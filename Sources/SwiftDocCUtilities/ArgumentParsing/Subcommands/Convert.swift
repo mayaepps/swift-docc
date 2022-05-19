@@ -33,7 +33,7 @@ extension Docc {
         /// The user-provided path to a `.docc` documentation bundle.
         @OptionGroup()
         public var documentationBundle: DocumentationBundleOption
-
+        
         /// User-provided platform name/version pairs.
         ///
         /// Used to set the current release version of a platform. Contains an array of strings in the following format:
@@ -137,6 +137,15 @@ extension Docc {
         /// Defaults to false.
         @Flag(help: "Inherit documentation for inherited symbols")
         public var enableInheritedDocs = false
+        
+        /// The user-provided path to a previous `.doccarchive` documentation archive to diff against.
+        @Option(
+            name: [.customLong("previous-archive-path")],
+            help: "The path to a previous .doccarchive documentation archive to diff against.",
+            transform: URL.init(fileURLWithPath:)
+        )
+        public var previousArchivePath: URL?
+
 
         // MARK: - Info.plist fallbacks
         
@@ -324,6 +333,11 @@ extension Docc {
                     
                     transformForStaticHosting = false
                 }
+            }
+            
+            if let previousArchivePath = previousArchivePath {
+                try DocCArchiveOption.validateDocCArchive(at: previousArchivePath)
+                print("You passed in a previous DocC Archive at \(previousArchivePath). DocC will use this archive to produce diffs.")
             }
 
         }

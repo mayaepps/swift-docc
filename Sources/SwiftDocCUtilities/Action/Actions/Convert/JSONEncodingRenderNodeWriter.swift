@@ -80,6 +80,16 @@ class JSONEncodingRenderNodeWriter {
         
         let encoder = RenderJSONEncoder.makeEncoder()
         
+        // Get the previous RenderNode from the target file URL to diff against.
+        do {
+            let targetFileData = try Data(contentsOf: renderNodeTargetFileURL)
+            let previousRenderNode = try RenderNode.decode(fromJSON: targetFileData)
+            
+            encoder.userInfoPreviousNode = previousRenderNode
+        } catch {
+            // This is a new RenderNode--there is no previous node to diff against.
+        }
+        
         let data = try renderNode.encodeToJSON(with: encoder, renderReferenceCache: renderReferenceCache)
         try fileManager.createFile(at: targetFileURL, contents: data)
     }
