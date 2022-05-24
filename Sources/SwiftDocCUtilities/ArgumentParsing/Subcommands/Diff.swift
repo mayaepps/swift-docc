@@ -34,7 +34,7 @@ extension Docc.ProcessArchive {
             let firstRenderNode = try decoder.decode(RenderNode.self, from: firstRenderJSONData)
             let secondRenderNode = try decoder.decode(RenderNode.self, from: secondRenderJSONData)
             
-            let difference = firstRenderNode.difference(from: secondRenderNode)
+            let difference = firstRenderNode.difference(from: secondRenderNode, at: "RenderNode")
             print(difference)
         }
     }

@@ -10,16 +10,221 @@
 
 import Foundation
 
-extension RenderNode {
+protocol Diffable {
+    func difference(from other: Self, at path: String) -> [String: Any]
+}
+
+extension RenderNode: Diffable {
+    
     /// Returns the differences between this render node and the given one.
-    public func difference(from other: RenderNode) -> [String: Any] {
-        // Diff the abstract:
-        let currentAbstract = abstract ?? []
-        let otherAbstract = other.abstract ?? []
-        let abstractDifference = otherAbstract.difference(from: currentAbstract)
+    public func difference(from other: RenderNode, at path: String) -> [String: Any] {
         
-        return [
-            "abstract": abstractDifference
-        ]
+        var diffs: [String: Any] = [:]
+        
+        // Diff the abstract:
+        diffs.merge(abstract.difference(from: other.abstract, at: "\(path)/abstract"),
+                    uniquingKeysWith: { (current, _) in current })
+        
+        if kind != other.kind {
+            diffs["\(path)/kind"] = "Replace with \(kind)"
+        }
+        
+        diffs.merge(schemaVersion.difference(from:other.schemaVersion, at: "\(path)/schemaVersion")) { (current, _) in current }
+        diffs.merge(identifier.difference(from:other.identifier, at: "\(path)/identifier")) { (current, _) in current }
+        diffs.merge(metadata.difference(from:other.metadata, at: "\(path)/metadata")) { (current, _) in current }
+        
+        // TODO: Error that RenderReference cannot conform to Diffable
+//        diffs.merge(references.difference(from:other.references)) { (current, _) in current }
+        
+        // TODO: Fix error that Protocol xyz as a type cannot conform to 'Equatable':
+//        diffs.merge(topicSections.difference(from: other.topicSections, at: "RenderNode/TopicSections")) { (current, _) in current }
+//        diffs.merge(primaryContentSections.difference(from: other.primaryContentSections, at: "RenderNode/PrimaryContentSection")) { (current, _) in current }
+//        diffs.merge(relationshipSections.difference(from: other.relationshipSections, at: "RenderNode/RelationshipSections")) { (current, _) in current }
+//        diffs.merge(seeAlsoSections.difference(from: other.seeAlsoSections, at: "RenderNode/SeeAlsoSections")) { (current, _) in current }
+        
+        // TODO: hierarchy
+        // TODO: variants
+        // TODO: sections
+        
+        return diffs
     }
+}
+
+extension Optional: Diffable where Wrapped: Diffable {
+    func difference(from other: Optional<Wrapped>, at path: String) -> [String : Any] {
+        
+        var difference: [String : Any] = [:]
+        if let current = self, let other = other {
+            difference.merge(current.difference(from: other, at: path)) { (current, _) in current }
+        } else if let other = other {
+            difference = [path: "Remove \(other)"]
+        } else if let current = self {
+            difference = [path: "Add \(current)"]
+        }
+        return difference
+    }
+}
+
+// This is just because I can't figure out how to make BidirectionalCollection Diffable
+extension Optional where Wrapped: BidirectionalCollection, Wrapped.Element: Equatable {
+    
+    func difference(from other: Optional<Wrapped>, at path: String) -> [String : Any] {
+        var difference: [String : Any] = [:]
+        if let current = self, let other = other {
+            difference.merge(current.difference(from: other, at: path)) { (current, _) in current }
+        } else if let other = other {
+            difference = [path: "Remove \(other)"]
+        } else if let current = self {
+            difference = [path: "Add \(current)"]
+        }
+        return difference
+    }
+}
+
+extension BidirectionalCollection where Element: Equatable {
+
+    func difference<C>(from other: C, at path: String) -> [String: Any] where C : BidirectionalCollection, Self.Element == C.Element {
+
+        return [path: self.difference(from: other)]
+    }
+}
+
+extension ResolvedTopicReference: Diffable {
+    
+    /// Returns the differences between this resolved topic reference and the given one.
+    public func difference(from other: ResolvedTopicReference, at path: String) -> [String: Any] {
+        var diffs: [String: Any] = [:]
+        if url != other.url {
+            diffs["\(path)/url"] = "Replace with \(url)"
+        }
+        if sourceLanguage != other.sourceLanguage {
+            diffs["\(path)/sourceLanguage"] = "Replace with \(sourceLanguage)"
+        }
+        return diffs
+    }
+}
+
+extension RenderMetadata: Diffable {
+    
+    /// Returns the differences between this render metadata and the given one.
+    public func difference(from other: RenderMetadata, at path: String) -> [String: Any] {
+        var diffs: [String : Any] = [:]
+        
+        // Diffing titles:
+        if let titleDiff = optionalPropertyDifference(title, from: other.title) {
+            diffs["\(path)/title"] = titleDiff
+        }
+        
+        // Diffing externalIDs:
+        if let idDiff = optionalPropertyDifference(externalID, from: other.externalID) {
+            diffs["\(path)/externalID"] = idDiff
+        }
+        
+        diffs.merge(modules.difference(from: other.modules, at: "\(path)/modules")) { (current, _) in current }
+        diffs.merge(fragments.difference(from: other.fragments, at: "\(path)/fragments")) { (current, _) in current }
+
+        // TODO: roleHeading
+        // TODO: role
+        // TODO: symbolKind
+        // TODO: navigatorTitle
+
+        return diffs
+    }
+}
+
+extension RenderMetadata.Module: Diffable, Equatable {
+    public static func == (lhs: RenderMetadata.Module, rhs: RenderMetadata.Module) -> Bool {
+        return lhs.name == rhs.name && lhs.relatedModules == rhs.relatedModules
+    }
+    
+    func difference(from other: RenderMetadata.Module, at path: String) -> [String : Any] {
+        var differences = [String: Any]()
+        if name != other.name {
+            differences["\(path)/name"] = "Replace with \(name)"
+        }
+        differences.merge(relatedModules.difference(from: other.relatedModules, at: "\(path)/relatedModules")) { (current, _) in current }
+        
+        return differences
+    }
+}
+
+extension SemanticVersion: Diffable {
+    /// Returns the differences between this semantic version and the given one.
+    public func difference(from other: SemanticVersion, at path: String) -> [String: Any] {
+        var diff = [String: Any]()
+        
+        if major != other.major {
+            diff["\(path)/major"] = "Replace with \(major)"
+        }
+        if minor != other.minor {
+            diff["\(path)/minor"] = "Replace with \(minor)"
+        }
+        if patch != other.patch  {
+            diff["\(path)/patch"] = "Replace with \(patch)"
+        }
+        return diff
+    }
+}
+
+extension Dictionary: Diffable where Value: Diffable {
+    func difference(from other: Dictionary<Key, Value>, at path: String) -> [String : Any] {
+        var differences: [String: Any] = [:]
+        for (key, value) in self {
+            differences.merge(value.difference(from: other[key]!, at: "\(path)/\(key)")) { (current, _) in current }
+        }
+        return differences
+    }
+}
+
+extension TopicRenderReference: Diffable {
+    
+    /// Returns the difference between two TopicRenderReferences.
+    public func difference(from other: TopicRenderReference, at path: String) -> [String: Any] {
+        var differences: [String: Any] = [:]
+        
+        if let roleDiff = optionalPropertyDifference(role, from: other.role) {
+            differences["\(path)/role"] = roleDiff
+        }
+        if title != other.title {
+            differences["\(path)/title"] = "Replace with \(title)"
+        }
+        if identifier != other.identifier {
+            differences["\(path)/identifier"] = "Replace with \(identifier)"
+        }
+        if kind != other.kind {
+            differences["\(path)/kind"] = "Replace with \(kind)"
+        }
+        if self.required != other.required {
+            differences["\(path)/required"] = "Replace with \(self.required)"
+        }
+        if type != other.type {
+            differences["\(path)/type"] = "Replace with \(type)"
+        }
+        if url != other.url {
+            differences["\(path)/url"] = "Replace with \(url)"
+        }
+        differences.merge(abstract.difference(from: other.abstract, at: "\(path)/abstract")) { (current, _) in current }
+        differences.merge(fragments.difference(from: other.fragments, at: "\(path)/fragments")) { (current, _) in current }
+        
+        // TODO: Title variants (Should this be handled differently?)
+        
+        return differences
+    }
+}
+
+// MARK: Diff Helpers
+
+/// Unwraps and returns the difference between two optional properties.
+private func optionalPropertyDifference<T>(_ current: T?, from other: T?) -> String? where T: Equatable {
+    var difference: String? = nil
+    if let current = current, let other = other {
+        if current != other {
+            difference = "Replace with \(current)"
+        }
+    } else if let other = other {
+        difference = "Remove \(other)"
+    } else if let current = current {
+        difference = "Add \(current)"
+    }
+    return difference
 }
