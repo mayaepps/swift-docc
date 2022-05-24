@@ -32,6 +32,7 @@ extension RenderNode: Diffable {
         diffs.merge(schemaVersion.difference(from:other.schemaVersion, at: "\(path)/schemaVersion")) { (current, _) in current }
         diffs.merge(identifier.difference(from:other.identifier, at: "\(path)/identifier")) { (current, _) in current }
         diffs.merge(metadata.difference(from:other.metadata, at: "\(path)/metadata")) { (current, _) in current }
+        diffs.merge(hierarchy.difference(from:other.hierarchy, at: "\(path)/hierarchy")) { (current, _) in current }
         
         // TODO: Error that RenderReference cannot conform to Diffable
 //        diffs.merge(references.difference(from:other.references)) { (current, _) in current }
@@ -42,7 +43,6 @@ extension RenderNode: Diffable {
 //        diffs.merge(relationshipSections.difference(from: other.relationshipSections, at: "RenderNode/RelationshipSections")) { (current, _) in current }
 //        diffs.merge(seeAlsoSections.difference(from: other.seeAlsoSections, at: "RenderNode/SeeAlsoSections")) { (current, _) in current }
         
-        // TODO: hierarchy
         // TODO: variants
         // TODO: sections
         
@@ -210,6 +210,40 @@ extension TopicRenderReference: Diffable {
         
         return differences
     }
+}
+
+extension RenderHierarchy: Diffable {
+    
+    func difference(from other: RenderHierarchy, at path: String) -> [String : Any] {
+        var differences = [String: Any]()
+        switch (self, other) {
+            case (let .reference(selfReferenceHierarchy), let .reference(otherReferenceHierarchy)):
+                differences.merge(selfReferenceHierarchy.difference(from: otherReferenceHierarchy, at: path)) { (current, _) in current }
+            case (let .tutorials(selfTutorialsHierarchy), let .tutorials(otherTutorialsHierarchy)):
+                differences.merge(selfTutorialsHierarchy.difference(from: otherTutorialsHierarchy, at: path)) { (current, _) in current }
+            default:
+            differences[path] = "Replace with \(self)"
+        }
+        return differences
+    }
+}
+
+extension RenderReferenceHierarchy: Diffable {
+    func difference(from other: RenderReferenceHierarchy, at path: String) -> [String : Any] {
+        return paths.difference(from: other.paths, at: "\(path)/paths")
+    }
+    
+}
+extension RenderTutorialsHierarchy: Diffable {
+    func difference(from other: RenderTutorialsHierarchy, at path: String) -> [String : Any] {
+        var differences = [String: Any]()
+        differences.merge(paths.difference(from: other.paths, at: "\(path)/paths")) { (current, _) in current }
+        
+        //TODO: reference, modules ?
+        
+        return differences
+    }
+    
 }
 
 // MARK: Diff Helpers
