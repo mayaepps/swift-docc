@@ -35,7 +35,7 @@ extension RenderNode: Diffable {
         diffs.merge(hierarchy.difference(from:other.hierarchy, at: "\(path)/hierarchy")) { (current, _) in current }
         
         // TODO: Error that RenderReference cannot conform to Diffable
-//        diffs.merge(references.difference(from:other.references)) { (current, _) in current }
+//        diffs.merge(references.difference(from:other.references, at: "\(path)/references")) { (current, _) in current }
         
         // TODO: Fix error that Protocol xyz as a type cannot conform to 'Equatable':
 //        diffs.merge(topicSections.difference(from: other.topicSections, at: "RenderNode/TopicSections")) { (current, _) in current }
@@ -65,26 +65,10 @@ extension Optional: Diffable where Wrapped: Diffable {
     }
 }
 
-// This is just because I can't figure out how to make BidirectionalCollection Diffable
-extension Optional where Wrapped: BidirectionalCollection, Wrapped.Element: Equatable {
+extension Array: Diffable where Element: Equatable {
     
-    func difference(from other: Optional<Wrapped>, at path: String) -> [String : Any] {
-        var difference: [String : Any] = [:]
-        if let current = self, let other = other {
-            difference.merge(current.difference(from: other, at: path)) { (current, _) in current }
-        } else if let other = other {
-            difference = [path: "Remove \(other)"]
-        } else if let current = self {
-            difference = [path: "Add \(current)"]
-        }
-        return difference
-    }
-}
-
-extension BidirectionalCollection where Element: Equatable {
-
-    func difference<C>(from other: C, at path: String) -> [String: Any] where C : BidirectionalCollection, Self.Element == C.Element {
-
+    func difference(from other: Array<Element>, at path: String) -> [String : Any] {
+        // TODO: Deal with arrays of big structs--drill into their specific differences
         return [path: self.difference(from: other)]
     }
 }
@@ -243,7 +227,6 @@ extension RenderTutorialsHierarchy: Diffable {
         
         return differences
     }
-    
 }
 
 // MARK: Diff Helpers
