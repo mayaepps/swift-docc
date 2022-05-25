@@ -91,23 +91,27 @@ extension RenderMetadata: Diffable {
     public func difference(from other: RenderMetadata, at path: String) -> [String: Any] {
         var diffs: [String : Any] = [:]
         
-        // Diffing titles:
+        // Diffing optional properties:
         if let titleDiff = optionalPropertyDifference(title, from: other.title) {
             diffs["\(path)/title"] = titleDiff
         }
-        
-        // Diffing externalIDs:
         if let idDiff = optionalPropertyDifference(externalID, from: other.externalID) {
             diffs["\(path)/externalID"] = idDiff
         }
+        if let currentSymbolKind = optionalPropertyDifference(symbolKind, from: other.symbolKind) {
+            diffs["\(path)/symbolKind"] = currentSymbolKind
+        }
+        if let currentRole = optionalPropertyDifference(role, from: other.role) {
+            diffs["\(path)/role"] = currentRole
+        }
+        if let currentRoleHeading = optionalPropertyDifference(roleHeading, from: other.roleHeading) {
+            diffs["\(path)/roleHeading"] = currentRoleHeading
+        }
         
+        // Diffing structs and arrays
         diffs.merge(modules.difference(from: other.modules, at: "\(path)/modules")) { (current, _) in current }
         diffs.merge(fragments.difference(from: other.fragments, at: "\(path)/fragments")) { (current, _) in current }
-
-        // TODO: roleHeading
-        // TODO: role
-        // TODO: symbolKind
-        // TODO: navigatorTitle
+        diffs.merge(navigatorTitle.difference(from: other.navigatorTitle, at: "\(path)/navigatorTitle")) { (current, _) in current }
 
         return diffs
     }
