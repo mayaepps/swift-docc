@@ -24,7 +24,8 @@
                     "kind",
                     "identifier",
                     "sections",
-                    "schemaVersion"
+                    "schemaVersion",
+                    "versions"
                 ],
                 "type": "object",
                 "properties": {
@@ -66,6 +67,12 @@
                     },
                     "schemaVersion": {
                         "$ref": "#/components/schemas/SchemaVersion"
+                    },
+                    "versions": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/VersionPatch"
+                        }
                     }
                 }
             },
@@ -1501,11 +1508,11 @@
                     "kind": {
                         "type": "string",
                         "enum": [
-                            "article", 
-                            "project", 
-                            "section", 
-                            "overview", 
-                            "symbol", 
+                            "article",
+                            "project",
+                            "section",
+                            "overview",
+                            "symbol",
                             "root"
                         ]
                     },
@@ -1759,7 +1766,8 @@
                     "schemaVersion",
                     "hierarchy",
                     "metadata",
-                    "sections"
+                    "sections",
+                    "versions"
                 ],
                 "type": "object",
                 "properties": {
@@ -1869,6 +1877,12 @@
                         "type": "array",
                         "items": {
                             "$ref": "#/components/schemas/VariantOverride"
+                        }
+                    },
+                    "versions": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/VersionPatch"
                         }
                     }
                 }
@@ -2854,6 +2868,18 @@
                         "items": {
                             "type": "string"
                         }
+                    }
+                }
+            },
+            "VersionPatch": {
+                "type": "object",
+                "required": ["version", "patch"],
+                "properties": {
+                    "version": {
+                        "$ref": "#/components/schemas/SchemaVersion"
+                    },
+                    "patch": {
+                        "$ref": "#/components/schemas/JSONPatch"
                     }
                 }
             }
