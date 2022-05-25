@@ -21,27 +21,24 @@ extension RenderNode: Diffable {
         
         var diffs: [String: Any] = [:]
         
-        // Diff the abstract:
-        diffs.merge(abstract.difference(from: other.abstract, at: "\(path)/abstract"),
-                    uniquingKeysWith: { (current, _) in current })
-        
         if kind != other.kind {
             diffs["\(path)/kind"] = "Replace with \(kind)"
         }
         
+        diffs.merge(abstract.difference(from: other.abstract, at: "\(path)/abstract")) { (current, _) in current }
         diffs.merge(schemaVersion.difference(from:other.schemaVersion, at: "\(path)/schemaVersion")) { (current, _) in current }
         diffs.merge(identifier.difference(from:other.identifier, at: "\(path)/identifier")) { (current, _) in current }
         diffs.merge(metadata.difference(from:other.metadata, at: "\(path)/metadata")) { (current, _) in current }
         diffs.merge(hierarchy.difference(from:other.hierarchy, at: "\(path)/hierarchy")) { (current, _) in current }
+        diffs.merge(topicSections.difference(from: other.topicSections, at: "\(path)/TopicSections")) { (current, _) in current }
+        diffs.merge(seeAlsoSections.difference(from: other.seeAlsoSections, at: "\(path)/SeeAlsoSections")) { (current, _) in current }
         
         // TODO: Error that RenderReference cannot conform to Diffable
 //        diffs.merge(references.difference(from:other.references, at: "\(path)/references")) { (current, _) in current }
         
         // TODO: Fix error that Protocol xyz as a type cannot conform to 'Equatable':
-//        diffs.merge(topicSections.difference(from: other.topicSections, at: "RenderNode/TopicSections")) { (current, _) in current }
 //        diffs.merge(primaryContentSections.difference(from: other.primaryContentSections, at: "RenderNode/PrimaryContentSection")) { (current, _) in current }
 //        diffs.merge(relationshipSections.difference(from: other.relationshipSections, at: "RenderNode/RelationshipSections")) { (current, _) in current }
-//        diffs.merge(seeAlsoSections.difference(from: other.seeAlsoSections, at: "RenderNode/SeeAlsoSections")) { (current, _) in current }
         
         // TODO: variants
         // TODO: sections
@@ -228,6 +225,15 @@ extension RenderTutorialsHierarchy: Diffable {
         return differences
     }
 }
+
+// MARK: Equatable Conformance
+
+extension TaskGroupRenderSection: Equatable {
+    public static func == (lhs: TaskGroupRenderSection, rhs: TaskGroupRenderSection) -> Bool {
+        return lhs.kind == rhs.kind && lhs.title == rhs.title && lhs.abstract == rhs.abstract && lhs.discussion?.kind == rhs.discussion?.kind && lhs.identifiers == rhs.identifiers && lhs.generated == rhs.generated
+    }
+}
+
 
 // MARK: Diff Helpers
 
