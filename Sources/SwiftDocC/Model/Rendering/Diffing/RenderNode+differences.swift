@@ -15,7 +15,6 @@ protocol Diffable {
 }
 
 extension RenderNode: Diffable {
-    
     /// Returns the differences between this render node and the given one.
     public func difference(from other: RenderNode, at path: String) -> [String: Any] {
         
@@ -24,7 +23,6 @@ extension RenderNode: Diffable {
         if kind != other.kind {
             diffs["\(path)/kind"] = "Replace with \(kind)"
         }
-        
         diffs.merge(abstract.difference(from: other.abstract, at: "\(path)/abstract")) { (current, _) in current }
         diffs.merge(schemaVersion.difference(from:other.schemaVersion, at: "\(path)/schemaVersion")) { (current, _) in current }
         diffs.merge(identifier.difference(from:other.identifier, at: "\(path)/identifier")) { (current, _) in current }
@@ -39,7 +37,7 @@ extension RenderNode: Diffable {
         // TODO: Fix error that Protocol xyz as a type cannot conform to 'Equatable':
 //        diffs.merge(primaryContentSections.difference(from: other.primaryContentSections, at: "RenderNode/PrimaryContentSection")) { (current, _) in current }
 //        diffs.merge(relationshipSections.difference(from: other.relationshipSections, at: "RenderNode/RelationshipSections")) { (current, _) in current }
-        
+
         // TODO: variants
         // TODO: sections
         
@@ -48,8 +46,8 @@ extension RenderNode: Diffable {
 }
 
 extension Optional: Diffable where Wrapped: Diffable {
+    /// Returns the differences between this optional and the given one.
     func difference(from other: Optional<Wrapped>, at path: String) -> [String : Any] {
-        
         var difference: [String : Any] = [:]
         if let current = self, let other = other {
             difference.merge(current.difference(from: other, at: path)) { (current, _) in current }
@@ -63,7 +61,7 @@ extension Optional: Diffable where Wrapped: Diffable {
 }
 
 extension Array: Diffable where Element: Equatable {
-    
+    /// Returns the differences between this array and the given one.
     func difference(from other: Array<Element>, at path: String) -> [String : Any] {
         // TODO: Deal with arrays of big structs--drill into their specific differences
         return [path: self.difference(from: other)]
@@ -71,7 +69,6 @@ extension Array: Diffable where Element: Equatable {
 }
 
 extension ResolvedTopicReference: Diffable {
-    
     /// Returns the differences between this resolved topic reference and the given one.
     public func difference(from other: ResolvedTopicReference, at path: String) -> [String: Any] {
         var diffs: [String: Any] = [:]
@@ -86,7 +83,6 @@ extension ResolvedTopicReference: Diffable {
 }
 
 extension RenderMetadata: Diffable {
-    
     /// Returns the differences between this render metadata and the given one.
     public func difference(from other: RenderMetadata, at path: String) -> [String: Any] {
         var diffs: [String : Any] = [:]
@@ -118,10 +114,12 @@ extension RenderMetadata: Diffable {
 }
 
 extension RenderMetadata.Module: Diffable, Equatable {
+    /// Returns whether lhs is equal to rhs.
     public static func == (lhs: RenderMetadata.Module, rhs: RenderMetadata.Module) -> Bool {
         return lhs.name == rhs.name && lhs.relatedModules == rhs.relatedModules
     }
     
+    /// Returns the difference between two RenderMetadata.Modules.
     func difference(from other: RenderMetadata.Module, at path: String) -> [String : Any] {
         var differences = [String: Any]()
         if name != other.name {
@@ -152,6 +150,7 @@ extension SemanticVersion: Diffable {
 }
 
 extension Dictionary: Diffable where Value: Diffable {
+    /// Returns the difference between two dictionaries with diffable values.
     func difference(from other: Dictionary<Key, Value>, at path: String) -> [String : Any] {
         var differences: [String: Any] = [:]
         for (key, value) in self {
@@ -162,7 +161,6 @@ extension Dictionary: Diffable where Value: Diffable {
 }
 
 extension TopicRenderReference: Diffable {
-    
     /// Returns the difference between two TopicRenderReferences.
     public func difference(from other: TopicRenderReference, at path: String) -> [String: Any] {
         var differences: [String: Any] = [:]
@@ -198,7 +196,7 @@ extension TopicRenderReference: Diffable {
 }
 
 extension RenderHierarchy: Diffable {
-    
+    /// Returns the difference between this RenderHierarchy and the given one.
     func difference(from other: RenderHierarchy, at path: String) -> [String : Any] {
         var differences = [String: Any]()
         switch (self, other) {
@@ -214,21 +212,47 @@ extension RenderHierarchy: Diffable {
 }
 
 extension RenderReferenceHierarchy: Diffable {
+    /// Returns the difference between this RenderReferenceHierarchy and the given one.
     func difference(from other: RenderReferenceHierarchy, at path: String) -> [String : Any] {
         return paths.difference(from: other.paths, at: "\(path)/paths")
     }
     
 }
+
 extension RenderTutorialsHierarchy: Diffable {
+    /// Returns the difference between this RenderTutorialsHierarchy and the given one.
     func difference(from other: RenderTutorialsHierarchy, at path: String) -> [String : Any] {
         var differences = [String: Any]()
         differences.merge(paths.difference(from: other.paths, at: "\(path)/paths")) { (current, _) in current }
-        
-        //TODO: reference, modules ?
+        differences.merge(reference.difference(from: other.reference, at: "\(path)/reference")) { (current, _) in current }
+        differences.merge(modules.difference(from: other.modules, at: "\(path)/modules")) { (current, _) in current }
         
         return differences
     }
 }
+
+extension RenderReferenceIdentifier: Diffable {
+    /// Returns the difference between this RenderReferenceIdentifier and the given one.
+    func difference(from other: RenderReferenceIdentifier, at path: String) -> [String : Any] {
+        
+        var differences = [String : Any]()
+        if identifier != other.identifier {
+            differences["\(path)/identifier"] = "Replace with \(identifier)"
+        }
+        return differences
+    }
+}
+
+//extension RenderReference where Self: Diffable {
+//    func diff(from other: RenderReference, at path: String) -> [String: Any] {
+//        let otherValue = other as! Self
+//        return self.difference(from: otherValue, at: path)
+//    }
+//
+//    func asDiffable() -> AnyDiffableReference {
+//        return AnyDiffableReference(self)
+//    }
+//}
 
 // MARK: Equatable Conformance
 
@@ -238,6 +262,25 @@ extension TaskGroupRenderSection: Equatable {
     }
 }
 
+extension RenderHierarchyChapter: Equatable {
+    public static func == (lhs: RenderHierarchyChapter, rhs: RenderHierarchyChapter) -> Bool {
+        return lhs.reference == rhs.reference && lhs.tutorials == rhs.tutorials
+    }
+}
+
+extension RenderHierarchyTutorial: Equatable {
+    public static func == (lhs: RenderHierarchyTutorial, rhs: RenderHierarchyTutorial) -> Bool {
+        return lhs.reference == rhs.reference && lhs.landmarks == rhs.landmarks
+    }
+}
+
+extension RenderHierarchyLandmark: Equatable {
+    public static func == (lhs: RenderHierarchyLandmark, rhs: RenderHierarchyLandmark) -> Bool {
+        return lhs.reference == rhs.reference && lhs.kind == rhs.kind
+    }
+    
+    
+}
 
 // MARK: Diff Helpers
 
