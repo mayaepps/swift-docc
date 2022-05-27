@@ -1508,11 +1508,11 @@
                     "kind": {
                         "type": "string",
                         "enum": [
-                            "article",
-                            "project",
-                            "section",
-                            "overview",
-                            "symbol",
+                            "article", 
+                            "project", 
+                            "section", 
+                            "overview", 
+                            "symbol", 
                             "root"
                         ]
                     },
@@ -2873,10 +2873,13 @@
             },
             "VersionPatch": {
                 "type": "object",
-                "required": ["version", "patch"],
+                "required": ["versionID", "displayName", "patch"],
                 "properties": {
-                    "version": {
-                        "$ref": "#/components/schemas/SchemaVersion"
+                    "versionID": {
+                        "type": "string",
+                    },
+                    "displayName": {
+                        "type": "string",
                     },
                     "patch": {
                         "$ref": "#/components/schemas/JSONPatch"
