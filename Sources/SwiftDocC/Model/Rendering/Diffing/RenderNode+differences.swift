@@ -23,6 +23,7 @@ extension RenderNode: Diffable {
         if kind != other.kind {
             diffs["\(path)/kind"] = "Replace with \(kind)"
         }
+        
         diffs.merge(abstract.difference(from: other.abstract, at: "\(path)/abstract")) { (current, _) in current }
         diffs.merge(schemaVersion.difference(from:other.schemaVersion, at: "\(path)/schemaVersion")) { (current, _) in current }
         diffs.merge(identifier.difference(from:other.identifier, at: "\(path)/identifier")) { (current, _) in current }
@@ -30,18 +31,34 @@ extension RenderNode: Diffable {
         diffs.merge(hierarchy.difference(from:other.hierarchy, at: "\(path)/hierarchy")) { (current, _) in current }
         diffs.merge(topicSections.difference(from: other.topicSections, at: "\(path)/TopicSections")) { (current, _) in current }
         diffs.merge(seeAlsoSections.difference(from: other.seeAlsoSections, at: "\(path)/SeeAlsoSections")) { (current, _) in current }
-        
-        // TODO: Error that RenderReference cannot conform to Diffable
-//        diffs.merge(references.difference(from:other.references, at: "\(path)/references")) { (current, _) in current }
+
+        let diffableReferences = references.mapValues { reference in
+            return  AnyRenderReference(reference)
+        }
+        let otherDiffableReferences = other.references.mapValues { reference in
+            return  AnyRenderReference(reference)
+        }
+        diffs.merge(diffableReferences.difference(from:otherDiffableReferences, at: "\(path)/references")) { (current, _) in current }
         
         // TODO: Fix error that Protocol xyz as a type cannot conform to 'Equatable':
 //        diffs.merge(primaryContentSections.difference(from: other.primaryContentSections, at: "RenderNode/PrimaryContentSection")) { (current, _) in current }
 //        diffs.merge(relationshipSections.difference(from: other.relationshipSections, at: "RenderNode/RelationshipSections")) { (current, _) in current }
+//        diffs.merge(sections.difference(from: other.sections, at: "\(path)/SeeAlsoSections")) { (current, _) in current }
 
         // TODO: variants
-        // TODO: sections
         
         return diffs
+    }
+}
+
+extension Dictionary: Diffable where Value: Diffable {
+    /// Returns the difference between two dictionaries with diffable values.
+    func difference(from other: Dictionary<Key, Value>, at path: String) -> [String : Any] {
+        var differences: [String: Any] = [:]
+        for (key, value) in self {
+            differences.merge(value.difference(from: other[key]!, at: "\(path)/\(key)")) { (current, _) in current }
+        }
+        return differences
     }
 }
 
@@ -63,9 +80,24 @@ extension Optional: Diffable where Wrapped: Diffable {
 extension Array: Diffable where Element: Equatable {
     /// Returns the differences between this array and the given one.
     func difference(from other: Array<Element>, at path: String) -> [String : Any] {
-        // TODO: Deal with arrays of big structs--drill into their specific differences
         return [path: self.difference(from: other)]
     }
+}
+
+extension DeclarationRenderSection.Token: Diffable {
+    /// Returns the differences between this Token and the given one.
+    func difference(from other: DeclarationRenderSection.Token, at path: String) -> [String : Any] {
+        var difference = [String : Any]()
+        if text != other.text {
+            difference["\(path)/text"] = "Replace with \(text)"
+        }
+        if kind != other.kind {
+            difference["\(path)/kind"] = "Replace with \(kind)"
+        }
+        return difference
+    }
+    
+    
 }
 
 extension ResolvedTopicReference: Diffable {
@@ -85,6 +117,7 @@ extension ResolvedTopicReference: Diffable {
 extension RenderMetadata: Diffable {
     /// Returns the differences between this render metadata and the given one.
     public func difference(from other: RenderMetadata, at path: String) -> [String: Any] {
+        
         var diffs: [String : Any] = [:]
         
         // Diffing optional properties:
@@ -146,17 +179,6 @@ extension SemanticVersion: Diffable {
             diff["\(path)/patch"] = "Replace with \(patch)"
         }
         return diff
-    }
-}
-
-extension Dictionary: Diffable where Value: Diffable {
-    /// Returns the difference between two dictionaries with diffable values.
-    func difference(from other: Dictionary<Key, Value>, at path: String) -> [String : Any] {
-        var differences: [String: Any] = [:]
-        for (key, value) in self {
-            differences.merge(value.difference(from: other[key]!, at: "\(path)/\(key)")) { (current, _) in current }
-        }
-        return differences
     }
 }
 
@@ -243,16 +265,24 @@ extension RenderReferenceIdentifier: Diffable {
     }
 }
 
-//extension RenderReference where Self: Diffable {
-//    func diff(from other: RenderReference, at path: String) -> [String: Any] {
-//        let otherValue = other as! Self
-//        return self.difference(from: otherValue, at: path)
-//    }
-//
-//    func asDiffable() -> AnyDiffableReference {
-//        return AnyDiffableReference(self)
-//    }
-//}
+/// A RenderReference value that can be diffed.
+///
+/// An `AnyRenderReference` value forwards difference operations to the underlying base type, which implement the difference differently.
+struct AnyRenderReference: Diffable {
+    var value: RenderReference
+    init(_ value: RenderReference) { self.value = value }
+    func difference(from other: AnyRenderReference, at path: String) -> [String : Any] {
+        var differences = [String: Any]()
+        switch (self.value, other.value) {
+        case let (identifier as TopicRenderReference, otherIdentifier as TopicRenderReference):
+            differences.merge(identifier.difference(from: otherIdentifier, at: path)) { (current, _) in current }
+        default:
+            return [:]
+        }
+        return [:]
+    }
+}
+
 
 // MARK: Equatable Conformance
 
