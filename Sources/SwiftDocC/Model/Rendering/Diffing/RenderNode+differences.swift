@@ -40,8 +40,9 @@ extension RenderNode: Diffable {
         }
         diffs.merge(diffableReferences.difference(from:otherDiffableReferences, at: "\(path)/references")) { (current, _) in current }
         
+        
         // TODO: Fix error that Protocol xyz as a type cannot conform to 'Equatable':
-//        diffs.merge(primaryContentSections.difference(from: other.primaryContentSections, at: "RenderNode/PrimaryContentSection")) { (current, _) in current }
+//        diffs.merge(primaryContentSections.difference(from: other.primaryContentSections, at: "\(path)/PrimaryContentSection")) { (current, _) in current }
 //        diffs.merge(relationshipSections.difference(from: other.relationshipSections, at: "RenderNode/RelationshipSections")) { (current, _) in current }
 //        diffs.merge(sections.difference(from: other.sections, at: "\(path)/SeeAlsoSections")) { (current, _) in current }
 
@@ -96,8 +97,6 @@ extension DeclarationRenderSection.Token: Diffable {
         }
         return difference
     }
-    
-    
 }
 
 extension ResolvedTopicReference: Diffable {
@@ -182,41 +181,6 @@ extension SemanticVersion: Diffable {
     }
 }
 
-extension TopicRenderReference: Diffable {
-    /// Returns the difference between two TopicRenderReferences.
-    public func difference(from other: TopicRenderReference, at path: String) -> [String: Any] {
-        var differences: [String: Any] = [:]
-        
-        if let roleDiff = optionalPropertyDifference(role, from: other.role) {
-            differences["\(path)/role"] = roleDiff
-        }
-        if title != other.title {
-            differences["\(path)/title"] = "Replace with \(title)"
-        }
-        if identifier != other.identifier {
-            differences["\(path)/identifier"] = "Replace with \(identifier)"
-        }
-        if kind != other.kind {
-            differences["\(path)/kind"] = "Replace with \(kind)"
-        }
-        if self.required != other.required {
-            differences["\(path)/required"] = "Replace with \(self.required)"
-        }
-        if type != other.type {
-            differences["\(path)/type"] = "Replace with \(type)"
-        }
-        if url != other.url {
-            differences["\(path)/url"] = "Replace with \(url)"
-        }
-        differences.merge(abstract.difference(from: other.abstract, at: "\(path)/abstract")) { (current, _) in current }
-        differences.merge(fragments.difference(from: other.fragments, at: "\(path)/fragments")) { (current, _) in current }
-        
-        // TODO: Title variants (Should this be handled differently?)
-        
-        return differences
-    }
-}
-
 extension RenderHierarchy: Diffable {
     /// Returns the difference between this RenderHierarchy and the given one.
     func difference(from other: RenderHierarchy, at path: String) -> [String : Any] {
@@ -265,6 +229,8 @@ extension RenderReferenceIdentifier: Diffable {
     }
 }
 
+// MARK: RenderReference Diffable conformance
+
 /// A RenderReference value that can be diffed.
 ///
 /// An `AnyRenderReference` value forwards difference operations to the underlying base type, which implement the difference differently.
@@ -273,16 +239,219 @@ struct AnyRenderReference: Diffable {
     init(_ value: RenderReference) { self.value = value }
     func difference(from other: AnyRenderReference, at path: String) -> [String : Any] {
         var differences = [String: Any]()
-        switch (self.value, other.value) {
-        case let (identifier as TopicRenderReference, otherIdentifier as TopicRenderReference):
-            differences.merge(identifier.difference(from: otherIdentifier, at: path)) { (current, _) in current }
-        default:
-            return [:]
+
+        if value.type != other.value.type {
+            differences["\(path)/value"] = "Replace with \(value.type)"
         }
-        return [:]
+        if value.identifier != other.value.identifier {
+            differences["\(path)/value"] = "Replace with \(value.identifier)"
+        }
+
+        switch (value.type, other.value.type) {
+        case (.file, .file):
+            let value = value as! FileReference
+            let otherValue = other.value as! FileReference
+            differences.merge(value.difference(from: otherValue, at: path)) { (current, _) in current }
+        case (.image, .image):
+            let value = value as! ImageReference
+            let otherValue = other.value as! ImageReference
+            differences.merge(value.difference(from: otherValue, at: path)) { (current, _) in current }
+        case (.video, .video):
+            let value = value as! VideoReference
+            let otherValue = other.value as! VideoReference
+            differences.merge(value.difference(from: otherValue, at: path)) { (current, _) in current }
+        case (.fileType, .fileType):
+            let value = value as! FileTypeReference
+            let other = other.value as! FileTypeReference
+            differences.merge(value.difference(from: other, at: path)) { (current, _) in current }
+        case (.xcodeRequirement, .xcodeRequirement):
+            let value = value as! XcodeRequirementReference
+            let otherValue = other.value as! XcodeRequirementReference
+            differences.merge(value.difference(from: otherValue, at: path)) { (current, _) in current }
+        case (.topic, .topic):
+            let value = value as! TopicRenderReference
+            let otherValue = other.value as! TopicRenderReference
+            differences.merge(value.difference(from: otherValue, at: path)) { (current, _) in current }
+        case (.section, .section):
+            let value = value as! TopicRenderReference
+            let otherValue = other.value as! TopicRenderReference
+            differences.merge(value.difference(from: otherValue, at: path)) { (current, _) in current }
+        case (.download, .download):
+            let value = value as! DownloadReference
+            let otherValue = other.value as! DownloadReference
+            differences.merge(value.difference(from: otherValue, at: path)) { (current, _) in current }
+        case (.unresolvable, .unresolvable):
+            let value = value as! UnresolvedRenderReference
+            let otherValue = other.value as! UnresolvedRenderReference
+            differences.merge(value.difference(from: otherValue, at: path)) { (current, _) in current }
+        case (.link, .link):
+            let value = value as! LinkReference
+            let otherValue = other.value as! LinkReference
+            differences.merge(value.difference(from: otherValue, at: path)) { (current, _) in current }
+        default:
+            differences["\(path)/value"] = "Replace with \(value.type)"
+        }
+        return differences
     }
 }
 
+extension TopicRenderReference: Diffable {
+    /// Returns the difference between two TopicRenderReferences.
+    public func difference(from other: TopicRenderReference, at path: String) -> [String: Any] {
+        var differences: [String: Any] = [:]
+        
+        if let roleDiff = optionalPropertyDifference(role, from: other.role) {
+            differences["\(path)/role"] = roleDiff
+        }
+        if title != other.title {
+            differences["\(path)/title"] = "Replace with \(title)"
+        }
+        if identifier != other.identifier {
+            differences["\(path)/identifier"] = "Replace with \(identifier)"
+        }
+        if kind != other.kind {
+            differences["\(path)/kind"] = "Replace with \(kind)"
+        }
+        if self.required != other.required {
+            differences["\(path)/required"] = "Replace with \(self.required)"
+        }
+        if type != other.type {
+            differences["\(path)/type"] = "Replace with \(type)"
+        }
+        if url != other.url {
+            differences["\(path)/url"] = "Replace with \(url)"
+        }
+        differences.merge(abstract.difference(from: other.abstract, at: "\(path)/abstract")) { (current, _) in current }
+        differences.merge(fragments.difference(from: other.fragments, at: "\(path)/fragments")) { (current, _) in current }
+        
+        // TODO: Title variants (Should this be handled differently?)
+        
+        return differences
+    }
+}
+
+extension FileReference: Diffable {
+    /// Returns the difference between this FileReference and the given one.
+    func difference(from other: FileReference, at path: String) -> [String : Any] {
+        var differences: [String: Any] = [:]
+        if fileName != other.fileName {
+            differences["\(path)/fileName"] = "Replace with \(fileName)"
+        }
+        if fileType != other.fileType {
+            differences["\(path)/fileName"] = "Replace with \(fileType)"
+        }
+        if syntax != other.syntax {
+            differences["\(path)/syntax"] = "Replace with \(syntax)"
+        }
+        differences.merge(content.difference(from: other.content, at: "\(path)/content")) { (current, _) in current }
+        differences.merge(highlights.difference(from: other.highlights, at: "\(path)/highlights")) { (current, _) in current }
+        return differences
+    }
+}
+
+extension ImageReference: Diffable {
+    /// Returns the difference between this ImageReference and the given one.
+    func difference(from other: ImageReference, at path: String) -> [String : Any] {
+        var differences: [String: Any] = [:]
+
+        if let altTextDiff = optionalPropertyDifference(altText, from: other.altText) {
+            differences["\(path)/altText"] = altTextDiff
+        }
+        if asset != other.asset {
+            differences["\(path)/asset"] = "Replace with \(asset)"
+        }
+        return differences
+    }
+}
+
+extension VideoReference: Diffable {
+    /// Returns the difference between this VideoReference and the given one.
+    func difference(from other: VideoReference, at path: String) -> [String : Any] {
+        var differences: [String: Any] = [:]
+        
+        if let altTextDiff = optionalPropertyDifference(altText, from: other.altText) {
+            differences["\(path)/altText"] = altTextDiff
+        }
+        if asset != other.asset {
+            differences["\(path)/asset"] = "Replace with \(asset)"
+        }
+        differences.merge(poster.difference(from: other.poster, at: "\(path)/poster")) { (current, _) in current }
+        return differences
+    }
+}
+
+extension FileTypeReference: Diffable {
+    /// Returns the difference between this FileTypeReference and the given one.
+    func difference(from other: FileTypeReference, at path: String) -> [String : Any] {
+        var differences = [String: Any]()
+        if displayName != other.displayName {
+            differences["\(path)/displayName"] = "Replace with \(displayName)"
+        }
+        if iconBase64 != other.iconBase64 {
+            differences["\(path)/iconBase64"] = "Replace with \(iconBase64)"
+        }
+        return differences
+    }
+}
+
+extension XcodeRequirementReference: Diffable {
+    /// Returns the difference between this XcodeRequirementReference and the given one.
+    func difference(from other: XcodeRequirementReference, at path: String) -> [String : Any] {
+        var differences = [String: Any]()
+        if title != other.title {
+            differences["\(path)/title"] = "Replace with \(title)"
+        }
+        if url != other.url {
+            differences["\(path)/url"] = "Replace with \(url)"
+        }
+
+        return differences
+    }
+}
+
+extension DownloadReference: Diffable {
+    /// Returns the difference between this DownloadReference and the given one.
+    func difference(from other: DownloadReference, at path: String) -> [String : Any] {
+        var differences = [String: Any]()
+        
+        if url != other.url {
+            differences["\(path)/url"] = "Replace with \(url)"
+        }
+        if sha512Checksum != other.sha512Checksum {
+            differences["\(path)/sha512Checksum"] = "Replace with \(sha512Checksum)"
+        }
+
+        return differences
+    }
+}
+
+extension UnresolvedRenderReference: Diffable {
+    /// Returns the difference between this UnresolvedRenderReference and the given one.
+    func difference(from other: UnresolvedRenderReference, at path: String) -> [String : Any] {
+        var differences = [String: Any]()
+        if title != other.title {
+            differences["\(path)/title"] = "Replace with \(title)"
+        }
+        return differences
+    }
+}
+
+extension LinkReference: Diffable {
+    /// Returns the difference between this LinkReference and the given one.
+    func difference(from other: LinkReference, at path: String) -> [String : Any] {
+        var differences = [String: Any]()
+        
+        differences.merge(titleInlineContent.difference(from: other.titleInlineContent, at: "\(path)/titleInlineContent")) { (current, _) in current }
+        if url != other.url {
+            differences["\(path)/url"] = "Replace with \(url)"
+        }
+        if title != other.title {
+            differences["\(path)/title"] = "Replace with \(title)"
+        }
+        
+        return differences
+    }
+}
 
 // MARK: Equatable Conformance
 
@@ -308,7 +477,18 @@ extension RenderHierarchyLandmark: Equatable {
     public static func == (lhs: RenderHierarchyLandmark, rhs: RenderHierarchyLandmark) -> Bool {
         return lhs.reference == rhs.reference && lhs.kind == rhs.kind
     }
-    
+}
+
+extension LineHighlighter.Highlight: Equatable {
+    public static func == (lhs: LineHighlighter.Highlight, rhs: LineHighlighter.Highlight) -> Bool {
+        return lhs.line == rhs.line && lhs.start == rhs.start && lhs.length == rhs.length
+    }
+}
+
+extension DataAsset: Equatable {
+    public static func == (lhs: DataAsset, rhs: DataAsset) -> Bool {
+        return lhs.context == rhs.context && lhs.variants == rhs.variants
+    }
     
 }
 
