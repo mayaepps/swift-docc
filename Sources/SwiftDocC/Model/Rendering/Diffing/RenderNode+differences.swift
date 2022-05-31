@@ -15,7 +15,7 @@ protocol Diffable {
 }
 
 public typealias Differences = [Path : Any]
-public typealias Path = [CodingKey]
+public typealias Path = String //[CodingKey]
 
 extension RenderNode: Diffable {
     /// Returns the differences between this render node and the given one.
@@ -267,7 +267,7 @@ struct AnyRenderReference: Diffable {
         var differences = Differences()
 
         if value.identifier != other.value.identifier {
-            differences["\(path)/value"] = "Replace with \(value.identifier)"
+            differences["\(path)/identifier"] = "Replace with \(value.identifier)"
         }
 
         switch (value.type, other.value.type) {
@@ -312,7 +312,7 @@ struct AnyRenderReference: Diffable {
             let otherValue = other.value as! LinkReference
             differences.merge(value.difference(from: otherValue, at: path)) { (current, _) in current }
         default:
-            differences["\(path)/value"] = "Replace with \(value.type)"
+            return [path: "Replace with \(value)"]
         }
         return differences
     }
@@ -533,6 +533,8 @@ struct AnyRenderSection: Equatable {
             return (lhs.value as! TutorialArticleSection) == (rhs.value as! TutorialArticleSection)
         case (.resources, .resources):
             return (lhs.value as! ResourcesRenderSection) == (rhs.value as! ResourcesRenderSection)
+        case (.declarations, .declarations):
+            return (lhs.value as! DeclarationsRenderSection) == (rhs.value as! DeclarationsRenderSection)
         default:
             return false
         }
