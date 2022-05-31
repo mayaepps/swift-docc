@@ -15,7 +15,7 @@ protocol Diffable {
 }
 
 public typealias Differences = [Path : Any]
-public typealias Path = String // Switch to [CodingKey]
+public typealias Path = [CodingKey]
 
 extension RenderNode: Diffable {
     /// Returns the differences between this render node and the given one.
@@ -35,6 +35,7 @@ extension RenderNode: Diffable {
         diffs.merge(topicSections.difference(from: other.topicSections, at: "\(path)/topicSections")) { (current, _) in current }
         diffs.merge(seeAlsoSections.difference(from: other.seeAlsoSections, at: "\(path)/seeAlsoSections")) { (current, _) in current }
 
+        // Diffing render references
         let diffableReferences = references.mapValues { reference in
             return AnyRenderReference(reference)
         }
@@ -43,13 +44,32 @@ extension RenderNode: Diffable {
         }
         diffs.merge(diffableReferences.difference(from:otherDiffableReferences, at: "\(path)/references")) { (current, _) in current }
         
+        //Diffing primary content sections
+        let equatablePrimaryContentSections = primaryContentSections.map { section in
+            return AnyRenderSection(section)
+        }
+        let otherEquatablePrimaryContentSections = other.primaryContentSections.map { section in
+            return AnyRenderSection(section)
+        }
+        diffs.merge(equatablePrimaryContentSections.difference(from: otherEquatablePrimaryContentSections, at: "\(path)/PrimaryContentSection")) { (current, _) in current }
         
-        // TODO: Fix error that Protocol xyz as a type cannot conform to 'Equatable':
-//        diffs.merge(primaryContentSections.difference(from: other.primaryContentSections, at: "\(path)/PrimaryContentSection")) { (current, _) in current }
-//        diffs.merge(relationshipSections.difference(from: other.relationshipSections, at: "RenderNode/RelationshipSections")) { (current, _) in current }
-//        diffs.merge(sections.difference(from: other.sections, at: "\(path)/SeeAlsoSections")) { (current, _) in current }
-
-        // TODO: variants
+        // Diffing relationship sections
+        let equatableRelationshipSections = relationshipSections.map { section in
+            return AnyRenderSection(section)
+        }
+        let otherEquatableRelationshipSections = other.relationshipSections.map { section in
+            return AnyRenderSection(section)
+        }
+        diffs.merge(equatableRelationshipSections.difference(from: otherEquatableRelationshipSections, at: "\(path)/RelationshipSections")) { (current, _) in current }
+        
+        // Diffing sections
+        let equatableSections = sections.map { section in
+            return AnyRenderSection(section)
+        }
+        let otherEquatableSections = other.sections.map { section in
+            return AnyRenderSection(section)
+        }
+        diffs.merge(equatableSections.difference(from: otherEquatableSections, at: "\(path)/sections")) { (current, _) in current }
         
         return diffs
     }
@@ -84,7 +104,10 @@ extension Optional: Diffable where Wrapped: Diffable {
 extension Array: Diffable where Element: Equatable {
     /// Returns the differences between this array and the given one.
     public func difference(from other: Array<Element>, at path: Path) -> Differences {
-        return [path: self.difference(from: other)]
+        let arrayDiffs = self.difference(from: other)
+        var differences = arrayDiffs.insertions
+        differences.append(contentsOf: arrayDiffs.removals)
+        return differences.count > 0 ? [path: differences] : [:]
     }
 }
 
@@ -103,7 +126,7 @@ extension DeclarationRenderSection.Token: Diffable {
 }
 
 extension ResolvedTopicReference: Diffable {
-    /// Returns the differences between this resolved topic reference and the given one.
+    /// Returns the differences between this ResolvedTopicReference and the given one.
     public func difference(from other: ResolvedTopicReference, at path: Path) -> Differences {
         var diffs = Differences()
         if url != other.url {
@@ -117,7 +140,7 @@ extension ResolvedTopicReference: Diffable {
 }
 
 extension RenderMetadata: Diffable {
-    /// Returns the differences between this render metadata and the given one.
+    /// Returns the differences between this RenderMetadata and the given one.
     public func difference(from other: RenderMetadata, at path: Path) -> Differences {
         
         var diffs = Differences()
@@ -167,7 +190,7 @@ extension RenderMetadata.Module: Diffable, Equatable {
 }
 
 extension SemanticVersion: Diffable {
-    /// Returns the differences between this semantic version and the given one.
+    /// Returns the differences between this SemanticVersion and the given one.
     public func difference(from other: SemanticVersion, at path: Path) -> Differences {
         var diff = Differences()
         
@@ -243,9 +266,6 @@ struct AnyRenderReference: Diffable {
     public func difference(from other: AnyRenderReference, at path: Path) -> Differences {
         var differences = Differences()
 
-        if value.type != other.value.type {
-            differences["\(path)/value"] = "Replace with \(value.type)"
-        }
         if value.identifier != other.value.identifier {
             differences["\(path)/value"] = "Replace with \(value.identifier)"
         }
@@ -326,8 +346,6 @@ extension TopicRenderReference: Diffable {
         }
         differences.merge(abstract.difference(from: other.abstract, at: "\(path)/abstract")) { (current, _) in current }
         differences.merge(fragments.difference(from: other.fragments, at: "\(path)/fragments")) { (current, _) in current }
-        
-        // TODO: Title variants (Should this be handled differently?)
         
         return differences
     }
@@ -491,6 +509,130 @@ extension LineHighlighter.Highlight: Equatable {
 extension DataAsset: Equatable {
     public static func == (lhs: DataAsset, rhs: DataAsset) -> Bool {
         return lhs.context == rhs.context && lhs.variants == rhs.variants
+    }
+}
+
+struct AnyRenderSection: Equatable {
+    static func == (lhs: AnyRenderSection, rhs: AnyRenderSection) -> Bool {
+        switch (lhs.value.kind, rhs.value.kind) {
+        case (.intro, .intro), (.hero, .hero):
+            return (lhs.value as! IntroRenderSection) == (rhs.value as! IntroRenderSection)
+        case (.tasks, .tasks):
+            return (lhs.value as! TutorialSectionsRenderSection) == (rhs.value as! TutorialSectionsRenderSection)
+        case (.assessments, .assessments):
+            return (lhs.value as! TutorialAssessmentsRenderSection) == (rhs.value as! TutorialAssessmentsRenderSection)
+        case (.volume, .volume):
+            return (lhs.value as! VolumeRenderSection) == (rhs.value as! VolumeRenderSection)
+        case (.contentAndMedia, .contentAndMedia):
+            return (lhs.value as! ContentAndMediaSection) == (rhs.value as! ContentAndMediaSection)
+        case (.contentAndMediaGroup, .contentAndMediaGroup):
+            return (lhs.value as! ContentAndMediaGroupSection) == (rhs.value as! ContentAndMediaGroupSection)
+        case (.callToAction, .callToAction):
+            return (lhs.value as! CallToActionSection) == (rhs.value as! CallToActionSection)
+        case (.articleBody, .articleBody):
+            return (lhs.value as! TutorialArticleSection) == (rhs.value as! TutorialArticleSection)
+        case (.resources, .resources):
+            return (lhs.value as! ResourcesRenderSection) == (rhs.value as! ResourcesRenderSection)
+        default:
+            return false
+        }
+    }
+    
+    var value: RenderSection
+    init(_ value: RenderSection) { self.value = value }
+}
+
+extension TutorialSectionsRenderSection: Equatable {
+    public static func == (lhs: TutorialSectionsRenderSection, rhs: TutorialSectionsRenderSection) -> Bool {
+        return lhs.tasks == rhs.tasks
+    }
+}
+
+extension TutorialSectionsRenderSection.Section: Equatable {
+    public static func == (lhs: TutorialSectionsRenderSection.Section, rhs: TutorialSectionsRenderSection.Section) -> Bool {
+        return lhs.title == rhs.title && lhs.contentSection == rhs.contentSection && lhs.stepsSection == rhs.stepsSection && lhs.anchor == rhs.anchor
+    }
+}
+
+extension ContentLayout: Equatable {
+    public static func == (lhs: ContentLayout, rhs: ContentLayout) -> Bool {
+        switch (lhs, rhs) {
+        case (.fullWidth(let lhsContent), .fullWidth(let rhsContent)):
+            return lhsContent == rhsContent
+        case (.contentAndMedia(let lhsContent), .contentAndMedia(let rhsContent)):
+            return lhsContent == rhsContent
+        case (.columns(let lhsContent), .columns(let rhsContent)):
+            return lhsContent == rhsContent
+        default:
+            return false
+        }
+    }
+}
+
+extension ContentAndMediaSection: Equatable {
+    public static func == (lhs: ContentAndMediaSection, rhs: ContentAndMediaSection) -> Bool {
+        return lhs.layout == rhs.layout && lhs.title == rhs.title && lhs.eyebrow == rhs.eyebrow && lhs.content == rhs.content && lhs.media == rhs.media && lhs.mediaPosition == rhs.mediaPosition
+    }
+}
+
+extension TutorialAssessmentsRenderSection: Equatable {
+    public static func == (lhs: TutorialAssessmentsRenderSection, rhs: TutorialAssessmentsRenderSection) -> Bool {
+        return lhs.assessments == rhs.assessments && lhs.anchor == rhs.anchor
+    }
+}
+
+extension TutorialAssessmentsRenderSection.Assessment: Equatable {
+    public static func == (lhs: TutorialAssessmentsRenderSection.Assessment, rhs: TutorialAssessmentsRenderSection.Assessment) -> Bool {
+        lhs.type == rhs.type && lhs.title == rhs.title && lhs.content == rhs.content && lhs.choices == rhs.choices
+    }
+}
+
+extension TutorialAssessmentsRenderSection.Assessment.Choice: Equatable {
+    public static func == (lhs: TutorialAssessmentsRenderSection.Assessment.Choice, rhs: TutorialAssessmentsRenderSection.Assessment.Choice) -> Bool {
+        return lhs.content == rhs.content && lhs.isCorrect == rhs.isCorrect && lhs.justification == rhs.justification && lhs.reaction == rhs.reaction
+    }
+}
+
+extension VolumeRenderSection: Equatable {
+    public static func == (lhs: VolumeRenderSection, rhs: VolumeRenderSection) -> Bool {
+        return lhs.name == rhs.name && lhs.image == rhs.image && lhs.content == rhs.content && lhs.chapters == rhs.chapters
+    }
+}
+
+extension VolumeRenderSection.Chapter: Equatable {
+    public static func == (lhs: VolumeRenderSection.Chapter, rhs: VolumeRenderSection.Chapter) -> Bool {
+        return lhs.name == rhs.name && lhs.content == rhs.content && lhs.tutorials == rhs.tutorials && lhs.image == rhs.image && lhs.headings == rhs.headings
+    }
+}
+
+extension ContentAndMediaGroupSection: Equatable {
+    public static func == (lhs: ContentAndMediaGroupSection, rhs: ContentAndMediaGroupSection) -> Bool {
+        // Question: How do I know whether a field is going to be in the RenderJSON? I don't even think this is Codable...
+        return lhs.layout == rhs.layout && lhs.sections == rhs.sections && lhs.headings == rhs.headings
+    }
+}
+
+extension CallToActionSection: Equatable {
+    public static func == (lhs: CallToActionSection, rhs: CallToActionSection) -> Bool {
+        return lhs.title == rhs.title && lhs.abstract == rhs.abstract && lhs.media == rhs.media && lhs.action == rhs.action && lhs.featuredEyebrow == rhs.featuredEyebrow
+    }
+}
+
+extension TutorialArticleSection: Equatable {
+    public static func == (lhs: TutorialArticleSection, rhs: TutorialArticleSection) -> Bool {
+        return lhs.content == rhs.content
+    }
+}
+
+extension ResourcesRenderSection: Equatable {
+    public static func == (lhs: ResourcesRenderSection, rhs: ResourcesRenderSection) -> Bool {
+        return lhs.tiles == rhs.tiles && lhs.content == rhs.content
+    }
+}
+
+extension RenderTile: Equatable {
+    public static func == (lhs: RenderTile, rhs: RenderTile) -> Bool {
+        return lhs.identifier == rhs.identifier && lhs.title == rhs.title && lhs.content == rhs.content && lhs.action == rhs.action && lhs.media == rhs.media
     }
 }
 
