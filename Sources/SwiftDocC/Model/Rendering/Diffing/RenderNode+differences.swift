@@ -51,7 +51,7 @@ extension RenderNode: Diffable {
         let otherEquatablePrimaryContentSections = other.primaryContentSections.map { section in
             return AnyRenderSection(section)
         }
-        diffs.merge(equatablePrimaryContentSections.difference(from: otherEquatablePrimaryContentSections, at: "\(path)/PrimaryContentSection")) { (current, _) in current }
+        diffs.merge(equatablePrimaryContentSections.difference(from: otherEquatablePrimaryContentSections, at: "\(path)/primaryContentSection")) { (current, _) in current }
         
         // Diffing relationship sections
         let equatableRelationshipSections = relationshipSections.map { section in
@@ -60,7 +60,7 @@ extension RenderNode: Diffable {
         let otherEquatableRelationshipSections = other.relationshipSections.map { section in
             return AnyRenderSection(section)
         }
-        diffs.merge(equatableRelationshipSections.difference(from: otherEquatableRelationshipSections, at: "\(path)/RelationshipSections")) { (current, _) in current }
+        diffs.merge(equatableRelationshipSections.difference(from: otherEquatableRelationshipSections, at: "\(path)/relationshipSections")) { (current, _) in current }
         
         // Diffing sections
         let equatableSections = sections.map { section in
@@ -228,7 +228,6 @@ extension RenderReferenceHierarchy: Diffable {
     func difference(from other: RenderReferenceHierarchy, at path: Path) -> Differences {
         return paths.difference(from: other.paths, at: "\(path)/paths")
     }
-    
 }
 
 extension RenderTutorialsHierarchy: Diffable {
@@ -254,8 +253,6 @@ extension RenderReferenceIdentifier: Diffable {
         return differences
     }
 }
-
-// MARK: RenderReference Diffable conformance
 
 /// A RenderReference value that can be diffed.
 ///
@@ -359,7 +356,7 @@ extension FileReference: Diffable {
             differences["\(path)/fileName"] = "Replace with \(fileName)"
         }
         if fileType != other.fileType {
-            differences["\(path)/fileName"] = "Replace with \(fileType)"
+            differences["\(path)/fileType"] = "Replace with \(fileType)"
         }
         if syntax != other.syntax {
             differences["\(path)/syntax"] = "Replace with \(syntax)"
@@ -609,7 +606,6 @@ extension VolumeRenderSection.Chapter: Equatable {
 
 extension ContentAndMediaGroupSection: Equatable {
     public static func == (lhs: ContentAndMediaGroupSection, rhs: ContentAndMediaGroupSection) -> Bool {
-        // Question: How do I know whether a field is going to be in the RenderJSON? I don't even think this is Codable...
         return lhs.layout == rhs.layout && lhs.sections == rhs.sections && lhs.headings == rhs.headings
     }
 }
