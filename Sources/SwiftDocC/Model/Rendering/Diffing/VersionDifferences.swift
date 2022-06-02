@@ -20,29 +20,6 @@ import Foundation
 /// ### Applying Patches
 ///
 /// - ``RenderNodeVariantOverridesApplier``
-public class VersionDifferences: Codable {
-
-    public var versions = [VersionPatch]()
-
-    public var isEmpty: Bool { versions.isEmpty }
-    
-    public init(values: [VersionPatch] = []) {
-        add(contentsOf: values)
-    }
-    
-    public func add<Patches>(
-        contentsOf patches: Patches
-    ) where Patches: Collection, Patches.Element == VersionPatch {
-        for patch in patches {
-            add(patch)
-        }
-    }
-
-    public func add(_ versionPatch: VersionPatch) {
-        versions.append(versionPatch)
-    }
-}
-
 public class VersionPatch: Codable {
         
     public var versionID: String
