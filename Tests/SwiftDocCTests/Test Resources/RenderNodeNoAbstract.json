@@ -53,6 +53,10 @@
         "interfaceLanguage": "swift"
     },
     "abstract": [
+        {
+            "type": "text",
+            "text": "A type that declares an activity a CatDog can perform."
+        }
     ],
     "topicSections": [
         {
@@ -63,7 +67,7 @@
             ]
         }
     ],
-    "kind": "article",
+    "kind": "symbol",
     "metadata": {
         "fragments": [
             {
@@ -133,7 +137,6 @@
                 }
             ],
             "abstract": [
-                
             ],
             "identifier": "doc:\/\/SlothCreator\/documentation\/SlothCreator\/Activity1",
             "kind": "symbol",
