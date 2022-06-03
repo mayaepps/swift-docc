@@ -33,20 +33,21 @@ class RenderNodeDiffingTests: XCTestCase {
     
     func testDiffingAbstractFromFile() throws {
         
-        let renderNodeWithAbstractURL = Bundle.module.url(
-            forResource: "RenderNodeWithAbstract", withExtension: "json", subdirectory: "Test Resources")!
-        let renderNodeNoAbstractURL = Bundle.module.url(
-            forResource: "RenderNodeNoAbstract", withExtension: "json", subdirectory: "Test Resources")!
+        let renderNodev1URL = Bundle.module.url(
+            forResource: "RenderNodev1", withExtension: "json", subdirectory: "Test Resources")!
+        let renderNodev2URL = Bundle.module.url(
+            forResource: "RenderNodev2", withExtension: "json", subdirectory: "Test Resources")!
         
-        let abstractData = try Data(contentsOf: renderNodeWithAbstractURL)
-        let noAbstractData = try Data(contentsOf: renderNodeNoAbstractURL)
-        let abstractSymbol = try RenderNode.decode(fromJSON: abstractData)
-        let noAbstractSymbol = try RenderNode.decode(fromJSON: noAbstractData)
+        let datav1 = try Data(contentsOf: renderNodev1URL)
+        let datav2 = try Data(contentsOf: renderNodev2URL)
+        let symbolv1 = try RenderNode.decode(fromJSON: datav1)
+        let symbolv2 = try RenderNode.decode(fromJSON: datav2)
         
         let encoder = RenderJSONEncoder.makeEncoder()
-        encoder.userInfoPreviousNode = noAbstractSymbol
+        encoder.userInfoPreviousNode = symbolv1
         encoder.userInfoVersionPatch = VersionPatch(id: "testID", name: "Test display name", jsonPatch: [])
-        let encodedNode = try encoder.encode(abstractSymbol)
+        let encodedNode = try encoder.encode(symbolv2)
         print(String(data: encodedNode, encoding: .utf8)!)
     }
 }
+
