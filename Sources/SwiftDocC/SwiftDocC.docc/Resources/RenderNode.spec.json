@@ -2890,17 +2890,17 @@
                         "$ref": "#/components/schemas/JSONPatch"
                     }
                 }
-            }
-        },
-        "Version": {
-            "type": "object",
-            "required": ["identifier", "displayName"],
-            "properties": {
-                "identifier": {
-                    "type": "string"
-                }
-                "displayName": {
-                    "type": "string"
+            },
+            "Version": {
+                "type": "object",
+                "required": ["identifier", "displayName"],
+                "properties": {
+                    "identifier": {
+                        "type": "string"
+                    },
+                    "displayName": {
+                        "type": "string"
+                    }
                 }
             }
         },
