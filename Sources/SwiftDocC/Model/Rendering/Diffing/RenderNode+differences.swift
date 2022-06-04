@@ -77,9 +77,9 @@ extension RenderNode: Diffable {
         diffs.append(contentsOf: identifier.difference(from:other.identifier, at: path + [CodingKeys.identifier]))
         diffs.append(contentsOf: metadata.difference(from:other.metadata, at: path + [CodingKeys.metadata]))
 //        diffs.merge(hierarchy.difference(from:other.hierarchy, at: "\(path)/hierarchy")) { (current, _) in current }
-//        diffs.merge(topicSections.difference(from: other.topicSections, at: "\(path)/topicSections")) { (current, _) in current }
-//        diffs.merge(seeAlsoSections.difference(from: other.seeAlsoSections, at: "\(path)/seeAlsoSections")) { (current, _) in current }
-//
+        diffs.append(contentsOf: topicSections.difference(from: other.topicSections, at: path + [CodingKeys.topicSections]))
+        diffs.append(contentsOf: seeAlsoSections.difference(from: other.seeAlsoSections, at: path + [CodingKeys.seeAlsoSections]))
+
 //        // Diffing render references
 //        let diffableReferences = references.mapValues { reference in
 //            return AnyRenderReference(reference)
