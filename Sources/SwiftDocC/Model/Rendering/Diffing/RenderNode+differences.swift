@@ -120,16 +120,18 @@ extension RenderNode: Diffable {
     }
 }
 
-//extension Dictionary: Diffable where Value: Diffable {
-//    /// Returns the difference between two dictionaries with diffable values.
-//    func difference(from other: Dictionary<Key, Value>, at path: Path) -> Differences {
-//        var differences = Differences()
-//        for (key, value) in self {
-//            differences.merge(value.difference(from: other[key]!, at: "\(path)/\(key)")) { (current, _) in current }
-//        }
-//        return differences
-//    }
-//}
+extension Dictionary: Diffable where Value: Diffable {
+    /// Returns the difference between two dictionaries with diffable values.
+    func difference(from other: Dictionary<Key, Value>, at path: Path) -> Differences {
+        var differences = Differences()
+        let uniqueKeysSet = Set(self.keys).union(Set(other.keys))
+        for key in uniqueKeysSet {
+            // TODO: The path isn't right
+            differences.append(contentsOf: self[key].difference(from: other[key], at: path))
+        }
+        return differences
+    }
+}
 
 extension Optional: Diffable where Wrapped: Diffable {
     /// Returns the differences between this optional and the given one.
@@ -142,7 +144,7 @@ extension Optional: Diffable where Wrapped: Diffable {
                 pointer: JSONPointer(from: path)))
         } else if let current = self {
             difference.append(JSONPatchOperation.add(
-                pointer: JSONPointer(from: path), value: current as! AnyCodable))
+                pointer: JSONPointer(from: path), value: AnyCodable(current as! Encodable)))
         }
         return difference
     }
@@ -164,7 +166,6 @@ extension Array: Diffable where Element: Equatable {
                 return .add(pointer: pointer, encodableValue: element as! Encodable)
             }
         }
-        
         return patchOperations
     }
 }
