@@ -14,18 +14,9 @@ import Foundation
 /// Defines differences between documentation content versions.
 ///
 /// This class can be used to accumulate difference information in the form of a JSONPatch while encoding a tree of objects.
-///
-/// ## Topics
-///
-/// ### Applying Patches
-///
-/// - ``RenderNodeVariantOverridesApplier``
 public class VersionPatch: Codable {
         
-    public var versionID: String
-        
-    public var displayName: String
-        
+    let version: ArchiveVersion
     public var patch: JSONPatch
     
     public func add(_ patchOperation: JSONPatchOperation) {
@@ -40,10 +31,17 @@ public class VersionPatch: Codable {
         }
     }
     
-    init(id: String, name: String, jsonPatch: JSONPatch) {
-        versionID = id
-        displayName = name
+    init(archiveVersion: ArchiveVersion, jsonPatch: JSONPatch) {
+        version = archiveVersion
         patch = jsonPatch
     }
         
+}
+
+/// Defines a version of a framework.
+///
+/// This struct can be used to group a version's unique identifier with its display name.
+struct ArchiveVersion: Codable {
+    public var versionID: String
+    public var displayName: String
 }

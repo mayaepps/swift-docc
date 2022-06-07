@@ -148,7 +148,7 @@ public struct ConvertAction: Action, RecreatingContext {
         if let currentPlatforms = currentPlatforms {
             self.context.externalMetadata.currentPlatforms = currentPlatforms
         }
-
+ 
         // Inject user-set flags.
         self.context.externalMetadata.inheritDocs = inheritDocs
         
