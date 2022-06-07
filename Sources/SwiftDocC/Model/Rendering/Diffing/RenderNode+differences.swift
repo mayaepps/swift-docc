@@ -89,49 +89,49 @@ extension RenderNode: Diffable {
 //        }
 //        diffs.merge(diffableReferences.difference(from:otherDiffableReferences, at: "\(path)/references")) { (current, _) in current }
 //
-//        //Diffing primary content sections
-//        let equatablePrimaryContentSections = primaryContentSections.map { section in
-//            return AnyRenderSection(section)
-//        }
-//        let otherEquatablePrimaryContentSections = other.primaryContentSections.map { section in
-//            return AnyRenderSection(section)
-//        }
-//        diffs.merge(equatablePrimaryContentSections.difference(from: otherEquatablePrimaryContentSections, at: "\(path)/primaryContentSection")) { (current, _) in current }
-//
-//        // Diffing relationship sections
-//        let equatableRelationshipSections = relationshipSections.map { section in
-//            return AnyRenderSection(section)
-//        }
-//        let otherEquatableRelationshipSections = other.relationshipSections.map { section in
-//            return AnyRenderSection(section)
-//        }
-//        diffs.merge(equatableRelationshipSections.difference(from: otherEquatableRelationshipSections, at: "\(path)/relationshipSections")) { (current, _) in current }
-//
-//        // Diffing sections
-//        let equatableSections = sections.map { section in
-//            return AnyRenderSection(section)
-//        }
-//        let otherEquatableSections = other.sections.map { section in
-//            return AnyRenderSection(section)
-//        }
-//        diffs.merge(equatableSections.difference(from: otherEquatableSections, at: "\(path)/sections")) { (current, _) in current }
+        //Diffing primary content sections
+        let equatablePrimaryContentSections = primaryContentSections.map { section in
+            return AnyRenderSection(section)
+        }
+        let otherEquatablePrimaryContentSections = other.primaryContentSections.map { section in
+            return AnyRenderSection(section)
+        }
+        diffs.append(contentsOf: equatablePrimaryContentSections.difference(from: otherEquatablePrimaryContentSections, at: path + [CodingKeys.primaryContentSections]))
+
+        // Diffing relationship sections
+        let equatableRelationshipSections = relationshipSections.map { section in
+            return AnyRenderSection(section)
+        }
+        let otherEquatableRelationshipSections = other.relationshipSections.map { section in
+            return AnyRenderSection(section)
+        }
+        diffs.append(contentsOf: equatableRelationshipSections.difference(from: otherEquatableRelationshipSections, at: path + [CodingKeys.relationshipsSections]))
+
+        // Diffing sections
+        let equatableSections = sections.map { section in
+            return AnyRenderSection(section)
+        }
+        let otherEquatableSections = other.sections.map { section in
+            return AnyRenderSection(section)
+        }
+        diffs.append(contentsOf: equatableSections.difference(from: otherEquatableSections, at: path + [CodingKeys.sections]))
         
         return diffs
     }
 }
 
-extension Dictionary: Diffable where Value: Diffable {
-    /// Returns the difference between two dictionaries with diffable values.
-    func difference(from other: Dictionary<Key, Value>, at path: Path) -> Differences {
-        var differences = Differences()
-        let uniqueKeysSet = Set(self.keys).union(Set(other.keys))
-        for key in uniqueKeysSet {
-            // TODO: The path isn't right
-            differences.append(contentsOf: self[key].difference(from: other[key], at: path))
-        }
-        return differences
-    }
-}
+//extension Dictionary: Diffable where Value: Diffable {
+//    /// Returns the difference between two dictionaries with diffable values.
+//    func difference(from other: Dictionary<Key, Value>, at path: Path) -> Differences {
+//        var differences = Differences()
+//        let uniqueKeysSet = Set(self.keys).union(Set(other.keys))
+//        for key in uniqueKeysSet {
+//            // TODO: The path isn't right
+//            differences.append(contentsOf: self[key].difference(from: other[key], at: path))
+//        }
+//        return differences
+//    }
+//}
 
 extension Optional: Diffable where Wrapped: Diffable {
     /// Returns the differences between this optional and the given one.
@@ -150,7 +150,7 @@ extension Optional: Diffable where Wrapped: Diffable {
     }
 }
 
-extension Array: Diffable where Element: Equatable {
+extension Array: Diffable where Element: Equatable, Element: Encodable {
     /// Returns the differences between this array and the given one.
     public func difference(from other: Array<Element>, at path: Path) -> Differences {
         let arrayDiffs = self.difference(from: other)
@@ -163,7 +163,7 @@ extension Array: Diffable where Element: Equatable {
                 return .remove(pointer: pointer)
             case .insert(let offset, let element, _):
                 let pointer = JSONPointer(from: path + [IntegerKey(offset)])
-                return .add(pointer: pointer, encodableValue: element as! Encodable)
+                return .add(pointer: pointer, encodableValue: element)
             }
         }
         return patchOperations
@@ -291,7 +291,7 @@ extension Array: Diffable where Element: Equatable {
 //        return differences
 //    }
 //}
-//
+
 //extension TopicRenderReference: Diffable {
 //    /// Returns the difference between two TopicRenderReferences.
 //    public func difference(from other: TopicRenderReference, at path: Path) -> Differences {
@@ -486,7 +486,7 @@ extension DataAsset: Equatable {
     }
 }
 
-struct AnyRenderSection: Equatable {
+struct AnyRenderSection: Equatable, Encodable {
     static func == (lhs: AnyRenderSection, rhs: AnyRenderSection) -> Bool {
         switch (lhs.value.kind, rhs.value.kind) {
         case (.intro, .intro), (.hero, .hero):
@@ -512,6 +512,10 @@ struct AnyRenderSection: Equatable {
         default:
             return false
         }
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        try value.encode(to: encoder)
     }
 
     var value: RenderSection
