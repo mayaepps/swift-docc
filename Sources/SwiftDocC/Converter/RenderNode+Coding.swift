@@ -27,12 +27,30 @@ extension CodingUserInfoKey {
     static let variantOverrides = CodingUserInfoKey(rawValue: "variantOverrides")!
     
     static let baseEncodingPath = CodingUserInfoKey(rawValue: "baseEncodingPath")!
+    
+    /// A user info key that encapsulates version patches.
+    ///
+    /// This key is used by encoders to accumulate the ``VersionPatch`` between this RenderNode and the previousNode.
+    static let versionPatch = CodingUserInfoKey(rawValue: "versionPatch")!
+    
+    /// A user key that encapsulates the previous RenderNode that will be compared to this one to find differences and create patches.
+    static let previousNode = CodingUserInfoKey(rawValue: "previousNode")!
 }
 
 extension Encoder {
     /// The variant overrides accumulated as part of the encoding process.
     var userInfoVariantOverrides: VariantOverrides? {
         userInfo[.variantOverrides] as? VariantOverrides
+    }
+     
+    /// The version patch accumulated as part of the encoding process.
+    var userInfoVersionPatch: VersionPatch? {
+        userInfo[.versionPatch] as? VersionPatch
+    }
+    
+    /// The previous RenderNode to be used in the diffing process.
+    var userInfoPreviousNode: RenderNode? {
+        userInfo[.previousNode] as? RenderNode
     }
     
     /// The base path to use when creating dynamic JSON pointers
@@ -62,6 +80,26 @@ extension JSONEncoder {
         }
         set {
             userInfo[.variantOverrides] = newValue
+        }
+    }
+    
+    /// The version patch accumulated as part of the encoding process.
+    var userInfoVersionPatch: VersionPatch? {
+        get {
+            userInfo[.versionPatch] as? VersionPatch
+        }
+        set {
+            userInfo[.versionPatch] = newValue
+        }
+    }
+    
+    /// The previous RenderNode to be used in the diffing process.
+    var userInfoPreviousNode: RenderNode? {
+        get {
+            userInfo[.previousNode] as? RenderNode
+        }
+        set {
+            userInfo[.previousNode] = newValue
         }
     }
     

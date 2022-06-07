@@ -11,7 +11,7 @@
 import Foundation
 
 /// Arbitrary metadata for a render node.
-public struct RenderMetadata: VariantContainer {
+public struct RenderMetadata: VariantContainer, Diffable {
     // MARK: Tutorials metadata
     
     /// The name of technology associated with a tutorial.
@@ -157,11 +157,22 @@ extension RenderMetadata: Codable {
     }
     
     /// Metadata about a module dependency.
-    public struct Module: Codable {
+    public struct Module: Codable, Diffable, Equatable {
         public let name: String
         /// Possible dependencies to the module, we allow for those in the render JSON model
         /// but have no authoring support at the moment.
         public let relatedModules: [String]?
+
+        /// Returns the difference between two RenderMetadata.Modules.
+        public func difference(from other: RenderMetadata.Module, at path: Path) -> Differences {
+            var differences = Differences()
+            if name != other.name {
+                differences.append(.replace(pointer: JSONPointer(from: path + [CodingKeys.name]), encodableValue: name))
+            }
+            differences.append(contentsOf: relatedModules.difference(from: other.relatedModules, at: path + [CodingKeys.relatedModules]))
+
+            return differences
+        }
     }
 
     public struct CodingKeys: CodingKey, Hashable {
@@ -280,4 +291,35 @@ extension RenderMetadata: Codable {
             try container.encode(AnyMetadata(value), forKey: key)
         }
     }
+    
+    /// Returns the differences between this RenderMetadata and the given one.
+    public func difference(from other: RenderMetadata, at path: Path) -> Differences {
+
+        var diffs = Differences()
+
+        // Diffing optional properties:
+        if let titleDiff = optionalPropertyDifference(title, from: other.title, at: path + [CodingKeys.title]) {
+            diffs.append(titleDiff)
+        }
+        if let idDiff = optionalPropertyDifference(externalID, from: other.externalID, at: path + [CodingKeys.externalID]) {
+            diffs.append(idDiff)
+        }
+        if let currentSymbolKind = optionalPropertyDifference(symbolKind, from: other.symbolKind, at: path + [CodingKeys.symbolKind]) {
+            diffs.append(currentSymbolKind)
+        }
+        if let currentRole = optionalPropertyDifference(role, from: other.role, at: path + [CodingKeys.role]) {
+            diffs.append(currentRole)
+        }
+        if let currentRoleHeading = optionalPropertyDifference(roleHeading, from: other.roleHeading, at: path + [CodingKeys.roleHeading]) {
+            diffs.append(currentRoleHeading)
+        }
+
+        // Diffing structs and arrays
+        diffs.append(contentsOf: modules.difference(from: other.modules, at: path + [CodingKeys.modules]))
+        diffs.append(contentsOf: fragments.difference(from: other.fragments, at: path + [CodingKeys.fragments]))
+        diffs.append(contentsOf: navigatorTitle.difference(from: other.navigatorTitle, at: path + [CodingKeys.navigatorTitle]))
+
+        return diffs
+    }
+
 }
