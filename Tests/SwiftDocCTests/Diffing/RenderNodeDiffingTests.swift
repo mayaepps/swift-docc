@@ -25,13 +25,13 @@ class RenderNodeDiffingTests: XCTestCase {
         
         let encoder = RenderJSONEncoder.makeEncoder()
         encoder.userInfoPreviousNode = renderNodeSymbol
-        encoder.userInfoVersionPatch = VersionPatch(id: "testID", name: "Test display name", jsonPatch: [])
+        encoder.userInfoVersionPatch = VersionPatch(archiveVersion: ArchiveVersion(versionID: "testID", displayName: "Test display name"), jsonPatch: [])
         
         let encodedNode = try encoder.encode(renderNodeArticle)
         print(String(data: encodedNode, encoding: .utf8)!)
     }
     
-    func testDiffingAbstractFromFile() throws {
+    func testDiffingFromFile() throws {
         
         let renderNodev1URL = Bundle.module.url(
             forResource: "RenderNodev1", withExtension: "json", subdirectory: "Test Resources")!
@@ -45,7 +45,7 @@ class RenderNodeDiffingTests: XCTestCase {
         
         let encoder = RenderJSONEncoder.makeEncoder()
         encoder.userInfoPreviousNode = symbolv1
-        encoder.userInfoVersionPatch = VersionPatch(id: "testID", name: "Test display name", jsonPatch: [])
+        encoder.userInfoVersionPatch = VersionPatch(archiveVersion: ArchiveVersion(versionID: "testID", displayName: "Test display name"), jsonPatch: [])
         let encodedNode = try encoder.encode(symbolv2)
         print(String(data: encodedNode, encoding: .utf8)!)
     }
