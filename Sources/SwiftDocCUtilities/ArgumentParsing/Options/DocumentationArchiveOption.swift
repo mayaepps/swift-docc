@@ -40,28 +40,30 @@ public struct DocCArchiveOption: DirectoryPathOption, ExpressibleByArgument {
     public var url: URL?
 
     public mutating func validate() throws {
-
         // Validate that the URL represents a directory
         guard urlOrFallback.hasDirectoryPath else {
             throw ValidationError("'\(urlOrFallback.path)' is not a valid DocC Archive. Expected a directory but a path to a file was provided")
         }
-        
+        try DocCArchiveOption.validateDocCArchive(at: urlOrFallback)
+    }
+    
+    public static func validateDocCArchive(at url: URL) throws {
+    
         var archiveContents: [String]
         do {
-            archiveContents = try FileManager.default.contentsOfDirectory(atPath: urlOrFallback.path)
+            archiveContents = try FileManager.default.contentsOfDirectory(atPath: url.path)
         } catch {
-            throw ValidationError("'\(urlOrFallback.path)' is not a valid DocC Archive: \(error)")
+            throw ValidationError("'\(url.path)' is not a valid DocC Archive: \(error)")
         }
         
         let missingContents = Array(Set(DocCArchiveOption.expectedContent).subtracting(archiveContents))
         guard missingContents.isEmpty else {
             throw ValidationError(
                 """
-                '\(urlOrFallback.path)' is not a valid DocC Archive.
+                '\(url.path)' is not a valid DocC Archive.
                 Expected a 'data' directory at the root of the archive.
                 """
             )
         }
-        
     }
 }

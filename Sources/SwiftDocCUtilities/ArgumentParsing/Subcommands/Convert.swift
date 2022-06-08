@@ -141,11 +141,10 @@ extension Docc {
         /// The user-provided path to a previous `.doccarchive` documentation archive to diff against.
         @Option(
             name: [.customLong("previous-archive-path")],
-            help: "The path to a previous .doccarchive documentation archive to diff against."
-//            transform: URL.init(fileURLWithPath:)
+            help: "The path to a previous .doccarchive documentation archive to diff against.",
+            transform: URL.init(fileURLWithPath:)
         )
-//        public var previousArchivePath: URL?
-        public var previousArchivePath: DocCArchiveOption
+        public var previousArchivePath: URL?
 
 
         // MARK: - Info.plist fallbacks
@@ -335,6 +334,8 @@ extension Docc {
                     transformForStaticHosting = false
                 }
             }
+            
+            try DocCArchiveOption.validateDocCArchive(at: previousArchivePath ?? URL(fileURLWithPath: "."))
 
         }
 
