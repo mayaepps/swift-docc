@@ -81,7 +81,7 @@ extension ConvertAction {
             experimentalEnableCustomTemplates: convert.experimentalEnableCustomTemplates,
             transformForStaticHosting: convert.transformForStaticHosting,
             hostingBasePath: convert.hostingBasePath,
-            previousArchiveURL: convert.previousArchivePath
+            previousArchiveURL: convert.previousArchivePath.url
         )
     }
 }

@@ -43,7 +43,7 @@ public struct DocumentationConverter: DocumentationConverterProtocol {
     let documentationCoverageOptions: DocumentationCoverageOptions
     let bundleDiscoveryOptions: BundleDiscoveryOptions
     let diagnosticEngine: DiagnosticEngine
-    let previousArchiveURL = URL?
+//    let previousArchiveURL = URL?
     
     private(set) var context: DocumentationContext
     private let workspace: DocumentationWorkspace
@@ -146,6 +146,7 @@ public struct DocumentationConverter: DocumentationConverterProtocol {
         self.shouldEmitSymbolAccessLevels = emitSymbolAccessLevels
         self.isCancelled = isCancelled
         self.diagnosticEngine = diagnosticEngine
+//        self.previousArchiveURL = previousArchiveURL
         
         // Inject current platform versions if provided
         if let currentPlatforms = currentPlatforms {

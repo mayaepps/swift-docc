@@ -213,8 +213,8 @@ public struct ConvertAction: Action, RecreatingContext {
         experimentalEnableCustomTemplates: Bool = false,
         transformForStaticHosting: Bool,
         hostingBasePath: String?,
-        temporaryDirectory: URL,
-        previousArchiveURL: URL?
+        temporaryDirectory: URL
+//        previousArchiveURL: URL?
     ) throws {
         // Note: This public initializer exists separately from the above internal one
         // because the FileManagerProtocol type we use to enable mocking in tests
@@ -245,8 +245,8 @@ public struct ConvertAction: Action, RecreatingContext {
             inheritDocs: inheritDocs,
             experimentalEnableCustomTemplates: experimentalEnableCustomTemplates,
             transformForStaticHosting: transformForStaticHosting,
-            hostingBasePath: hostingBasePath,
-            previousArchiveURL: previousArchiveURL
+            hostingBasePath: hostingBasePath
+//            previousArchiveURL: previousArchiveURL
         )
     }
 
