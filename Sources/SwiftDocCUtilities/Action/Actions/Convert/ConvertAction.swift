@@ -42,6 +42,8 @@ public struct ConvertAction: Action, RecreatingContext {
     let transformForStaticHosting: Bool
     let hostingBasePath: String?
     
+    let previousArchiveURL: URL?
+    
     
     private(set) var context: DocumentationContext {
         didSet {
@@ -100,7 +102,8 @@ public struct ConvertAction: Action, RecreatingContext {
         inheritDocs: Bool = false,
         experimentalEnableCustomTemplates: Bool = false,
         transformForStaticHosting: Bool = false,
-        hostingBasePath: String? = nil
+        hostingBasePath: String? = nil,
+        previousArchiveURL: URL? = nil
     ) throws
     {
         self.rootURL = documentationBundleURL
@@ -117,6 +120,7 @@ public struct ConvertAction: Action, RecreatingContext {
         self.documentationCoverageOptions = documentationCoverageOptions
         self.transformForStaticHosting = transformForStaticHosting
         self.hostingBasePath = hostingBasePath
+        self.previousArchiveURL = previousArchiveURL
         
         let filterLevel: DiagnosticSeverity
         if analyze {
@@ -158,7 +162,7 @@ public struct ConvertAction: Action, RecreatingContext {
         case .none:
             break
         }
-        
+  
         let dataProvider: DocumentationWorkspaceDataProvider
         if let injectedDataProvider = injectedDataProvider {
             dataProvider = injectedDataProvider
@@ -181,7 +185,8 @@ public struct ConvertAction: Action, RecreatingContext {
             dataProvider: dataProvider,
             bundleDiscoveryOptions: bundleDiscoveryOptions,
             isCancelled: isCancelled,
-            diagnosticEngine: self.diagnosticEngine
+            diagnosticEngine: self.diagnosticEngine,
+            previousArchiveURL: previousArchiveURL
         )
     }
     
@@ -208,7 +213,8 @@ public struct ConvertAction: Action, RecreatingContext {
         experimentalEnableCustomTemplates: Bool = false,
         transformForStaticHosting: Bool,
         hostingBasePath: String?,
-        temporaryDirectory: URL
+        temporaryDirectory: URL,
+        previousArchiveURL: URL?
     ) throws {
         // Note: This public initializer exists separately from the above internal one
         // because the FileManagerProtocol type we use to enable mocking in tests
@@ -239,7 +245,8 @@ public struct ConvertAction: Action, RecreatingContext {
             inheritDocs: inheritDocs,
             experimentalEnableCustomTemplates: experimentalEnableCustomTemplates,
             transformForStaticHosting: transformForStaticHosting,
-            hostingBasePath: hostingBasePath
+            hostingBasePath: hostingBasePath,
+            previousArchiveURL: previousArchiveURL
         )
     }
 
@@ -339,7 +346,7 @@ public struct ConvertAction: Action, RecreatingContext {
             // Create an index builder and prepare it to receive nodes.
             indexer = try Indexer(outputURL: temporaryFolder, bundleIdentifier: bundleIdentifier)
         }
-
+        
         let outputConsumer = ConvertFileWritingConsumer(
             targetFolder: temporaryFolder,
             bundleRootFolder: rootURL,

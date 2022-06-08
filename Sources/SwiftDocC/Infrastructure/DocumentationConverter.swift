@@ -43,6 +43,7 @@ public struct DocumentationConverter: DocumentationConverterProtocol {
     let documentationCoverageOptions: DocumentationCoverageOptions
     let bundleDiscoveryOptions: BundleDiscoveryOptions
     let diagnosticEngine: DiagnosticEngine
+    let previousArchiveURL = URL?
     
     private(set) var context: DocumentationContext
     private let workspace: DocumentationWorkspace
@@ -129,7 +130,8 @@ public struct DocumentationConverter: DocumentationConverterProtocol {
         emitSymbolSourceFileURIs: Bool = false,
         emitSymbolAccessLevels: Bool = false,
         isCancelled: Synchronized<Bool>? = nil,
-        diagnosticEngine: DiagnosticEngine = .init()
+        diagnosticEngine: DiagnosticEngine = .init(),
+        previousArchiveURL: URL? = nil
     ) {
         self.rootURL = documentationBundleURL
         self.emitDigest = emitDigest

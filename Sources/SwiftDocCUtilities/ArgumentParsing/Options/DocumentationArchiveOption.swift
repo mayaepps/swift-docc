@@ -12,8 +12,19 @@ import ArgumentParser
 import Foundation
 
 /// Resolves and validates a URL value that provides the path to a documentation archive.
-public struct DocCArchiveOption: DirectoryPathOption {
-
+public struct DocCArchiveOption: DirectoryPathOption, ExpressibleByArgument {
+    
+    public init?(argument: String) {
+        url = URL(string: argument)
+        do {
+            try self.validate()
+        } catch {
+            print(error)
+            print("Will not produce a diff against a previous archive, but conversion will continue.")
+            url = nil
+        }
+    }
+    
     public init(){}
 
     /// The name of the command line argument used to specify a source archive path.
