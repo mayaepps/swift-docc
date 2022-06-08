@@ -335,7 +335,9 @@ extension Docc {
                 }
             }
             
-            try DocCArchiveOption.validateDocCArchive(at: previousArchivePath ?? URL(fileURLWithPath: "."))
+            if let previousArchivePath = previousArchivePath {
+                try DocCArchiveOption.validateDocCArchive(at: previousArchivePath)
+            }
 
         }
 

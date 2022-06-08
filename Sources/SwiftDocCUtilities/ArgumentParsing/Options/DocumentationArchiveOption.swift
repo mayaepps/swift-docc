@@ -12,18 +12,7 @@ import ArgumentParser
 import Foundation
 
 /// Resolves and validates a URL value that provides the path to a documentation archive.
-public struct DocCArchiveOption: DirectoryPathOption, ExpressibleByArgument {
-    
-    public init?(argument: String) {
-        url = URL(string: argument)
-        do {
-            try self.validate()
-        } catch {
-            print(error)
-            print("Will not produce a diff against a previous archive, but conversion will continue.")
-            url = nil
-        }
-    }
+public struct DocCArchiveOption: DirectoryPathOption {
     
     public init(){}
 
@@ -40,15 +29,15 @@ public struct DocCArchiveOption: DirectoryPathOption, ExpressibleByArgument {
     public var url: URL?
 
     public mutating func validate() throws {
-        // Validate that the URL represents a directory
-        guard urlOrFallback.hasDirectoryPath else {
-            throw ValidationError("'\(urlOrFallback.path)' is not a valid DocC Archive. Expected a directory but a path to a file was provided")
-        }
         try DocCArchiveOption.validateDocCArchive(at: urlOrFallback)
     }
     
+    /// Validates that a URL value provides a path to a documentation archive.
     public static func validateDocCArchive(at url: URL) throws {
-    
+        // Validate that the URL represents a directory
+        guard url.hasDirectoryPath else {
+            throw ValidationError("'\(url.path)' is not a valid DocC Archive. Expected a directory but a path to a file was provided")
+        }
         var archiveContents: [String]
         do {
             archiveContents = try FileManager.default.contentsOfDirectory(atPath: url.path)
