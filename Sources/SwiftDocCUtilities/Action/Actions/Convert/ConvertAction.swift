@@ -185,8 +185,7 @@ public struct ConvertAction: Action, RecreatingContext {
             dataProvider: dataProvider,
             bundleDiscoveryOptions: bundleDiscoveryOptions,
             isCancelled: isCancelled,
-            diagnosticEngine: self.diagnosticEngine,
-            previousArchiveURL: previousArchiveURL
+            diagnosticEngine: self.diagnosticEngine
         )
     }
     
@@ -311,6 +310,16 @@ public struct ConvertAction: Action, RecreatingContext {
         
         defer {
             try? fileManager.removeItem(at: temporaryFolder)
+        }
+        
+        // Copy over all items from the previous archive so old assets and pages will be avaliable for viewing older versions.
+        // Most old files will be overritten by the new ones.
+        if let previousArchiveURL = previousArchiveURL {
+            for itemURL in try fileManager.contentsOfDirectory(at: previousArchiveURL,
+                                                  includingPropertiesForKeys: nil,
+                                                            options: .skipsHiddenFiles) {
+                try fileManager.copyItem(at: itemURL, to: temporaryFolder.appendingPathComponent(itemURL.lastPathComponent))
+            }
         }
 
         let indexHTML: URL?

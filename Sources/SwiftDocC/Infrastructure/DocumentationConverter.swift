@@ -43,7 +43,6 @@ public struct DocumentationConverter: DocumentationConverterProtocol {
     let documentationCoverageOptions: DocumentationCoverageOptions
     let bundleDiscoveryOptions: BundleDiscoveryOptions
     let diagnosticEngine: DiagnosticEngine
-//    let previousArchiveURL = URL?
     
     private(set) var context: DocumentationContext
     private let workspace: DocumentationWorkspace
@@ -130,8 +129,7 @@ public struct DocumentationConverter: DocumentationConverterProtocol {
         emitSymbolSourceFileURIs: Bool = false,
         emitSymbolAccessLevels: Bool = false,
         isCancelled: Synchronized<Bool>? = nil,
-        diagnosticEngine: DiagnosticEngine = .init(),
-        previousArchiveURL: URL? = nil
+        diagnosticEngine: DiagnosticEngine = .init()
     ) {
         self.rootURL = documentationBundleURL
         self.emitDigest = emitDigest
@@ -146,7 +144,6 @@ public struct DocumentationConverter: DocumentationConverterProtocol {
         self.shouldEmitSymbolAccessLevels = emitSymbolAccessLevels
         self.isCancelled = isCancelled
         self.diagnosticEngine = diagnosticEngine
-//        self.previousArchiveURL = previousArchiveURL
         
         // Inject current platform versions if provided
         if let currentPlatforms = currentPlatforms {
@@ -229,7 +226,6 @@ public struct DocumentationConverter: DocumentationConverterProtocol {
                 throw GeneratedDataProvider.Error.notEnoughDataToGenerateBundle(options: bundleDiscoveryOptions, underlyingError: nil)
             }
         }
-        
         // For now, we only support one bundle.
         let bundle = bundles.first!
         
