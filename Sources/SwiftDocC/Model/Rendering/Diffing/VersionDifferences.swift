@@ -42,6 +42,6 @@ public class VersionPatch: Codable {
 ///
 /// This struct can be used to group a version's unique identifier with its display name.
 struct ArchiveVersion: Codable {
-    public var versionID: String
+    public var identifier: String
     public var displayName: String
 }

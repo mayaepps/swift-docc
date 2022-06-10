@@ -315,11 +315,10 @@ public struct ConvertAction: Action, RecreatingContext {
         // Copy over all items from the previous archive so old assets and pages will be avaliable for viewing older versions.
         // Most old files will be overritten by the new ones.
         if let previousArchiveURL = previousArchiveURL {
-            for itemURL in try fileManager.contentsOfDirectory(at: previousArchiveURL,
-                                                  includingPropertiesForKeys: nil,
-                                                            options: .skipsHiddenFiles) {
-                try fileManager.copyItem(at: itemURL, to: temporaryFolder.appendingPathComponent(itemURL.lastPathComponent))
-            }
+            // TODO: Copy over the rest of the archive too, will have to deal with item already exists error
+            let targetDataURL = temporaryFolder.appendingPathComponent("data")
+            let previousArchiveDataURL = previousArchiveURL.appendingPathComponent("data")
+            try fileManager.copyItem(at: previousArchiveDataURL, to: targetDataURL)
         }
 
         let indexHTML: URL?
