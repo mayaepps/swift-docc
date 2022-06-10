@@ -94,7 +94,7 @@ extension JSONEncoder {
     }
     
     /// The previous RenderNode to be used in the diffing process.
-    var userInfoPreviousNode: RenderNode? {
+    public var userInfoPreviousNode: RenderNode? {
         get {
             userInfo[.previousNode] as? RenderNode
         }
