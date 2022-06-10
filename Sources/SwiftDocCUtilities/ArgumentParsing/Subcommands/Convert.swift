@@ -337,6 +337,7 @@ extension Docc {
             
             if let previousArchivePath = previousArchivePath {
                 try DocCArchiveOption.validateDocCArchive(at: previousArchivePath)
+                print("You passed in a previous DocC Archive at \(previousArchivePath). DocC will use this archive to produce diffs.")
             }
 
         }
