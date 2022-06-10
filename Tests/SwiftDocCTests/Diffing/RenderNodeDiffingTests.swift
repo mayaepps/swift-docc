@@ -1,9 +1,12 @@
-//
-//  File.swift
-//  
-//
-//  Created by Maya Epps on 5/31/22.
-//
+/*
+ This source file is part of the Swift.org open source project
+
+ Copyright (c) 2022 Apple Inc. and the Swift project authors
+ Licensed under Apache License v2.0 with Runtime Library Exception
+
+ See https://swift.org/LICENSE.txt for license information
+ See https://swift.org/CONTRIBUTORS.txt for Swift project authors
+*/
 
 import Foundation
 import XCTest
@@ -25,7 +28,7 @@ class RenderNodeDiffingTests: XCTestCase {
         
         let encoder = RenderJSONEncoder.makeEncoder()
         encoder.userInfoPreviousNode = renderNodeSymbol
-        encoder.userInfoVersionPatch = VersionPatch(archiveVersion: ArchiveVersion(versionID: "testID", displayName: "Test display name"), jsonPatch: [])
+        encoder.userInfoVersionPatch = VersionPatch(archiveVersion: ArchiveVersion(identifier: "testID", displayName: "Test display name"), jsonPatch: [])
         
         let encodedNode = try encoder.encode(renderNodeArticle)
         print(String(data: encodedNode, encoding: .utf8)!)
@@ -45,7 +48,7 @@ class RenderNodeDiffingTests: XCTestCase {
         
         let encoder = RenderJSONEncoder.makeEncoder()
         encoder.userInfoPreviousNode = symbolv1
-        encoder.userInfoVersionPatch = VersionPatch(archiveVersion: ArchiveVersion(versionID: "testID", displayName: "Test display name"), jsonPatch: [])
+        encoder.userInfoVersionPatch = VersionPatch(archiveVersion: ArchiveVersion(identifier: "testID", displayName: "Test display name"), jsonPatch: [])
         let encodedNode = try encoder.encode(symbolv2)
         print(String(data: encodedNode, encoding: .utf8)!)
     }
