@@ -146,6 +146,9 @@ public struct RenderMetadata: VariantContainer, Diffable {
     
     /// Any tags assigned to the node.
     public var tags: [RenderNode.Tag]?
+    
+    /// The archive version that this node belongs to.
+    public var version: ArchiveVersion?
 }
 
 extension RenderMetadata: Codable {
@@ -208,6 +211,7 @@ extension RenderMetadata: Codable {
         public static let navigatorTitle = CodingKeys(stringValue: "navigatorTitle")
         public static let sourceFileURI = CodingKeys(stringValue: "sourceFileURI")
         public static let tags = CodingKeys(stringValue: "tags")
+        public static let version = CodingKeys(stringValue: "version")
     }
     
     public init(from decoder: Decoder) throws {
@@ -233,6 +237,7 @@ extension RenderMetadata: Codable {
         navigatorTitleVariants = try container.decodeVariantCollectionIfPresent(ofValueType: [DeclarationRenderSection.Token]?.self, forKey: .navigatorTitle)
         sourceFileURIVariants = try container.decodeVariantCollectionIfPresent(ofValueType: String?.self, forKey: .sourceFileURI)
         tags = try container.decodeIfPresent([RenderNode.Tag].self, forKey: .tags)
+        version = try container.decodeIfPresent(ArchiveVersion.self, forKey: .version)
         
         let extraKeys = Set(container.allKeys).subtracting(
             [
@@ -253,7 +258,8 @@ extension RenderMetadata: Codable {
                 .fragments,
                 .navigatorTitle,
                 .sourceFileURI,
-                .tags
+                .tags,
+                .version
             ]
         )
         for extraKey in extraKeys {
@@ -283,6 +289,7 @@ extension RenderMetadata: Codable {
         try container.encodeVariantCollection(fragmentsVariants, forKey: .fragments, encoder: encoder)
         try container.encodeVariantCollection(navigatorTitleVariants, forKey: .navigatorTitle, encoder: encoder)
         try container.encodeVariantCollection(sourceFileURIVariants, forKey: .sourceFileURI, encoder: encoder)
+        try container.encodeIfPresent(version, forKey: .version)
         if let tags = self.tags, !tags.isEmpty {
             try container.encodeIfPresent(tags, forKey: .tags)
         }
@@ -298,20 +305,23 @@ extension RenderMetadata: Codable {
         var diffs = Differences()
 
         // Diffing optional properties:
-        if let titleDiff = optionalPropertyDifference(title, from: other.title, at: path + [CodingKeys.title]) {
-            diffs.append(titleDiff)
+        if let titlePatch = optionalPropertyDifference(title, from: other.title, at: path + [CodingKeys.title]) {
+            diffs.append(titlePatch)
         }
-        if let idDiff = optionalPropertyDifference(externalID, from: other.externalID, at: path + [CodingKeys.externalID]) {
-            diffs.append(idDiff)
+        if let idPatch = optionalPropertyDifference(externalID, from: other.externalID, at: path + [CodingKeys.externalID]) {
+            diffs.append(idPatch)
         }
-        if let currentSymbolKind = optionalPropertyDifference(symbolKind, from: other.symbolKind, at: path + [CodingKeys.symbolKind]) {
-            diffs.append(currentSymbolKind)
+        if let currentSymbolKindPatch = optionalPropertyDifference(symbolKind, from: other.symbolKind, at: path + [CodingKeys.symbolKind]) {
+            diffs.append(currentSymbolKindPatch)
         }
-        if let currentRole = optionalPropertyDifference(role, from: other.role, at: path + [CodingKeys.role]) {
-            diffs.append(currentRole)
+        if let currentRolePatch = optionalPropertyDifference(role, from: other.role, at: path + [CodingKeys.role]) {
+            diffs.append(currentRolePatch)
         }
-        if let currentRoleHeading = optionalPropertyDifference(roleHeading, from: other.roleHeading, at: path + [CodingKeys.roleHeading]) {
-            diffs.append(currentRoleHeading)
+        if let currentRoleHeadingPatch = optionalPropertyDifference(roleHeading, from: other.roleHeading, at: path + [CodingKeys.roleHeading]) {
+            diffs.append(currentRoleHeadingPatch)
+        }
+        if let currentVersionPatch = optionalPropertyDifference(version, from: other.version, at: path + [CodingKeys.version]) {
+            diffs.append(currentVersionPatch)
         }
 
         // Diffing structs and arrays

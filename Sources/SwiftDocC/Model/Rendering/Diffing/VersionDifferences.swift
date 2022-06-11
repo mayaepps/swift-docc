@@ -41,7 +41,7 @@ public class VersionPatch: Codable {
 /// Defines a version of a framework.
 ///
 /// This struct can be used to group a version's unique identifier with its display name.
-struct ArchiveVersion: Codable {
+public struct ArchiveVersion: Codable, Equatable {
     public var identifier: String
     public var displayName: String
 }

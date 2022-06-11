@@ -93,7 +93,7 @@ class JSONEncodingRenderNodeWriter {
         
         // Get the previous RenderNode from the target file URL to diff against.
         do {
-            let targetFileData = try Data(contentsOf: targetFileURL)
+            let targetFileData = try Data(contentsOf: renderNodeTargetFileURL)
             let previousRenderNode = try RenderNode.decode(fromJSON: targetFileData)
             encoder.userInfoPreviousNode = previousRenderNode
         } catch {
