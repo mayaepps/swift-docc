@@ -113,14 +113,15 @@ extension RenderNode: Codable {
             // that have been accumulated while encoding the properties of the render node.
             try container.encode(variantOverrides, forKey: .variantOverrides)
         }
-        
+    
         // If given a previous node, diff between it and this RenderNode.
         if let previousNode = encoder.userInfoPreviousNode {
-            encoder.userInfoVersionPatch?.add(contentsOf: previousNode.difference(from: self, at: encoder.codingPath))
+            let versionPatch = VersionPatch(archiveVersion: previousNode.metadata.version ?? ArchiveVersion(identifier: "N/A", displayName: "N/A"),
+                                            jsonPatch: previousNode.difference(from: self, at: encoder.codingPath))
+            
+            // For now, we're only doing one VersionPatch
+            try container.encodeIfPresent([versionPatch], forKey: .versions)
         }
-        
-        // For now, we're only doing one VersionPatch
-        try container.encodeIfPresent([encoder.userInfoVersionPatch], forKey: .versions)
     }
 }
 

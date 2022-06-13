@@ -95,6 +95,7 @@ class JSONEncodingRenderNodeWriter {
         do {
             let targetFileData = try Data(contentsOf: renderNodeTargetFileURL)
             let previousRenderNode = try RenderNode.decode(fromJSON: targetFileData)
+            
             encoder.userInfoPreviousNode = previousRenderNode
         } catch {
             // This is a new RenderNode--there is no previous node to diff against.

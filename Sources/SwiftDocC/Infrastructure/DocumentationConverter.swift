@@ -187,7 +187,7 @@ public struct DocumentationConverter: DocumentationConverterProtocol {
         func isConversionCancelled() -> Bool {
             return isCancelled?.sync({ $0 }) == true
         }
-
+        
         // Run a timer that synchronizes the cancelled state between the converter and the context directly.
         // We need a timer on a separate dispatch queue because `workspace.registerProvider()` blocks
         // the current thread until it loads all symbol graphs, markdown files, and builds the topic graph
@@ -278,10 +278,11 @@ public struct DocumentationConverter: DocumentationConverterProtocol {
                         return
                     }
 
-                    guard let renderNode = try converter.renderNode(for: entity, at: source) else {
+                    guard var renderNode = try converter.renderNode(for: entity, at: source) else {
                         // No render node was produced for this entity, so just skip it.
                         return
                     }
+                    renderNode.metadata.version = ArchiveVersion(identifier: bundle.version!, displayName: bundle.versionDisplayName ?? bundle.version!)
                     
                     try outputConsumer.consume(renderNode: renderNode)
 

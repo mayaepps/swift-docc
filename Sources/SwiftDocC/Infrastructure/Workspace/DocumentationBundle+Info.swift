@@ -24,6 +24,9 @@ extension DocumentationBundle {
         /// The version of the bundle.
         public var version: String?
         
+        /// The display name of the bundle's version.
+        public var versionDisplayName: String?
+        
         /// The default language identifier for code listings in the bundle.
         public var defaultCodeListingLanguage: String?
         
@@ -40,6 +43,7 @@ extension DocumentationBundle {
             case displayName = "CFBundleDisplayName"
             case identifier = "CFBundleIdentifier"
             case version = "CFBundleVersion"
+            case versionDisplayName = "CDBundleVersionDisplayName"
             case defaultCodeListingLanguage = "CDDefaultCodeListingLanguage"
             case defaultAvailability = "CDAppleDefaultAvailability"
             case defaultModuleKind = "CDDefaultModuleKind"
@@ -52,6 +56,8 @@ extension DocumentationBundle {
                     return "--fallback-bundle-identifier"
                 case .version:
                     return "--fallback-bundle-version"
+                case .versionDisplayName:
+                    return "--fallback-bundle-version-display-name"
                 case .defaultCodeListingLanguage:
                     return "--default-code-listing-language"
                 case .defaultModuleKind:
@@ -173,6 +179,7 @@ extension DocumentationBundle {
             self.displayName = try decodeOrFallback(String.self, with: .displayName)
             self.identifier = try decodeOrFallback(String.self, with: .identifier)
             self.version = try decodeOrFallbackIfPresent(String.self, with: .version)
+            self.versionDisplayName = try decodeOrFallbackIfPresent(String.self, with: .versionDisplayName)
             
             // Finally, decode the optional keys if they're present.
             
@@ -185,6 +192,7 @@ extension DocumentationBundle {
             displayName: String,
             identifier: String,
             version: String? = nil,
+            versionDisplayName: String? = nil,
             defaultCodeListingLanguage: String? = nil,
             defaultModuleKind: String? = nil,
             defaultAvailability: DefaultAvailability? = nil
@@ -192,6 +200,7 @@ extension DocumentationBundle {
             self.displayName = displayName
             self.identifier = identifier
             self.version = version
+            self.versionDisplayName = versionDisplayName
             self.defaultCodeListingLanguage = defaultCodeListingLanguage
             self.defaultModuleKind = defaultModuleKind
             self.defaultAvailability = defaultAvailability
@@ -216,6 +225,7 @@ extension BundleDiscoveryOptions {
         fallbackDisplayName: String? = nil,
         fallbackIdentifier: String? = nil,
         fallbackVersion: String? = nil,
+        fallbackVersionDisplayName: String? = nil,
         fallbackDefaultCodeListingLanguage: String? = nil,
         fallbackDefaultModuleKind: String? = nil,
         fallbackDefaultAvailability: DefaultAvailability? = nil,
@@ -236,6 +246,8 @@ extension BundleDiscoveryOptions {
                 value = fallbackIdentifier
             case .version:
                 value = fallbackVersion
+            case .versionDisplayName:
+                value = fallbackVersionDisplayName
             case .defaultCodeListingLanguage:
                 value = fallbackDefaultCodeListingLanguage
             case .defaultAvailability:

@@ -84,7 +84,7 @@ extension JSONEncoder {
     }
     
     /// The version patch accumulated as part of the encoding process.
-    var userInfoVersionPatch: VersionPatch? {
+    public var userInfoVersionPatch: VersionPatch? {
         get {
             userInfo[.versionPatch] as? VersionPatch
         }

@@ -84,6 +84,8 @@ public struct DocumentationNode {
     /// Linkable in-content sections.
     var anchorSections = [AnchorSection]()
     
+    var bundle: DocumentationBundle?
+    
     /// Collects any sections in the node content that could be
     /// linked to from other nodes' content.
     private mutating func updateAnchorSections() {
@@ -122,7 +124,7 @@ public struct DocumentationNode {
     ///   - markup: The markup that makes up the content for the node.
     ///   - semantic: The parsed documentation structure that's described by the documentation content.
     ///   - platformNames: The names of the platforms for which the node is available.
-    public init(reference: ResolvedTopicReference, kind: Kind, sourceLanguage: SourceLanguage, availableSourceLanguages: Set<SourceLanguage>? = nil, name: Name, markup: Markup, semantic: Semantic?, platformNames: Set<String>? = nil) {
+    public init(reference: ResolvedTopicReference, kind: Kind, sourceLanguage: SourceLanguage, availableSourceLanguages: Set<SourceLanguage>? = nil, name: Name, markup: Markup, semantic: Semantic?, platformNames: Set<String>? = nil, bundle: DocumentationBundle? = nil) {
         self.reference = reference
         self.kind = kind
         self.sourceLanguage = sourceLanguage
@@ -133,6 +135,7 @@ public struct DocumentationNode {
         self.symbol = nil
         self.platformNames = platformNames
         self.docChunks = [DocumentationChunk(source: .sourceCode(location: nil), markup: markup)]
+        self.bundle = bundle
         updateAnchorSections()
     }
 
@@ -159,7 +162,7 @@ public struct DocumentationNode {
     ///   - symbol: The symbol to create a documentation node for.
     ///   - platformName: The name of the platforms for which the node is available.
     ///   - moduleName: The name of the module that the symbol belongs to.
-    init(reference: ResolvedTopicReference, unifiedSymbol: UnifiedSymbolGraph.Symbol, platformName: String?, moduleReference: ResolvedTopicReference, bystanderModules: [String]? = nil) {
+    init(reference: ResolvedTopicReference, unifiedSymbol: UnifiedSymbolGraph.Symbol, platformName: String?, moduleReference: ResolvedTopicReference, bystanderModules: [String]? = nil, bundle: DocumentationBundle? = nil) {
         self.reference = reference
         
         guard let defaultSymbol = unifiedSymbol.defaultSymbol else {
@@ -264,6 +267,7 @@ public struct DocumentationNode {
 
         try! semanticSymbol.mergeDeclarations(unifiedSymbol: unifiedSymbol)
         self.semantic = semanticSymbol
+        self.bundle = bundle
     }
 
     /// Given an optional documentation extension, initializes the node's documentation content.
