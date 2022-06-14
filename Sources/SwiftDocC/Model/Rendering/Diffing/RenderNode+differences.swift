@@ -155,8 +155,8 @@ extension Array: Diffable where Element: Equatable, Element: Encodable {
     /// Returns the differences between this array and the given one.
     public func difference(from other: Array<Element>, at path: Path) -> Differences {
         let arrayDiffs = self.difference(from: other)
-        var differences: [CollectionDifference.Change] = arrayDiffs.insertions
-        differences.append(contentsOf: arrayDiffs.removals)
+        var differences: [CollectionDifference.Change] = arrayDiffs.removals
+        differences.append(contentsOf: arrayDiffs.insertions)
         let patchOperations = differences.map { diff -> JSONPatchOperation in
             switch diff {
             case .remove(let offset, _, _):
