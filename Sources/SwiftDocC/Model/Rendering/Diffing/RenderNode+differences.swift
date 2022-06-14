@@ -13,6 +13,7 @@ import Foundation
 protocol Diffable {
     func difference(from other: Self, at path: Path) -> Differences
 }
+
 extension Diffable {
     /// Builds and returns a JSON pointer at the given path and .
     func buildPointer(from path: Path, atKey key: CodingKey) -> JSONPointer {
@@ -509,7 +510,18 @@ struct AnyRenderSection: Equatable, Encodable {
             return (lhs.value as! ResourcesRenderSection) == (rhs.value as! ResourcesRenderSection)
         case (.declarations, .declarations):
             return (lhs.value as! DeclarationsRenderSection) == (rhs.value as! DeclarationsRenderSection)
+//        case (.title, .title):
+//        case (.discussion, .discussion):
+        case (.content, .content):
+            return (lhs.value as! ContentRenderSection) == (rhs.value as! ContentRenderSection)
+//        case (.taskGroup, .taskGroup):
+        case (.relationships, .relationships):
+            return (lhs.value as! RelationshipsRenderSection) == (rhs.value as! RelationshipsRenderSection)
+        case (.parameters, .parameters):
+            return (lhs.value as! ParametersRenderSection) == (rhs.value as! ParametersRenderSection)
+//        case (.sampleDownload, .sampleDownload):
         default:
+            print("RENDER SECTION USED THAT IS NOT EQUATABLE \(type(of: lhs.value))")
             return false
         }
     }
@@ -520,6 +532,30 @@ struct AnyRenderSection: Equatable, Encodable {
 
     var value: RenderSection
     init(_ value: RenderSection) { self.value = value }
+}
+
+extension RelationshipsRenderSection: Equatable {
+    public static func == (lhs: RelationshipsRenderSection, rhs: RelationshipsRenderSection) -> Bool {
+        return lhs.title == rhs.title && lhs.identifiers == rhs.identifiers && lhs.type == rhs.type
+    }
+}
+
+extension ParametersRenderSection: Equatable {
+    public static func == (lhs: ParametersRenderSection, rhs: ParametersRenderSection) -> Bool {
+        return lhs.parameters == rhs.parameters
+    }
+}
+
+extension ParameterRenderSection: Equatable {
+    public static func == (lhs: ParameterRenderSection, rhs: ParameterRenderSection) -> Bool {
+        return lhs.name == rhs.name && lhs.content == rhs.content
+    }
+}
+
+extension ContentRenderSection: Equatable {
+    public static func == (lhs: ContentRenderSection, rhs: ContentRenderSection) -> Bool {
+        return lhs.content == rhs.content
+    }
 }
 
 extension TutorialSectionsRenderSection: Equatable {
