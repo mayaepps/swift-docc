@@ -152,8 +152,7 @@ enum GeneratedDocumentationTopics {
             availableSourceLanguages: automaticCurationSourceLanguages,
             name: DocumentationNode.Name.conceptual(title: title),
             markup: Document(parsing: ""),
-            semantic: Article(markup: nil, metadata: nil, redirects: nil),
-            bundle: bundle
+            semantic: Article(markup: nil, metadata: nil, redirects: nil)
         )
         
         let collectionTaskGroups = try AutomaticCuration.topics(for: temporaryCollectionNode, withTrait: nil, context: context)
@@ -170,8 +169,7 @@ enum GeneratedDocumentationTopics {
             availableSourceLanguages: automaticCurationSourceLanguages,
             name: DocumentationNode.Name.conceptual(title: title),
             markup: Document(parsing: ""),
-            semantic: collectionArticle,
-            bundle: bundle
+            semantic: collectionArticle
         )
 
         // Curate the collection node

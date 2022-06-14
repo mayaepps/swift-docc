@@ -42,11 +42,6 @@ extension Encoder {
     var userInfoVariantOverrides: VariantOverrides? {
         userInfo[.variantOverrides] as? VariantOverrides
     }
-     
-    /// The version patch accumulated as part of the encoding process.
-    var userInfoVersionPatch: VersionPatch? {
-        userInfo[.versionPatch] as? VersionPatch
-    }
     
     /// The previous RenderNode to be used in the diffing process.
     var userInfoPreviousNode: RenderNode? {
@@ -80,16 +75,6 @@ extension JSONEncoder {
         }
         set {
             userInfo[.variantOverrides] = newValue
-        }
-    }
-    
-    /// The version patch accumulated as part of the encoding process.
-    public var userInfoVersionPatch: VersionPatch? {
-        get {
-            userInfo[.versionPatch] as? VersionPatch
-        }
-        set {
-            userInfo[.versionPatch] = newValue
         }
     }
     

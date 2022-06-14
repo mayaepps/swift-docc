@@ -28,7 +28,6 @@ class RenderNodeDiffingTests: XCTestCase {
         
         let encoder = RenderJSONEncoder.makeEncoder()
         encoder.userInfoPreviousNode = renderNodeSymbol
-        encoder.userInfoVersionPatch = VersionPatch(archiveVersion: ArchiveVersion(identifier: "testID", displayName: "Test display name"), jsonPatch: [])
         
         let encodedNode = try encoder.encode(renderNodeArticle)
         print(String(data: encodedNode, encoding: .utf8)!)
@@ -48,7 +47,6 @@ class RenderNodeDiffingTests: XCTestCase {
         
         let encoder = RenderJSONEncoder.makeEncoder()
         encoder.userInfoPreviousNode = symbolv1
-        encoder.userInfoVersionPatch = VersionPatch(archiveVersion: ArchiveVersion(identifier: "testID", displayName: "Test display name"), jsonPatch: [])
         let encodedNode = try encoder.encode(symbolv2)
         print(String(data: encodedNode, encoding: .utf8)!)
     }

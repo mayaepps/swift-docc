@@ -710,8 +710,7 @@ public class DocumentationContext: DocumentationContextDataProviderDelegate {
                     availableSourceLanguages: sourceLanguages,
                     name: .conceptual(title: tutorial.intro.title),
                     markup: tutorial.originalMarkup,
-                    semantic: tutorial,
-                    bundle: bundle
+                    semantic: tutorial
                 )
                 documentationCache[tutorialReference] = tutorialNode
                 
@@ -745,8 +744,7 @@ public class DocumentationContext: DocumentationContextDataProviderDelegate {
                     availableSourceLanguages: sourceLanguages,
                     name: .conceptual(title: article.title ?? ""),
                     markup: article.originalMarkup,
-                    semantic: article,
-                    bundle: bundle
+                    semantic: article
                 )
                 documentationCache[articleReference] = articleNode
                 
@@ -985,7 +983,7 @@ public class DocumentationContext: DocumentationContextDataProviderDelegate {
     
     /// Creates a topic graph node and a documentation node for the given symbol.
     private func preparedSymbolData(_ symbol: UnifiedSymbolGraph.Symbol, reference: ResolvedTopicReference, referenceAliases: [ResolvedTopicReference], module: SymbolGraph.Module, moduleReference: ResolvedTopicReference, bundle: DocumentationBundle, fileURL symbolGraphURL: URL?) -> AddSymbolResultWithProblems {
-        let documentation = DocumentationNode(reference: reference, unifiedSymbol: symbol, platformName: module.platform.name, moduleReference: moduleReference, bystanderModules: module.bystanders, bundle: bundle)
+        let documentation = DocumentationNode(reference: reference, unifiedSymbol: symbol, platformName: module.platform.name, moduleReference: moduleReference, bystanderModules: module.bystanders)
         let source: TopicGraph.Node.ContentLocation // TODO: use a list of URLs for the files in a unified graph
         if let symbolGraphURL = symbolGraphURL {
             source = .file(url: symbolGraphURL)
@@ -1894,8 +1892,7 @@ public class DocumentationContext: DocumentationContextDataProviderDelegate {
             availableSourceLanguages: availableSourceLanguages,
             name: .conceptual(title: title),
             markup: articleMarkup,
-            semantic: article.value,
-            bundle: bundle
+            semantic: article.value
         )
         
         return (documentationNode, title)
