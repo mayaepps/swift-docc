@@ -145,6 +145,26 @@ extension Docc {
             transform: URL.init(fileURLWithPath:)
         )
         public var previousArchivePath: URL?
+        
+        // MARK: - Info.plist overrides
+        
+        /// A user-provided version display name override for the documentation bundle.
+        ///
+        /// If the documentation bundle's Info.plist file contains a bundle version display name, the documentation bundle uses this override instead.
+        @Option(
+            name: [.customLong("version-display-name-override")],
+            help: "An override for the version's display name in the documentation bundle's Info.plist file."
+        )
+        public var versionDisplayNameOverride: String?
+        
+        /// A user-provided version identifier override for the documentation bundle.
+        ///
+        /// If the documentation bundle's Info.plist file contains a bundle version, the documentation bundle uses this override instead.
+        @Option(
+            name: [.customLong("version-identifier-override"), .customLong("bundle-version-override")],
+            help: "An override for the bundle version in the documentation bundle's Info.plist file."
+        )
+        public var versionIdentifierOverride: String?
 
 
         // MARK: - Info.plist fallbacks
@@ -339,7 +359,14 @@ extension Docc {
                 try DocCArchiveOption.validateDocCArchive(at: previousArchivePath)
                 print("You passed in a previous DocC Archive at \(previousArchivePath). DocC will use this archive to produce diffs.")
             }
-
+            
+            if let versionDisplayNameOverride = versionDisplayNameOverride {
+                print("Version display name: \(versionDisplayNameOverride)")
+            }
+            
+            if let versionIdentifierOverride = versionIdentifierOverride {
+                print("Version identifier: \(versionIdentifierOverride)")
+            }
         }
 
         // MARK: - Execution
