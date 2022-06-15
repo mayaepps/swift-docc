@@ -68,6 +68,8 @@ extension RenderNode: Codable {
         diffAvailability = try container.decodeIfPresent(DiffAvailability.self, forKey: .diffAvailability)
         variants = try container.decodeIfPresent([RenderNode.Variant].self, forKey: .variants)
         variantOverrides = try container.decodeIfPresent(VariantOverrides.self, forKey: .variantOverrides)
+        
+        versions = try container.decodeIfPresent([VersionPatch].self, forKey: .versions)
     }
     
     public func encode(to encoder: Encoder) throws {
@@ -116,11 +118,16 @@ extension RenderNode: Codable {
     
         // If given a previous node, diff between it and this RenderNode.
         if let previousNode = encoder.userInfoPreviousNode {
+            
             let versionPatch = VersionPatch(archiveVersion: previousNode.metadata.version ?? ArchiveVersion(identifier: "N/A", displayName: "N/A"),
                                             jsonPatch: previousNode.difference(from: self, at: encoder.codingPath))
             
-            // For now, we're only doing one VersionPatch
+            let allPreviousVersionPatches = (versions ?? []) + [versionPatch]
+            
+            try metadata.version?.checkIsUniqueFrom(otherVersions: allPreviousVersionPatches.map({$0.version}))
+
             try container.encodeIfPresent([versionPatch], forKey: .versions)
+            // try container.encodeIfPresent(allPreviousVersions, forKey: .versions)
         }
     }
 }

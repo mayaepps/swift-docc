@@ -44,4 +44,19 @@ public class VersionPatch: Codable {
 public struct ArchiveVersion: Codable, Equatable {
     public var identifier: String
     public var displayName: String
+    
+    enum ArchiveVersionError: Error {
+        case versionDisplayNameNotUnique
+        case versionIdentifierNotUnique
+    }
+    
+    public func checkIsUniqueFrom( otherVersions: [ArchiveVersion]) throws {
+        if otherVersions.map({ $0.displayName }).contains(displayName) {
+            throw ArchiveVersionError.versionDisplayNameNotUnique
+        }
+        
+        if otherVersions.map({ $0.identifier }).contains(identifier) {
+            throw ArchiveVersionError.versionIdentifierNotUnique
+        }
+    }
 }
