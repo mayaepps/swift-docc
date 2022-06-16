@@ -80,3 +80,18 @@ extension TaskGroupRenderSection {
         self.generated = false
     }
 }
+
+// Conformance to Diffable
+extension TaskGroupRenderSection: Diffable {
+    func difference(from other: TaskGroupRenderSection, at path: Path) -> Differences {
+        var diffs = Differences()
+        if let diff = optionalPropertyDifference(title, from: other.title, at: path + [CodingKeys.title]) {
+            diffs.append(diff)
+        }
+        
+        //diffs.append(contentsOf: Self.diff(from: other.discussion, to: discussion, at: path + [CodingKeys.discussion]))
+        diffs.append(contentsOf: Self.diff(from: other.identifiers, to: identifiers, at: path + [CodingKeys.identifiers]))
+        diffs.append(contentsOf: Self.diff(from: other.generated, to: generated, at: path + [CodingKeys.generated]))
+        return diffs
+    }
+}

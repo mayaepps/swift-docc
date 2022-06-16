@@ -12,12 +12,39 @@ import Foundation
 
 protocol Diffable {
     func difference(from other: Self, at path: Path) -> Differences
+    func similar(to other: Self) -> Bool
+}
+
+public typealias Differences = [JSONPatchOperation]
+public typealias Path = [CodingKey]
+
+extension Diffable where Self: Equatable {
+    func similar(to other: Self) -> Bool {
+        return self == other
+    }
 }
 
 extension Diffable {
-    /// Builds and returns a JSON pointer at the given path and .
-    func buildPointer(from path: Path, atKey key: CodingKey) -> JSONPointer {
-        return JSONPointer(from: path + [key])
+    
+    static func diff<T>(from old: T, to new: T, at path: Path) -> Differences where T: Equatable & Diffable & Encodable {
+        if new == old {
+            return []
+        } else if new.similar(to: old) {
+            return old.difference(from: new, at: path)
+        } else {
+            return [.replace(pointer: JSONPointer(from: path), encodableValue: old)]
+        }
+    }
+    
+    static func diff<T>(from new: T, to old: T, at path: Path) -> Differences where T: Diffable {
+        return new.difference(from: old, at: path)
+    }
+    
+    static func diff<T>(from new: T, to old: T, at path: Path) -> Differences where T: Equatable & Encodable {
+        if new != old {
+            return [.replace(pointer: JSONPointer(from: path), encodableValue: new)]
+        }
+        return []
     }
     
     /// Unwraps and returns the difference between two optional properties.
@@ -35,9 +62,6 @@ extension Diffable {
         return difference
     }
 }
-
-public typealias Differences = [JSONPatchOperation]
-public typealias Path = [CodingKey]
 
 /// An integer coding key.
 private struct IntegerKey: CodingKey {
@@ -63,24 +87,24 @@ private struct IntegerKey: CodingKey {
     }
 }
 
-extension RenderNode: Diffable {
+extension RenderNode: Diffable, Equatable {
+    
     /// Returns the differences between this render node and the given one.
     public func difference(from other: RenderNode, at path: Path) -> Differences {
         
         var diffs = Differences()
         
         if kind != other.kind {
-            let patch = JSONPatchOperation.replace(pointer: buildPointer(from: path, atKey: CodingKeys.kind), encodableValue: kind)
+            let patch = JSONPatchOperation.replace(pointer: JSONPointer(from: path + [CodingKeys.kind]), encodableValue: kind)
             diffs.append(patch)
         }
-        diffs.append(contentsOf: abstract.difference(from: other.abstract, at: path + [CodingKeys.abstract]))
+//        diffs.append(contentsOf: abstract.difference(from: other.abstract, at: path + [CodingKeys.abstract]))
         diffs.append(contentsOf: schemaVersion.difference(from:other.schemaVersion, at: path + [CodingKeys.schemaVersion]))
         diffs.append(contentsOf: identifier.difference(from:other.identifier, at: path + [CodingKeys.identifier]))
         diffs.append(contentsOf: metadata.difference(from:other.metadata, at: path + [CodingKeys.metadata]))
 //        diffs.merge(hierarchy.difference(from:other.hierarchy, at: "\(path)/hierarchy")) { (current, _) in current }
-        diffs.append(contentsOf: topicSections.difference(from: other.topicSections, at: path + [CodingKeys.topicSections]))
+//        diffs.append(contentsOf: topicSections.difference(from: other.topicSections, at: path + [CodingKeys.topicSections]))
         diffs.append(contentsOf: seeAlsoSections.difference(from: other.seeAlsoSections, at: path + [CodingKeys.seeAlsoSections]))
-
 //        // Diffing render references
 //        let diffableReferences = references.mapValues { reference in
 //            return AnyRenderReference(reference)
@@ -91,33 +115,40 @@ extension RenderNode: Diffable {
 //        diffs.merge(diffableReferences.difference(from:otherDiffableReferences, at: "\(path)/references")) { (current, _) in current }
 //
         //Diffing primary content sections
-        let equatablePrimaryContentSections = primaryContentSections.map { section in
-            return AnyRenderSection(section)
-        }
-        let otherEquatablePrimaryContentSections = other.primaryContentSections.map { section in
-            return AnyRenderSection(section)
-        }
-        diffs.append(contentsOf: equatablePrimaryContentSections.difference(from: otherEquatablePrimaryContentSections, at: path + [CodingKeys.primaryContentSections]))
-
-        // Diffing relationship sections
-        let equatableRelationshipSections = relationshipSections.map { section in
-            return AnyRenderSection(section)
-        }
-        let otherEquatableRelationshipSections = other.relationshipSections.map { section in
-            return AnyRenderSection(section)
-        }
-        diffs.append(contentsOf: equatableRelationshipSections.difference(from: otherEquatableRelationshipSections, at: path + [CodingKeys.relationshipsSections]))
+//        let equatablePrimaryContentSections = primaryContentSections.map { section in
+//            return AnyRenderSection(section)
+//        }
+//        let otherEquatablePrimaryContentSections = other.primaryContentSections.map { section in
+//            return AnyRenderSection(section)
+//        }
+//        diffs.append(contentsOf: equatablePrimaryContentSections.difference(from: otherEquatablePrimaryContentSections, at: path + [CodingKeys.primaryContentSections]))
+//
+//        // Diffing relationship sections
+//        let equatableRelationshipSections = relationshipSections.map { section in
+//            return AnyRenderSection(section)
+//        }
+//        let otherEquatableRelationshipSections = other.relationshipSections.map { section in
+//            return AnyRenderSection(section)
+//        }
+//        diffs.append(contentsOf: equatableRelationshipSections.difference(from: otherEquatableRelationshipSections, at: path + [CodingKeys.relationshipsSections]))
 
         // Diffing sections
-        let equatableSections = sections.map { section in
-            return AnyRenderSection(section)
-        }
-        let otherEquatableSections = other.sections.map { section in
-            return AnyRenderSection(section)
-        }
-        diffs.append(contentsOf: equatableSections.difference(from: otherEquatableSections, at: path + [CodingKeys.sections]))
+//        let equatableSections = sections.map { section in
+//            return AnyRenderSection(section)
+//        }
+//        let otherEquatableSections = other.sections.map { section in
+//            return AnyRenderSection(section)
+//        }
+//        diffs.append(contentsOf: equatableSections.difference(from: otherEquatableSections, at: path + [CodingKeys.sections]))
         
         return diffs
+    }
+    
+    //TODO: finish
+    public static func == (lhs: RenderNode, rhs: RenderNode) -> Bool {
+        return false
+//        return lhs.abstract == rhs.abstract && lhs.versions == rhs.versions && lhs.identifier == rhs.identifier && lhs.metadata == rhs.metadata && lhs.abstractVariants == rhs.abstractVariants && lhs.kind == rhs.kind && lhs.references == rhs.references && lhs.variants == rhs.variants && lhs.assetReferences == rhs.assetReferences && lhs.defaultImplementationsSections == rhs.defaultImplementationsSections && lhs.deprecationSummary == rhs.deprecationSummary && lhs.deprecationSummaryVariants == rhs.deprecationSummaryVariants && lhs.schemaVersion == rhs.schemaVersion && lhs.sections == rhs.sections && lhs.metadata == rhs.metadata && lhs.kind == rhs.kind && lhs.hierarchy == rhs.hierarchy && lhs.abstractVariants == rhs.abstractVariants && lhs.topicSections == rhs.topicSections && lhs.defaultImplementationsSections == rhs.defaultImplementationsSections && lhs.relationshipSections == rhs.relationshipSections && lhs.seeAlsoSections == rhs.seeAlsoSections && lhs.primaryContentSections == rhs.primaryContentSections && lhs.sampleDownload == rhs.sampleDownload && lhs.downloadNotAvailableSummary == rhs.downloadNotAvailableSummary && lhs.deprecationSummary == rhs.deprecationSummary && lhs.diffAvailability == rhs.diffAvailability && lhs.variants == rhs.variants && lhs.variantOverrides == rhs.variantOverrides
+        
     }
 }
 
@@ -134,7 +165,7 @@ extension RenderNode: Diffable {
 //    }
 //}
 
-extension Optional: Diffable where Wrapped: Diffable {
+extension Optional: Diffable where Wrapped: Diffable & Equatable {
     /// Returns the differences between this optional and the given one.
     func difference(from other: Optional<Wrapped>, at path: Path) -> Differences {
         var difference = Differences()
@@ -151,9 +182,9 @@ extension Optional: Diffable where Wrapped: Diffable {
     }
 }
 
-extension Array: Diffable where Element: Equatable, Element: Encodable {
+extension Array: Diffable where Element: Diffable & Equatable & Encodable {
     /// Returns the differences between this array and the given one.
-    public func difference(from other: Array<Element>, at path: Path) -> Differences {
+    func difference(from other: Array<Element>, at path: Path) -> Differences {
         let arrayDiffs = self.difference(from: other)
         var differences: [CollectionDifference.Change] = arrayDiffs.removals
         differences.append(contentsOf: arrayDiffs.insertions)
@@ -649,5 +680,15 @@ extension RenderTile: Equatable {
     public static func == (lhs: RenderTile, rhs: RenderTile) -> Bool {
         return lhs.identifier == rhs.identifier && lhs.title == rhs.title && lhs.content == rhs.content && lhs.action == rhs.action && lhs.media == rhs.media
     }
+}
+
+extension RenderMetadata: Equatable {
+    /// DO NOT USE
+    //TODO: finish
+    public static func == (lhs: RenderMetadata, rhs: RenderMetadata) -> Bool {
+        return false
+    }
+    
+    
 }
 
