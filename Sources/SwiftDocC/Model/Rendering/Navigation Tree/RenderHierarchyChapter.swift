@@ -9,7 +9,8 @@
 */
 
 /// A hierarchy tree node that represents a chapter in a tutorial series.
-public struct RenderHierarchyChapter: Codable {    
+public struct RenderHierarchyChapter: Codable, Equatable {
+    
     /// The topic reference for the chapter.
     public var reference: RenderReferenceIdentifier
     

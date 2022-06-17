@@ -11,7 +11,8 @@
 import Foundation
 
 /// Arbitrary metadata for a render node.
-public struct RenderMetadata: VariantContainer, Diffable {
+public struct RenderMetadata: VariantContainer {
+    
     // MARK: Tutorials metadata
     
     /// The name of technology associated with a tutorial.
@@ -153,7 +154,7 @@ public struct RenderMetadata: VariantContainer, Diffable {
 
 extension RenderMetadata: Codable {
     /// A list of pre-defined roles to assign to nodes.
-    public enum Role: String {
+    public enum Role: String, Equatable {
         case symbol, containerSymbol, restRequestSymbol, dictionarySymbol, pseudoSymbol, pseudoCollection, collection, collectionGroup, article, sampleCode, unknown
         case table, codeListing, link, subsection, task, overview
         case tutorial = "project"
@@ -178,7 +179,7 @@ extension RenderMetadata: Codable {
         }
     }
 
-    public struct CodingKeys: CodingKey, Hashable {
+    public struct CodingKeys: CodingKey, Hashable, Equatable {
         public var stringValue: String
         
         public init(stringValue: String) {
@@ -332,4 +333,10 @@ extension RenderMetadata: Codable {
         return diffs
     }
 
+}
+
+extension RenderMetadata: Diffable {
+    func similar(to other: RenderMetadata) -> Bool {
+        return self.title == other.title
+    }
 }

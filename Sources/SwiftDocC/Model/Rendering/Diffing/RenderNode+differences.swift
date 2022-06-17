@@ -36,10 +36,6 @@ extension Diffable {
         }
     }
     
-    static func diff<T>(from new: T, to old: T, at path: Path) -> Differences where T: Diffable {
-        return new.difference(from: old, at: path)
-    }
-    
     static func diff<T>(from new: T, to old: T, at path: Path) -> Differences where T: Equatable & Encodable {
         if new != old {
             return [.replace(pointer: JSONPointer(from: path), encodableValue: new)]
@@ -87,68 +83,61 @@ private struct IntegerKey: CodingKey {
     }
 }
 
-extension RenderNode: Diffable, Equatable {
+extension RenderNode: Diffable {
+    func similar(to other: RenderNode) -> Bool {
+        return identifier == other.identifier
+    }
     
     /// Returns the differences between this render node and the given one.
     public func difference(from other: RenderNode, at path: Path) -> Differences {
         
         var diffs = Differences()
         
-        if kind != other.kind {
-            let patch = JSONPatchOperation.replace(pointer: JSONPointer(from: path + [CodingKeys.kind]), encodableValue: kind)
-            diffs.append(patch)
-        }
-//        diffs.append(contentsOf: abstract.difference(from: other.abstract, at: path + [CodingKeys.abstract]))
+        diffs.append(contentsOf: Self.diff(from: other.kind, to: kind, at: path + [CodingKeys.kind]))
+        diffs.append(contentsOf: abstract.difference(from: other.abstract, at: path + [CodingKeys.abstract]))
         diffs.append(contentsOf: schemaVersion.difference(from:other.schemaVersion, at: path + [CodingKeys.schemaVersion]))
         diffs.append(contentsOf: identifier.difference(from:other.identifier, at: path + [CodingKeys.identifier]))
         diffs.append(contentsOf: metadata.difference(from:other.metadata, at: path + [CodingKeys.metadata]))
-//        diffs.merge(hierarchy.difference(from:other.hierarchy, at: "\(path)/hierarchy")) { (current, _) in current }
-//        diffs.append(contentsOf: topicSections.difference(from: other.topicSections, at: path + [CodingKeys.topicSections]))
+//        diffs.append(contentsOf: hierarchy.difference(from:other.hierarchy, at: path + [CodingKeys.hierarchy]))
+        diffs.append(contentsOf: topicSections.difference(from: other.topicSections, at: path + [CodingKeys.topicSections]))
         diffs.append(contentsOf: seeAlsoSections.difference(from: other.seeAlsoSections, at: path + [CodingKeys.seeAlsoSections]))
-//        // Diffing render references
+        // Diffing render references
 //        let diffableReferences = references.mapValues { reference in
 //            return AnyRenderReference(reference)
 //        }
 //        let otherDiffableReferences = other.references.mapValues { reference in
 //            return AnyRenderReference(reference)
 //        }
-//        diffs.merge(diffableReferences.difference(from:otherDiffableReferences, at: "\(path)/references")) { (current, _) in current }
-//
-        //Diffing primary content sections
-//        let equatablePrimaryContentSections = primaryContentSections.map { section in
-//            return AnyRenderSection(section)
-//        }
-//        let otherEquatablePrimaryContentSections = other.primaryContentSections.map { section in
-//            return AnyRenderSection(section)
-//        }
-//        diffs.append(contentsOf: equatablePrimaryContentSections.difference(from: otherEquatablePrimaryContentSections, at: path + [CodingKeys.primaryContentSections]))
-//
-//        // Diffing relationship sections
-//        let equatableRelationshipSections = relationshipSections.map { section in
-//            return AnyRenderSection(section)
-//        }
-//        let otherEquatableRelationshipSections = other.relationshipSections.map { section in
-//            return AnyRenderSection(section)
-//        }
-//        diffs.append(contentsOf: equatableRelationshipSections.difference(from: otherEquatableRelationshipSections, at: path + [CodingKeys.relationshipsSections]))
+//        diffs.append(contentsOf: diffableReferences.difference(from:otherDiffableReferences, at: path + [CodingKeys.references]))
+
+        // Diffing primary content sections
+        let equatablePrimaryContentSections = primaryContentSections.map { section in
+            return AnyRenderSection(section)
+        }
+        let otherEquatablePrimaryContentSections = other.primaryContentSections.map { section in
+            return AnyRenderSection(section)
+        }
+        diffs.append(contentsOf: equatablePrimaryContentSections.difference(from: otherEquatablePrimaryContentSections, at: path + [CodingKeys.primaryContentSections]))
+
+        // Diffing relationship sections
+        let equatableRelationshipSections = relationshipSections.map { section in
+            return AnyRenderSection(section)
+        }
+        let otherEquatableRelationshipSections = other.relationshipSections.map { section in
+            return AnyRenderSection(section)
+        }
+        diffs.append(contentsOf: equatableRelationshipSections.difference(from: otherEquatableRelationshipSections, at: path + [CodingKeys.relationshipsSections]))
 
         // Diffing sections
-//        let equatableSections = sections.map { section in
-//            return AnyRenderSection(section)
-//        }
-//        let otherEquatableSections = other.sections.map { section in
-//            return AnyRenderSection(section)
-//        }
-//        diffs.append(contentsOf: equatableSections.difference(from: otherEquatableSections, at: path + [CodingKeys.sections]))
+        let equatableSections = sections.map { section in
+            return AnyRenderSection(section)
+        }
+        let otherEquatableSections = other.sections.map { section in
+            return AnyRenderSection(section)
+        }
+        diffs.append(contentsOf: equatableSections.difference(from: otherEquatableSections, at: path + [CodingKeys.sections]))
         
         return diffs
-    }
-    
-    //TODO: finish
-    public static func == (lhs: RenderNode, rhs: RenderNode) -> Bool {
-        return false
-//        return lhs.abstract == rhs.abstract && lhs.versions == rhs.versions && lhs.identifier == rhs.identifier && lhs.metadata == rhs.metadata && lhs.abstractVariants == rhs.abstractVariants && lhs.kind == rhs.kind && lhs.references == rhs.references && lhs.variants == rhs.variants && lhs.assetReferences == rhs.assetReferences && lhs.defaultImplementationsSections == rhs.defaultImplementationsSections && lhs.deprecationSummary == rhs.deprecationSummary && lhs.deprecationSummaryVariants == rhs.deprecationSummaryVariants && lhs.schemaVersion == rhs.schemaVersion && lhs.sections == rhs.sections && lhs.metadata == rhs.metadata && lhs.kind == rhs.kind && lhs.hierarchy == rhs.hierarchy && lhs.abstractVariants == rhs.abstractVariants && lhs.topicSections == rhs.topicSections && lhs.defaultImplementationsSections == rhs.defaultImplementationsSections && lhs.relationshipSections == rhs.relationshipSections && lhs.seeAlsoSections == rhs.seeAlsoSections && lhs.primaryContentSections == rhs.primaryContentSections && lhs.sampleDownload == rhs.sampleDownload && lhs.downloadNotAvailableSummary == rhs.downloadNotAvailableSummary && lhs.deprecationSummary == rhs.deprecationSummary && lhs.diffAvailability == rhs.diffAvailability && lhs.variants == rhs.variants && lhs.variantOverrides == rhs.variantOverrides
-        
     }
 }
 
@@ -182,8 +171,35 @@ extension Optional: Diffable where Wrapped: Diffable & Equatable {
     }
 }
 
-extension Array: Diffable where Element: Diffable & Equatable & Encodable {
+extension Array: Diffable where Element: Equatable & Encodable {
     /// Returns the differences between this array and the given one.
+    func difference(from other: Array<Element>, at path: Path) -> Differences where Element: Diffable {
+        let arrayDiffs = self.difference(from: other) { element1, element2 in
+            return element1.similar(to: element2)
+        }
+        var differences: [CollectionDifference.Change] = arrayDiffs.removals
+        differences.append(contentsOf: arrayDiffs.insertions)
+        
+        var patchOperations = differences.map { diff -> JSONPatchOperation in
+            switch diff {
+            case .remove(let offset, _, _):
+                let pointer = JSONPointer(from: path + [IntegerKey(offset)])
+                return .remove(pointer: pointer)
+            case .insert(let offset, let element, _):
+                let pointer = JSONPointer(from: path + [IntegerKey(offset)])
+                return .add(pointer: pointer, encodableValue: element)
+            }
+        }
+        
+        for (index, value) in enumerated() {
+            if other[index] != value {
+                patchOperations.append(contentsOf: value.difference(from: other[index], at: path + [IntegerKey(index)]))
+            }
+        }
+        
+        return patchOperations
+    }
+    
     func difference(from other: Array<Element>, at path: Path) -> Differences {
         let arrayDiffs = self.difference(from: other)
         var differences: [CollectionDifference.Change] = arrayDiffs.removals
@@ -215,7 +231,7 @@ extension Array: Diffable where Element: Diffable & Equatable & Encodable {
 //        return difference
 //    }
 //}
-//
+
 //extension RenderHierarchy: Diffable {
 //    /// Returns the difference between this RenderHierarchy and the given one.
 //    public func difference(from other: RenderHierarchy, at path: Path) -> Differences {
@@ -482,44 +498,44 @@ extension Array: Diffable where Element: Diffable & Equatable & Encodable {
 //
 // MARK: Equatable Conformance
 
-extension TaskGroupRenderSection: Equatable {
-    public static func == (lhs: TaskGroupRenderSection, rhs: TaskGroupRenderSection) -> Bool {
-        return lhs.kind == rhs.kind && lhs.title == rhs.title && lhs.abstract == rhs.abstract && lhs.discussion?.kind == rhs.discussion?.kind && lhs.identifiers == rhs.identifiers && lhs.generated == rhs.generated
-    }
-}
-
-extension RenderHierarchyChapter: Equatable {
-    public static func == (lhs: RenderHierarchyChapter, rhs: RenderHierarchyChapter) -> Bool {
-        return lhs.reference == rhs.reference && lhs.tutorials == rhs.tutorials
-    }
-}
-
-extension RenderHierarchyTutorial: Equatable {
-    public static func == (lhs: RenderHierarchyTutorial, rhs: RenderHierarchyTutorial) -> Bool {
-        return lhs.reference == rhs.reference && lhs.landmarks == rhs.landmarks
-    }
-}
-
-extension RenderHierarchyLandmark: Equatable {
-    public static func == (lhs: RenderHierarchyLandmark, rhs: RenderHierarchyLandmark) -> Bool {
-        return lhs.reference == rhs.reference && lhs.kind == rhs.kind
-    }
-}
-
-extension LineHighlighter.Highlight: Equatable {
-    public static func == (lhs: LineHighlighter.Highlight, rhs: LineHighlighter.Highlight) -> Bool {
-        return lhs.line == rhs.line && lhs.start == rhs.start && lhs.length == rhs.length
-    }
-}
-
-extension DataAsset: Equatable {
-    public static func == (lhs: DataAsset, rhs: DataAsset) -> Bool {
-        return lhs.context == rhs.context && lhs.variants == rhs.variants
-    }
-}
-
-struct AnyRenderSection: Equatable, Encodable {
-    static func == (lhs: AnyRenderSection, rhs: AnyRenderSection) -> Bool {
+//extension TaskGroupRenderSection: Equatable {
+//    public static func == (lhs: TaskGroupRenderSection, rhs: TaskGroupRenderSection) -> Bool {
+//        return lhs.kind == rhs.kind && lhs.title == rhs.title && lhs.abstract == rhs.abstract && lhs.discussion?.kind == rhs.discussion?.kind && lhs.identifiers == rhs.identifiers && lhs.generated == rhs.generated
+//    }
+//}
+//
+//extension RenderHierarchyChapter: Equatable {
+//    public static func == (lhs: RenderHierarchyChapter, rhs: RenderHierarchyChapter) -> Bool {
+//        return lhs.reference == rhs.reference && lhs.tutorials == rhs.tutorials
+//    }
+//}
+//
+//extension RenderHierarchyTutorial: Equatable {
+//    public static func == (lhs: RenderHierarchyTutorial, rhs: RenderHierarchyTutorial) -> Bool {
+//        return lhs.reference == rhs.reference && lhs.landmarks == rhs.landmarks
+//    }
+//}
+//
+//extension RenderHierarchyLandmark: Equatable {
+//    public static func == (lhs: RenderHierarchyLandmark, rhs: RenderHierarchyLandmark) -> Bool {
+//        return lhs.reference == rhs.reference && lhs.kind == rhs.kind
+//    }
+//}
+//
+//extension LineHighlighter.Highlight: Equatable {
+//    public static func == (lhs: LineHighlighter.Highlight, rhs: LineHighlighter.Highlight) -> Bool {
+//        return lhs.line == rhs.line && lhs.start == rhs.start && lhs.length == rhs.length
+//    }
+//}
+//
+//extension DataAsset: Equatable {
+//    public static func == (lhs: DataAsset, rhs: DataAsset) -> Bool {
+//        return lhs.context == rhs.context && lhs.variants == rhs.variants
+//    }
+//}
+//
+public struct AnyRenderSection: Equatable, Encodable {
+    public static func == (lhs: AnyRenderSection, rhs: AnyRenderSection) -> Bool {
         switch (lhs.value.kind, rhs.value.kind) {
         case (.intro, .intro), (.hero, .hero):
             return (lhs.value as! IntroRenderSection) == (rhs.value as! IntroRenderSection)
@@ -556,139 +572,156 @@ struct AnyRenderSection: Equatable, Encodable {
             return false
         }
     }
-    
-    func encode(to encoder: Encoder) throws {
+
+    public func encode(to encoder: Encoder) throws {
         try value.encode(to: encoder)
     }
 
-    var value: RenderSection
+    public var value: RenderSection
     init(_ value: RenderSection) { self.value = value }
 }
-
-extension RelationshipsRenderSection: Equatable {
-    public static func == (lhs: RelationshipsRenderSection, rhs: RelationshipsRenderSection) -> Bool {
-        return lhs.title == rhs.title && lhs.identifiers == rhs.identifiers && lhs.type == rhs.type
-    }
-}
-
-extension ParametersRenderSection: Equatable {
-    public static func == (lhs: ParametersRenderSection, rhs: ParametersRenderSection) -> Bool {
-        return lhs.parameters == rhs.parameters
-    }
-}
-
-extension ParameterRenderSection: Equatable {
-    public static func == (lhs: ParameterRenderSection, rhs: ParameterRenderSection) -> Bool {
-        return lhs.name == rhs.name && lhs.content == rhs.content
-    }
-}
-
-extension ContentRenderSection: Equatable {
-    public static func == (lhs: ContentRenderSection, rhs: ContentRenderSection) -> Bool {
-        return lhs.content == rhs.content
-    }
-}
-
-extension TutorialSectionsRenderSection: Equatable {
-    public static func == (lhs: TutorialSectionsRenderSection, rhs: TutorialSectionsRenderSection) -> Bool {
-        return lhs.tasks == rhs.tasks
-    }
-}
-
-extension TutorialSectionsRenderSection.Section: Equatable {
-    public static func == (lhs: TutorialSectionsRenderSection.Section, rhs: TutorialSectionsRenderSection.Section) -> Bool {
-        return lhs.title == rhs.title && lhs.contentSection == rhs.contentSection && lhs.stepsSection == rhs.stepsSection && lhs.anchor == rhs.anchor
-    }
-}
-
-extension ContentLayout: Equatable {
-    public static func == (lhs: ContentLayout, rhs: ContentLayout) -> Bool {
-        switch (lhs, rhs) {
-        case (.fullWidth(let lhsContent), .fullWidth(let rhsContent)):
-            return lhsContent == rhsContent
-        case (.contentAndMedia(let lhsContent), .contentAndMedia(let rhsContent)):
-            return lhsContent == rhsContent
-        case (.columns(let lhsContent), .columns(let rhsContent)):
-            return lhsContent == rhsContent
-        default:
-            return false
-        }
-    }
-}
-
-extension ContentAndMediaSection: Equatable {
-    public static func == (lhs: ContentAndMediaSection, rhs: ContentAndMediaSection) -> Bool {
-        return lhs.layout == rhs.layout && lhs.title == rhs.title && lhs.eyebrow == rhs.eyebrow && lhs.content == rhs.content && lhs.media == rhs.media && lhs.mediaPosition == rhs.mediaPosition
-    }
-}
-
-extension TutorialAssessmentsRenderSection: Equatable {
-    public static func == (lhs: TutorialAssessmentsRenderSection, rhs: TutorialAssessmentsRenderSection) -> Bool {
-        return lhs.assessments == rhs.assessments && lhs.anchor == rhs.anchor
-    }
-}
-
-extension TutorialAssessmentsRenderSection.Assessment: Equatable {
-    public static func == (lhs: TutorialAssessmentsRenderSection.Assessment, rhs: TutorialAssessmentsRenderSection.Assessment) -> Bool {
-        lhs.type == rhs.type && lhs.title == rhs.title && lhs.content == rhs.content && lhs.choices == rhs.choices
-    }
-}
-
-extension TutorialAssessmentsRenderSection.Assessment.Choice: Equatable {
-    public static func == (lhs: TutorialAssessmentsRenderSection.Assessment.Choice, rhs: TutorialAssessmentsRenderSection.Assessment.Choice) -> Bool {
-        return lhs.content == rhs.content && lhs.isCorrect == rhs.isCorrect && lhs.justification == rhs.justification && lhs.reaction == rhs.reaction
-    }
-}
-
-extension VolumeRenderSection: Equatable {
-    public static func == (lhs: VolumeRenderSection, rhs: VolumeRenderSection) -> Bool {
-        return lhs.name == rhs.name && lhs.image == rhs.image && lhs.content == rhs.content && lhs.chapters == rhs.chapters
-    }
-}
-
-extension VolumeRenderSection.Chapter: Equatable {
-    public static func == (lhs: VolumeRenderSection.Chapter, rhs: VolumeRenderSection.Chapter) -> Bool {
-        return lhs.name == rhs.name && lhs.content == rhs.content && lhs.tutorials == rhs.tutorials && lhs.image == rhs.image && lhs.headings == rhs.headings
-    }
-}
-
-extension ContentAndMediaGroupSection: Equatable {
-    public static func == (lhs: ContentAndMediaGroupSection, rhs: ContentAndMediaGroupSection) -> Bool {
-        return lhs.layout == rhs.layout && lhs.sections == rhs.sections && lhs.headings == rhs.headings
-    }
-}
-
-extension CallToActionSection: Equatable {
-    public static func == (lhs: CallToActionSection, rhs: CallToActionSection) -> Bool {
-        return lhs.title == rhs.title && lhs.abstract == rhs.abstract && lhs.media == rhs.media && lhs.action == rhs.action && lhs.featuredEyebrow == rhs.featuredEyebrow
-    }
-}
-
-extension TutorialArticleSection: Equatable {
-    public static func == (lhs: TutorialArticleSection, rhs: TutorialArticleSection) -> Bool {
-        return lhs.content == rhs.content
-    }
-}
-
-extension ResourcesRenderSection: Equatable {
-    public static func == (lhs: ResourcesRenderSection, rhs: ResourcesRenderSection) -> Bool {
-        return lhs.tiles == rhs.tiles && lhs.content == rhs.content
-    }
-}
-
-extension RenderTile: Equatable {
-    public static func == (lhs: RenderTile, rhs: RenderTile) -> Bool {
-        return lhs.identifier == rhs.identifier && lhs.title == rhs.title && lhs.content == rhs.content && lhs.action == rhs.action && lhs.media == rhs.media
-    }
-}
-
-extension RenderMetadata: Equatable {
-    /// DO NOT USE
-    //TODO: finish
-    public static func == (lhs: RenderMetadata, rhs: RenderMetadata) -> Bool {
-        return false
-    }
-    
-    
-}
+//
+//extension RelationshipsRenderSection: Equatable {
+//    public static func == (lhs: RelationshipsRenderSection, rhs: RelationshipsRenderSection) -> Bool {
+//        return lhs.title == rhs.title && lhs.identifiers == rhs.identifiers && lhs.type == rhs.type
+//    }
+//}
+//
+//extension ParametersRenderSection: Equatable {
+//    public static func == (lhs: ParametersRenderSection, rhs: ParametersRenderSection) -> Bool {
+//        return lhs.parameters == rhs.parameters
+//    }
+//}
+//
+//extension ParameterRenderSection: Equatable {
+//    public static func == (lhs: ParameterRenderSection, rhs: ParameterRenderSection) -> Bool {
+//        return lhs.name == rhs.name && lhs.content == rhs.content
+//    }
+//}
+//
+//extension ContentRenderSection: Equatable {
+//    public static func == (lhs: ContentRenderSection, rhs: ContentRenderSection) -> Bool {
+//        return lhs.content == rhs.content
+//    }
+//}
+//
+//extension TutorialSectionsRenderSection: Equatable {
+//    public static func == (lhs: TutorialSectionsRenderSection, rhs: TutorialSectionsRenderSection) -> Bool {
+//        return lhs.tasks == rhs.tasks
+//    }
+//}
+//
+//extension TutorialSectionsRenderSection.Section: Equatable {
+//    public static func == (lhs: TutorialSectionsRenderSection.Section, rhs: TutorialSectionsRenderSection.Section) -> Bool {
+//        return lhs.title == rhs.title && lhs.contentSection == rhs.contentSection && lhs.stepsSection == rhs.stepsSection && lhs.anchor == rhs.anchor
+//    }
+//}
+//
+//extension ContentLayout: Equatable {
+//    public static func == (lhs: ContentLayout, rhs: ContentLayout) -> Bool {
+//        switch (lhs, rhs) {
+//        case (.fullWidth(let lhsContent), .fullWidth(let rhsContent)):
+//            return lhsContent == rhsContent
+//        case (.contentAndMedia(let lhsContent), .contentAndMedia(let rhsContent)):
+//            return lhsContent == rhsContent
+//        case (.columns(let lhsContent), .columns(let rhsContent)):
+//            return lhsContent == rhsContent
+//        default:
+//            return false
+//        }
+//    }
+//}
+//
+//extension ContentAndMediaSection: Equatable {
+//    public static func == (lhs: ContentAndMediaSection, rhs: ContentAndMediaSection) -> Bool {
+//        return lhs.layout == rhs.layout && lhs.title == rhs.title && lhs.eyebrow == rhs.eyebrow && lhs.content == rhs.content && lhs.media == rhs.media && lhs.mediaPosition == rhs.mediaPosition
+//    }
+//}
+//
+//extension TutorialAssessmentsRenderSection: Equatable {
+//    public static func == (lhs: TutorialAssessmentsRenderSection, rhs: TutorialAssessmentsRenderSection) -> Bool {
+//        return lhs.assessments == rhs.assessments && lhs.anchor == rhs.anchor
+//    }
+//}
+//
+//extension TutorialAssessmentsRenderSection.Assessment: Equatable {
+//    public static func == (lhs: TutorialAssessmentsRenderSection.Assessment, rhs: TutorialAssessmentsRenderSection.Assessment) -> Bool {
+//        lhs.type == rhs.type && lhs.title == rhs.title && lhs.content == rhs.content && lhs.choices == rhs.choices
+//    }
+//}
+//
+//extension TutorialAssessmentsRenderSection.Assessment.Choice: Equatable {
+//    public static func == (lhs: TutorialAssessmentsRenderSection.Assessment.Choice, rhs: TutorialAssessmentsRenderSection.Assessment.Choice) -> Bool {
+//        return lhs.content == rhs.content && lhs.isCorrect == rhs.isCorrect && lhs.justification == rhs.justification && lhs.reaction == rhs.reaction
+//    }
+//}
+//
+//extension VolumeRenderSection: Equatable {
+//    public static func == (lhs: VolumeRenderSection, rhs: VolumeRenderSection) -> Bool {
+//        return lhs.name == rhs.name && lhs.image == rhs.image && lhs.content == rhs.content && lhs.chapters == rhs.chapters
+//    }
+//}
+//
+//extension VolumeRenderSection.Chapter: Equatable {
+//    public static func == (lhs: VolumeRenderSection.Chapter, rhs: VolumeRenderSection.Chapter) -> Bool {
+//        return lhs.name == rhs.name && lhs.content == rhs.content && lhs.tutorials == rhs.tutorials && lhs.image == rhs.image && lhs.headings == rhs.headings
+//    }
+//}
+//
+//extension ContentAndMediaGroupSection: Equatable {
+//    public static func == (lhs: ContentAndMediaGroupSection, rhs: ContentAndMediaGroupSection) -> Bool {
+//        return lhs.layout == rhs.layout && lhs.sections == rhs.sections && lhs.headings == rhs.headings
+//    }
+//}
+//
+//extension CallToActionSection: Equatable {
+//    public static func == (lhs: CallToActionSection, rhs: CallToActionSection) -> Bool {
+//        return lhs.title == rhs.title && lhs.abstract == rhs.abstract && lhs.media == rhs.media && lhs.action == rhs.action && lhs.featuredEyebrow == rhs.featuredEyebrow
+//    }
+//}
+//
+//extension TutorialArticleSection: Equatable {
+//    public static func == (lhs: TutorialArticleSection, rhs: TutorialArticleSection) -> Bool {
+//        return lhs.content == rhs.content
+//    }
+//}
+//
+//extension ResourcesRenderSection: Equatable {
+//    public static func == (lhs: ResourcesRenderSection, rhs: ResourcesRenderSection) -> Bool {
+//        return lhs.tiles == rhs.tiles && lhs.content == rhs.content
+//    }
+//}
+//
+//extension RenderTile: Equatable {
+//    public static func == (lhs: RenderTile, rhs: RenderTile) -> Bool {
+//        return lhs.identifier == rhs.identifier && lhs.title == rhs.title && lhs.content == rhs.content && lhs.action == rhs.action && lhs.media == rhs.media
+//    }
+//}
+//
+//extension RenderMetadata: Equatable {
+//    /// DO NOT USE
+//    //TODO: finish
+//    public static func == (lhs: RenderMetadata, rhs: RenderMetadata) -> Bool {
+//        return false
+//    }
+//}
+//
+//extension RenderHierarchy: Equatable {
+//    public static func == (lhs: RenderHierarchy, rhs: RenderHierarchy) -> Bool {
+//        switch (lhs, rhs) {
+//        case (.reference(let lhsHierarchy), .reference(let rhsHierarchy)):
+//            return lhsHierarchy == rhsHierarchy
+//        case (.tutorials(let lhsHierarchy), .tutorials(let rhsHierarchy)):
+//            return lhsHierarchy == rhsHierarchy
+//        default:
+//            return false
+//        }
+//    }
+//}
+//
+//extension VariantCollection: Equatable {
+//    public static func == (lhs: VariantCollection<Value>, rhs: VariantCollection<Value>) -> Bool {
+//        return lhs.defaultValue == rhs.defaultValue && lhs.variants == rhs.variants
+//    }
+//}
 

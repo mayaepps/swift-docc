@@ -8,10 +8,26 @@
  See https://swift.org/CONTRIBUTORS.txt for Swift project authors
 */
 
+import Foundation
+
 /// A type-erased codable value.
 ///
 /// An `AnyCodable` value forwards encoding and decoding operations to the underlying base.
-public struct AnyCodable: Codable, CustomDebugStringConvertible {
+public struct AnyCodable: Codable, CustomDebugStringConvertible, Equatable {
+    public static func == (lhs: AnyCodable, rhs: AnyCodable) -> Bool {
+        do {
+            let encoder = JSONEncoder() as! Encoder
+            let lhsData = try lhs.encode(to: encoder)
+            let rhsData = try rhs.encode(to: encoder)
+            return lhsData == rhsData
+        } catch {
+            print("The AnyCodable value couldn't be encoded while checking for equality.")
+            return false
+        }
+        
+    }
+    
+    
     /// The base encodable value.
     public var value: Encodable
     

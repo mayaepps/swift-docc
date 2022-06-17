@@ -33,7 +33,7 @@ public enum RenderReferenceType: String, Codable {
 /// The identifier of a render reference.
 ///
 /// This structure wraps a string value to make handling of render identifiers more type safe and explicit.
-public struct RenderReferenceIdentifier: Codable, Hashable {
+public struct RenderReferenceIdentifier: Codable, Hashable, Equatable {
     /// The wrapped string identifier.
     public var identifier: String
     
