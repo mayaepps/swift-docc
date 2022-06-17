@@ -96,15 +96,17 @@ extension TaskGroupRenderSection {
 // Conformance to Diffable
 extension TaskGroupRenderSection: Diffable {
     func difference(from other: TaskGroupRenderSection, at path: Path) -> Differences {
-        var diffs = Differences()
-        if let diff = optionalPropertyDifference(title, from: other.title, at: path + [CodingKeys.title]) {
-            diffs.append(diff)
+        if let diff = self.checkIfReplaced(comparingAgainst: other, at: path) {
+            return diff
         }
+        var diffs = Differences()
         
-        //TODO: RenderSection has to conform to Equatable
-        // diffs.append(contentsOf: Self.diff(from: other.discussion, to: discussion, at: path + [CodingKeys.discussion]))
-        diffs.append(contentsOf: Self.diff(from: other.identifiers, to: identifiers, at: path + [CodingKeys.identifiers]))
-        diffs.append(contentsOf: Self.diff(from: other.generated, to: generated, at: path + [CodingKeys.generated]))
+        diffs.append(contentsOf: optionalPropertyDifference(title, from: other.title, at: path + [CodingKeys.title]))
+        
+        //TODO: RenderSection has to conform to Diffable
+//        diffs.append(contentsOf: discussion.difference(from: other.discussion, at: path + [CodingKeys.discussion]))
+        diffs.append(contentsOf: identifiers.difference(from: other.identifiers, at: path + [CodingKeys.identifiers]))
+        diffs.append(contentsOf: propertyDifference(generated, from: other.generated, at: path + [CodingKeys.generated]))
         return diffs
     }
     

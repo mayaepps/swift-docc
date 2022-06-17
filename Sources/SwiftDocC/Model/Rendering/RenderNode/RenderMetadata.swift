@@ -169,6 +169,10 @@ extension RenderMetadata: Codable {
 
         /// Returns the difference between two RenderMetadata.Modules.
         public func difference(from other: RenderMetadata.Module, at path: Path) -> Differences {
+            if let diff = self.checkIfReplaced(comparingAgainst: other, at: path) {
+                return diff
+            }
+            
             var differences = Differences()
             if name != other.name {
                 differences.append(.replace(pointer: JSONPointer(from: path + [CodingKeys.name]), encodableValue: name))
@@ -306,24 +310,12 @@ extension RenderMetadata: Codable {
         var diffs = Differences()
 
         // Diffing optional properties:
-        if let titlePatch = optionalPropertyDifference(title, from: other.title, at: path + [CodingKeys.title]) {
-            diffs.append(titlePatch)
-        }
-        if let idPatch = optionalPropertyDifference(externalID, from: other.externalID, at: path + [CodingKeys.externalID]) {
-            diffs.append(idPatch)
-        }
-        if let currentSymbolKindPatch = optionalPropertyDifference(symbolKind, from: other.symbolKind, at: path + [CodingKeys.symbolKind]) {
-            diffs.append(currentSymbolKindPatch)
-        }
-        if let currentRolePatch = optionalPropertyDifference(role, from: other.role, at: path + [CodingKeys.role]) {
-            diffs.append(currentRolePatch)
-        }
-        if let currentRoleHeadingPatch = optionalPropertyDifference(roleHeading, from: other.roleHeading, at: path + [CodingKeys.roleHeading]) {
-            diffs.append(currentRoleHeadingPatch)
-        }
-        if let currentVersionPatch = optionalPropertyDifference(version, from: other.version, at: path + [CodingKeys.version]) {
-            diffs.append(currentVersionPatch)
-        }
+        diffs.append(contentsOf: optionalPropertyDifference(title, from: other.title, at: path + [CodingKeys.title]))
+        diffs.append(contentsOf: optionalPropertyDifference(externalID, from: other.externalID, at: path + [CodingKeys.externalID]))
+        diffs.append(contentsOf: optionalPropertyDifference(symbolKind, from: other.symbolKind, at: path + [CodingKeys.symbolKind]))
+        diffs.append(contentsOf: optionalPropertyDifference(role, from: other.role, at: path + [CodingKeys.role]))
+        diffs.append(contentsOf: optionalPropertyDifference(roleHeading, from: other.roleHeading, at: path + [CodingKeys.roleHeading]))
+        diffs.append(contentsOf: optionalPropertyDifference(version, from: other.version, at: path + [CodingKeys.version]))
 
         // Diffing structs and arrays
         diffs.append(contentsOf: modules.difference(from: other.modules, at: path + [CodingKeys.modules]))

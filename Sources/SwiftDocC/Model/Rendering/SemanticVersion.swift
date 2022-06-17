@@ -64,8 +64,11 @@ public struct SemanticVersion: Codable, Equatable, CustomStringConvertible, Diff
     
     /// Returns the differences between this SemanticVersion and the given one.
     public func difference(from other: SemanticVersion, at path: Path) -> Differences {
+        if let diff = self.checkIfReplaced(comparingAgainst: other, at: path) {
+            return diff
+        }
+        
         var diff = Differences()
-
         if major != other.major {
             diff.append(.replace(pointer: JSONPointer(from: path + [CodingKeys.major]), value: AnyCodable(major)))
         }

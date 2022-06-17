@@ -84,7 +84,7 @@ public enum TopicReferenceResolutionResult: Hashable, CustomStringConvertible {
 ///
 /// > Important: This type has copy-on-write semantics and wraps an underlying class to store
 /// > its data.
-public struct ResolvedTopicReference: Hashable, Codable, Equatable, CustomStringConvertible, Diffable {
+public struct ResolvedTopicReference: Hashable, Codable, Equatable, CustomStringConvertible {
     typealias ReferenceBundleIdentifier = String
     typealias ReferenceKey = String
     
@@ -428,24 +428,6 @@ public struct ResolvedTopicReference: Hashable, Codable, Equatable, CustomString
             self.absoluteString = self.url.absoluteString
         }
     }
-    
-    /// Returns the differences between this ResolvedTopicReference and the given one.
-    public func difference(from other: ResolvedTopicReference, at path: Path) -> Differences {
-        var diffs = Differences()
-        // The only part of the URL that is encoded to RenderJSON is the absolute string.
-        let urlString = url.absoluteString
-        let otherUrlString = other.url.absoluteString
-        if urlString != otherUrlString {
-            diffs.append(.replace(pointer: JSONPointer(from: path + [CodingKeys.url]), value: AnyCodable(urlString)))
-        }
-        // The only part of the source language that is encoded to RenderJSON is the id.
-        let sourceLanguageId = sourceLanguage.id
-        let otherSourceLanguageId = other.sourceLanguage.id
-        if sourceLanguageId != otherSourceLanguageId {
-            diffs.append(.replace(pointer: JSONPointer(from: path + [CodingKeys.interfaceLanguage]), value: AnyCodable(sourceLanguageId)))
-        }
-        return diffs
-    }
 }
 
 typealias ResolvedTopicReferenceCacheKey = String
@@ -462,6 +444,30 @@ extension ResolvedTopicReference {
             assert(reference.topicURL.components.host != nil)
             return reference.topicURL.absoluteString.appending(isSymbolLink)
         }
+    }
+}
+
+extension ResolvedTopicReference: Diffable {
+    /// Returns the differences between this ResolvedTopicReference and the given one.
+    public func difference(from other: ResolvedTopicReference, at path: Path) -> Differences {
+        if let diff = self.checkIfReplaced(comparingAgainst: other, at: path) {
+            return diff
+        }
+        
+        var diffs = Differences()
+        // The only part of the URL that is encoded to RenderJSON is the absolute string.
+        let urlString = url.absoluteString
+        let otherUrlString = other.url.absoluteString
+        if urlString != otherUrlString {
+            diffs.append(.replace(pointer: JSONPointer(from: path + [CodingKeys.url]), value: AnyCodable(urlString)))
+        }
+        // The only part of the source language that is encoded to RenderJSON is the id.
+        let sourceLanguageId = sourceLanguage.id
+        let otherSourceLanguageId = other.sourceLanguage.id
+        if sourceLanguageId != otherSourceLanguageId {
+            diffs.append(.replace(pointer: JSONPointer(from: path + [CodingKeys.interfaceLanguage]), value: AnyCodable(sourceLanguageId)))
+        }
+        return diffs
     }
 }
 

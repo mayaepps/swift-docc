@@ -22,38 +22,38 @@ extension Diffable where Self: Equatable {
     func similar(to other: Self) -> Bool {
         return self == other
     }
+    
+    func checkIfReplaced(comparingAgainst other: Self, at path: Path) -> [JSONPatchOperation]? where Self: Encodable {
+        if self == other {
+            return []
+        } else if self.similar(to: other) {
+            return nil
+        } else {
+            return [.replace(pointer: JSONPointer(from: path), encodableValue: self)]
+        }
+    }
 }
 
 extension Diffable {
-    
-    static func diff<T>(from old: T, to new: T, at path: Path) -> Differences where T: Equatable & Diffable & Encodable {
-        if new == old {
-            return []
-        } else if new.similar(to: old) {
-            return old.difference(from: new, at: path)
-        } else {
-            return [.replace(pointer: JSONPointer(from: path), encodableValue: old)]
-        }
-    }
-    
-    static func diff<T>(from new: T, to old: T, at path: Path) -> Differences where T: Equatable & Encodable {
-        if new != old {
-            return [.replace(pointer: JSONPointer(from: path), encodableValue: new)]
+    /// Returns the difference between two optional properties.
+    func propertyDifference<T: Equatable & Encodable>(_ current: T, from other: T, at path: Path) -> Differences {
+        if current != other {
+            return [.replace(pointer: JSONPointer(from: path), encodableValue: current)]
         }
         return []
     }
     
     /// Unwraps and returns the difference between two optional properties.
-    func optionalPropertyDifference<T>(_ current: T?, from other: T?, at path: Path) -> JSONPatchOperation? where T: Equatable, T: Codable {
-        var difference: JSONPatchOperation? = nil
+    func optionalPropertyDifference<T>(_ current: T?, from other: T?, at path: Path) -> Differences where T: Equatable, T: Codable {
+        var difference = Differences()
         if let current = current, let other = other {
             if current != other {
-                difference = .replace(pointer: JSONPointer(from: path), encodableValue: current)
+                difference.append(.replace(pointer: JSONPointer(from: path), encodableValue: current))
             }
         } else if other != nil {
-            difference = .remove(pointer: JSONPointer(from: path))
+            difference.append(.remove(pointer: JSONPointer(from: path)))
         } else if let current = current {
-            difference = .add(pointer: JSONPointer(from: path), encodableValue: current)
+            difference.append(.add(pointer: JSONPointer(from: path), encodableValue: current))
         }
         return difference
     }
@@ -93,7 +93,7 @@ extension RenderNode: Diffable {
         
         var diffs = Differences()
         
-        diffs.append(contentsOf: Self.diff(from: other.kind, to: kind, at: path + [CodingKeys.kind]))
+        diffs.append(contentsOf: propertyDifference(kind, from: other.kind, at: path + [CodingKeys.kind]))
         diffs.append(contentsOf: abstract.difference(from: other.abstract, at: path + [CodingKeys.abstract]))
         diffs.append(contentsOf: schemaVersion.difference(from:other.schemaVersion, at: path + [CodingKeys.schemaVersion]))
         diffs.append(contentsOf: identifier.difference(from:other.identifier, at: path + [CodingKeys.identifier]))
@@ -200,6 +200,7 @@ extension Array: Diffable where Element: Equatable & Encodable {
         return patchOperations
     }
     
+    /// Returns the differences between this array and the given one assuming none of the elements are similar.
     func difference(from other: Array<Element>, at path: Path) -> Differences {
         let arrayDiffs = self.difference(from: other)
         var differences: [CollectionDifference.Change] = arrayDiffs.removals

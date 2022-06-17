@@ -119,8 +119,7 @@ extension RenderNode: Codable {
         // If given a previous node, diff between it and this RenderNode.
         if let previousNode = encoder.userInfoPreviousNode {
             
-            let versionPatch = VersionPatch(archiveVersion: previousNode.metadata.version ?? ArchiveVersion(identifier: "N/A", displayName: "N/A"),
-                                            jsonPatch: previousNode.difference(from: self, at: encoder.codingPath))
+            let versionPatch = VersionPatch(archiveVersion: previousNode.metadata.version ?? ArchiveVersion(identifier: "N/A", displayName: "N/A"), jsonPatch: previousNode.difference(from: self, at: encoder.codingPath))
             
             let allPreviousVersionPatches = (versions ?? []) + [versionPatch]
             
