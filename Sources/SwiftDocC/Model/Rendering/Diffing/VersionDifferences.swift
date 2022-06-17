@@ -14,16 +14,16 @@ import Foundation
 /// Defines differences between documentation content versions.
 ///
 /// This class can be used to accumulate difference information in the form of a JSONPatch while encoding a tree of objects.
-public class VersionPatch: Codable {
+public struct VersionPatch: Codable, Equatable {
         
     let version: ArchiveVersion
     public var patch: JSONPatch
     
-    public func add(_ patchOperation: JSONPatchOperation) {
+    public mutating func add(_ patchOperation: JSONPatchOperation) {
         patch.append(patchOperation)
     }
     
-    public func add<PatchOperations>(
+    public mutating func add<PatchOperations>(
         contentsOf patchOperations: PatchOperations
     ) where PatchOperations: Collection, PatchOperations.Element == JSONPatchOperation {
         for operation in patchOperations {

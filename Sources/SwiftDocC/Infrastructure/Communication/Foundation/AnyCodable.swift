@@ -16,9 +16,9 @@ import Foundation
 public struct AnyCodable: Codable, CustomDebugStringConvertible, Equatable {
     public static func == (lhs: AnyCodable, rhs: AnyCodable) -> Bool {
         do {
-            let encoder = JSONEncoder() as! Encoder
-            let lhsData = try lhs.encode(to: encoder)
-            let rhsData = try rhs.encode(to: encoder)
+            let encoder = JSONEncoder()
+            let lhsData = try encoder.encode(lhs)
+            let rhsData = try encoder.encode(rhs)
             return lhsData == rhsData
         } catch {
             print("The AnyCodable value couldn't be encoded while checking for equality.")

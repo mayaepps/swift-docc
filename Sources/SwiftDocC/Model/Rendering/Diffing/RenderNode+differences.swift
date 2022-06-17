@@ -498,42 +498,6 @@ extension Array: Diffable where Element: Equatable & Encodable {
 //
 // MARK: Equatable Conformance
 
-//extension TaskGroupRenderSection: Equatable {
-//    public static func == (lhs: TaskGroupRenderSection, rhs: TaskGroupRenderSection) -> Bool {
-//        return lhs.kind == rhs.kind && lhs.title == rhs.title && lhs.abstract == rhs.abstract && lhs.discussion?.kind == rhs.discussion?.kind && lhs.identifiers == rhs.identifiers && lhs.generated == rhs.generated
-//    }
-//}
-//
-//extension RenderHierarchyChapter: Equatable {
-//    public static func == (lhs: RenderHierarchyChapter, rhs: RenderHierarchyChapter) -> Bool {
-//        return lhs.reference == rhs.reference && lhs.tutorials == rhs.tutorials
-//    }
-//}
-//
-//extension RenderHierarchyTutorial: Equatable {
-//    public static func == (lhs: RenderHierarchyTutorial, rhs: RenderHierarchyTutorial) -> Bool {
-//        return lhs.reference == rhs.reference && lhs.landmarks == rhs.landmarks
-//    }
-//}
-//
-//extension RenderHierarchyLandmark: Equatable {
-//    public static func == (lhs: RenderHierarchyLandmark, rhs: RenderHierarchyLandmark) -> Bool {
-//        return lhs.reference == rhs.reference && lhs.kind == rhs.kind
-//    }
-//}
-//
-//extension LineHighlighter.Highlight: Equatable {
-//    public static func == (lhs: LineHighlighter.Highlight, rhs: LineHighlighter.Highlight) -> Bool {
-//        return lhs.line == rhs.line && lhs.start == rhs.start && lhs.length == rhs.length
-//    }
-//}
-//
-//extension DataAsset: Equatable {
-//    public static func == (lhs: DataAsset, rhs: DataAsset) -> Bool {
-//        return lhs.context == rhs.context && lhs.variants == rhs.variants
-//    }
-//}
-//
 public struct AnyRenderSection: Equatable, Encodable {
     public static func == (lhs: AnyRenderSection, rhs: AnyRenderSection) -> Bool {
         switch (lhs.value.kind, rhs.value.kind) {
@@ -557,16 +521,18 @@ public struct AnyRenderSection: Equatable, Encodable {
             return (lhs.value as! ResourcesRenderSection) == (rhs.value as! ResourcesRenderSection)
         case (.declarations, .declarations):
             return (lhs.value as! DeclarationsRenderSection) == (rhs.value as! DeclarationsRenderSection)
-//        case (.title, .title):
-//        case (.discussion, .discussion):
+        case (.discussion, .discussion):
+            return (lhs.value as! ContentRenderSection) == (rhs.value as! ContentRenderSection)
         case (.content, .content):
             return (lhs.value as! ContentRenderSection) == (rhs.value as! ContentRenderSection)
-//        case (.taskGroup, .taskGroup):
+        case (.taskGroup, .taskGroup):
+            return (lhs.value as! TaskGroupRenderSection) == (rhs.value as! TaskGroupRenderSection)
         case (.relationships, .relationships):
             return (lhs.value as! RelationshipsRenderSection) == (rhs.value as! RelationshipsRenderSection)
         case (.parameters, .parameters):
             return (lhs.value as! ParametersRenderSection) == (rhs.value as! ParametersRenderSection)
-//        case (.sampleDownload, .sampleDownload):
+        case (.sampleDownload, .sampleDownload):
+            return (lhs.value as! SampleDownloadSection) == (rhs.value as! SampleDownloadSection)
         default:
             print("RENDER SECTION USED THAT IS NOT EQUATABLE \(type(of: lhs.value))")
             return false
@@ -580,148 +546,5 @@ public struct AnyRenderSection: Equatable, Encodable {
     public var value: RenderSection
     init(_ value: RenderSection) { self.value = value }
 }
-//
-//extension RelationshipsRenderSection: Equatable {
-//    public static func == (lhs: RelationshipsRenderSection, rhs: RelationshipsRenderSection) -> Bool {
-//        return lhs.title == rhs.title && lhs.identifiers == rhs.identifiers && lhs.type == rhs.type
-//    }
-//}
-//
-//extension ParametersRenderSection: Equatable {
-//    public static func == (lhs: ParametersRenderSection, rhs: ParametersRenderSection) -> Bool {
-//        return lhs.parameters == rhs.parameters
-//    }
-//}
-//
-//extension ParameterRenderSection: Equatable {
-//    public static func == (lhs: ParameterRenderSection, rhs: ParameterRenderSection) -> Bool {
-//        return lhs.name == rhs.name && lhs.content == rhs.content
-//    }
-//}
-//
-//extension ContentRenderSection: Equatable {
-//    public static func == (lhs: ContentRenderSection, rhs: ContentRenderSection) -> Bool {
-//        return lhs.content == rhs.content
-//    }
-//}
-//
-//extension TutorialSectionsRenderSection: Equatable {
-//    public static func == (lhs: TutorialSectionsRenderSection, rhs: TutorialSectionsRenderSection) -> Bool {
-//        return lhs.tasks == rhs.tasks
-//    }
-//}
-//
-//extension TutorialSectionsRenderSection.Section: Equatable {
-//    public static func == (lhs: TutorialSectionsRenderSection.Section, rhs: TutorialSectionsRenderSection.Section) -> Bool {
-//        return lhs.title == rhs.title && lhs.contentSection == rhs.contentSection && lhs.stepsSection == rhs.stepsSection && lhs.anchor == rhs.anchor
-//    }
-//}
-//
-//extension ContentLayout: Equatable {
-//    public static func == (lhs: ContentLayout, rhs: ContentLayout) -> Bool {
-//        switch (lhs, rhs) {
-//        case (.fullWidth(let lhsContent), .fullWidth(let rhsContent)):
-//            return lhsContent == rhsContent
-//        case (.contentAndMedia(let lhsContent), .contentAndMedia(let rhsContent)):
-//            return lhsContent == rhsContent
-//        case (.columns(let lhsContent), .columns(let rhsContent)):
-//            return lhsContent == rhsContent
-//        default:
-//            return false
-//        }
-//    }
-//}
-//
-//extension ContentAndMediaSection: Equatable {
-//    public static func == (lhs: ContentAndMediaSection, rhs: ContentAndMediaSection) -> Bool {
-//        return lhs.layout == rhs.layout && lhs.title == rhs.title && lhs.eyebrow == rhs.eyebrow && lhs.content == rhs.content && lhs.media == rhs.media && lhs.mediaPosition == rhs.mediaPosition
-//    }
-//}
-//
-//extension TutorialAssessmentsRenderSection: Equatable {
-//    public static func == (lhs: TutorialAssessmentsRenderSection, rhs: TutorialAssessmentsRenderSection) -> Bool {
-//        return lhs.assessments == rhs.assessments && lhs.anchor == rhs.anchor
-//    }
-//}
-//
-//extension TutorialAssessmentsRenderSection.Assessment: Equatable {
-//    public static func == (lhs: TutorialAssessmentsRenderSection.Assessment, rhs: TutorialAssessmentsRenderSection.Assessment) -> Bool {
-//        lhs.type == rhs.type && lhs.title == rhs.title && lhs.content == rhs.content && lhs.choices == rhs.choices
-//    }
-//}
-//
-//extension TutorialAssessmentsRenderSection.Assessment.Choice: Equatable {
-//    public static func == (lhs: TutorialAssessmentsRenderSection.Assessment.Choice, rhs: TutorialAssessmentsRenderSection.Assessment.Choice) -> Bool {
-//        return lhs.content == rhs.content && lhs.isCorrect == rhs.isCorrect && lhs.justification == rhs.justification && lhs.reaction == rhs.reaction
-//    }
-//}
-//
-//extension VolumeRenderSection: Equatable {
-//    public static func == (lhs: VolumeRenderSection, rhs: VolumeRenderSection) -> Bool {
-//        return lhs.name == rhs.name && lhs.image == rhs.image && lhs.content == rhs.content && lhs.chapters == rhs.chapters
-//    }
-//}
-//
-//extension VolumeRenderSection.Chapter: Equatable {
-//    public static func == (lhs: VolumeRenderSection.Chapter, rhs: VolumeRenderSection.Chapter) -> Bool {
-//        return lhs.name == rhs.name && lhs.content == rhs.content && lhs.tutorials == rhs.tutorials && lhs.image == rhs.image && lhs.headings == rhs.headings
-//    }
-//}
-//
-//extension ContentAndMediaGroupSection: Equatable {
-//    public static func == (lhs: ContentAndMediaGroupSection, rhs: ContentAndMediaGroupSection) -> Bool {
-//        return lhs.layout == rhs.layout && lhs.sections == rhs.sections && lhs.headings == rhs.headings
-//    }
-//}
-//
-//extension CallToActionSection: Equatable {
-//    public static func == (lhs: CallToActionSection, rhs: CallToActionSection) -> Bool {
-//        return lhs.title == rhs.title && lhs.abstract == rhs.abstract && lhs.media == rhs.media && lhs.action == rhs.action && lhs.featuredEyebrow == rhs.featuredEyebrow
-//    }
-//}
-//
-//extension TutorialArticleSection: Equatable {
-//    public static func == (lhs: TutorialArticleSection, rhs: TutorialArticleSection) -> Bool {
-//        return lhs.content == rhs.content
-//    }
-//}
-//
-//extension ResourcesRenderSection: Equatable {
-//    public static func == (lhs: ResourcesRenderSection, rhs: ResourcesRenderSection) -> Bool {
-//        return lhs.tiles == rhs.tiles && lhs.content == rhs.content
-//    }
-//}
-//
-//extension RenderTile: Equatable {
-//    public static func == (lhs: RenderTile, rhs: RenderTile) -> Bool {
-//        return lhs.identifier == rhs.identifier && lhs.title == rhs.title && lhs.content == rhs.content && lhs.action == rhs.action && lhs.media == rhs.media
-//    }
-//}
-//
-//extension RenderMetadata: Equatable {
-//    /// DO NOT USE
-//    //TODO: finish
-//    public static func == (lhs: RenderMetadata, rhs: RenderMetadata) -> Bool {
-//        return false
-//    }
-//}
-//
-//extension RenderHierarchy: Equatable {
-//    public static func == (lhs: RenderHierarchy, rhs: RenderHierarchy) -> Bool {
-//        switch (lhs, rhs) {
-//        case (.reference(let lhsHierarchy), .reference(let rhsHierarchy)):
-//            return lhsHierarchy == rhsHierarchy
-//        case (.tutorials(let lhsHierarchy), .tutorials(let rhsHierarchy)):
-//            return lhsHierarchy == rhsHierarchy
-//        default:
-//            return false
-//        }
-//    }
-//}
-//
-//extension VariantCollection: Equatable {
-//    public static func == (lhs: VariantCollection<Value>, rhs: VariantCollection<Value>) -> Bool {
-//        return lhs.defaultValue == rhs.defaultValue && lhs.variants == rhs.variants
-//    }
-//}
+
 
