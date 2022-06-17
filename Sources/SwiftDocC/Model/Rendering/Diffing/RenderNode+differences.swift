@@ -60,26 +60,22 @@ extension Diffable {
 }
 
 /// An integer coding key.
-private struct IntegerKey: CodingKey {
+private struct CustomKey: CodingKey {
     var stringValue: String
     var intValue: Int?
     
-    init(_ value: Int) {
-        self.intValue = value
-        self.stringValue = value.description
-    }
-    
-    init?(stringValue: String) {
-        guard let intValue = Int(stringValue) else {
-            return nil
-        }
-        
+    init(intValue: Int) {
         self.intValue = intValue
-        self.stringValue = stringValue
+        self.stringValue = intValue.description
     }
     
-    init?(intValue: Int) {
-        self.init(intValue)
+    init(stringValue: String) {
+        if let intValue = Int(stringValue) {
+            self.intValue = intValue
+        } else {
+            self.intValue = stringValue.hashValue
+        }
+        self.stringValue = stringValue
     }
 }
 
@@ -141,18 +137,31 @@ extension RenderNode: Diffable {
     }
 }
 
-//extension Dictionary: Diffable where Value: Diffable {
-//    /// Returns the difference between two dictionaries with diffable values.
-//    func difference(from other: Dictionary<Key, Value>, at path: Path) -> Differences {
-//        var differences = Differences()
-//        let uniqueKeysSet = Set(self.keys).union(Set(other.keys))
-//        for key in uniqueKeysSet {
-//            // TODO: The path isn't right
-//            differences.append(contentsOf: self[key].difference(from: other[key], at: path))
-//        }
-//        return differences
-//    }
-//}
+extension Dictionary: Diffable where Key == String, Value: Encodable & Equatable {
+    /// Returns the difference between two dictionaries with diffable values.
+    func difference(from other: Dictionary<Key, Value>, at path: Path) -> Differences where Value: Diffable {
+        var differences = Differences()
+        let uniqueKeysSet = Set(self.keys).union(Set(other.keys))
+        for key in uniqueKeysSet {
+            differences.append(contentsOf: self[key].difference(from: other[key], at: path + [CustomKey(stringValue: key)]))
+        }
+        return differences
+    }
+    
+    /// Returns the difference between two dictionaries with diffable values.
+    func difference(from other: Dictionary<Key, Value>, at path: Path) -> Differences {
+        var differences = Differences()
+        let uniqueKeysSet = Set(self.keys).union(Set(other.keys))
+        for key in uniqueKeysSet {
+            if self[key] != other[key] {
+                differences.append(.replace(
+                    pointer: JSONPointer(from: path + [CustomKey(stringValue: key)]),
+                    encodableValue: self[key]))
+            }
+        }
+        return differences
+    }
+}
 
 extension Optional: Diffable where Wrapped: Diffable & Equatable {
     /// Returns the differences between this optional and the given one.
@@ -183,17 +192,17 @@ extension Array: Diffable where Element: Equatable & Encodable {
         var patchOperations = differences.map { diff -> JSONPatchOperation in
             switch diff {
             case .remove(let offset, _, _):
-                let pointer = JSONPointer(from: path + [IntegerKey(offset)])
+                let pointer = JSONPointer(from: path + [CustomKey(intValue: offset)])
                 return .remove(pointer: pointer)
             case .insert(let offset, let element, _):
-                let pointer = JSONPointer(from: path + [IntegerKey(offset)])
+                let pointer = JSONPointer(from: path + [CustomKey(intValue: offset)])
                 return .add(pointer: pointer, encodableValue: element)
             }
         }
         
         for (index, value) in enumerated() {
             if other[index] != value {
-                patchOperations.append(contentsOf: value.difference(from: other[index], at: path + [IntegerKey(index)]))
+                patchOperations.append(contentsOf: value.difference(from: other[index], at: path + [CustomKey(intValue: index)]))
             }
         }
         
@@ -208,10 +217,10 @@ extension Array: Diffable where Element: Equatable & Encodable {
         let patchOperations = differences.map { diff -> JSONPatchOperation in
             switch diff {
             case .remove(let offset, _, _):
-                let pointer = JSONPointer(from: path + [IntegerKey(offset)])
+                let pointer = JSONPointer(from: path + [CustomKey(intValue: offset)])
                 return .remove(pointer: pointer)
             case .insert(let offset, let element, _):
-                let pointer = JSONPointer(from: path + [IntegerKey(offset)])
+                let pointer = JSONPointer(from: path + [CustomKey(intValue: offset)])
                 return .add(pointer: pointer, encodableValue: element)
             }
         }
