@@ -47,3 +47,21 @@ public enum RenderHierarchy: Codable, Equatable {
         }
     }
 }
+
+// Diffable conformance
+extension RenderHierarchy: Diffable {
+    /// Returns the difference between this RenderHierarchy and the given one.
+    public func difference(from other: RenderHierarchy, at path: Path) -> Differences {
+        if let diff = checkIfReplaced(comparingAgainst: other, at: path) {
+            return diff
+        }
+        var differences = Differences()
+        switch (self, other) {
+            case (let .reference(selfReferenceHierarchy), let .reference(otherReferenceHierarchy)):
+                differences.append(contentsOf: selfReferenceHierarchy.difference(from: otherReferenceHierarchy, at: path))
+        case (.tutorials(_), _), (_, .tutorials(_)):
+                return differences // Diffing tutorials is not currently supported
+        }
+        return differences
+    }
+}

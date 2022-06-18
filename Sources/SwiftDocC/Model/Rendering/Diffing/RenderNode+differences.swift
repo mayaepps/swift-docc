@@ -199,7 +199,6 @@ extension Array: Diffable where Element: Equatable & Encodable {
             }
         }
         let similarOther = other.applying(arrayDiffs)! // Apply the changes so all elements are now similar.
-        if !self.difference(from:similarOther).isEmpty { print("Difference: \(self.difference(from:similarOther))")}
 
         for (index, value) in enumerated() {
             if similarOther[index] != value {
@@ -229,48 +228,6 @@ extension Array: Diffable where Element: Equatable & Encodable {
     }
 }
 
-extension RenderHierarchy: Diffable {
-    /// Returns the difference between this RenderHierarchy and the given one.
-    public func difference(from other: RenderHierarchy, at path: Path) -> Differences {
-        if let diff = checkIfReplaced(comparingAgainst: other, at: path) {
-            return diff
-        }
-        var differences = Differences()
-        switch (self, other) {
-            case (let .reference(selfReferenceHierarchy), let .reference(otherReferenceHierarchy)):
-                differences.append(contentsOf: selfReferenceHierarchy.difference(from: otherReferenceHierarchy, at: path))
-        case (.tutorials(_), _), (_, .tutorials(_)):
-                return differences // We do not currently support diffing tutorials
-        }
-        return differences
-    }
-}
-
-//
-//extension RenderTutorialsHierarchy: Diffable {
-//    /// Returns the difference between this RenderTutorialsHierarchy and the given one.
-//    public func difference(from other: RenderTutorialsHierarchy, at path: Path) -> Differences {
-//        var differences = Differences()
-//        differences.merge(paths.difference(from: other.paths, at: "\(path)/paths")) { (current, _) in current }
-//        differences.merge(reference.difference(from: other.reference, at: "\(path)/reference")) { (current, _) in current }
-//        differences.merge(modules.difference(from: other.modules, at: "\(path)/modules")) { (current, _) in current }
-//
-//        return differences
-//    }
-//}
-//
-//extension RenderReferenceIdentifier: Diffable {
-//    /// Returns the difference between this RenderReferenceIdentifier and the given one.
-//    public func difference(from other: RenderReferenceIdentifier, at path: Path) -> Differences {
-//
-//        var differences = Differences()
-//        if identifier != other.identifier {
-//            differences["\(path)/identifier"] = "Replace with \(identifier)"
-//        }
-//        return differences
-//    }
-//}
-//
 ///// A RenderReference value that can be diffed.
 /////
 ///// An `AnyRenderReference` value forwards difference operations to the underlying base type, which implement the difference differently.
