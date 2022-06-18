@@ -111,7 +111,7 @@ extension TaskGroupRenderSection: Diffable {
     }
     
     func similar(to other: TaskGroupRenderSection) -> Bool {
-        return title == other.title || abstract == other.abstract || identifiers == self.identifiers
+        return ((title != nil) && title == other.title) || ((abstract != nil) && abstract == other.abstract) ||  identifiers == other.identifiers
         // TODO: || discussion == other.discussion
     }
 }

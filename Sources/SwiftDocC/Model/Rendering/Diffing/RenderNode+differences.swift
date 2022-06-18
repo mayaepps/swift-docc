@@ -186,9 +186,8 @@ extension Array: Diffable where Element: Equatable & Encodable {
         let arrayDiffs = self.difference(from: other) { element1, element2 in
             return element1.similar(to: element2)
         }
-        var differences: [CollectionDifference.Change] = arrayDiffs.removals
+        var differences = arrayDiffs.removals
         differences.append(contentsOf: arrayDiffs.insertions)
-        
         var patchOperations = differences.map { diff -> JSONPatchOperation in
             switch diff {
             case .remove(let offset, _, _):
@@ -199,10 +198,12 @@ extension Array: Diffable where Element: Equatable & Encodable {
                 return .add(pointer: pointer, encodableValue: element)
             }
         }
-        
+        let similarOther = other.applying(arrayDiffs)! // Apply the changes so all elements are now similar.
+        if !self.difference(from:similarOther).isEmpty { print("Difference: \(self.difference(from:similarOther))")}
+
         for (index, value) in enumerated() {
-            if other[index] != value {
-                patchOperations.append(contentsOf: value.difference(from: other[index], at: path + [CustomKey(intValue: index)]))
+            if similarOther[index] != value {
+                patchOperations.append(contentsOf: value.difference(from: similarOther[index], at: path + [CustomKey(intValue: index)]))
             }
         }
         
