@@ -172,3 +172,22 @@ extension DeclarationRenderSection: TextIndexing {
         return ""
     }
 }
+
+// Diffable conformance
+extension DeclarationRenderSection.Token: Diffable {
+    /// Returns the differences between this Token and the given one.
+    public func difference(from other: DeclarationRenderSection.Token, at path: Path) -> Differences {
+        if let diff = checkIfReplaced(comparingAgainst: other, at: path) {
+            return diff
+        }
+        var diffs = Differences()
+        diffs.append(contentsOf: propertyDifference(text, from: other.text, at: path + [CodingKeys.text]))
+        diffs.append(contentsOf: propertyDifference(kind, from: other.kind, at: path + [CodingKeys.kind]))
+        return diffs
+    }
+    
+    public func similar(to other: DeclarationRenderSection.Token) -> Bool {
+        return kind == other.kind || text == self.text
+    }
+}
+

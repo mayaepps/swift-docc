@@ -228,42 +228,23 @@ extension Array: Diffable where Element: Equatable & Encodable {
     }
 }
 
-//extension DeclarationRenderSection.Token: Diffable {
-//    /// Returns the differences between this Token and the given one.
-//    public func difference(from other: DeclarationRenderSection.Token, at path: Path) -> Differences {
-//        var difference = Differences()
-//        if text != other.text {
-//            difference["\(path)/text"] = "Replace with \(text)"
-//        }
-//        if kind != other.kind {
-//            difference["\(path)/kind"] = "Replace with \(kind)"
-//        }
-//        return difference
-//    }
-//}
+extension RenderHierarchy: Diffable {
+    /// Returns the difference between this RenderHierarchy and the given one.
+    public func difference(from other: RenderHierarchy, at path: Path) -> Differences {
+        if let diff = checkIfReplaced(comparingAgainst: other, at: path) {
+            return diff
+        }
+        var differences = Differences()
+        switch (self, other) {
+            case (let .reference(selfReferenceHierarchy), let .reference(otherReferenceHierarchy)):
+                differences.append(contentsOf: selfReferenceHierarchy.difference(from: otherReferenceHierarchy, at: path))
+        case (.tutorials(_), _), (_, .tutorials(_)):
+                return differences // We do not currently support diffing tutorials
+        }
+        return differences
+    }
+}
 
-//extension RenderHierarchy: Diffable {
-//    /// Returns the difference between this RenderHierarchy and the given one.
-//    public func difference(from other: RenderHierarchy, at path: Path) -> Differences {
-//        var differences = Differences()
-//        switch (self, other) {
-//            case (let .reference(selfReferenceHierarchy), let .reference(otherReferenceHierarchy)):
-//                differences.merge(selfReferenceHierarchy.difference(from: otherReferenceHierarchy, at: path)) { (current, _) in current }
-//            case (let .tutorials(selfTutorialsHierarchy), let .tutorials(otherTutorialsHierarchy)):
-//                differences.merge(selfTutorialsHierarchy.difference(from: otherTutorialsHierarchy, at: path)) { (current, _) in current }
-//            default:
-//            differences[path] = "Replace with \(self)"
-//        }
-//        return differences
-//    }
-//}
-//
-//extension RenderReferenceHierarchy: Diffable {
-//    /// Returns the difference between this RenderReferenceHierarchy and the given one.
-//    func difference(from other: RenderReferenceHierarchy, at path: Path) -> Differences {
-//        return paths.difference(from: other.paths, at: "\(path)/paths")
-//    }
-//}
 //
 //extension RenderTutorialsHierarchy: Diffable {
 //    /// Returns the difference between this RenderTutorialsHierarchy and the given one.
