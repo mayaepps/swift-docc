@@ -328,7 +328,7 @@ extension RenderMetadata: Codable {
 }
 
 extension RenderMetadata: Diffable {
-    func similar(to other: RenderMetadata) -> Bool {
+    func isSimilar(to other: RenderMetadata) -> Bool {
         return self.title == other.title
     }
 }

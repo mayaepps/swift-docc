@@ -12,40 +12,96 @@ import Foundation
 
 protocol Diffable {
     func difference(from other: Self, at path: Path) -> Differences
-    func similar(to other: Self) -> Bool
+    func isSimilar(to other: Self) -> Bool
 }
 
 public typealias Differences = [JSONPatchOperation]
 public typealias Path = [CodingKey]
 
-extension Diffable where Self: Equatable {
-    func similar(to other: Self) -> Bool {
-        return self == other
+struct DifferenceBuilder<T> {
+    
+    var differences: Differences
+    let current: T
+    let other: T
+    let path: Path
+    
+    init(current: T, other: T, basePath: Path, keyedBy: codingKeys) {
+        self.differences = []
+        self.current = current
+        self.other = other
+        self.path = basePath
+        self.codingKeys = codingKeys
     }
     
-    func checkIfReplaced(comparingAgainst other: Self, at path: Path) -> [JSONPatchOperation]? where Self: Encodable {
-        if self == other {
-            return []
-        } else if self.similar(to: other) {
-            return nil
+    /// Determines the difference between the two diffable objects at the KeyPaths given.
+    mutating func addDifferences<D>(atKeyPath keyPath: KeyPath<T, D>, forKey codingKey: self.co) where D: Diffable & Equatable & Codable {
+        let currentProperty = current[keyPath: keyPath]
+        let otherProperty = other[keyPath: keyPath]
+        
+        if currentProperty == otherProperty {
+            return
+        }
+        
+        if currentProperty.isSimilar(to: otherProperty) {
+            let diffs = currentProperty.difference(from: otherProperty, at: path + [codingKey])
+            differences.append(contentsOf: diffs)
         } else {
-            return [.replace(pointer: JSONPointer(from: path), encodableValue: self)]
+            differences.append(.replace(pointer: JSONPointer(from: path + [codingKey]), encodableValue: currentProperty))
+        }
+    }
+    
+    /// Determines the difference between the two diffable objects at the KeyPaths given.
+    mutating func addDifferences<Element>(atKeyPath keyPath: KeyPath<T, Array<Element>>, forKey codingKey: CodingKey) where Element: Diffable & Equatable & Codable {
+        let currentProperty = current[keyPath: keyPath]
+        let otherProperty = other[keyPath: keyPath]
+        
+        if currentProperty == otherProperty {
+            return
+        }
+        
+        if currentProperty.isSimilar(to: otherProperty) {
+            let diffs = currentProperty.difference(from: otherProperty, at: path + [codingKey])
+            differences.append(contentsOf: diffs)
+        } else {
+            differences.append(.replace(pointer: JSONPointer(from: path + [codingKey]), encodableValue: currentProperty))
+        }
+    }
+
+    
+    /// Adds the difference between two optional properties to the DifferenceBuilder.
+    mutating func addPropertyDifference<E>(atKeyPath keyPath: KeyPath<T, E>, forKey codingKey: CodingKey) where E: Equatable & Codable {
+        let currentProperty = current[keyPath: keyPath]
+        let otherProperty = other[keyPath: keyPath]
+        
+        if currentProperty != otherProperty {
+            differences.append(.replace(pointer: JSONPointer(from: path + [codingKey]), encodableValue: currentProperty))
+        }
+    }
+    
+    /// Unwraps and adds the difference between two optional properties.
+    mutating func addOptionalPropertyDifference<O>(atKeyPath keyPath: KeyPath<T, O?>, forKey key: CodingKey) where O: Equatable & Codable {
+        var difference = Differences()
+        
+        let currentProperty = current[keyPath: keyPath]
+        let otherProperty = other[keyPath: keyPath]
+        
+        if let currentProperty = currentProperty, let otherProperty = otherProperty {
+            if currentProperty != otherProperty {
+                difference.append(.replace(pointer: JSONPointer(from: path + [key]), encodableValue: currentProperty))
+            }
+        } else if otherProperty != nil {
+            difference.append(.remove(pointer: JSONPointer(from: path + [key])))
+        } else if let currentProp = currentProperty {
+            difference.append(.add(pointer: JSONPointer(from: path + [key]), encodableValue: currentProp))
         }
     }
 }
 
+// To be deleted when I switch over to DifferenceBuilder
 extension Diffable {
-    /// Returns the difference between two optional properties.
-    func propertyDifference<T: Equatable & Encodable>(_ current: T, from other: T, at path: Path) -> Differences {
-        if current != other {
-            return [.replace(pointer: JSONPointer(from: path), encodableValue: current)]
-        }
-        return []
-    }
-    
-    /// Unwraps and returns the difference between two optional properties.
-    func optionalPropertyDifference<T>(_ current: T?, from other: T?, at path: Path) -> Differences where T: Equatable, T: Codable {
+    func optionalPropertyDifference<T>(_ current: T?, from other: T?, at path: Path) -> Differences where T: Equatable & Codable {
         var difference = Differences()
+        
         if let current = current, let other = other {
             if current != other {
                 difference.append(.replace(pointer: JSONPointer(from: path), encodableValue: current))
@@ -56,6 +112,30 @@ extension Diffable {
             difference.append(.add(pointer: JSONPointer(from: path), encodableValue: current))
         }
         return difference
+    }
+    func propertyDifference<T>(_ current: T, from other: T, at path: Path) -> Differences where T: Equatable & Codable {
+        var differences = Differences()
+        if current != other {
+            differences.append(.replace(pointer: JSONPointer(from: path), encodableValue: current))
+        }
+        return differences
+    }
+}
+
+
+extension Diffable where Self: Equatable {
+    func isSimilar(to other: Self) -> Bool {
+        return self == other
+    }
+    
+    func checkIfReplaced(comparingAgainst other: Self, at path: Path) -> [JSONPatchOperation]? where Self: Encodable {
+        if self == other {
+            return []
+        } else if self.isSimilar(to: other) {
+            return nil
+        } else {
+            return [.replace(pointer: JSONPointer(from: path), encodableValue: self)]
+        }
     }
 }
 
@@ -80,64 +160,71 @@ private struct CustomKey: CodingKey {
 }
 
 extension RenderNode: Diffable {
-    func similar(to other: RenderNode) -> Bool {
+    func isSimilar(to other: RenderNode) -> Bool {
         return identifier == other.identifier
     }
     
     /// Returns the differences between this render node and the given one.
     public func difference(from other: RenderNode, at path: Path) -> Differences {
         
-        var diffs = Differences()
+        var diffBuilder = DifferenceBuilder(current: self, other: other, basePath: path, keyedBy: CodingKeys.self)
         
-        diffs.append(contentsOf: propertyDifference(kind, from: other.kind, at: path + [CodingKeys.kind]))
-        diffs.append(contentsOf: abstract.difference(from: other.abstract, at: path + [CodingKeys.abstract]))
-        diffs.append(contentsOf: schemaVersion.difference(from:other.schemaVersion, at: path + [CodingKeys.schemaVersion]))
-        diffs.append(contentsOf: identifier.difference(from:other.identifier, at: path + [CodingKeys.identifier]))
-        diffs.append(contentsOf: metadata.difference(from:other.metadata, at: path + [CodingKeys.metadata]))
-//        diffs.append(contentsOf: hierarchy.difference(from:other.hierarchy, at: path + [CodingKeys.hierarchy]))
-        diffs.append(contentsOf: topicSections.difference(from: other.topicSections, at: path + [CodingKeys.topicSections]))
-        diffs.append(contentsOf: seeAlsoSections.difference(from: other.seeAlsoSections, at: path + [CodingKeys.seeAlsoSections]))
+        diffBuilder.addPropertyDifference(atKeyPath: \.kind, forKey: CodingKeys.kind)
+        diffBuilder.addDifferences(atKeyPath: \.abstract, forKey: CodingKeys.abstract)
+        diffBuilder.addDifferences(atKeyPath: \.schemaVersion, forKey: CodingKeys.schemaVersion)
+        diffBuilder.addDifferences(atKeyPath: \.identifier, forKey: CodingKeys.identifier)
+        diffBuilder.differences.append(contentsOf: metadata.difference(from: other.metadata, at: path + [CodingKeys.metadata])) // RenderMetadata isn't Equatable
+        //diffBuilder.addDifferences(atKeyPath: \Self.hierarchy, forKey: CodingKeys.hierarchy)
+        //diffBuilder.differences.append(contentsOf: topicSections.difference(from: other.topicSections, at: path + [CodingKeys.topicSections]))
+        diffBuilder.addDifferences(atKeyPath: \Self.topicSections, forKey: CodingKeys.topicSections)
+        diffBuilder.addDifferences(atKeyPath: \Self.seeAlsoSections, forKey: CodingKeys.seeAlsoSections)
+        
         // Diffing render references
+        // TODO: This should be dealt with in the DifferenceBuilder
 //        let diffableReferences = references.mapValues { reference in
 //            return AnyRenderReference(reference)
 //        }
 //        let otherDiffableReferences = other.references.mapValues { reference in
 //            return AnyRenderReference(reference)
 //        }
-//        diffs.append(contentsOf: diffableReferences.difference(from:otherDiffableReferences, at: path + [CodingKeys.references]))
+//        diffBuilder.differences.append(contentsOf: diffableReferences.difference(from:otherDiffableReferences, at: path + [CodingKeys.references]))
 
         // Diffing primary content sections
+        // TODO: This should be dealt with in the DifferenceBuilder
         let equatablePrimaryContentSections = primaryContentSections.map { section in
             return AnyRenderSection(section)
         }
         let otherEquatablePrimaryContentSections = other.primaryContentSections.map { section in
             return AnyRenderSection(section)
         }
-        diffs.append(contentsOf: equatablePrimaryContentSections.difference(from: otherEquatablePrimaryContentSections, at: path + [CodingKeys.primaryContentSections]))
+        diffBuilder.differences.append(contentsOf: equatablePrimaryContentSections.difference(from: otherEquatablePrimaryContentSections, at: path + [CodingKeys.primaryContentSections]))
 
         // Diffing relationship sections
+        // TODO: This should be dealt with in the DifferenceBuilder
         let equatableRelationshipSections = relationshipSections.map { section in
             return AnyRenderSection(section)
         }
         let otherEquatableRelationshipSections = other.relationshipSections.map { section in
             return AnyRenderSection(section)
         }
-        diffs.append(contentsOf: equatableRelationshipSections.difference(from: otherEquatableRelationshipSections, at: path + [CodingKeys.relationshipsSections]))
+        diffBuilder.differences.append(contentsOf: equatableRelationshipSections.difference(from: otherEquatableRelationshipSections, at: path + [CodingKeys.relationshipsSections]))
 
         // Diffing sections
+        // TODO: This should be dealt with in the DifferenceBuilder
         let equatableSections = sections.map { section in
             return AnyRenderSection(section)
         }
         let otherEquatableSections = other.sections.map { section in
             return AnyRenderSection(section)
         }
-        diffs.append(contentsOf: equatableSections.difference(from: otherEquatableSections, at: path + [CodingKeys.sections]))
+        diffBuilder.differences.append(contentsOf: equatableSections.difference(from: otherEquatableSections, at: path + [CodingKeys.sections]))
         
-        return diffs
+        return diffBuilder.differences
     }
 }
 
 extension Dictionary: Diffable where Key == String, Value: Encodable & Equatable {
+    //TODO: This should be done in the DifferenceBuilder
     /// Returns the difference between two dictionaries with diffable values.
     func difference(from other: Dictionary<Key, Value>, at path: Path) -> Differences where Value: Diffable {
         var differences = Differences()
@@ -148,6 +235,7 @@ extension Dictionary: Diffable where Key == String, Value: Encodable & Equatable
         return differences
     }
     
+    //TODO: This should be done in the DifferenceBuilder
     /// Returns the difference between two dictionaries with diffable values.
     func difference(from other: Dictionary<Key, Value>, at path: Path) -> Differences {
         var differences = Differences()
@@ -161,9 +249,15 @@ extension Dictionary: Diffable where Key == String, Value: Encodable & Equatable
         }
         return differences
     }
+    
+    // For now, we are not replacing whole dictionaries
+    func isSimilar(to other: Dictionary<String, Value>) -> Bool {
+        return true
+    }
 }
 
 extension Optional: Diffable where Wrapped: Diffable & Equatable {
+    //TODO: This should be done in the DifferenceBuilder
     /// Returns the differences between this optional and the given one.
     func difference(from other: Optional<Wrapped>, at path: Path) -> Differences {
         var difference = Differences()
@@ -178,13 +272,40 @@ extension Optional: Diffable where Wrapped: Diffable & Equatable {
         }
         return difference
     }
+    
+    // TODO: Optionals should deal with replacements on their own.
+    func isSimilar(to other: Optional<Wrapped>) -> Bool {
+        return true
+    }
 }
 
 extension Array: Diffable where Element: Equatable & Encodable {
+    
+    //TODO: This should be done in the DifferenceBuilder
     /// Returns the differences between this array and the given one.
+    func difference(from other: Array<Element>, at path: Path) -> Differences {
+        print("called the generic array diffing method (non-diffable elements)")
+        let arrayDiffs = self.difference(from: other)
+        var differences = arrayDiffs.removals
+        differences.append(contentsOf: arrayDiffs.insertions)
+        let patchOperations = differences.map { diff -> JSONPatchOperation in
+            switch diff {
+            case .remove(let offset, _, _):
+                let pointer = JSONPointer(from: path + [CustomKey(intValue: offset)])
+                return .remove(pointer: pointer)
+            case .insert(let offset, let element, _):
+                let pointer = JSONPointer(from: path + [CustomKey(intValue: offset)])
+                return .add(pointer: pointer, encodableValue: element)
+            }
+        }
+        
+        return patchOperations
+    }
+    
     func difference(from other: Array<Element>, at path: Path) -> Differences where Element: Diffable {
+        print("called the Element: Diffable method")
         let arrayDiffs = self.difference(from: other) { element1, element2 in
-            return element1.similar(to: element2)
+            return element1.isSimilar(to: element2)
         }
         var differences = arrayDiffs.removals
         differences.append(contentsOf: arrayDiffs.insertions)
@@ -209,242 +330,109 @@ extension Array: Diffable where Element: Equatable & Encodable {
         return patchOperations
     }
     
-    /// Returns the differences between this array and the given one assuming none of the elements are similar.
-    func difference(from other: Array<Element>, at path: Path) -> Differences {
-        let arrayDiffs = self.difference(from: other)
-        var differences: [CollectionDifference.Change] = arrayDiffs.removals
-        differences.append(contentsOf: arrayDiffs.insertions)
-        let patchOperations = differences.map { diff -> JSONPatchOperation in
-            switch diff {
-            case .remove(let offset, _, _):
-                let pointer = JSONPointer(from: path + [CustomKey(intValue: offset)])
-                return .remove(pointer: pointer)
-            case .insert(let offset, let element, _):
-                let pointer = JSONPointer(from: path + [CustomKey(intValue: offset)])
-                return .add(pointer: pointer, encodableValue: element)
-            }
-        }
-        return patchOperations
+    // For now, we are not replacing whole arrays
+    func isSimilar(to other: Array<Element>) -> Bool {
+        return true
     }
 }
 
-///// A RenderReference value that can be diffed.
-/////
-///// An `AnyRenderReference` value forwards difference operations to the underlying base type, which implement the difference differently.
-//struct AnyRenderReference: Diffable {
-//    var value: RenderReference
-//    init(_ value: RenderReference) { self.value = value }
-//    public func difference(from other: AnyRenderReference, at path: Path) -> Differences {
-//        var differences = Differences()
-//
-//        if value.identifier != other.value.identifier {
-//            differences["\(path)/identifier"] = "Replace with \(value.identifier)"
-//        }
-//
-//        switch (value.type, other.value.type) {
-//        case (.file, .file):
-//            let value = value as! FileReference
-//            let otherValue = other.value as! FileReference
-//            differences.merge(value.difference(from: otherValue, at: path)) { (current, _) in current }
-//        case (.image, .image):
-//            let value = value as! ImageReference
-//            let otherValue = other.value as! ImageReference
-//            differences.merge(value.difference(from: otherValue, at: path)) { (current, _) in current }
-//        case (.video, .video):
-//            let value = value as! VideoReference
-//            let otherValue = other.value as! VideoReference
-//            differences.merge(value.difference(from: otherValue, at: path)) { (current, _) in current }
-//        case (.fileType, .fileType):
-//            let value = value as! FileTypeReference
-//            let other = other.value as! FileTypeReference
-//            differences.merge(value.difference(from: other, at: path)) { (current, _) in current }
-//        case (.xcodeRequirement, .xcodeRequirement):
-//            let value = value as! XcodeRequirementReference
-//            let otherValue = other.value as! XcodeRequirementReference
-//            differences.merge(value.difference(from: otherValue, at: path)) { (current, _) in current }
-//        case (.topic, .topic):
-//            let value = value as! TopicRenderReference
-//            let otherValue = other.value as! TopicRenderReference
-//            differences.merge(value.difference(from: otherValue, at: path)) { (current, _) in current }
-//        case (.section, .section):
-//            let value = value as! TopicRenderReference
-//            let otherValue = other.value as! TopicRenderReference
-//            differences.merge(value.difference(from: otherValue, at: path)) { (current, _) in current }
-//        case (.download, .download):
-//            let value = value as! DownloadReference
-//            let otherValue = other.value as! DownloadReference
-//            differences.merge(value.difference(from: otherValue, at: path)) { (current, _) in current }
-//        case (.unresolvable, .unresolvable):
-//            let value = value as! UnresolvedRenderReference
-//            let otherValue = other.value as! UnresolvedRenderReference
-//            differences.merge(value.difference(from: otherValue, at: path)) { (current, _) in current }
-//        case (.link, .link):
-//            let value = value as! LinkReference
-//            let otherValue = other.value as! LinkReference
-//            differences.merge(value.difference(from: otherValue, at: path)) { (current, _) in current }
-//        default:
-//            return [path: "Replace with \(value)"]
-//        }
-//        return differences
-//    }
-//}
 
-//extension TopicRenderReference: Diffable {
-//    /// Returns the difference between two TopicRenderReferences.
-//    public func difference(from other: TopicRenderReference, at path: Path) -> Differences {
-//        var differences = Differences()
-//
-//        if let roleDiff = optionalPropertyDifference(role, from: other.role) {
-//            differences["\(path)/role"] = roleDiff
-//        }
-//        if title != other.title {
-//            differences["\(path)/title"] = "Replace with \(title)"
-//        }
-//        if identifier != other.identifier {
-//            differences["\(path)/identifier"] = "Replace with \(identifier)"
-//        }
-//        if kind != other.kind {
-//            differences["\(path)/kind"] = "Replace with \(kind)"
-//        }
-//        if self.required != other.required {
-//            differences["\(path)/required"] = "Replace with \(self.required)"
-//        }
-//        if type != other.type {
-//            differences["\(path)/type"] = "Replace with \(type)"
-//        }
-//        if url != other.url {
-//            differences["\(path)/url"] = "Replace with \(url)"
-//        }
-//        differences.merge(abstract.difference(from: other.abstract, at: "\(path)/abstract")) { (current, _) in current }
-//        differences.merge(fragments.difference(from: other.fragments, at: "\(path)/fragments")) { (current, _) in current }
-//
-//        return differences
-//    }
-//}
-//
-//extension FileReference: Diffable {
-//    /// Returns the difference between this FileReference and the given one.
-//    public func difference(from other: FileReference, at path: Path) -> Differences {
-//        var differences = Differences()
-//        if fileName != other.fileName {
-//            differences["\(path)/fileName"] = "Replace with \(fileName)"
-//        }
-//        if fileType != other.fileType {
-//            differences["\(path)/fileType"] = "Replace with \(fileType)"
-//        }
-//        if syntax != other.syntax {
-//            differences["\(path)/syntax"] = "Replace with \(syntax)"
-//        }
-//        differences.merge(content.difference(from: other.content, at: "\(path)/content")) { (current, _) in current }
-//        differences.merge(highlights.difference(from: other.highlights, at: "\(path)/highlights")) { (current, _) in current }
-//        return differences
-//    }
-//}
-//
-//extension ImageReference: Diffable {
-//    /// Returns the difference between this ImageReference and the given one.
-//    public func difference(from other: ImageReference, at path: Path) -> Differences {
-//        var differences = Differences()
-//
-//        if let altTextDiff = optionalPropertyDifference(altText, from: other.altText) {
-//            differences["\(path)/altText"] = altTextDiff
-//        }
-//        if asset != other.asset {
-//            differences["\(path)/asset"] = "Replace with \(asset)"
-//        }
-//        return differences
-//    }
-//}
-//
-//extension VideoReference: Diffable {
-//    /// Returns the difference between this VideoReference and the given one.
-//    public func difference(from other: VideoReference, at path: Path) -> Differences {
-//        var differences = Differences()
-//
-//        if let altTextDiff = optionalPropertyDifference(altText, from: other.altText) {
-//            differences["\(path)/altText"] = altTextDiff
-//        }
-//        if asset != other.asset {
-//            differences["\(path)/asset"] = "Replace with \(asset)"
-//        }
-//        differences.merge(poster.difference(from: other.poster, at: "\(path)/poster")) { (current, _) in current }
-//        return differences
-//    }
-//}
-//
-//extension FileTypeReference: Diffable {
-//    /// Returns the difference between this FileTypeReference and the given one.
-//    public func difference(from other: FileTypeReference, at path: Path) -> Differences {
-//        var differences = Differences()
-//        if displayName != other.displayName {
-//            differences["\(path)/displayName"] = "Replace with \(displayName)"
-//        }
-//        if iconBase64 != other.iconBase64 {
-//            differences["\(path)/iconBase64"] = "Replace with \(iconBase64)"
-//        }
-//        return differences
-//    }
-//}
-//
-//extension XcodeRequirementReference: Diffable {
-//    /// Returns the difference between this XcodeRequirementReference and the given one.
-//    public func difference(from other: XcodeRequirementReference, at path: Path) -> Differences {
-//        var differences = Differences()
-//        if title != other.title {
-//            differences["\(path)/title"] = "Replace with \(title)"
-//        }
-//        if url != other.url {
-//            differences["\(path)/url"] = "Replace with \(url)"
-//        }
-//
-//        return differences
-//    }
-//}
-//
-//extension DownloadReference: Diffable {
-//    /// Returns the difference between this DownloadReference and the given one.
-//    public func difference(from other: DownloadReference, at path: Path) -> Differences {
-//        var differences = Differences()
-//
-//        if url != other.url {
-//            differences["\(path)/url"] = "Replace with \(url)"
-//        }
-//        if sha512Checksum != other.sha512Checksum {
-//            differences["\(path)/sha512Checksum"] = "Replace with \(sha512Checksum)"
-//        }
-//
-//        return differences
-//    }
-//}
-//
-//extension UnresolvedRenderReference: Diffable {
-//    /// Returns the difference between this UnresolvedRenderReference and the given one.
-//    public func difference(from other: UnresolvedRenderReference, at path: Path) -> Differences {
-//        var differences = Differences()
-//        if title != other.title {
-//            differences["\(path)/title"] = "Replace with \(title)"
-//        }
-//        return differences
-//    }
-//}
-//
-//extension LinkReference: Diffable {
-//    /// Returns the difference between this LinkReference and the given one.
-//    public func difference(from other: LinkReference, at path: Path) -> Differences {
-//        var differences = Differences()
-//
-//        differences.merge(titleInlineContent.difference(from: other.titleInlineContent, at: "\(path)/titleInlineContent")) { (current, _) in current }
-//        if url != other.url {
-//            differences["\(path)/url"] = "Replace with \(url)"
-//        }
-//        if title != other.title {
-//            differences["\(path)/title"] = "Replace with \(title)"
-//        }
-//
-//        return differences
-//    }
-//}
-//
+/// A RenderReference value that can be diffed.
+///
+/// An `AnyRenderReference` value forwards difference operations to the underlying base type, which implement the difference differently.
+struct AnyRenderReference: Diffable, Equatable {
+    
+    var value: RenderReference & Codable
+    init(_ value: RenderReference & Codable) { self.value = value }
+    public func difference(from other: AnyRenderReference, at path: Path) -> Differences {
+        var differences = Differences()
+        
+        // TODO: Fix this CodingKey accessibility issue
+        differences.append(contentsOf: propertyDifference(value.identifier,
+                                                          from: other.value.identifier,
+                                                          at: path + [CustomKey(stringValue: "identifier")])
+                           )
+                           
+        switch (value.type, other.value.type) {
+        case (.file, .file):
+            let value = value as! FileReference
+            let otherValue = other.value as! FileReference
+            differences.append(contentsOf: value.difference(from: otherValue, at: path))
+        case (.image, .image):
+            let value = value as! ImageReference
+            let otherValue = other.value as! ImageReference
+            differences.append(contentsOf: value.difference(from: otherValue, at: path))
+        case (.video, .video):
+            let value = value as! VideoReference
+            let otherValue = other.value as! VideoReference
+            differences.append(contentsOf: value.difference(from: otherValue, at: path))
+        case (.fileType, .fileType):
+            let value = value as! FileTypeReference
+            let otherValue = other.value as! FileTypeReference
+            differences.append(contentsOf: value.difference(from: otherValue, at: path))
+        case (.xcodeRequirement, .xcodeRequirement):
+            let value = value as! XcodeRequirementReference
+            let otherValue = other.value as! XcodeRequirementReference
+            differences.append(contentsOf: value.difference(from: otherValue, at: path))
+        case (.topic, .topic):
+            let value = value as! TopicRenderReference
+            let otherValue = other.value as! TopicRenderReference
+            differences.append(contentsOf: value.difference(from: otherValue, at: path))
+        case (.section, .section):
+            let value = value as! TopicRenderReference
+            let otherValue = other.value as! TopicRenderReference
+            differences.append(contentsOf: value.difference(from: otherValue, at: path))
+        case (.download, .download):
+            let value = value as! DownloadReference
+            let otherValue = other.value as! DownloadReference
+            differences.append(contentsOf: value.difference(from: otherValue, at: path))
+        case (.unresolvable, .unresolvable):
+            let value = value as! UnresolvedRenderReference
+            let otherValue = other.value as! UnresolvedRenderReference
+            differences.append(contentsOf: value.difference(from: otherValue, at: path))
+        case (.link, .link):
+            let value = value as! LinkReference
+            let otherValue = other.value as! LinkReference
+            differences.append(contentsOf: value.difference(from: otherValue, at: path))
+        default:
+            differences.append(.replace(pointer: JSONPointer(from: path), encodableValue: self.value))
+        }
+        return differences
+    }
+    
+    static func == (lhs: AnyRenderReference, rhs: AnyRenderReference) -> Bool {
+        switch (lhs.value.type, rhs.value.type) {
+        case (.file, .file):
+            return (lhs.value as! FileReference) == (rhs.value as! FileReference)
+        case (.image, .image):
+            return (lhs.value as! ImageReference) == (rhs.value as! ImageReference)
+        case (.video, .video):
+            return (lhs.value as! VideoReference) == (rhs.value as! VideoReference)
+        case (.fileType, .fileType):
+            return (lhs.value as! FileTypeReference) == (rhs.value as! FileTypeReference)
+        case (.xcodeRequirement, .xcodeRequirement):
+            return (lhs.value as! XcodeRequirementReference) == (rhs.value as! XcodeRequirementReference)
+        case (.topic, .topic):
+            return (lhs.value as! TopicRenderReference) == (rhs.value as! TopicRenderReference)
+        case (.section, .section):
+            return (lhs.value as! TopicRenderReference) == (rhs.value as! TopicRenderReference)
+        case (.download, .download):
+            return (lhs.value as! DownloadReference) == (rhs.value as! DownloadReference)
+        case (.unresolvable, .unresolvable):
+            return (lhs.value as! UnresolvedRenderReference) == (rhs.value as! UnresolvedRenderReference)
+        case (.link, .link):
+            return (lhs.value as! LinkReference) == (rhs.value as! LinkReference)
+        default:
+            return false
+        }
+    }
+    
+    func isSimilar(to other: AnyRenderReference) -> Bool {
+        // TODO: Pass this down to the specific render references. Maybe abstract the casting into its own method and pass in a closure?
+        self.value.identifier == other.value.identifier
+    }
+}
+
 // MARK: Equatable Conformance
 
 public struct AnyRenderSection: Equatable, Encodable {

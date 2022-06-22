@@ -11,7 +11,7 @@
 import Foundation
 
 /// A reference to a video.
-public struct VideoReference: MediaReference, URLReference {
+public struct VideoReference: MediaReference, URLReference, Equatable {
     /// The type of this video reference.
     ///
     /// This value is always `.video`.
@@ -123,5 +123,18 @@ public struct VideoReference: MediaReference, URLReference {
             try container.encode(url, forKey: .url)
             try container.encode(traits, forKey: .traits)
         }
+    }
+}
+
+extension VideoReference: Diffable {
+    /// Returns the difference between this VideoReference and the given one.
+    public func difference(from other: VideoReference, at path: Path) -> Differences {
+        var differences = Differences()
+
+        differences.append(contentsOf: optionalPropertyDifference(altText, from: other.altText, at: path + [CodingKeys.alt]))
+        differences.append(contentsOf: optionalPropertyDifference(asset, from: other.asset, at: path + [CodingKeys.variants]))
+        differences.append(contentsOf: poster.difference(from: other.poster, at: path + [CodingKeys.poster]))
+        
+        return differences
     }
 }

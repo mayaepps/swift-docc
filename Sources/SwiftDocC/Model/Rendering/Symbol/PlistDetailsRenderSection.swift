@@ -11,12 +11,14 @@
 import Foundation
 
 /// A title style for a property list key or an entitlement key.
-public enum TitleStyle: String, Codable {
+public enum TitleStyle: String, Codable, Equatable {
     // Render links to the symbol using the "raw" name, for example, "com.apple.enableDataAccess".
     case symbol
     // Render links to the symbol using a special "IDE title" name, for example, "Enables Data Access".
     case title
 }
+
+
 
 /// A section that contains details about a property list key.
 struct PlistDetailsRenderSection: RenderSection {

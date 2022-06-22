@@ -186,7 +186,7 @@ extension DeclarationRenderSection.Token: Diffable {
         return diffs
     }
     
-    public func similar(to other: DeclarationRenderSection.Token) -> Bool {
+    public func isSimilar(to other: DeclarationRenderSection.Token) -> Bool {
         return kind == other.kind || text == self.text
     }
 }

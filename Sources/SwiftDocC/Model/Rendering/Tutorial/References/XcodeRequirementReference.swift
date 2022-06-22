@@ -11,7 +11,7 @@
 import Foundation
 
 /// A reference to a version of Xcode that users of your documentation must use.
-public struct XcodeRequirementReference: RenderReference {
+public struct XcodeRequirementReference: RenderReference, Equatable {
     public var type: RenderReferenceType = .xcodeRequirement
     
     public let identifier: RenderReferenceIdentifier
@@ -32,5 +32,18 @@ public struct XcodeRequirementReference: RenderReference {
         self.identifier = identifier
         self.title = title
         self.url = url
+    }
+}
+
+// Diffable conformance
+extension XcodeRequirementReference: Diffable {
+    /// Returns the difference between this XcodeRequirementReference and the given one.
+    public func difference(from other: XcodeRequirementReference, at path: Path) -> Differences {
+        var diffBuilder = DifferenceBuilder(current: self, other: other, basePath: path)
+        
+        diffBuilder.addPropertyDifference(atKeyPath: \Self.title, forKey: CodingKeys.title)
+        diffBuilder.addPropertyDifference(atKeyPath: \Self.url, forKey: CodingKeys.url)
+
+        return diffBuilder.differences
     }
 }

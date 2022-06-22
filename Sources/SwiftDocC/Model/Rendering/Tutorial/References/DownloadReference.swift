@@ -11,7 +11,7 @@
 import Foundation
 
 /// A reference to a resource that can be downloaded.
-public struct DownloadReference: RenderReference, URLReference {
+public struct DownloadReference: RenderReference, URLReference, Equatable {
     /// The name you use for the directory that contains download items.
     ///
     /// This is the name of the directory within the generated build folder
@@ -63,5 +63,18 @@ public struct DownloadReference: RenderReference, URLReference {
 extension DownloadReference {
     private func renderURL(for url: URL) -> URL {
         url.isAbsoluteWebURL ? url : destinationURL(for: url.lastPathComponent)
+    }
+}
+
+// Diffable conformance
+extension DownloadReference: Diffable {
+    /// Returns the difference between this DownloadReference and the given one.
+    public func difference(from other: DownloadReference, at path: Path) -> Differences {
+        var diffBuilder = DifferenceBuilder(current: self, other: other, basePath: path)
+
+        diffBuilder.addPropertyDifference(atKeyPath: \Self.url, forKey: CodingKeys.url)
+        diffBuilder.addPropertyDifference(atKeyPath: \Self.sha512Checksum, forKey: CodingKeys.sha512Checksum)
+
+        return diffBuilder.differences
     }
 }

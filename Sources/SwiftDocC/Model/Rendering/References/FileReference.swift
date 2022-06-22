@@ -13,7 +13,7 @@ import Foundation
 /// A reference to a file resource.
 ///
 /// File resources are used, for example, to display the contents of a source code file in a Tutorial's step.
-public struct FileReference: RenderReference {
+public struct FileReference: RenderReference, Equatable {
     /// The type of this file reference.
     ///
     /// This value is always `.file`.
@@ -67,11 +67,25 @@ public struct FileReference: RenderReference {
     }
 }
 
+// Diffable conformance
+extension FileReference: Diffable {
+    /// Returns the difference between this FileReference and the given one.
+    public func difference(from other: FileReference, at path: Path) -> Differences {
+        var differences = Differences()
+        differences.append(contentsOf: propertyDifference(fileName, from: other.fileName, at: path + [CodingKeys.fileName]))
+        differences.append(contentsOf: propertyDifference(fileType, from: other.fileType, at: path + [CodingKeys.fileType]))
+        differences.append(contentsOf: propertyDifference(syntax, from: other.syntax, at: path + [CodingKeys.syntax]))
+        differences.append(contentsOf: content.difference(from: other.content, at: path + [CodingKeys.content]))
+        differences.append(contentsOf: highlights.difference(from: other.highlights, at: path + [CodingKeys.highlights]))
+        return differences
+    }
+}
+
 /// A reference to a type of file.
 ///
 /// This is not a reference to a specific file, but rather to a type of file. Use a file type reference together with a file reference to display an icon for that file type
 /// alongside the content of that file. For example, a property list file icon alongside the content of a specific property list file.
-public struct FileTypeReference: RenderReference {
+public struct FileTypeReference: RenderReference, Equatable {
     public var type: RenderReferenceType = .fileType
     
     /// The identifier of this reference.
@@ -92,5 +106,17 @@ public struct FileTypeReference: RenderReference {
         self.identifier = identifier
         self.displayName = displayName
         self.iconBase64 = iconBase64
+    }
+}
+
+extension FileTypeReference: Diffable {
+    /// Returns the difference between this FileTypeReference and the given one.
+    public func difference(from other: FileTypeReference, at path: Path) -> Differences {
+        var diffBuilder = DifferenceBuilder(current: self, other: other, basePath: path)
+        
+        diffBuilder.addPropertyDifference(atKeyPath: \Self.displayName, forKey: CodingKeys.displayName)
+        diffBuilder.addPropertyDifference(atKeyPath: \Self.iconBase64, forKey: CodingKeys.iconBase64)
+
+        return diffBuilder.differences
     }
 }

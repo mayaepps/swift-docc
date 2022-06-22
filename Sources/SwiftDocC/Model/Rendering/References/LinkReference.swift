@@ -9,7 +9,7 @@
 */
 
 /// A reference to a URL.
-public struct LinkReference: RenderReference {
+public struct LinkReference: RenderReference, Equatable {
     /// The type of this link reference.
     ///
     /// This value is always `.link`.
@@ -75,5 +75,19 @@ public struct LinkReference: RenderReference {
         try container.encode(title, forKey: .title)
         try container.encode(titleInlineContent, forKey: .titleInlineContent)
         try container.encode(url, forKey: .url)
+    }
+}
+
+// Diffable conformance
+extension LinkReference: Diffable {
+    /// Returns the difference between this LinkReference and the given one.
+    public func difference(from other: LinkReference, at path: Path) -> Differences {
+        var diffBuilder = DifferenceBuilder(current: self, other: other, basePath: path)
+
+        diffBuilder.addDifferences(atKeyPath: \Self.titleInlineContent, forKey: CodingKeys.titleInlineContent)
+        diffBuilder.addPropertyDifference(atKeyPath: \Self.url, forKey: CodingKeys.url)
+        diffBuilder.addPropertyDifference(atKeyPath: \Self.title, forKey: CodingKeys.title)
+
+        return diffBuilder.differences
     }
 }

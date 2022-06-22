@@ -110,8 +110,8 @@ extension TaskGroupRenderSection: Diffable {
         return diffs
     }
     
-    func similar(to other: TaskGroupRenderSection) -> Bool {
+    func isSimilar(to other: TaskGroupRenderSection) -> Bool {
         return ((title != nil) && title == other.title) || ((abstract != nil) && abstract == other.abstract) ||  identifiers == other.identifiers
-        // TODO: || discussion == other.discussion
+//        || discussion == other.discussion
     }
 }

@@ -11,7 +11,7 @@
 import Foundation
 
 /// A reference to an image.
-public struct ImageReference: MediaReference, URLReference {
+public struct ImageReference: MediaReference, URLReference, Equatable {
     /// The type of this image reference.
     ///
     /// This value is always `.image`.
@@ -116,5 +116,19 @@ public struct ImageReference: MediaReference, URLReference {
             try container.encode(url, forKey: .url)
             try container.encode(traits, forKey: .traits)
         }
+    }
+}
+
+// Diffable conformance
+extension ImageReference: Diffable {
+    
+    /// Returns the difference between this ImageReference and the given one.
+    public func difference(from other: ImageReference, at path: Path) -> Differences {
+        var diffs = Differences()
+        
+        diffs.append(contentsOf: optionalPropertyDifference(altText, from: other.altText, at: path + [CodingKeys.alt]))
+        diffs.append(contentsOf: optionalPropertyDifference(asset, from: other.asset, at: path + [CodingKeys.variants]))
+        
+        return diffs
     }
 }

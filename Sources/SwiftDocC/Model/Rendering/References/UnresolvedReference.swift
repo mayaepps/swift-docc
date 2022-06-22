@@ -9,7 +9,7 @@
 */
 
 /// A reference to another page which cannot be resolved.
-public struct UnresolvedRenderReference: RenderReference {
+public struct UnresolvedRenderReference: RenderReference, Equatable {
     /// The type of this unresolvable reference.
     ///
     /// This value is always `.unresolvable`.
@@ -36,5 +36,17 @@ public struct UnresolvedRenderReference: RenderReference {
         type = try values.decode(RenderReferenceType.self, forKey: .type)
         identifier = try values.decode(RenderReferenceIdentifier.self, forKey: .identifier)
         title = try values.decode(String.self, forKey: .title)
+    }
+}
+
+// Diffable conformance
+extension UnresolvedRenderReference: Diffable {
+    /// Returns the difference between this UnresolvedRenderReference and the given one.
+    public func difference(from other: UnresolvedRenderReference, at path: Path) -> Differences {
+        var diffBuilder = DifferenceBuilder(current: self, other: other, basePath: path)
+        
+        diffBuilder.addPropertyDifference(atKeyPath: \Self.title, forKey: CodingKeys.title)
+        
+        return diffBuilder.differences
     }
 }

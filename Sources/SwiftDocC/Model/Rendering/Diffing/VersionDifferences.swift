@@ -52,10 +52,12 @@ public struct ArchiveVersion: Codable, Equatable {
     
     public func checkIsUniqueFrom( otherVersions: [ArchiveVersion]) throws {
         if otherVersions.map({ $0.displayName }).contains(displayName) {
+            print("You cannot repeat version display names!")
             throw ArchiveVersionError.versionDisplayNameNotUnique
         }
         
         if otherVersions.map({ $0.identifier }).contains(identifier) {
+            print("You cannot repeat version identifiers!")
             throw ArchiveVersionError.versionIdentifierNotUnique
         }
     }

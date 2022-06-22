@@ -9,7 +9,7 @@
 */
 
 /// A reference to another page of documentation in the current context.
-public struct TopicRenderReference: RenderReference, VariantContainer {
+public struct TopicRenderReference: RenderReference, VariantContainer, Equatable {
     /// The type of this reference.
     ///
     /// This value is always `.topic`.
@@ -305,5 +305,35 @@ public struct TopicRenderReference: RenderReference, VariantContainer {
         try container.encodeIfPresent(name, forKey: .name)
         try container.encodeIfPresent(ideTitle, forKey: .ideTitle)
         try container.encodeIfPresent(tags, forKey: .tags)
+    }
+}
+
+// Conformance to Diffable
+extension TopicRenderReference: Diffable {
+    /// Returns the difference between two TopicRenderReferences.
+    public func difference(from other: TopicRenderReference, at path: Path) -> Differences {
+        var differences = Differences()
+
+        differences.append(contentsOf: optionalPropertyDifference(role, from: other.role, at: path + [CodingKeys.role]))
+        differences.append(contentsOf: propertyDifference(title, from: other.title, at: path + [CodingKeys.title]))
+        differences.append(contentsOf: propertyDifference(identifier, from: other.identifier, at: path + [CodingKeys.identifier]))
+        differences.append(contentsOf: propertyDifference(kind, from: other.kind, at: path + [CodingKeys.kind]))
+        differences.append(contentsOf: propertyDifference(self.required, from: other.required, at: path + [CodingKeys.required]))
+        differences.append(contentsOf: propertyDifference(type, from: other.type, at: path + [CodingKeys.type]))
+        differences.append(contentsOf: propertyDifference(url, from: other.url, at: path + [CodingKeys.url]))
+        differences.append(contentsOf: abstract.difference(from: other.abstract, at: path + [CodingKeys.abstract]))
+        differences.append(contentsOf: fragments.difference(from: other.fragments, at: path + [CodingKeys.fragments]))
+        differences.append(contentsOf: navigatorTitle.difference(from: other.navigatorTitle, at: path + [CodingKeys.navigatorTitle]))
+        differences.append(contentsOf: optionalPropertyDifference(estimatedTime, from: other.estimatedTime, at: path + [CodingKeys.estimatedTime]))
+        differences.append(contentsOf: conformance.difference(from: other.conformance, at: path + [CodingKeys.conformance]))
+        differences.append(contentsOf: propertyDifference(isBeta, from: other.isBeta, at: path + [CodingKeys.beta]))
+        differences.append(contentsOf: propertyDifference(isDeprecated, from: other.isDeprecated, at: path + [CodingKeys.deprecated]))
+        differences.append(contentsOf: propertyDifference(defaultImplementationCount, from: other.defaultImplementationCount, at: path + [CodingKeys.defaultImplementations]))
+        differences.append(contentsOf: propertyDifference(titleStyle, from: other.titleStyle, at: path + [CodingKeys.titleStyle]))
+        differences.append(contentsOf: optionalPropertyDifference(name, from: other.name, at: path + [CodingKeys.name]))
+        differences.append(contentsOf: optionalPropertyDifference(ideTitle, from: other.ideTitle, at: path + [CodingKeys.ideTitle]))
+        differences.append(contentsOf: optionalPropertyDifference(tags, from: other.tags, at: path + [CodingKeys.tags]))
+
+        return differences
     }
 }
