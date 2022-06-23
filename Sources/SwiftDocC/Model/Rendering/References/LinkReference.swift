@@ -84,9 +84,9 @@ extension LinkReference: Diffable {
     public func difference(from other: LinkReference, at path: Path) -> Differences {
         var diffBuilder = DifferenceBuilder(current: self, other: other, basePath: path)
 
-        diffBuilder.addDifferences(atKeyPath: \Self.titleInlineContent, forKey: CodingKeys.titleInlineContent)
-        diffBuilder.addPropertyDifference(atKeyPath: \Self.url, forKey: CodingKeys.url)
-        diffBuilder.addPropertyDifference(atKeyPath: \Self.title, forKey: CodingKeys.title)
+        diffBuilder.addDifferences(atKeyPath: \.titleInlineContent, forKey: CodingKeys.titleInlineContent)
+        diffBuilder.addPropertyDifference(atKeyPath: \.url, forKey: CodingKeys.url)
+        diffBuilder.addPropertyDifference(atKeyPath: \.title, forKey: CodingKeys.title)
 
         return diffBuilder.differences
     }

@@ -171,9 +171,9 @@ extension ConformanceSection: Diffable {
     func difference(from other: ConformanceSection, at path: Path) -> Differences {
         var diffBuilder = DifferenceBuilder(current: self, other: other, basePath: path)
 
-        diffBuilder.addDifferences(atKeyPath: \Self.availabilityPrefix, forKey: CodingKeys.availabilityPrefix)
-        diffBuilder.addDifferences(atKeyPath: \Self.conformancePrefix, forKey: CodingKeys.conformancePrefix)
-        diffBuilder.addDifferences(atKeyPath: \Self.constraints, forKey: CodingKeys.constraints)
+        diffBuilder.addDifferences(atKeyPath: \.availabilityPrefix, forKey: CodingKeys.availabilityPrefix)
+        diffBuilder.addDifferences(atKeyPath: \.conformancePrefix, forKey: CodingKeys.conformancePrefix)
+        diffBuilder.addDifferences(atKeyPath: \.constraints, forKey: CodingKeys.constraints)
         
         return diffBuilder.differences
     }

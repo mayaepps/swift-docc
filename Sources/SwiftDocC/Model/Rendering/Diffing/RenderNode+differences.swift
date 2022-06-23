@@ -25,16 +25,15 @@ struct DifferenceBuilder<T> {
     let other: T
     let path: Path
     
-    init(current: T, other: T, basePath: Path, keyedBy: codingKeys) {
+    init(current: T, other: T, basePath: Path) {
         self.differences = []
         self.current = current
         self.other = other
         self.path = basePath
-        self.codingKeys = codingKeys
     }
     
     /// Determines the difference between the two diffable objects at the KeyPaths given.
-    mutating func addDifferences<D>(atKeyPath keyPath: KeyPath<T, D>, forKey codingKey: self.co) where D: Diffable & Equatable & Codable {
+    mutating func addDifferences<D>(atKeyPath keyPath: KeyPath<T, D>, forKey codingKey: CodingKey) where D: Diffable & Equatable & Codable {
         let currentProperty = current[keyPath: keyPath]
         let otherProperty = other[keyPath: keyPath]
         
@@ -166,8 +165,7 @@ extension RenderNode: Diffable {
     
     /// Returns the differences between this render node and the given one.
     public func difference(from other: RenderNode, at path: Path) -> Differences {
-        
-        var diffBuilder = DifferenceBuilder(current: self, other: other, basePath: path, keyedBy: CodingKeys.self)
+        var diffBuilder = DifferenceBuilder(current: self, other: other, basePath: path)
         
         diffBuilder.addPropertyDifference(atKeyPath: \.kind, forKey: CodingKeys.kind)
         diffBuilder.addDifferences(atKeyPath: \.abstract, forKey: CodingKeys.abstract)
@@ -175,9 +173,8 @@ extension RenderNode: Diffable {
         diffBuilder.addDifferences(atKeyPath: \.identifier, forKey: CodingKeys.identifier)
         diffBuilder.differences.append(contentsOf: metadata.difference(from: other.metadata, at: path + [CodingKeys.metadata])) // RenderMetadata isn't Equatable
         //diffBuilder.addDifferences(atKeyPath: \Self.hierarchy, forKey: CodingKeys.hierarchy)
-        //diffBuilder.differences.append(contentsOf: topicSections.difference(from: other.topicSections, at: path + [CodingKeys.topicSections]))
-        diffBuilder.addDifferences(atKeyPath: \Self.topicSections, forKey: CodingKeys.topicSections)
-        diffBuilder.addDifferences(atKeyPath: \Self.seeAlsoSections, forKey: CodingKeys.seeAlsoSections)
+        diffBuilder.addDifferences(atKeyPath: \.topicSections, forKey: CodingKeys.topicSections)
+        diffBuilder.addDifferences(atKeyPath: \.seeAlsoSections, forKey: CodingKeys.seeAlsoSections)
         
         // Diffing render references
         // TODO: This should be dealt with in the DifferenceBuilder
@@ -284,7 +281,6 @@ extension Array: Diffable where Element: Equatable & Encodable {
     //TODO: This should be done in the DifferenceBuilder
     /// Returns the differences between this array and the given one.
     func difference(from other: Array<Element>, at path: Path) -> Differences {
-        print("called the generic array diffing method (non-diffable elements)")
         let arrayDiffs = self.difference(from: other)
         var differences = arrayDiffs.removals
         differences.append(contentsOf: arrayDiffs.insertions)
@@ -303,7 +299,6 @@ extension Array: Diffable where Element: Equatable & Encodable {
     }
     
     func difference(from other: Array<Element>, at path: Path) -> Differences where Element: Diffable {
-        print("called the Element: Diffable method")
         let arrayDiffs = self.difference(from: other) { element1, element2 in
             return element1.isSimilar(to: element2)
         }
