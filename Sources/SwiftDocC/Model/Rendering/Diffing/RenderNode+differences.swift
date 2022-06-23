@@ -94,6 +94,30 @@ struct DifferenceBuilder<T> {
             difference.append(.add(pointer: JSONPointer(from: path + [key]), encodableValue: currentProp))
         }
     }
+    
+    /// Determines the difference between the two diffable Arrays of RenderSections at the KeyPaths given.
+    mutating func addDifferences(atKeyPath keyPath: KeyPath<T, Array<RenderSection>>, forKey codingKey: CodingKey) {
+        let currentArray = current[keyPath: keyPath]
+        let otherArray = other[keyPath: keyPath]
+        
+        let typeErasedCurrentArray = currentArray.map { section in
+            return AnyRenderSection(section)
+        }
+        let typeErasedOtherArray = otherArray.map { section in
+            return AnyRenderSection(section)
+        }
+        
+        if typeErasedCurrentArray == typeErasedOtherArray {
+            return
+        }
+
+        if typeErasedCurrentArray.isSimilar(to: typeErasedOtherArray) {
+            let diffs = typeErasedCurrentArray.difference(from: typeErasedOtherArray, at: path + [codingKey])
+            differences.append(contentsOf: diffs)
+        } else {
+            differences.append(.replace(pointer: JSONPointer(from: path + [codingKey]), encodableValue: typeErasedCurrentArray))
+        }
+    }
 }
 
 // To be deleted when I switch over to DifferenceBuilder
@@ -172,7 +196,7 @@ extension RenderNode: Diffable {
         diffBuilder.addDifferences(atKeyPath: \.schemaVersion, forKey: CodingKeys.schemaVersion)
         diffBuilder.addDifferences(atKeyPath: \.identifier, forKey: CodingKeys.identifier)
         diffBuilder.differences.append(contentsOf: metadata.difference(from: other.metadata, at: path + [CodingKeys.metadata])) // RenderMetadata isn't Equatable
-        //diffBuilder.addDifferences(atKeyPath: \Self.hierarchy, forKey: CodingKeys.hierarchy)
+        diffBuilder.addDifferences(atKeyPath: \.hierarchy, forKey: CodingKeys.hierarchy)
         diffBuilder.addDifferences(atKeyPath: \.topicSections, forKey: CodingKeys.topicSections)
         diffBuilder.addDifferences(atKeyPath: \.seeAlsoSections, forKey: CodingKeys.seeAlsoSections)
         
@@ -186,35 +210,9 @@ extension RenderNode: Diffable {
 //        }
 //        diffBuilder.differences.append(contentsOf: diffableReferences.difference(from:otherDiffableReferences, at: path + [CodingKeys.references]))
 
-        // Diffing primary content sections
-        // TODO: This should be dealt with in the DifferenceBuilder
-        let equatablePrimaryContentSections = primaryContentSections.map { section in
-            return AnyRenderSection(section)
-        }
-        let otherEquatablePrimaryContentSections = other.primaryContentSections.map { section in
-            return AnyRenderSection(section)
-        }
-        diffBuilder.differences.append(contentsOf: equatablePrimaryContentSections.difference(from: otherEquatablePrimaryContentSections, at: path + [CodingKeys.primaryContentSections]))
-
-        // Diffing relationship sections
-        // TODO: This should be dealt with in the DifferenceBuilder
-        let equatableRelationshipSections = relationshipSections.map { section in
-            return AnyRenderSection(section)
-        }
-        let otherEquatableRelationshipSections = other.relationshipSections.map { section in
-            return AnyRenderSection(section)
-        }
-        diffBuilder.differences.append(contentsOf: equatableRelationshipSections.difference(from: otherEquatableRelationshipSections, at: path + [CodingKeys.relationshipsSections]))
-
-        // Diffing sections
-        // TODO: This should be dealt with in the DifferenceBuilder
-        let equatableSections = sections.map { section in
-            return AnyRenderSection(section)
-        }
-        let otherEquatableSections = other.sections.map { section in
-            return AnyRenderSection(section)
-        }
-        diffBuilder.differences.append(contentsOf: equatableSections.difference(from: otherEquatableSections, at: path + [CodingKeys.sections]))
+        diffBuilder.addDifferences(atKeyPath: \.primaryContentSections, forKey: CodingKeys.primaryContentSections)
+        diffBuilder.addDifferences(atKeyPath: \.relationshipSections, forKey: CodingKeys.relationshipsSections)
+        diffBuilder.addDifferences(atKeyPath: \.sections, forKey: CodingKeys.sections)
         
         return diffBuilder.differences
     }
@@ -331,11 +329,11 @@ extension Array: Diffable where Element: Equatable & Encodable {
     }
 }
 
-
+// MARK: AnyRenderReference
 /// A RenderReference value that can be diffed.
 ///
 /// An `AnyRenderReference` value forwards difference operations to the underlying base type, which implement the difference differently.
-struct AnyRenderReference: Diffable, Equatable {
+struct AnyRenderReference: Diffable, Encodable, Equatable {
     
     var value: RenderReference & Codable
     init(_ value: RenderReference & Codable) { self.value = value }
@@ -422,15 +420,51 @@ struct AnyRenderReference: Diffable, Equatable {
         }
     }
     
+    public func encode(to encoder: Encoder) throws {
+        try value.encode(to: encoder)
+    }
+    
     func isSimilar(to other: AnyRenderReference) -> Bool {
         // TODO: Pass this down to the specific render references. Maybe abstract the casting into its own method and pass in a closure?
         self.value.identifier == other.value.identifier
     }
 }
 
-// MARK: Equatable Conformance
+// MARK: AnyRenderSection
 
-public struct AnyRenderSection: Equatable, Encodable {
+/// A RenderSection value that can be diffed.
+///
+/// An `AnyRenderSection` value forwards difference operations to the underlying base type, each of which determine the difference differently.
+public struct AnyRenderSection: Equatable, Encodable, Diffable {
+    
+    // This forwards the difference methods on to the correct concrete type.
+    func difference(from other: AnyRenderSection, at path: Path) -> Differences {
+        switch (self.value.kind, other.value.kind) {
+        case (.intro, .intro), (.hero, .hero):
+            return (value as! IntroRenderSection).difference(from: (other.value as! IntroRenderSection), at: path)
+//        case (.contentAndMedia, .contentAndMedia):
+//            return (value as! ContentAndMediaSection).difference(from: (other.value as! ContentAndMediaSection), at: path)
+//        case (.contentAndMediaGroup, .contentAndMediaGroup):
+//            return (value as! ContentAndMediaGroupSection).difference(from: (other.value as! ContentAndMediaGroupSection), at: path)
+//        case (.callToAction, .callToAction):
+//            return (value as! CallToActionSection).difference(from: (other.value as! CallToActionSection), at: path)
+//        case (.resources, .resources):
+//            return (value as! ResourcesRenderSection).difference(from: (other.value as! ResourcesRenderSection), at: path)
+//        case (.declarations, .declarations):
+//            return (value as! DeclarationsRenderSection).difference(from: (other.value as! DeclarationsRenderSection), at: path)
+        case (.discussion, .discussion), (.content, .content):
+            return (value as! ContentRenderSection).difference(from: (other.value as! ContentRenderSection), at: path)
+        case (.taskGroup, .taskGroup):
+            return (value as! TaskGroupRenderSection).difference(from: (other.value as! TaskGroupRenderSection), at: path)
+//        case (.relationships, .relationships):
+//            return (value as! RelationshipsRenderSection).difference(from: (other.value as! RelationshipsRenderSection), at: path)
+//        case (.parameters, .parameters):
+//            return (value as! ParametersRenderSection).difference(from: (other.value as! ParametersRenderSection), at: path)
+        default:
+            return []
+        }
+    }
+    
     public static func == (lhs: AnyRenderSection, rhs: AnyRenderSection) -> Bool {
         switch (lhs.value.kind, rhs.value.kind) {
         case (.intro, .intro), (.hero, .hero):
@@ -477,6 +511,10 @@ public struct AnyRenderSection: Equatable, Encodable {
 
     public var value: RenderSection
     init(_ value: RenderSection) { self.value = value }
+    
+    public func isSimilar(to other: AnyRenderSection) -> Bool {
+        return self.value.kind == other.value.kind
+    }
 }
 
 
