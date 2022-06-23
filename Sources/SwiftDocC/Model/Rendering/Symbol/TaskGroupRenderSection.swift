@@ -96,18 +96,15 @@ extension TaskGroupRenderSection {
 // Conformance to Diffable
 extension TaskGroupRenderSection: Diffable {
     func difference(from other: TaskGroupRenderSection, at path: Path) -> Differences {
-        if let diff = self.checkIfReplaced(comparingAgainst: other, at: path) {
-            return diff
-        }
-        var diffs = Differences()
+        var diffBuilder = DifferenceBuilder(current: self, other: other, basePath: path)
         
-        diffs.append(contentsOf: optionalPropertyDifference(title, from: other.title, at: path + [CodingKeys.title]))
+        diffBuilder.addDifferences(atKeyPath: \.title, forKey: CodingKeys.title)
+        diffBuilder.addDifferences(atKeyPath: \.discussion, forKey: CodingKeys.discussion)
+        diffBuilder.addDifferences(atKeyPath: \.identifiers, forKey: CodingKeys.identifiers)
+        diffBuilder.addDifferences(atKeyPath: \.generated, forKey: CodingKeys.generated)
+        diffBuilder.addDifferences(atKeyPath: \.abstract, forKey: CodingKeys.abstract)
         
-        //TODO: RenderSection has to conform to Diffable
-//        diffs.append(contentsOf: discussion.difference(from: other.discussion, at: path + [CodingKeys.discussion]))
-        diffs.append(contentsOf: identifiers.difference(from: other.identifiers, at: path + [CodingKeys.identifiers]))
-        diffs.append(contentsOf: propertyDifference(generated, from: other.generated, at: path + [CodingKeys.generated]))
-        return diffs
+        return diffBuilder.differences
     }
     
     func isSimilar(to other: TaskGroupRenderSection) -> Bool {

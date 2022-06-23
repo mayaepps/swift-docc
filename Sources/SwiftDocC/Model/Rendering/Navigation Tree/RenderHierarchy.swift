@@ -52,10 +52,8 @@ public enum RenderHierarchy: Codable, Equatable {
 extension RenderHierarchy: Diffable {
     /// Returns the difference between this RenderHierarchy and the given one.
     public func difference(from other: RenderHierarchy, at path: Path) -> Differences {
-        if let diff = checkIfReplaced(comparingAgainst: other, at: path) {
-            return diff
-        }
         var differences = Differences()
+        
         switch (self, other) {
             case (let .reference(selfReferenceHierarchy), let .reference(otherReferenceHierarchy)):
                 differences.append(contentsOf: selfReferenceHierarchy.difference(from: otherReferenceHierarchy, at: path))
@@ -63,5 +61,15 @@ extension RenderHierarchy: Diffable {
                 return differences // Diffing tutorials is not currently supported
         }
         return differences
+    }
+    
+    func isSimilar(to other: RenderHierarchy) -> Bool {
+        switch (self, other) {
+        case (let .reference(selfReferenceHierarchy), let .reference(otherReferenceHierarchy)):
+            return selfReferenceHierarchy.isSimilar(to: otherReferenceHierarchy)
+        case (.tutorials(_), _), (_, .tutorials(_)):
+            return false // Diffing tutorials is not currently supported
+        }
+        return false
     }
 }

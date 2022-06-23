@@ -72,8 +72,8 @@ extension DownloadReference: Diffable {
     public func difference(from other: DownloadReference, at path: Path) -> Differences {
         var diffBuilder = DifferenceBuilder(current: self, other: other, basePath: path)
 
-        diffBuilder.addPropertyDifference(atKeyPath: \.url, forKey: CodingKeys.url)
-        diffBuilder.addPropertyDifference(atKeyPath: \.sha512Checksum, forKey: CodingKeys.sha512Checksum)
+        diffBuilder.addDifferences(atKeyPath: \.url, forKey: CodingKeys.url)
+        diffBuilder.addDifferences(atKeyPath: \.sha512Checksum, forKey: CodingKeys.sha512Checksum)
 
         return diffBuilder.differences
     }

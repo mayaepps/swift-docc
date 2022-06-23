@@ -450,24 +450,12 @@ extension ResolvedTopicReference {
 extension ResolvedTopicReference: Diffable {
     /// Returns the differences between this ResolvedTopicReference and the given one.
     public func difference(from other: ResolvedTopicReference, at path: Path) -> Differences {
-        if let diff = self.checkIfReplaced(comparingAgainst: other, at: path) {
-            return diff
-        }
+        var diffBuilder = DifferenceBuilder(current: self, other: other, basePath: path)
         
-        var diffs = Differences()
-        // The only part of the URL that is encoded to RenderJSON is the absolute string.
-        let urlString = url.absoluteString
-        let otherUrlString = other.url.absoluteString
-        if urlString != otherUrlString {
-            diffs.append(.replace(pointer: JSONPointer(from: path + [CodingKeys.url]), value: AnyCodable(urlString)))
-        }
-        // The only part of the source language that is encoded to RenderJSON is the id.
-        let sourceLanguageId = sourceLanguage.id
-        let otherSourceLanguageId = other.sourceLanguage.id
-        if sourceLanguageId != otherSourceLanguageId {
-            diffs.append(.replace(pointer: JSONPointer(from: path + [CodingKeys.interfaceLanguage]), value: AnyCodable(sourceLanguageId)))
-        }
-        return diffs
+        diffBuilder.addDifferences(atKeyPath: \.url.absoluteString, forKey: CodingKeys.url) // The only part of the URL that is encoded to RenderJSON is the absolute string.
+        diffBuilder.addDifferences(atKeyPath: \.sourceLanguage.id, forKey: CodingKeys.interfaceLanguage) // The only part of the source language that is encoded to RenderJSON is the id.
+        
+        return diffBuilder.differences
     }
 }
 

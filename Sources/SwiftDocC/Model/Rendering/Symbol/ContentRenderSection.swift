@@ -39,8 +39,8 @@ extension ContentRenderSection: Diffable {
     func difference(from other: ContentRenderSection, at path: Path) -> Differences {
         var diffBuilder = DifferenceBuilder(current: self, other: other, basePath: path)
         
-        diffBuilder.addPropertyDifference(atKeyPath: \.kind, forKey: CodingKeys.kind)
-        diffBuilder.addPropertyDifference(atKeyPath: \.content, forKey: CodingKeys.content)
+        diffBuilder.addDifferences(atKeyPath: \.kind, forKey: CodingKeys.kind)
+        diffBuilder.addDifferences(atKeyPath: \.content, forKey: CodingKeys.content)
         
         return diffBuilder.differences
     }

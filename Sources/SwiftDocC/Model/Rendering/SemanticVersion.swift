@@ -11,7 +11,7 @@
 /// A semantic version.
 ///
 /// A version that follows the [Semantic Versioning](https://semver.org) specification.
-public struct SemanticVersion: Codable, Equatable, CustomStringConvertible, Diffable {
+public struct SemanticVersion: Codable, Equatable, CustomStringConvertible {
     
     /// The major version number.
     ///
@@ -61,23 +61,19 @@ public struct SemanticVersion: Codable, Equatable, CustomStringConvertible, Diff
         }
         return result
     }
-    
+}
+
+
+//Diffable conformance
+extension SemanticVersion: Diffable {
     /// Returns the differences between this SemanticVersion and the given one.
     public func difference(from other: SemanticVersion, at path: Path) -> Differences {
-        if let diff = self.checkIfReplaced(comparingAgainst: other, at: path) {
-            return diff
-        }
+        var diffBuilder = DifferenceBuilder(current: self, other: other, basePath: path)
         
-        var diff = Differences()
-        if major != other.major {
-            diff.append(.replace(pointer: JSONPointer(from: path + [CodingKeys.major]), value: AnyCodable(major)))
-        }
-        if minor != other.minor {
-            diff.append(.replace(pointer: JSONPointer(from: path + [CodingKeys.minor]), value: AnyCodable(minor)))
-        }
-        if patch != other.patch  {
-            diff.append(.replace(pointer: JSONPointer(from: path + [CodingKeys.patch]), value: AnyCodable(patch)))
-        }
-        return diff
+        diffBuilder.addDifferences(atKeyPath: \.major, forKey: CodingKeys.major)
+        diffBuilder.addDifferences(atKeyPath: \.minor, forKey: CodingKeys.minor)
+        diffBuilder.addDifferences(atKeyPath: \.patch, forKey: CodingKeys.patch)
+
+        return diffBuilder.differences
     }
 }

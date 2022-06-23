@@ -45,7 +45,7 @@ extension UnresolvedRenderReference: Diffable {
     public func difference(from other: UnresolvedRenderReference, at path: Path) -> Differences {
         var diffBuilder = DifferenceBuilder(current: self, other: other, basePath: path)
         
-        diffBuilder.addPropertyDifference(atKeyPath: \.title, forKey: CodingKeys.title)
+        diffBuilder.addDifferences(atKeyPath: \.title, forKey: CodingKeys.title)
         
         return diffBuilder.differences
     }

@@ -68,7 +68,7 @@ struct DifferenceBuilder<T> {
 
     
     /// Adds the difference between two optional properties to the DifferenceBuilder.
-    mutating func addPropertyDifference<E>(atKeyPath keyPath: KeyPath<T, E>, forKey codingKey: CodingKey) where E: Equatable & Codable {
+    mutating func addDifferences<E>(atKeyPath keyPath: KeyPath<T, E>, forKey codingKey: CodingKey) where E: Equatable & Codable {
         let currentProperty = current[keyPath: keyPath]
         let otherProperty = other[keyPath: keyPath]
         
@@ -78,7 +78,7 @@ struct DifferenceBuilder<T> {
     }
     
     /// Unwraps and adds the difference between two optional properties.
-    mutating func addOptionalPropertyDifference<O>(atKeyPath keyPath: KeyPath<T, O?>, forKey key: CodingKey) where O: Equatable & Codable {
+    mutating func addDifferences<O>(atKeyPath keyPath: KeyPath<T, O?>, forKey key: CodingKey) where O: Equatable & Codable {
         var difference = Differences()
         
         let currentProperty = current[keyPath: keyPath]
@@ -86,6 +86,28 @@ struct DifferenceBuilder<T> {
         
         if let currentProperty = currentProperty, let otherProperty = otherProperty {
             if currentProperty != otherProperty {
+                difference.append(.replace(pointer: JSONPointer(from: path + [key]), encodableValue: currentProperty))
+            }
+        } else if otherProperty != nil {
+            difference.append(.remove(pointer: JSONPointer(from: path + [key])))
+        } else if let currentProp = currentProperty {
+            difference.append(.add(pointer: JSONPointer(from: path + [key]), encodableValue: currentProp))
+        }
+    }
+    
+    /// Unwraps and adds the difference between two optional properties.
+    mutating func addDifferences(atKeyPath keyPath: KeyPath<T, Optional<RenderSection>>, forKey key: CodingKey) {
+        var difference = Differences()
+        
+        let currentProperty = current[keyPath: keyPath]
+        let otherProperty = other[keyPath: keyPath]
+        
+        if let currentProperty = currentProperty, let otherProperty = otherProperty {
+            let anyCurrent = AnyRenderSection(currentProperty)
+            let anyOther = AnyRenderSection(otherProperty)
+            if anyCurrent.isSimilar(to: anyOther) {
+                difference.append(contentsOf: anyCurrent.difference(from: anyOther, at: path + [key]))
+            } else {
                 difference.append(.replace(pointer: JSONPointer(from: path + [key]), encodableValue: currentProperty))
             }
         } else if otherProperty != nil {
@@ -150,16 +172,6 @@ extension Diffable where Self: Equatable {
     func isSimilar(to other: Self) -> Bool {
         return self == other
     }
-    
-    func checkIfReplaced(comparingAgainst other: Self, at path: Path) -> [JSONPatchOperation]? where Self: Encodable {
-        if self == other {
-            return []
-        } else if self.isSimilar(to: other) {
-            return nil
-        } else {
-            return [.replace(pointer: JSONPointer(from: path), encodableValue: self)]
-        }
-    }
 }
 
 /// An integer coding key.
@@ -191,7 +203,7 @@ extension RenderNode: Diffable {
     public func difference(from other: RenderNode, at path: Path) -> Differences {
         var diffBuilder = DifferenceBuilder(current: self, other: other, basePath: path)
         
-        diffBuilder.addPropertyDifference(atKeyPath: \.kind, forKey: CodingKeys.kind)
+        diffBuilder.addDifferences(atKeyPath: \.kind, forKey: CodingKeys.kind)
         diffBuilder.addDifferences(atKeyPath: \.abstract, forKey: CodingKeys.abstract)
         diffBuilder.addDifferences(atKeyPath: \.schemaVersion, forKey: CodingKeys.schemaVersion)
         diffBuilder.addDifferences(atKeyPath: \.identifier, forKey: CodingKeys.identifier)

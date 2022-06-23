@@ -114,8 +114,8 @@ extension FileTypeReference: Diffable {
     public func difference(from other: FileTypeReference, at path: Path) -> Differences {
         var diffBuilder = DifferenceBuilder(current: self, other: other, basePath: path)
         
-        diffBuilder.addPropertyDifference(atKeyPath: \.displayName, forKey: CodingKeys.displayName)
-        diffBuilder.addPropertyDifference(atKeyPath: \.iconBase64, forKey: CodingKeys.iconBase64)
+        diffBuilder.addDifferences(atKeyPath: \.displayName, forKey: CodingKeys.displayName)
+        diffBuilder.addDifferences(atKeyPath: \.iconBase64, forKey: CodingKeys.iconBase64)
 
         return diffBuilder.differences
     }

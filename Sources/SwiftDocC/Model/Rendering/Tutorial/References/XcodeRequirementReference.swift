@@ -41,8 +41,8 @@ extension XcodeRequirementReference: Diffable {
     public func difference(from other: XcodeRequirementReference, at path: Path) -> Differences {
         var diffBuilder = DifferenceBuilder(current: self, other: other, basePath: path)
         
-        diffBuilder.addPropertyDifference(atKeyPath: \.title, forKey: CodingKeys.title)
-        diffBuilder.addPropertyDifference(atKeyPath: \.url, forKey: CodingKeys.url)
+        diffBuilder.addDifferences(atKeyPath: \.title, forKey: CodingKeys.title)
+        diffBuilder.addDifferences(atKeyPath: \.url, forKey: CodingKeys.url)
 
         return diffBuilder.differences
     }

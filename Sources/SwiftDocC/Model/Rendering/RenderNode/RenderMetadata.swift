@@ -169,17 +169,12 @@ extension RenderMetadata: Codable {
 
         /// Returns the difference between two RenderMetadata.Modules.
         public func difference(from other: RenderMetadata.Module, at path: Path) -> Differences {
-            if let diff = self.checkIfReplaced(comparingAgainst: other, at: path) {
-                return diff
-            }
+            var diffBuilder = DifferenceBuilder(current: self, other: other, basePath: path)
             
-            var differences = Differences()
-            if name != other.name {
-                differences.append(.replace(pointer: JSONPointer(from: path + [CodingKeys.name]), encodableValue: name))
-            }
-            differences.append(contentsOf: relatedModules.difference(from: other.relatedModules, at: path + [CodingKeys.relatedModules]))
+            diffBuilder.addDifferences(atKeyPath: \.name, forKey: CodingKeys.name)
+            diffBuilder.addDifferences(atKeyPath: \.relatedModules, forKey: CodingKeys.relatedModules)
 
-            return differences
+            return diffBuilder.differences
         }
     }
 
