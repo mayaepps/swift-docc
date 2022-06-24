@@ -212,7 +212,7 @@
              },
              "Version": {
                  "type": "object",
-                 "required": ["identifier", "displayName", "nodeContentHash"],
+                 "required": ["identifier", "displayName", "nodeHash"],
                  "properties": {
                      "identifier": {
                          "type": "string"
@@ -220,7 +220,7 @@
                      "displayName": {
                          "type": "string"
                      },
-                     "nodeContentHash": {
+                     "nodeHash": {
                          "type": "string"
                      }
                  }

@@ -24,8 +24,7 @@
                     "kind",
                     "identifier",
                     "sections",
-                    "schemaVersion",
-                    "versions"
+                    "schemaVersion"
                 ],
                 "type": "object",
                 "properties": {
@@ -67,12 +66,6 @@
                     },
                     "schemaVersion": {
                         "$ref": "#/components/schemas/SchemaVersion"
-                    },
-                    "versions": {
-                        "type": "array",
-                        "items": {
-                          "$ref": "#/components/schemas/VersionPatch"
-                        }
                     }
                 }
             },
@@ -1770,8 +1763,7 @@
                     "schemaVersion",
                     "hierarchy",
                     "metadata",
-                    "sections",
-                    "versions"
+                    "sections"
                 ],
                 "type": "object",
                 "properties": {
@@ -2893,12 +2885,15 @@
             },
             "Version": {
                 "type": "object",
-                "required": ["identifier", "displayName"],
+                "required": ["identifier", "displayName", "nodeHash"],
                 "properties": {
                     "identifier": {
                         "type": "string"
                     },
                     "displayName": {
+                        "type": "string"
+                    },
+                    "nodeHash": {
                         "type": "string"
                     }
                 }
