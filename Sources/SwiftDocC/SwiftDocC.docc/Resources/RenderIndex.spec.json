@@ -26,6 +26,12 @@
                                 "$ref": "#/components/schemas/Node"
                             }
                         }
+                    },
+                    "versions": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/VersionPatch"
+                        }
                     }
                 }
             },
@@ -99,6 +105,16 @@
                         "items": {
                             "$ref": "#/components/schemas/Node"
                         }
+                    },
+                    "diffs": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "type": "string",
+                            "enum": [
+                                "modified",
+                                "added"
+                            ]
+                        },
                     }
                 }
             },
@@ -120,7 +136,95 @@
                         "type": "integer"
                     }
                 }
-            }
+            },
+            "JSONPatch": {
+                "type": "array",
+                "items": {
+                    "oneOf": [
+                        {
+                            "type": "object",
+                            "required": [
+                                "op",
+                                "path",
+                                "value"
+                            ],
+                            "properties": {
+                                "op": {
+                                    "type": "string",
+                                    "enum": ["add", "test"]
+                                },
+                                "path": {
+                                    "type": "string"
+                                },
+                                "value": {}
+                            }
+                        },
+                        {
+                            "type": "object",
+                            "required": [
+                                "op",
+                                "path"
+                            ],
+                            "properties": {
+                                "op": {
+                                    "type": "string",
+                                    "enum": ["remove"]
+                                },
+                                "path": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        {
+                            "type": "object",
+                            "required": [
+                                "op",
+                                "path",
+                                "from"
+                            ],
+                            "properties": {
+                                "op": {
+                                    "type": "string",
+                                    "enum": ["move", "copy"]
+                                },
+                                "path": {
+                                    "type": "string"
+                                },
+                                "from": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            "VersionPatch": {
+                 "type": "object",
+                 "required": ["version"],
+                 "properties": {
+                     "version": {
+                         "$ref" : "#/components/schemas/Version"
+                     },
+                     "patch": {
+                         "$ref": "#/components/schemas/JSONPatch"
+                     }
+                 }
+             },
+             "Version": {
+                 "type": "object",
+                 "required": ["identifier", "displayName", "nodeContentHash"],
+                 "properties": {
+                     "identifier": {
+                         "type": "string"
+                     },
+                     "displayName": {
+                         "type": "string"
+                     },
+                     "nodeContentHash": {
+                         "type": "string"
+                     }
+                 }
+             }
         },
         "requestBodies": {},
         "securitySchemes": {},
