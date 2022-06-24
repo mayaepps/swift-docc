@@ -11,7 +11,7 @@
 import Foundation
 
 /// Arbitrary metadata for a render node.
-public struct RenderMetadata: VariantContainer {
+public struct RenderMetadata: VariantContainer, Diffable {
     // MARK: Tutorials metadata
     
     /// The name of technology associated with a tutorial.
@@ -146,6 +146,9 @@ public struct RenderMetadata: VariantContainer {
     
     /// Any tags assigned to the node.
     public var tags: [RenderNode.Tag]?
+    
+    /// The archive version that this node belongs to.
+    public var version: ArchiveVersion?
 }
 
 extension RenderMetadata: Codable {
@@ -157,11 +160,22 @@ extension RenderMetadata: Codable {
     }
     
     /// Metadata about a module dependency.
-    public struct Module: Codable {
+    public struct Module: Codable, Diffable, Equatable {
         public let name: String
         /// Possible dependencies to the module, we allow for those in the render JSON model
         /// but have no authoring support at the moment.
         public let relatedModules: [String]?
+
+        /// Returns the difference between two RenderMetadata.Modules.
+        public func difference(from other: RenderMetadata.Module, at path: Path) -> Differences {
+            var differences = Differences()
+            if name != other.name {
+                differences.append(.replace(pointer: JSONPointer(from: path + [CodingKeys.name]), encodableValue: name))
+            }
+            differences.append(contentsOf: relatedModules.difference(from: other.relatedModules, at: path + [CodingKeys.relatedModules]))
+
+            return differences
+        }
     }
 
     public struct CodingKeys: CodingKey, Hashable {
@@ -197,6 +211,7 @@ extension RenderMetadata: Codable {
         public static let navigatorTitle = CodingKeys(stringValue: "navigatorTitle")
         public static let sourceFileURI = CodingKeys(stringValue: "sourceFileURI")
         public static let tags = CodingKeys(stringValue: "tags")
+        public static let version = CodingKeys(stringValue: "version")
     }
     
     public init(from decoder: Decoder) throws {
@@ -222,6 +237,7 @@ extension RenderMetadata: Codable {
         navigatorTitleVariants = try container.decodeVariantCollectionIfPresent(ofValueType: [DeclarationRenderSection.Token]?.self, forKey: .navigatorTitle)
         sourceFileURIVariants = try container.decodeVariantCollectionIfPresent(ofValueType: String?.self, forKey: .sourceFileURI)
         tags = try container.decodeIfPresent([RenderNode.Tag].self, forKey: .tags)
+        version = try container.decodeIfPresent(ArchiveVersion.self, forKey: .version)
         
         let extraKeys = Set(container.allKeys).subtracting(
             [
@@ -242,7 +258,8 @@ extension RenderMetadata: Codable {
                 .fragments,
                 .navigatorTitle,
                 .sourceFileURI,
-                .tags
+                .tags,
+                .version
             ]
         )
         for extraKey in extraKeys {
@@ -272,6 +289,7 @@ extension RenderMetadata: Codable {
         try container.encodeVariantCollection(fragmentsVariants, forKey: .fragments, encoder: encoder)
         try container.encodeVariantCollection(navigatorTitleVariants, forKey: .navigatorTitle, encoder: encoder)
         try container.encodeVariantCollection(sourceFileURIVariants, forKey: .sourceFileURI, encoder: encoder)
+        try container.encodeIfPresent(version, forKey: .version)
         if let tags = self.tags, !tags.isEmpty {
             try container.encodeIfPresent(tags, forKey: .tags)
         }
@@ -280,4 +298,38 @@ extension RenderMetadata: Codable {
             try container.encode(AnyMetadata(value), forKey: key)
         }
     }
+    
+    /// Returns the differences between this RenderMetadata and the given one.
+    public func difference(from other: RenderMetadata, at path: Path) -> Differences {
+
+        var diffs = Differences()
+
+        // Diffing optional properties:
+        if let titlePatch = optionalPropertyDifference(title, from: other.title, at: path + [CodingKeys.title]) {
+            diffs.append(titlePatch)
+        }
+        if let idPatch = optionalPropertyDifference(externalID, from: other.externalID, at: path + [CodingKeys.externalID]) {
+            diffs.append(idPatch)
+        }
+        if let currentSymbolKindPatch = optionalPropertyDifference(symbolKind, from: other.symbolKind, at: path + [CodingKeys.symbolKind]) {
+            diffs.append(currentSymbolKindPatch)
+        }
+        if let currentRolePatch = optionalPropertyDifference(role, from: other.role, at: path + [CodingKeys.role]) {
+            diffs.append(currentRolePatch)
+        }
+        if let currentRoleHeadingPatch = optionalPropertyDifference(roleHeading, from: other.roleHeading, at: path + [CodingKeys.roleHeading]) {
+            diffs.append(currentRoleHeadingPatch)
+        }
+        if let currentVersionPatch = optionalPropertyDifference(version, from: other.version, at: path + [CodingKeys.version]) {
+            diffs.append(currentVersionPatch)
+        }
+
+        // Diffing structs and arrays
+        diffs.append(contentsOf: modules.difference(from: other.modules, at: path + [CodingKeys.modules]))
+        diffs.append(contentsOf: fragments.difference(from: other.fragments, at: path + [CodingKeys.fragments]))
+        diffs.append(contentsOf: navigatorTitle.difference(from: other.navigatorTitle, at: path + [CodingKeys.navigatorTitle]))
+
+        return diffs
+    }
+
 }

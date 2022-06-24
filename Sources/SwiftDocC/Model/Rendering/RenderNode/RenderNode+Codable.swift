@@ -11,9 +11,9 @@
 import Foundation
 
 extension RenderNode: Codable {
-    private enum CodingKeys: CodingKey {
+    enum CodingKeys: CodingKey {
         case schemaVersion, identifier, sections, references, metadata, kind, hierarchy
-        case abstract, topicSections, defaultImplementationsSections, primaryContentSections, relationshipsSections, declarationSections, seeAlsoSections, returnsSection, parametersSection, sampleCodeDownload, downloadNotAvailableSummary, deprecationSummary, diffAvailability, interfaceLanguage, variants, variantOverrides
+        case abstract, topicSections, defaultImplementationsSections, primaryContentSections, relationshipsSections, declarationSections, seeAlsoSections, returnsSection, parametersSection, sampleCodeDownload, downloadNotAvailableSummary, deprecationSummary, diffAvailability, interfaceLanguage, variants, variantOverrides, versions
     }
     
     public init(from decoder: Decoder) throws {
@@ -75,7 +75,6 @@ extension RenderNode: Codable {
         try container.encode(schemaVersion, forKey: .schemaVersion)
         try container.encode(identifier, forKey: .identifier)
         try container.encode(sections.map(CodableRenderSection.init), forKey: .sections)
-        
         try container.encode(metadata, forKey: .metadata)
         try container.encode(kind, forKey: .kind)
         try container.encode(hierarchy, forKey: .hierarchy)
@@ -113,6 +112,15 @@ extension RenderNode: Codable {
             // Otherwise, the variant overrides
             // that have been accumulated while encoding the properties of the render node.
             try container.encode(variantOverrides, forKey: .variantOverrides)
+        }
+    
+        // If given a previous node, diff between it and this RenderNode.
+        if let previousNode = encoder.userInfoPreviousNode {
+            let versionPatch = VersionPatch(archiveVersion: previousNode.metadata.version ?? ArchiveVersion(identifier: "N/A", displayName: "N/A"),
+                                            jsonPatch: previousNode.difference(from: self, at: encoder.codingPath))
+            
+            // For now, we're only doing one VersionPatch
+            try container.encodeIfPresent([versionPatch], forKey: .versions)
         }
     }
 }

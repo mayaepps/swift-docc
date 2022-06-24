@@ -42,6 +42,8 @@ public struct ConvertAction: Action, RecreatingContext {
     let transformForStaticHosting: Bool
     let hostingBasePath: String?
     
+    let previousArchiveURL: URL?
+    
     
     private(set) var context: DocumentationContext {
         didSet {
@@ -100,7 +102,8 @@ public struct ConvertAction: Action, RecreatingContext {
         inheritDocs: Bool = false,
         experimentalEnableCustomTemplates: Bool = false,
         transformForStaticHosting: Bool = false,
-        hostingBasePath: String? = nil
+        hostingBasePath: String? = nil,
+        previousArchiveURL: URL? = nil
     ) throws
     {
         self.rootURL = documentationBundleURL
@@ -117,6 +120,7 @@ public struct ConvertAction: Action, RecreatingContext {
         self.documentationCoverageOptions = documentationCoverageOptions
         self.transformForStaticHosting = transformForStaticHosting
         self.hostingBasePath = hostingBasePath
+        self.previousArchiveURL = previousArchiveURL
         
         let filterLevel: DiagnosticSeverity
         if analyze {
@@ -148,7 +152,7 @@ public struct ConvertAction: Action, RecreatingContext {
         if let currentPlatforms = currentPlatforms {
             self.context.externalMetadata.currentPlatforms = currentPlatforms
         }
-
+ 
         // Inject user-set flags.
         self.context.externalMetadata.inheritDocs = inheritDocs
         
@@ -158,7 +162,7 @@ public struct ConvertAction: Action, RecreatingContext {
         case .none:
             break
         }
-        
+  
         let dataProvider: DocumentationWorkspaceDataProvider
         if let injectedDataProvider = injectedDataProvider {
             dataProvider = injectedDataProvider
@@ -209,6 +213,7 @@ public struct ConvertAction: Action, RecreatingContext {
         transformForStaticHosting: Bool,
         hostingBasePath: String?,
         temporaryDirectory: URL
+//        previousArchiveURL: URL?
     ) throws {
         // Note: This public initializer exists separately from the above internal one
         // because the FileManagerProtocol type we use to enable mocking in tests
@@ -240,6 +245,7 @@ public struct ConvertAction: Action, RecreatingContext {
             experimentalEnableCustomTemplates: experimentalEnableCustomTemplates,
             transformForStaticHosting: transformForStaticHosting,
             hostingBasePath: hostingBasePath
+//            previousArchiveURL: previousArchiveURL
         )
     }
 
@@ -305,6 +311,15 @@ public struct ConvertAction: Action, RecreatingContext {
         defer {
             try? fileManager.removeItem(at: temporaryFolder)
         }
+        
+        // Copy over all items from the previous archive so old assets and pages will be avaliable for viewing older versions.
+        // Most old files will be overritten by the new ones.
+        if let previousArchiveURL = previousArchiveURL {
+            // TODO: Copy over the rest of the archive too, will have to deal with item already exists error
+            let targetDataURL = temporaryFolder.appendingPathComponent("data")
+            let previousArchiveDataURL = previousArchiveURL.appendingPathComponent("data")
+            try fileManager.copyItem(at: previousArchiveDataURL, to: targetDataURL)
+        }
 
         let indexHTML: URL?
         if let htmlTemplateDirectory = htmlTemplateDirectory {
@@ -352,7 +367,7 @@ public struct ConvertAction: Action, RecreatingContext {
             // Create an index builder and prepare it to receive nodes.
             indexer = try Indexer(outputURL: temporaryFolder, bundleIdentifier: bundleIdentifier)
         }
-
+        
         let outputConsumer = ConvertFileWritingConsumer(
             targetFolder: temporaryFolder,
             bundleRootFolder: rootURL,

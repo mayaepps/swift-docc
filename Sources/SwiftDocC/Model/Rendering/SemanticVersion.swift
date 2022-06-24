@@ -11,7 +11,7 @@
 /// A semantic version.
 ///
 /// A version that follows the [Semantic Versioning](https://semver.org) specification.
-public struct SemanticVersion: Codable, Equatable, CustomStringConvertible {
+public struct SemanticVersion: Codable, Equatable, CustomStringConvertible, Diffable {
     
     /// The major version number.
     ///
@@ -60,5 +60,21 @@ public struct SemanticVersion: Codable, Equatable, CustomStringConvertible {
             result += "+\(buildMetadata)"
         }
         return result
+    }
+    
+    /// Returns the differences between this SemanticVersion and the given one.
+    public func difference(from other: SemanticVersion, at path: Path) -> Differences {
+        var diff = Differences()
+
+        if major != other.major {
+            diff.append(.replace(pointer: JSONPointer(from: path + [CodingKeys.major]), value: AnyCodable(major)))
+        }
+        if minor != other.minor {
+            diff.append(.replace(pointer: JSONPointer(from: path + [CodingKeys.minor]), value: AnyCodable(minor)))
+        }
+        if patch != other.patch  {
+            diff.append(.replace(pointer: JSONPointer(from: path + [CodingKeys.patch]), value: AnyCodable(patch)))
+        }
+        return diff
     }
 }
