@@ -31,12 +31,38 @@ public struct RenderIndex: Codable, Equatable {
     /// A mapping of interface languages to the index nodes they contain.
     public let interfaceLanguages: [String: [Node]]
     
+    public let versions: [ArchiveVersion]?
+    
     /// Creates a new render index with the given interface language to node mapping.
     public init(
-        interfaceLanguages: [String: [Node]]
+        interfaceLanguages: [String: [Node]],
+        versions: [ArchiveVersion]? = []
     ) {
         self.schemaVersion = Self.currentSchemaVersion
         self.interfaceLanguages = interfaceLanguages
+        self.versions = versions
+    }
+    
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        
+        try container.encode(schemaVersion, forKey: .schemaVersion)
+        try container.encode(interfaceLanguages, forKey: .interfaceLanguages)
+        
+        // If given a previous index, diff between it and this RenderNode.
+        if let previousIndex = encoder.userInfoPreviousIndex {
+            
+            // TODO: Grab the previousNode's version info from somewhere.
+            let versionPatch = VersionPatch(archiveVersion: ArchiveVersion(identifier: "N/A", displayName: "N/A"), jsonPatch: previousIndex.difference(from: self, at: encoder.codingPath))
+
+            let allPreviousVersionPatches = (versions ?? []) + [versionPatch]
+            
+            // TODO: Check version (or maybe this is already done in RenderNode?)
+//            try metadata.version?.checkIsUniqueFrom(otherVersions: allPreviousVersionPatches.map({$0.version}))
+
+            try container.encode([versionPatch], forKey: .versions)
+            // try container.encodeIfPresent(allPreviousVersions, forKey: .versions)
+        }
     }
 }
 
@@ -334,5 +360,32 @@ extension NavigatorIndex.PageType {
         case .groupMarker:
             return "groupMarker"
         }
+    }
+}
+
+extension RenderIndex: Diffable {
+    func difference(from other: RenderIndex, at path: Path) -> Differences {
+        var diffBuilder = DifferenceBuilder(current: self, other: other, basePath: path)
+        
+        diffBuilder.addDifferences(atKeyPath: \.schemaVersion, forKey: CodingKeys.schemaVersion)
+        diffBuilder.addDifferences(atKeyPath: \.interfaceLanguages, forKey: CodingKeys.interfaceLanguages)
+        
+        return diffBuilder.differences
+    }
+}
+
+extension RenderIndex.Node: Diffable {
+    func difference(from other: RenderIndex.Node, at path: Path) -> Differences {
+        var diffBuilder = DifferenceBuilder(current: self, other: other, basePath: path)
+        
+        diffBuilder.addDifferences(atKeyPath: \.title, forKey: CodingKeys.title)
+        diffBuilder.addDifferences(atKeyPath: \.path, forKey: CodingKeys.path)
+        diffBuilder.addDifferences(atKeyPath: \.type, forKey: CodingKeys.type)
+        diffBuilder.addDifferences(atKeyPath: \.children, forKey: CodingKeys.children)
+        diffBuilder.addDifferences(atKeyPath: \.isDeprecated, forKey: CodingKeys.deprecated)
+        diffBuilder.addDifferences(atKeyPath: \.isExternal, forKey: CodingKeys.external)
+        diffBuilder.addDifferences(atKeyPath: \.isBeta, forKey: CodingKeys.beta)
+        
+        return diffBuilder.differences
     }
 }

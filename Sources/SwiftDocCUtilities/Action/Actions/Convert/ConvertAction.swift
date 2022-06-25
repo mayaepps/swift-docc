@@ -313,9 +313,11 @@ public struct ConvertAction: Action, RecreatingContext {
         // Most old files will be overwritten by the new ones.
         if let previousArchiveURL = previousArchiveURL {
             // TODO: Copy over the rest of the archive too, will have to deal with item already exists error
-            let targetDataURL = temporaryFolder.appendingPathComponent("data")
-            let previousArchiveDataURL = previousArchiveURL.appendingPathComponent("data")
-            try fileManager.copyItem(at: previousArchiveDataURL, to: targetDataURL)
+            for directory in ["data", "index"] {
+                let targetDataURL = temporaryFolder.appendingPathComponent(directory, isDirectory: true)
+                let previousArchiveDataURL = previousArchiveURL.appendingPathComponent(directory, isDirectory: true)
+                try fileManager.copyItem(at: previousArchiveDataURL, to: targetDataURL)
+            }
         }
 
         defer {
