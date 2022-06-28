@@ -33,7 +33,7 @@ struct DifferenceBuilder<T> {
     }
     
     /// Determines the difference between the two diffable objects at the KeyPaths given.
-    mutating func addDifferences<D>(atKeyPath keyPath: KeyPath<T, D>, forKey codingKey: CodingKey) where D: Diffable & Equatable & Codable {
+    mutating func addDifferences<D>(atKeyPath keyPath: KeyPath<T, D>, forKey codingKey: CodingKey) where D: Diffable & Equatable & Encodable {
         let currentProperty = current[keyPath: keyPath]
         let otherProperty = other[keyPath: keyPath]
         
@@ -49,7 +49,7 @@ struct DifferenceBuilder<T> {
         }
     }
     
-    /// Determines the difference between the two arrays of diffable objects at the KeyPaths given.
+    /// Determines the difference between the two dictionaries mapping strings to diffable objects at the KeyPaths given.
     mutating func addDifferences<Element>(atKeyPath keyPath: KeyPath<T, Array<Element>>, forKey codingKey: CodingKey) where Element: Diffable & Equatable & Codable {
         let currentProperty = current[keyPath: keyPath]
         let otherProperty = other[keyPath: keyPath]
@@ -65,32 +65,64 @@ struct DifferenceBuilder<T> {
             differences.append(.replace(pointer: JSONPointer(from: path + [codingKey]), encodableValue: currentProperty))
         }
     }
-
     
+    /// Determines the difference between the two dictionaries mapping strings to arrays of diffable objects at the KeyPaths given.
+    mutating func addDifferences<Value>(atKeyPath keyPath: KeyPath<T, Dictionary<String, [Value]>>, forKey codingKey: CodingKey) where Value: Diffable & Equatable & Encodable {
+        let currentProperty = current[keyPath: keyPath]
+        let otherProperty = other[keyPath: keyPath]
+        
+        if currentProperty == otherProperty {
+            return
+        }
+        
+        if currentProperty.isSimilar(to: otherProperty) {
+            differences.append(contentsOf: currentProperty.arrayValueDifference(from: otherProperty, at: path + [codingKey]))
+        } else {
+            differences.append(.replace(pointer: JSONPointer(from: path + [codingKey]), encodableValue: currentProperty))
+        }
+    }
+    
+    /// Determines the difference between the two arrays of diffable objects at the KeyPaths given.
+    mutating func addDifferences<Value>(atKeyPath keyPath: KeyPath<T, Dictionary<String, Value>>, forKey codingKey: CodingKey) where Value: Diffable & Equatable & Encodable {
+        let currentProperty = current[keyPath: keyPath]
+        let otherProperty = other[keyPath: keyPath]
+        
+        if currentProperty == otherProperty {
+            return
+        }
+        
+        if currentProperty.isSimilar(to: otherProperty) {
+            let diffs = currentProperty.difference(from: otherProperty, at: path + [codingKey])
+            differences.append(contentsOf: diffs)
+        } else {
+            differences.append(.replace(pointer: JSONPointer(from: path + [codingKey]), encodableValue: currentProperty))
+        }
+    }
+    
+    /// Determines the difference between the two dictionaries mapping strings to diffable objects at the KeyPaths given.
+    mutating func addDifferences<Element>(atKeyPath keyPath: KeyPath<T, Array<Element>?>, forKey codingKey: CodingKey) where Element: Diffable & Equatable & Codable {
+        let currentProperty = current[keyPath: keyPath]
+        let otherProperty = other[keyPath: keyPath]
+        
+        if currentProperty == otherProperty {
+            return
+        }
+        
+        if currentProperty.isSimilar(to: otherProperty) {
+            let diffs = currentProperty.difference(from: otherProperty, at: path + [codingKey])
+            differences.append(contentsOf: diffs)
+        } else {
+            differences.append(.replace(pointer: JSONPointer(from: path + [codingKey]), encodableValue: currentProperty))
+        }
+    }
+
     /// Adds the difference between two properties to the DifferenceBuilder.
-    mutating func addDifferences<E>(atKeyPath keyPath: KeyPath<T, E>, forKey codingKey: CodingKey) where E: Equatable & Codable {
+    @_disfavoredOverload mutating func addDifferences<E>(atKeyPath keyPath: KeyPath<T, E>, forKey codingKey: CodingKey) where E: Equatable & Codable {
         let currentProperty = current[keyPath: keyPath]
         let otherProperty = other[keyPath: keyPath]
         
         if currentProperty != otherProperty {
             differences.append(.replace(pointer: JSONPointer(from: path + [codingKey]), encodableValue: currentProperty))
-        }
-    }
-    
-    /// Unwraps and adds the difference between two optional properties.
-    mutating func addDifferences<O>(atKeyPath keyPath: KeyPath<T, O?>, forKey key: CodingKey) where O: Equatable & Codable {
-        
-        let currentProperty = current[keyPath: keyPath]
-        let otherProperty = other[keyPath: keyPath]
-        
-        if let currentProperty = currentProperty, let otherProperty = otherProperty {
-            if currentProperty != otherProperty {
-                differences.append(.replace(pointer: JSONPointer(from: path + [key]), encodableValue: currentProperty))
-            }
-        } else if otherProperty != nil {
-            differences.append(.remove(pointer: JSONPointer(from: path + [key])))
-        } else if let currentProp = currentProperty {
-            differences.append(.add(pointer: JSONPointer(from: path + [key]), encodableValue: currentProp))
         }
     }
     
@@ -158,20 +190,6 @@ struct DifferenceBuilder<T> {
 
 // To be deleted when I switch over to DifferenceBuilder
 extension Diffable {
-    func optionalPropertyDifference<T>(_ current: T?, from other: T?, at path: Path) -> Differences where T: Equatable & Codable {
-        var difference = Differences()
-        
-        if let current = current, let other = other {
-            if current != other {
-                difference.append(.replace(pointer: JSONPointer(from: path), encodableValue: current))
-            }
-        } else if other != nil {
-            difference.append(.remove(pointer: JSONPointer(from: path)))
-        } else if let current = current {
-            difference.append(.add(pointer: JSONPointer(from: path), encodableValue: current))
-        }
-        return difference
-    }
     func propertyDifference<T>(_ current: T, from other: T, at path: Path) -> Differences where T: Equatable & Codable {
         var differences = Differences()
         if current != other {
@@ -230,7 +248,7 @@ extension RenderNode: Diffable {
 }
 
 extension Dictionary: Diffable where Key == String, Value: Encodable & Equatable {
-    //TODO: This should be done in the DifferenceBuilder
+    
     /// Returns the difference between two dictionaries with diffable values.
     func difference(from other: Dictionary<Key, Value>, at path: Path) -> Differences where Value: Diffable {
         var differences = Differences()
@@ -241,7 +259,6 @@ extension Dictionary: Diffable where Key == String, Value: Encodable & Equatable
         return differences
     }
     
-    //TODO: This should be done in the DifferenceBuilder
     /// Returns the difference between two dictionaries with diffable values.
     func difference(from other: Dictionary<Key, Value>, at path: Path) -> Differences {
         var differences = Differences()
@@ -256,16 +273,26 @@ extension Dictionary: Diffable where Key == String, Value: Encodable & Equatable
         return differences
     }
     
+    /// Returns the difference between two dictionaries with diffable values.
+    func arrayValueDifference<Element>(from other: Dictionary<Key, [Element]>, at path: Path) -> Differences where Element : Diffable & Equatable & Encodable {
+        var differences = Differences()
+        let uniqueKeysSet = Set(self.keys).union(Set(other.keys))
+        for key in uniqueKeysSet {
+            differences.append(contentsOf: (self[key] as! Array<Element>?).difference(from: other[key], at: path + [CustomKey(stringValue: key)]))
+        }
+        return differences
+    }
+    
     // For now, we are not replacing whole dictionaries
     func isSimilar(to other: Dictionary<String, Value>) -> Bool {
         return true
     }
 }
 
-extension Optional: Diffable where Wrapped: Diffable & Equatable {
+extension Optional: Diffable where Wrapped: Diffable & Equatable & Encodable {
     //TODO: This should be done in the DifferenceBuilder
     /// Returns the differences between this optional and the given one.
-    func difference(from other: Optional<Wrapped>, at path: Path) -> Differences {
+    @_disfavoredOverload func difference(from other: Optional<Wrapped>, at path: Path) -> Differences {
         var difference = Differences()
         if let current = self, let other = other {
             difference.append(contentsOf: current.difference(from: other, at: path))
@@ -274,10 +301,25 @@ extension Optional: Diffable where Wrapped: Diffable & Equatable {
                 pointer: JSONPointer(from: path)))
         } else if let current = self {
             difference.append(JSONPatchOperation.add(
-                pointer: JSONPointer(from: path), value: AnyCodable(current as! Encodable)))
+                pointer: JSONPointer(from: path), encodableValue: current))
         }
         return difference
     }
+    
+    func difference<Element>(from other: Optional<Array<Element>>, at path: Path) -> Differences where Element : Diffable & Equatable & Encodable {
+        var difference = Differences()
+        if let current = self, let other = other {
+            difference.append(contentsOf: (current as! Array<Element>).difference(from: other, at: path))
+        } else if other != nil {
+            difference.append(JSONPatchOperation.remove(
+                pointer: JSONPointer(from: path)))
+        } else if let current = self {
+            difference.append(JSONPatchOperation.add(
+                pointer: JSONPointer(from: path), encodableValue: current))
+        }
+        return difference
+    }
+    
     
     // TODO: Optionals should deal with replacements on their own.
     func isSimilar(to other: Optional<Wrapped>) -> Bool {

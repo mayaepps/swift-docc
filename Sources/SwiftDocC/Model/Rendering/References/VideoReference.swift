@@ -129,12 +129,12 @@ public struct VideoReference: MediaReference, URLReference, Equatable {
 extension VideoReference: Diffable {
     /// Returns the difference between this VideoReference and the given one.
     public func difference(from other: VideoReference, at path: Path) -> Differences {
-        var differences = Differences()
-
-        differences.append(contentsOf: optionalPropertyDifference(altText, from: other.altText, at: path + [CodingKeys.alt]))
-        differences.append(contentsOf: optionalPropertyDifference(asset, from: other.asset, at: path + [CodingKeys.variants]))
-        differences.append(contentsOf: poster.difference(from: other.poster, at: path + [CodingKeys.poster]))
+        var diffBuilder = DifferenceBuilder(current: self, other: other, basePath: path)
         
-        return differences
+        diffBuilder.addDifferences(atKeyPath: \.altText, forKey: CodingKeys.alt)
+        diffBuilder.addDifferences(atKeyPath: \.asset, forKey: CodingKeys.variants)
+        diffBuilder.addDifferences(atKeyPath: \.poster, forKey: CodingKeys.poster)
+        
+        return diffBuilder.differences
     }
 }

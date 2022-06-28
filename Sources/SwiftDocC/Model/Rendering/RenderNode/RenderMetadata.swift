@@ -302,22 +302,19 @@ extension RenderMetadata: Codable {
     /// Returns the differences between this RenderMetadata and the given one.
     public func difference(from other: RenderMetadata, at path: Path) -> Differences {
 
-        var diffs = Differences()
+        var diffBuilder = DifferenceBuilder(current: self, other: other, basePath: path)
 
-        // Diffing optional properties:
-        diffs.append(contentsOf: optionalPropertyDifference(title, from: other.title, at: path + [CodingKeys.title]))
-        diffs.append(contentsOf: optionalPropertyDifference(externalID, from: other.externalID, at: path + [CodingKeys.externalID]))
-        diffs.append(contentsOf: optionalPropertyDifference(symbolKind, from: other.symbolKind, at: path + [CodingKeys.symbolKind]))
-        diffs.append(contentsOf: optionalPropertyDifference(role, from: other.role, at: path + [CodingKeys.role]))
-        diffs.append(contentsOf: optionalPropertyDifference(roleHeading, from: other.roleHeading, at: path + [CodingKeys.roleHeading]))
-        diffs.append(contentsOf: optionalPropertyDifference(version, from: other.version, at: path + [CodingKeys.version]))
+        diffBuilder.addDifferences(atKeyPath: \.title, forKey: CodingKeys.title)
+        diffBuilder.addDifferences(atKeyPath: \.externalID, forKey: CodingKeys.externalID)
+        diffBuilder.addDifferences(atKeyPath: \.symbolKind, forKey: CodingKeys.symbolKind)
+        diffBuilder.addDifferences(atKeyPath: \.role, forKey: CodingKeys.role)
+        diffBuilder.addDifferences(atKeyPath: \.roleHeading, forKey: CodingKeys.roleHeading)
+        diffBuilder.addDifferences(atKeyPath: \.version, forKey: CodingKeys.version)
+        diffBuilder.addDifferences(atKeyPath: \.modules, forKey: CodingKeys.modules)
+        diffBuilder.addDifferences(atKeyPath: \.fragments, forKey: CodingKeys.fragments)
+        diffBuilder.addDifferences(atKeyPath: \.navigatorTitle, forKey: CodingKeys.navigatorTitle)
 
-        // Diffing structs and arrays
-        diffs.append(contentsOf: modules.difference(from: other.modules, at: path + [CodingKeys.modules]))
-        diffs.append(contentsOf: fragments.difference(from: other.fragments, at: path + [CodingKeys.fragments]))
-        diffs.append(contentsOf: navigatorTitle.difference(from: other.navigatorTitle, at: path + [CodingKeys.navigatorTitle]))
-
-        return diffs
+        return diffBuilder.differences
     }
 
 }

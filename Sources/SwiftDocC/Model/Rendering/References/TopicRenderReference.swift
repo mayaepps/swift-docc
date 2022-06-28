@@ -312,28 +312,29 @@ public struct TopicRenderReference: RenderReference, VariantContainer, Equatable
 extension TopicRenderReference: Diffable {
     /// Returns the difference between two TopicRenderReferences.
     public func difference(from other: TopicRenderReference, at path: Path) -> Differences {
-        var differences = Differences()
+        var diffBuilder = DifferenceBuilder(current: self, other: other, basePath: path)
 
-        differences.append(contentsOf: optionalPropertyDifference(role, from: other.role, at: path + [CodingKeys.role]))
-        differences.append(contentsOf: propertyDifference(title, from: other.title, at: path + [CodingKeys.title]))
-        differences.append(contentsOf: propertyDifference(identifier, from: other.identifier, at: path + [CodingKeys.identifier]))
-        differences.append(contentsOf: propertyDifference(kind, from: other.kind, at: path + [CodingKeys.kind]))
-        differences.append(contentsOf: propertyDifference(self.required, from: other.required, at: path + [CodingKeys.required]))
-        differences.append(contentsOf: propertyDifference(type, from: other.type, at: path + [CodingKeys.type]))
-        differences.append(contentsOf: propertyDifference(url, from: other.url, at: path + [CodingKeys.url]))
-        differences.append(contentsOf: abstract.difference(from: other.abstract, at: path + [CodingKeys.abstract]))
-        differences.append(contentsOf: fragments.difference(from: other.fragments, at: path + [CodingKeys.fragments]))
-        differences.append(contentsOf: navigatorTitle.difference(from: other.navigatorTitle, at: path + [CodingKeys.navigatorTitle]))
-        differences.append(contentsOf: optionalPropertyDifference(estimatedTime, from: other.estimatedTime, at: path + [CodingKeys.estimatedTime]))
-        differences.append(contentsOf: conformance.difference(from: other.conformance, at: path + [CodingKeys.conformance]))
-        differences.append(contentsOf: propertyDifference(isBeta, from: other.isBeta, at: path + [CodingKeys.beta]))
-        differences.append(contentsOf: propertyDifference(isDeprecated, from: other.isDeprecated, at: path + [CodingKeys.deprecated]))
-        differences.append(contentsOf: propertyDifference(defaultImplementationCount, from: other.defaultImplementationCount, at: path + [CodingKeys.defaultImplementations]))
-        differences.append(contentsOf: propertyDifference(titleStyle, from: other.titleStyle, at: path + [CodingKeys.titleStyle]))
-        differences.append(contentsOf: optionalPropertyDifference(name, from: other.name, at: path + [CodingKeys.name]))
-        differences.append(contentsOf: optionalPropertyDifference(ideTitle, from: other.ideTitle, at: path + [CodingKeys.ideTitle]))
-        differences.append(contentsOf: optionalPropertyDifference(tags, from: other.tags, at: path + [CodingKeys.tags]))
+        diffBuilder.addDifferences(atKeyPath: \.role, forKey: CodingKeys.role)
+        diffBuilder.addDifferences(atKeyPath: \.title, forKey: CodingKeys.title)
+        diffBuilder.addDifferences(atKeyPath: \.identifier, forKey: CodingKeys.identifier)
+        diffBuilder.addDifferences(atKeyPath: \.kind, forKey: CodingKeys.kind)
+        diffBuilder.addDifferences(atKeyPath: \.required, forKey: CodingKeys.required)
+        diffBuilder.addDifferences(atKeyPath: \.type, forKey: CodingKeys.type)
+        diffBuilder.addDifferences(atKeyPath: \.url, forKey: CodingKeys.url)
+        diffBuilder.addDifferences(atKeyPath: \.abstract, forKey: CodingKeys.abstract)
+        diffBuilder.addDifferences(atKeyPath: \.fragments, forKey: CodingKeys.fragments)
+        diffBuilder.addDifferences(atKeyPath: \.navigatorTitle, forKey: CodingKeys.navigatorTitle)
+        diffBuilder.addDifferences(atKeyPath: \.estimatedTime, forKey: CodingKeys.estimatedTime)
+        diffBuilder.addDifferences(atKeyPath: \.title, forKey: CodingKeys.title)
+        diffBuilder.addDifferences(atKeyPath: \.conformance, forKey: CodingKeys.conformance)
+        diffBuilder.addDifferences(atKeyPath: \.isBeta, forKey: CodingKeys.beta)
+        diffBuilder.addDifferences(atKeyPath: \.isDeprecated, forKey: CodingKeys.deprecated)
+        diffBuilder.addDifferences(atKeyPath: \.defaultImplementationCount, forKey: CodingKeys.defaultImplementations)
+        diffBuilder.addDifferences(atKeyPath: \.titleStyle, forKey: CodingKeys.titleStyle)
+        diffBuilder.addDifferences(atKeyPath: \.name, forKey: CodingKeys.name)
+        diffBuilder.addDifferences(atKeyPath: \.ideTitle, forKey: CodingKeys.ideTitle)
+        diffBuilder.addDifferences(atKeyPath: \.tags, forKey: CodingKeys.tags)
 
-        return differences
+        return diffBuilder.differences
     }
 }
