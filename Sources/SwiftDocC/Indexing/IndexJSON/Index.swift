@@ -390,6 +390,6 @@ extension RenderIndex.Node: Diffable {
     }
     
     func isSimilar(to other: RenderIndex.Node) -> Bool {
-        return title == other.title
+        return title == other.title || ((children != nil) && children == other.children) || ((path != nil) && path == other.path) || ((type != nil) && type == other.type)
     }
 }

@@ -565,7 +565,7 @@ public struct AnyRenderSection: Equatable, Encodable, Diffable {
     init(_ value: RenderSection) { self.value = value }
     
     public func isSimilar(to other: AnyRenderSection) -> Bool {
-        return self.value.kind == other.value.kind
+        return value.kind == other.value.kind
     }
 }
 
