@@ -70,6 +70,5 @@ extension RenderHierarchy: Diffable {
         case (.tutorials(_), _), (_, .tutorials(_)):
             return false // Diffing tutorials is not currently supported
         }
-        return false
     }
 }

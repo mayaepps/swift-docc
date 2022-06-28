@@ -17,10 +17,10 @@ import Foundation
 public struct VersionPatch: Codable, Equatable {
         
     let version: ArchiveVersion
-    public var patch: JSONPatch
+    public var patch: JSONPatch?
     
     public mutating func add(_ patchOperation: JSONPatchOperation) {
-        patch.append(patchOperation)
+        patch?.append(patchOperation)
     }
     
     public mutating func add<PatchOperations>(
@@ -33,7 +33,8 @@ public struct VersionPatch: Codable, Equatable {
     
     init(archiveVersion: ArchiveVersion, jsonPatch: JSONPatch) {
         version = archiveVersion
-        patch = jsonPatch
+        // To prevent many empty patches cluttering the versions array, the patch property should not be encoded if it is an empty array.
+        patch = jsonPatch.count > 0 ? jsonPatch : nil
     }
         
 }

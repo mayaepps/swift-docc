@@ -117,7 +117,7 @@ struct DifferenceBuilder<T> {
     }
 
     /// Adds the difference between two properties to the DifferenceBuilder.
-    @_disfavoredOverload mutating func addDifferences<E>(atKeyPath keyPath: KeyPath<T, E>, forKey codingKey: CodingKey) where E: Equatable & Codable {
+    mutating func addDifferences<E>(atKeyPath keyPath: KeyPath<T, E>, forKey codingKey: CodingKey) where E: Equatable & Encodable {
         let currentProperty = current[keyPath: keyPath]
         let otherProperty = other[keyPath: keyPath]
         
