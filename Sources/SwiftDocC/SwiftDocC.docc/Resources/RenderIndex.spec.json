@@ -12,7 +12,8 @@
                 "type": "object",
                 "required": [
                     "schemaVersion",
-                    "interfaceLanguages"
+                    "interfaceLanguages",
+                    "metadata"
                 ],
                 "properties": {
                     "identifier": {
@@ -27,10 +28,33 @@
                             }
                         }
                     },
+                    "metadata": {
+                        "type": "object",
+                        "properties": {
+                            "version": {
+                                "$ref" : "#/components/schemas/Version"
+                            }
+                        }
+                    }
                     "versions": {
                         "type": "array",
                         "items": {
                             "$ref": "#/components/schemas/VersionPatch"
+                        }
+                    },
+                    "previousNodeDifferences": {
+                        "type": "object",
+                        "properties": {
+                            "diffs": {
+                                "description": "A dictionary property that maps from a node identifier to a dictionary of node diffs. The node diffs dictionary maps to the type of change the current node should display when diffing against the given prior node. If nothing changed against a given version, that version won't appear in the dictionary of diffs.",
+                                "additionalProperties": {
+                                    "type": "string",
+                                    "enum": [
+                                        "modified",
+                                        "added"
+                                    ]
+                                },
+                            }
                         }
                     }
                 }
@@ -106,16 +130,6 @@
                             "$ref": "#/components/schemas/Node"
                         }
                     },
-                    "diffs": {
-                        "type": "object",
-                        "additionalProperties": {
-                            "type": "string",
-                            "enum": [
-                                "modified",
-                                "added"
-                            ]
-                        },
-                    }
                 }
             },
             "SchemaVersion": {
@@ -212,15 +226,12 @@
              },
              "Version": {
                  "type": "object",
-                 "required": ["identifier", "displayName", "nodeHash"],
+                 "required": ["identifier", "displayName"],
                  "properties": {
                      "identifier": {
                          "type": "string"
                      },
                      "displayName": {
-                         "type": "string"
-                     },
-                     "nodeHash": {
                          "type": "string"
                      }
                  }
