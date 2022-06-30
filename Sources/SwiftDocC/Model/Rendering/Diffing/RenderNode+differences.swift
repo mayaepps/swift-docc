@@ -254,7 +254,13 @@ extension Dictionary: Diffable where Key == String, Value: Encodable & Equatable
         var differences = Differences()
         let uniqueKeysSet = Set(self.keys).union(Set(other.keys))
         for key in uniqueKeysSet {
+//            if let value = self[key] as? Array<any Diffable & Equatable & Encodable>, let otherValue = other[key] as? Array<any Diffable & Equatable & Encodable> {
+//                differences.append(contentsOf: value.difference(from: otherValue, at: path + [CustomKey(stringValue: key)]))
+//            } else {
+//                differences.append(contentsOf: self[key].difference(from: other[key], at: path + [CustomKey(stringValue: key)]))
+//            }
             differences.append(contentsOf: self[key].difference(from: other[key], at: path + [CustomKey(stringValue: key)]))
+            
         }
         return differences
     }

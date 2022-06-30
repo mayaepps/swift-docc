@@ -69,7 +69,7 @@ extension RenderNode: Codable {
         variants = try container.decodeIfPresent([RenderNode.Variant].self, forKey: .variants)
         variantOverrides = try container.decodeIfPresent(VariantOverrides.self, forKey: .variantOverrides)
         
-        versions = try container.decodeIfPresent([VersionPatch].self, forKey: .versions)
+        versions = try container.decodeIfPresent([VersionPatch].self, forKey: .versions)  ?? []
     }
     
     public func encode(to encoder: Encoder) throws {
@@ -119,14 +119,15 @@ extension RenderNode: Codable {
         // If given a previous node, diff between it and this RenderNode.
         if let previousNode = encoder.userInfoPreviousNode {
             
-            let versionPatch = VersionPatch(archiveVersion: previousNode.metadata.version ?? ArchiveVersion(identifier: "N/A", displayName: "N/A"), jsonPatch: previousNode.difference(from: self, at: encoder.codingPath))
+            let newVersionPatch = VersionPatch(archiveVersion: previousNode.metadata.version ?? ArchiveVersion(identifier: "N/A", displayName: "N/A"), jsonPatch: previousNode.difference(from: self, at: encoder.codingPath))
             
-            let allPreviousVersionPatches = (versions ?? []) + [versionPatch]
+            var newVersions = [VersionPatch]() // versions <-- For now, only diffing two versions for ease of testing.
+            newVersions.append(newVersionPatch)
+            try metadata.version!.checkIsUniqueFrom(otherVersions: newVersions.map { $0.version }) // TODO: Move this to be done when the archive is passed in.
+            try container.encode(newVersions, forKey: .versions)
             
-            try metadata.version?.checkIsUniqueFrom(otherVersions: allPreviousVersionPatches.map({$0.version}))
-
-            try container.encodeIfPresent([versionPatch], forKey: .versions)
-            // try container.encodeIfPresent(allPreviousVersions, forKey: .versions)
+        } else {  // TODO: If this RenderNode didn't have a previous version beacuse it is a new page, there will be a previousIndex.
+            try container.encode(versions ?? [], forKey: .versions)
         }
     }
 }

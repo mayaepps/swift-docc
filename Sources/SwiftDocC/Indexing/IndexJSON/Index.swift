@@ -31,12 +31,12 @@ public struct RenderIndex: Codable, Equatable {
     /// A mapping of interface languages to the index nodes they contain.
     public let interfaceLanguages: [String: [Node]]
     
-    public let versions: [ArchiveVersion]?
+    public let versions: [VersionPatch]?
     
     /// Creates a new render index with the given interface language to node mapping.
     public init(
         interfaceLanguages: [String: [Node]],
-        versions: [ArchiveVersion]? = []
+        versions: [VersionPatch]? = []
     ) {
         self.schemaVersion = Self.currentSchemaVersion
         self.interfaceLanguages = interfaceLanguages
@@ -53,15 +53,12 @@ public struct RenderIndex: Codable, Equatable {
         if let previousIndex = encoder.userInfoPreviousIndex {
             
             // TODO: Grab the previousNode's version info from somewhere.
-            let versionPatch = VersionPatch(archiveVersion: ArchiveVersion(identifier: "N/A", displayName: "N/A"), jsonPatch: previousIndex.difference(from: self, at: encoder.codingPath))
-
-            let allPreviousVersionPatches = (versions ?? []) + [versionPatch]
+            let newVersionPatch = VersionPatch(archiveVersion: ArchiveVersion(identifier: "N/A", displayName: "N/A"), jsonPatch: previousIndex.difference(from: self, at: encoder.codingPath))
             
-            // TODO: Check version (or maybe this is already done in RenderNode?)
-//            try metadata.version?.checkIsUniqueFrom(otherVersions: allPreviousVersionPatches.map({$0.version}))
-
-            try container.encode([versionPatch], forKey: .versions)
-            // try container.encodeIfPresent(allPreviousVersions, forKey: .versions)
+            var newVersions = [VersionPatch]() // versions <-- For now, only diffing two versions for ease of testing.
+            newVersions.append(newVersionPatch)
+            
+            try container.encode(newVersions, forKey: .versions)
         }
     }
 }

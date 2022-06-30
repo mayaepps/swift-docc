@@ -28,11 +28,6 @@ extension CodingUserInfoKey {
     
     static let baseEncodingPath = CodingUserInfoKey(rawValue: "baseEncodingPath")!
     
-    /// A user info key that encapsulates version patches.
-    ///
-    /// This key is used by encoders to accumulate the ``VersionPatch`` between this RenderNode and the previousNode.
-    static let versionPatch = CodingUserInfoKey(rawValue: "versionPatch")!
-    
     /// A user key that encapsulates the previous RenderNode that will be compared to this one to find differences and create patches.
     static let previousNode = CodingUserInfoKey(rawValue: "previousNode")!
     
