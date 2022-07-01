@@ -35,25 +35,21 @@
                                 "$ref" : "#/components/schemas/Version"
                             }
                         }
-                    }
+                    },
                     "versions": {
                         "type": "array",
                         "items": {
                             "$ref": "#/components/schemas/VersionPatch"
                         }
                     },
-                    "previousNodeDifferences": {
+                    "nodeVersionDifferences": {
+                        "description": "A dictionary property that maps from a node identifier to a dictionary of diffs for that node. The node diffs dictionary maps from a version to the type of change (modified/added) the current node should display when diffing against that prior version. If nothing changed against a given version, that version won't appear in the dictionary of diffs.",
                         "type": "object",
-                        "properties": {
-                            "diffs": {
-                                "description": "A dictionary property that maps from a node identifier to a dictionary of node diffs. The node diffs dictionary maps to the type of change the current node should display when diffing against the given prior node. If nothing changed against a given version, that version won't appear in the dictionary of diffs.",
-                                "additionalProperties": {
-                                    "type": "string",
-                                    "enum": [
-                                        "modified",
-                                        "added"
-                                    ]
-                                },
+                        "additionalProperties": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string",
+                                "enum": ["modified", "added"]
                             }
                         }
                     }
@@ -235,7 +231,7 @@
                          "type": "string"
                      }
                  }
-             }
+             },
         },
         "requestBodies": {},
         "securitySchemes": {},
