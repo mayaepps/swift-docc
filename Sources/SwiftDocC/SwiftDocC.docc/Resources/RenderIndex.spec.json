@@ -125,7 +125,7 @@
                         "items": {
                             "$ref": "#/components/schemas/Node"
                         }
-                    },
+                    }
                 }
             },
             "SchemaVersion": {
