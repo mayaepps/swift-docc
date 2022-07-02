@@ -9,6 +9,7 @@
 */
 
 import SymbolKit
+import Foundation
 
 /// A navigation index of the content in a DocC archive, optimized for rendering.
 ///
@@ -31,16 +32,25 @@ public struct RenderIndex: Codable, Equatable {
     /// A mapping of interface languages to the index nodes they contain.
     public let interfaceLanguages: [String: [Node]]
     
+    /// Metadata about the RenderIndex
+    public let metadata: RenderIndexMetadata?
+    
     public let versions: [VersionPatch]?
     
     /// Creates a new render index with the given interface language to node mapping.
     public init(
         interfaceLanguages: [String: [Node]],
-        versions: [VersionPatch]? = []
+        versions: [VersionPatch]? = [],
+        currentVersion: ArchiveVersion? = nil
     ) {
         self.schemaVersion = Self.currentSchemaVersion
         self.interfaceLanguages = interfaceLanguages
         self.versions = versions
+        if let currentVersion = currentVersion {
+            self.metadata = RenderIndexMetadata(version: currentVersion)
+        } else {
+            self.metadata = nil
+        }
     }
     
     public func encode(to encoder: Encoder) throws {
@@ -48,12 +58,15 @@ public struct RenderIndex: Codable, Equatable {
         
         try container.encode(schemaVersion, forKey: .schemaVersion)
         try container.encode(interfaceLanguages, forKey: .interfaceLanguages)
+        try container.encode(metadata, forKey: .metadata)
         
         // If given a previous index, diff between it and this RenderNode.
         if let previousIndex = encoder.userInfoPreviousIndex {
             
-            // TODO: Grab the previousNode's version info from somewhere.
-            let newVersionPatch = VersionPatch(archiveVersion: ArchiveVersion(identifier: "N/A", displayName: "N/A"), jsonPatch: previousIndex.difference(from: self, at: encoder.codingPath))
+            // If diffing against a previous version, this index must have a version.
+            let newVersionPatch = VersionPatch(
+                archiveVersion: previousIndex.metadata?.version ?? ArchiveVersion(identifier: "N/A", displayName: "N/A"),
+                jsonPatch: previousIndex.difference(from: self, at: encoder.codingPath))
             
             var newVersions = [VersionPatch]() // versions <-- For now, only diffing two versions for ease of testing.
             newVersions.append(newVersionPatch)
@@ -239,7 +252,8 @@ extension RenderIndex {
                     )
                 },
                 uniquingKeysWith: +
-            )
+            ),
+            currentVersion: ArchiveVersion(identifier: "234567", displayName: "Parakeet") //TODO: remove hardcoding of archive version
         )
     }
 }
@@ -360,12 +374,21 @@ extension NavigatorIndex.PageType {
     }
 }
 
+/// Metadata about a RenderIndex, such as the index's current version.
+public struct RenderIndexMetadata: Equatable, Codable {
+    
+    /// The version of the archive that contains this RenderIndex.
+    public let version: ArchiveVersion
+    
+}
+
 extension RenderIndex: Diffable {
     func difference(from other: RenderIndex, at path: Path) -> Differences {
         var diffBuilder = DifferenceBuilder(current: self, other: other, basePath: path)
         
         diffBuilder.addDifferences(atKeyPath: \.schemaVersion, forKey: CodingKeys.schemaVersion)
         diffBuilder.addDifferences(atKeyPath: \.interfaceLanguages, forKey: CodingKeys.interfaceLanguages)
+        diffBuilder.addDifferences(atKeyPath: \.metadata, forKey: CodingKeys.metadata)
         
         return diffBuilder.differences
     }

@@ -203,6 +203,11 @@ extension Diffable where Self: Equatable {
     func isSimilar(to other: Self) -> Bool {
         return self == other
     }
+    
+    //    func differenceWithCast(from other: some Diffable, at path: Path) -> Differences {
+    //        guard let other = other as? Self else { return [] }
+    //        return difference(from: other, at: path)
+    //    }
 }
 
 /// An integer coding key.
