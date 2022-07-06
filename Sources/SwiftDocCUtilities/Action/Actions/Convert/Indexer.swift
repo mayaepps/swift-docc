@@ -64,12 +64,13 @@ extension ConvertAction {
         
         /// Finalizes the index and writes it on disk.
         /// - Returns: Returns a list of problems if any were encountered during indexing.
-        func finalize(emitJSON: Bool, emitLMDB: Bool) -> [Problem] {
+        func finalize(emitJSON: Bool, emitLMDB: Bool, differencesCache: Synchronized<[String : [String : RenderIndexChange]]>? = nil) -> [Problem] {
             indexBuilder.sync { indexBuilder in
                 indexBuilder.finalize(
                     estimatedCount: nodeCount,
                     emitJSONRepresentation: emitJSON,
-                    emitLMDBRepresentation: emitLMDB
+                    emitLMDBRepresentation: emitLMDB,
+                    differencesCache: differencesCache
                 )
             }
             return problems

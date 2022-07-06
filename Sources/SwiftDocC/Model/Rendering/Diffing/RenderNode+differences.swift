@@ -18,6 +18,13 @@ protocol Diffable {
 public typealias Differences = [JSONPatchOperation]
 public typealias Path = [CodingKey]
 
+/// Represents a change that can can be displayed between two versions of a RenderIndex Node.
+public enum RenderIndexChange: String, Codable, Equatable {
+    case added
+    case modified
+    case newlyDeprecated
+}
+
 struct DifferenceBuilder<T> {
     
     var differences: Differences
@@ -203,11 +210,6 @@ extension Diffable where Self: Equatable {
     func isSimilar(to other: Self) -> Bool {
         return self == other
     }
-    
-    //    func differenceWithCast(from other: some Diffable, at path: Path) -> Differences {
-    //        guard let other = other as? Self else { return [] }
-    //        return difference(from: other, at: path)
-    //    }
 }
 
 /// An integer coding key.
@@ -259,13 +261,7 @@ extension Dictionary: Diffable where Key == String, Value: Encodable & Equatable
         var differences = Differences()
         let uniqueKeysSet = Set(self.keys).union(Set(other.keys))
         for key in uniqueKeysSet {
-//            if let value = self[key] as? Array<any Diffable & Equatable & Encodable>, let otherValue = other[key] as? Array<any Diffable & Equatable & Encodable> {
-//                differences.append(contentsOf: value.difference(from: otherValue, at: path + [CustomKey(stringValue: key)]))
-//            } else {
-//                differences.append(contentsOf: self[key].difference(from: other[key], at: path + [CustomKey(stringValue: key)]))
-//            }
             differences.append(contentsOf: self[key].difference(from: other[key], at: path + [CustomKey(stringValue: key)]))
-            
         }
         return differences
     }

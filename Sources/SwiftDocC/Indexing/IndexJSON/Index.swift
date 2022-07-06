@@ -32,16 +32,21 @@ public struct RenderIndex: Codable, Equatable {
     /// A mapping of interface languages to the index nodes they contain.
     public let interfaceLanguages: [String: [Node]]
     
-    /// Metadata about the RenderIndex
+    /// Metadata about the RenderIndex.
     public let metadata: RenderIndexMetadata?
     
+    /// Information about previous version of this RenderIndex.
     public let versions: [VersionPatch]?
+    
+    /// A mapping of node identifiers to what type of change should be rendered when this version of the archive is diffed against previous versions
+    public var versionDifferences: [String : [String : RenderIndexChange]]?
     
     /// Creates a new render index with the given interface language to node mapping.
     public init(
         interfaceLanguages: [String: [Node]],
         versions: [VersionPatch]? = [],
-        currentVersion: ArchiveVersion? = nil
+        currentVersion: ArchiveVersion? = nil,
+        versionDifferences: [String : [String : RenderIndexChange]]? = nil
     ) {
         self.schemaVersion = Self.currentSchemaVersion
         self.interfaceLanguages = interfaceLanguages
@@ -51,6 +56,7 @@ public struct RenderIndex: Codable, Equatable {
         } else {
             self.metadata = nil
         }
+        self.versionDifferences = versionDifferences
     }
     
     public func encode(to encoder: Encoder) throws {
@@ -58,7 +64,8 @@ public struct RenderIndex: Codable, Equatable {
         
         try container.encode(schemaVersion, forKey: .schemaVersion)
         try container.encode(interfaceLanguages, forKey: .interfaceLanguages)
-        try container.encode(metadata, forKey: .metadata)
+        try container.encodeIfPresent(metadata, forKey: .metadata)
+        try container.encodeIfPresent(versionDifferences, forKey: .versionDifferences)
         
         // If given a previous index, diff between it and this RenderNode.
         if let previousIndex = encoder.userInfoPreviousIndex {
@@ -229,7 +236,7 @@ extension RenderIndex {
 }
 
 extension RenderIndex {
-    static func fromNavigatorIndex(_ navigatorIndex: NavigatorIndex, with builder: NavigatorIndex.Builder) -> RenderIndex {
+    static func fromNavigatorIndex(_ navigatorIndex: NavigatorIndex, with builder: NavigatorIndex.Builder, differencesCache: Synchronized<[String:[String:RenderIndexChange]]>? = nil) -> RenderIndex {
         // The immediate children of the root represent the interface languages
         // described in this navigator tree.
         let interfaceLanguageRoots = navigatorIndex.navigatorTree.root.children
@@ -253,7 +260,10 @@ extension RenderIndex {
                 },
                 uniquingKeysWith: +
             ),
-            currentVersion: ArchiveVersion(identifier: "234567", displayName: "Parakeet") //TODO: remove hardcoding of archive version
+            currentVersion: ArchiveVersion(identifier: "234567", displayName: "Parakeet"), //TODO: remove hardcoding of archive version
+            versionDifferences: differencesCache?.sync { differences in
+                return differences
+            }
         )
     }
 }

@@ -31,21 +31,32 @@ class JSONEncodingRenderNodeWriter {
     private let fileManager: FileManagerProtocol
     private let renderReferenceCache = RenderReferenceCache([:])
     
+    /// The changes (modifications, additions, deprecations) made to nodes in the index between archive versions.
+    let differencesCache: Synchronized<[String : [String : RenderIndexChange]]>?
+    
     /// Creates a writer object that write render node JSON into a given folder.
     ///
     /// - Parameters:
     ///   - targetFolder: The folder to which the writer object writes the files.
     ///   - fileManager: The file manager with which the writer object writes data to files.
-    init(targetFolder: URL, fileManager: FileManagerProtocol) {
+    init(targetFolder: URL, fileManager: FileManagerProtocol, buildDifferencesCache: Bool = false) {
         self.urlGenerator = NodeURLGenerator(
             baseURL: targetFolder.appendingPathComponent("data", isDirectory: true)
         )
         self.fileManager = fileManager
+        
+        if buildDifferencesCache {
+            self.differencesCache = Synchronized<[String : [String : RenderIndexChange]]>([:])
+        } else {
+            self.differencesCache = nil
+        }
     }
     
     // The already created directories on disk
     let directoryIndex = Synchronized(Set<URL>())
     
+    
+
     /// Writes a render node to a JSON file at a location based on the node's relative URL.
     ///
     /// If the target path to the JSON file includes intermediate folders that don't exist, the writer object will ask the file manager, with which it was created, to
@@ -88,6 +99,15 @@ class JSONEncodingRenderNodeWriter {
             encoder.userInfoPreviousNode = previousRenderNode
         } catch {
             // This is a new RenderNode--there is no previous node to diff against.
+            
+            let previousVersionID = "previousVersionIDHere" // TODO: get the previous version from somewhere... metadata.json maybe?
+            differencesCache?.sync { differentReferences in
+                if differentReferences[renderNode.identifier.path] != nil {
+                    differentReferences[renderNode.identifier.path]![previousVersionID] = RenderIndexChange.added
+                } else {
+                    differentReferences[renderNode.identifier.path] = [previousVersionID : RenderIndexChange.added]
+                }
+            }
         }
         
         let data = try renderNode.encodeToJSON(with: encoder, renderReferenceCache: renderReferenceCache)

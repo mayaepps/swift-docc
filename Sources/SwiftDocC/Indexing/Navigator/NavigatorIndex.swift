@@ -805,7 +805,8 @@ extension NavigatorIndex {
         public func finalize(
             estimatedCount: Int? = nil,
             emitJSONRepresentation: Bool = true,
-            emitLMDBRepresentation: Bool = true
+            emitLMDBRepresentation: Bool = true,
+            differencesCache: Synchronized<[String : [String : RenderIndexChange]]>? = nil
         ) {
             precondition(!isCompleted, "Finalizing an already completed index build multiple times is not possible.")
             
@@ -924,7 +925,7 @@ extension NavigatorIndex {
             }
             
             if emitJSONRepresentation {
-                let renderIndex = RenderIndex.fromNavigatorIndex(navigatorIndex, with: self)
+                let renderIndex = RenderIndex.fromNavigatorIndex(navigatorIndex, with: self, differencesCache: differencesCache)
                 
                 let jsonEncoder = JSONEncoder()
                 if shouldPrettyPrintOutputJSON {
