@@ -529,6 +529,9 @@ extension NavigatorIndex {
         /// Indicates if the page title should be used instead of the navigator title.
         private let usePageTitle: Bool
         
+        /// The archive version associated with this index.
+        let indexVersion: ArchiveVersion?
+        
         /**
          Initialize a `Builder` with the given data provider and output URL.
          - Parameters:
@@ -538,8 +541,9 @@ extension NavigatorIndex {
             - sortRootChildren: Indicates if the root's children must be sorted by name.
             - groupByLanguage: Indicates if the tree needs to group the entries by language.
             - usePageTitle: Use the page title instead of the navigator title as the entry title.
+            - indexVersion: The archive version associated with this index.
          */
-        public init(renderNodeProvider: RenderNodeProvider? = nil, outputURL: URL, bundleIdentifier: String, sortRootChildrenByName: Bool = false, groupByLanguage: Bool = false, writePathsOnDisk: Bool = true, usePageTitle: Bool = false) {
+        public init(renderNodeProvider: RenderNodeProvider? = nil, outputURL: URL, bundleIdentifier: String, sortRootChildrenByName: Bool = false, groupByLanguage: Bool = false, writePathsOnDisk: Bool = true, usePageTitle: Bool = false, indexVersion: ArchiveVersion? = nil) {
             self.renderNodeProvider = renderNodeProvider
             self.outputURL = outputURL
             self.bundleIdentifier = bundleIdentifier
@@ -547,6 +551,7 @@ extension NavigatorIndex {
             self.groupByLanguage = groupByLanguage
             self.writePathsOnDisk = writePathsOnDisk
             self.usePageTitle = usePageTitle
+            self.indexVersion = indexVersion
         }
         
         /// Setup the builder to process render nodes.

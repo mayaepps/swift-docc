@@ -33,14 +33,16 @@ extension ConvertAction {
         /// - Parameters:
         ///   - outputURL: The target directory to create the index file.
         ///   - bundleIdentifier: The identifier of the bundle being indexed.
-        init(outputURL: URL, bundleIdentifier: String) throws {
+        ///   - indexVersion: The archive version associated with the index being created.
+        init(outputURL: URL, bundleIdentifier: String, indexVersion: ArchiveVersion? = nil) throws {
             let indexURL = outputURL.appendingPathComponent("index")
             indexBuilder = Synchronized<NavigatorIndex.Builder>(
                 NavigatorIndex.Builder(renderNodeProvider: nil,
                     outputURL: indexURL,
                     bundleIdentifier: bundleIdentifier,
                     sortRootChildrenByName: true,
-                    groupByLanguage: true
+                    groupByLanguage: true,
+                    indexVersion: indexVersion
                 )
             )
             indexBuilder.sync({ $0.setup() })

@@ -260,7 +260,7 @@ extension RenderIndex {
                 },
                 uniquingKeysWith: +
             ),
-            currentVersion: ArchiveVersion(identifier: "234567", displayName: "Parakeet"), //TODO: remove hardcoding of archive version
+            currentVersion: builder.indexVersion,
             versionDifferences: differencesCache?.sync { differences in
                 return differences
             }

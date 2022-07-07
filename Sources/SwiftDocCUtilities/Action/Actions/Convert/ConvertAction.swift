@@ -328,13 +328,18 @@ public struct ConvertAction: Action, RecreatingContext {
             documentationCoverageOptions: documentationCoverageOptions,
             workingDirectory: temporaryFolder,
             fileManager: fileManager)
-
+        
         // An optional indexer, if indexing while converting is enabled.
         var indexer: Indexer? = nil
         
         if let bundleIdentifier = converter.firstAvailableBundle()?.identifier {
             // Create an index builder and prepare it to receive nodes.
-            indexer = try Indexer(outputURL: temporaryFolder, bundleIdentifier: bundleIdentifier)
+            
+            var indexVersion: ArchiveVersion? = nil
+            if let versionID = converter.firstAvailableBundle()?.version, let displayName = converter.firstAvailableBundle()?.versionDisplayName {
+                indexVersion = ArchiveVersion(identifier: versionID, displayName: displayName)
+            }
+            indexer = try Indexer(outputURL: temporaryFolder, bundleIdentifier: bundleIdentifier, indexVersion: indexVersion)
         }
         
         let outputConsumer = ConvertFileWritingConsumer(
