@@ -83,6 +83,10 @@
                 "text": "Activity"
             }
         ],
+        "version": {
+            "identifier": "version2",
+            "displayName": "Version 2"
+        },
         "title": "Activity",
         "roleHeading": "Protocol",
         "role": "symbol",
