@@ -26,13 +26,34 @@ public struct BuildMetadata: Codable {
     /// The bundle identifier of the documentation bundle that DocC built.
     public var bundleIdentifier: String
     
+    /// The master list of versions that are available for this documentation archive.
+    public var versions: [ArchiveVersion]?
+    
     /// Creates a build metadata value for a documentation bundle built by DocC.
     ///
     /// - Parameters:
     ///   - bundleDisplayName: The display name of the documentation bundle.
     ///   - bundleIdentifier: The bundle identifier of the documentation bundle.
-    public init(bundleDisplayName: String, bundleIdentifier: String) {
+    ///   - currentVersion: The current version for the archive the documentation bundle will be converted into
+    ///   - previousBuildMetadata: The URL to a previous DocC archive's buildMetadata file.
+    public init(bundleDisplayName: String, bundleIdentifier: String, currentVersion: ArchiveVersion? = nil, previousBuildMetadata: URL? = nil) {
         self.bundleDisplayName = bundleDisplayName
         self.bundleIdentifier = bundleIdentifier
+        
+        // Try to get the previous archive's BuildMetadata and grab its versions property.
+        if let previousBuildMetadata = previousBuildMetadata {
+            do {
+                let previousMetadataData = try Data(contentsOf: previousBuildMetadata)
+                let previousMetadata = try JSONDecoder().decode(BuildMetadata.self, from: previousMetadataData)
+                self.versions = previousMetadata.versions
+            } catch {
+            // There is no previous BuildMetadata
+            }
+        }
+        
+        if let currentVersion = currentVersion {
+            if self.versions == nil { self.versions = [] }
+            self.versions?.append(currentVersion)
+        }
     }
 }

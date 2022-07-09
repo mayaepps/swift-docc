@@ -67,4 +67,11 @@ public struct ArchiveVersion: Codable, Equatable {
             throw ArchiveVersionError.versionIdentifierNotUnique
         }
     }
+    
+    public static func createArchiveVersion(displayName: String?, identifier: String?) -> ArchiveVersion? {
+        if let identifier = identifier {
+            return ArchiveVersion(identifier: identifier, displayName: displayName ?? identifier)
+        }
+        return nil
+    }
 }

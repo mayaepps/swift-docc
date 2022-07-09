@@ -329,17 +329,26 @@ public struct ConvertAction: Action, RecreatingContext {
             workingDirectory: temporaryFolder,
             fileManager: fileManager)
         
+        var archiveVersion: ArchiveVersion? = nil
+        var buildMetadata: BuildMetadata? = nil
+        if let bundle = converter.firstAvailableBundle() {
+            archiveVersion = ArchiveVersion.createArchiveVersion(displayName: bundle.versionDisplayName, identifier: bundle.version)
+            buildMetadata = BuildMetadata(bundleDisplayName: bundle.displayName,
+                                          bundleIdentifier: bundle.identifier,
+                                          currentVersion: archiveVersion,
+                                          previousBuildMetadata: previousArchiveURL?.appendingPathComponent(ConvertFileWritingConsumer.buildMetadataFileName, isDirectory: false)
+                                          )
+            // This buildMetadata has an array of all versions available in the archive being produced; override the buildMetadata that would otherwise
+            // have been created.
+            converter.buildMetadataOverride = buildMetadata
+        }
+        
         // An optional indexer, if indexing while converting is enabled.
         var indexer: Indexer? = nil
         
         if let bundleIdentifier = converter.firstAvailableBundle()?.identifier {
             // Create an index builder and prepare it to receive nodes.
-            
-            var indexVersion: ArchiveVersion? = nil
-            if let versionID = converter.firstAvailableBundle()?.version, let displayName = converter.firstAvailableBundle()?.versionDisplayName {
-                indexVersion = ArchiveVersion(identifier: versionID, displayName: displayName)
-            }
-            indexer = try Indexer(outputURL: temporaryFolder, bundleIdentifier: bundleIdentifier, indexVersion: indexVersion)
+            indexer = try Indexer(outputURL: temporaryFolder, bundleIdentifier: bundleIdentifier, indexVersion: archiveVersion)
         }
         
         let outputConsumer = ConvertFileWritingConsumer(
