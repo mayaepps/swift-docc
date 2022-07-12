@@ -236,7 +236,7 @@ extension RenderIndex {
 }
 
 extension RenderIndex {
-    static func fromNavigatorIndex(_ navigatorIndex: NavigatorIndex, with builder: NavigatorIndex.Builder, differencesCache: Synchronized<[String:[String:RenderIndexChange]]>? = nil) -> RenderIndex {
+    static func fromNavigatorIndex(_ navigatorIndex: NavigatorIndex, with builder: NavigatorIndex.Builder, versionDifferences: [String:[String:RenderIndexChange]]? = nil) -> RenderIndex {
         // The immediate children of the root represent the interface languages
         // described in this navigator tree.
         let interfaceLanguageRoots = navigatorIndex.navigatorTree.root.children
@@ -261,9 +261,7 @@ extension RenderIndex {
                 uniquingKeysWith: +
             ),
             currentVersion: builder.indexVersion,
-            versionDifferences: differencesCache?.sync { differences in
-                return differences
-            }
+            versionDifferences: versionDifferences
         )
     }
 }

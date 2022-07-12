@@ -390,8 +390,12 @@ public struct ConvertAction: Action, RecreatingContext {
             
             // Always emit a JSON representation of the index but only emit the LMDB
             // index if the user has explicitly opted in with the `--emit-lmdb-index` flag.
-            let indexerProblems = indexer.finalize(emitJSON: true, emitLMDB: buildLMDBIndex,
-                                                   differencesCache: outputConsumer.renderNodeWriter.differencesCache)
+            let indexerProblems = indexer.finalize(emitJSON: true,
+                                                   emitLMDB: buildLMDBIndex,
+                                                   versionDifferences: outputConsumer.renderNodeWriter.differencesCache?.sync{ versionDifferences in
+                                                        return versionDifferences
+                                                    }
+            )
             allProblems.append(contentsOf: indexerProblems)
         }
 
