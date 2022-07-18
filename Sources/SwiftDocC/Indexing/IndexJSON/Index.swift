@@ -75,8 +75,8 @@ public struct RenderIndex: Codable, Equatable {
                 archiveVersion: previousIndex.metadata?.version ?? ArchiveVersion(identifier: "N/A", displayName: "N/A"),
                 jsonPatch: previousIndex.difference(from: self, at: encoder.codingPath))
             
-            var newVersions = [VersionPatch]() // versions <-- For now, only diffing two versions for ease of testing.
-            newVersions.append(newVersionPatch)
+            var newVersions: [VersionPatch] = [newVersionPatch]
+            newVersions.append(contentsOf: previousIndex.versions ?? [])
             
             try container.encode(newVersions, forKey: .versions)
         }

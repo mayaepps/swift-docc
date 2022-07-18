@@ -16,7 +16,7 @@ import Foundation
 /// This class can be used to accumulate difference information in the form of a JSONPatch while encoding a tree of objects.
 public struct VersionPatch: Codable, Equatable {
         
-    let version: ArchiveVersion
+    public let version: ArchiveVersion
     public var patch: JSONPatch?
     
     public mutating func add(_ patchOperation: JSONPatchOperation) {

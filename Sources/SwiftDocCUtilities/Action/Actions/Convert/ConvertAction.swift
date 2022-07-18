@@ -358,7 +358,7 @@ public struct ConvertAction: Action, RecreatingContext {
             context: context,
             indexer: indexer,
             enableCustomTemplates: experimentalEnableCustomTemplates,
-            buildDifferencesCache: previousArchiveURL != nil
+            buildMetadata: buildMetadata
         )
 
         let analysisProblems: [Problem]

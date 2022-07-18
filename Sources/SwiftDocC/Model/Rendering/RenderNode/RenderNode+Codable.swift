@@ -116,17 +116,18 @@ extension RenderNode: Codable {
             try container.encode(variantOverrides, forKey: .variantOverrides)
         }
     
-        // If given a previous node, diff between it and this RenderNode.
+        // If given a previous node, produce a diff between it and this RenderNode.
         if let previousNode = encoder.userInfoPreviousNode {
             
-            let newVersionPatch = VersionPatch(archiveVersion: previousNode.metadata.version ?? ArchiveVersion(identifier: "N/A", displayName: "N/A"), jsonPatch: previousNode.difference(from: self, at: encoder.codingPath))
+            let newVersionPatch = VersionPatch(archiveVersion: previousNode.metadata.version ?? ArchiveVersion(identifier: "N/A", displayName: "N/A"),
+                                               jsonPatch: previousNode.difference(from: self, at: encoder.codingPath))
             
-            var newVersions = [VersionPatch]() // versions <-- For now, only diffing two versions for ease of testing.
-            newVersions.append(newVersionPatch)
+            var newVersions: [VersionPatch] = [newVersionPatch]
+            newVersions.append(contentsOf: previousNode.versions ?? [])
             try metadata.version!.checkIsUniqueFrom(otherVersions: newVersions.map { $0.version }) // TODO: Move this to be done when the archive is passed in.
             try container.encode(newVersions, forKey: .versions)
             
-        } else {  // TODO: If this RenderNode didn't have a previous version beacuse it is a new page, there will be a previousIndex.
+        } else {
             try container.encode(versions ?? [], forKey: .versions)
         }
     }
