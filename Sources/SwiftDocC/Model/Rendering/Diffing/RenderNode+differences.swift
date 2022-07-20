@@ -360,7 +360,7 @@ extension Array: Diffable where Element: Equatable & Encodable {
         let arrayDiffs = self.difference(from: other) { element1, element2 in
             return element1.isSimilar(to: element2)
         }
-        var differences = arrayDiffs.removals
+        var differences = arrayDiffs.removals.reversed() as [CollectionDifference<Element>.Change]
         differences.append(contentsOf: arrayDiffs.insertions)
         var patchOperations = differences.map { diff -> JSONPatchOperation in
             switch diff {
@@ -379,7 +379,6 @@ extension Array: Diffable where Element: Equatable & Encodable {
                 patchOperations.append(contentsOf: value.difference(from: similarOther[index], at: path + [CustomKey(intValue: index)]))
             }
         }
-        
         return patchOperations
     }
     
