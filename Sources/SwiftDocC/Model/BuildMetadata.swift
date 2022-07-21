@@ -41,9 +41,9 @@ public struct BuildMetadata: Codable {
         self.bundleIdentifier = bundleIdentifier
         
         // Try to get the previous archive's BuildMetadata and grab its versions property.
-        if let previousBuildMetadata = previousBuildMetadata {
-            let previousMetadataData = try? Data(contentsOf: previousBuildMetadata)
-            let previousMetadata = try? JSONDecoder().decode(BuildMetadata.self, from: previousMetadataData!)
+        
+        if let previousBuildMetadataURL = previousBuildMetadata, let previousMetadataData = try? Data(contentsOf: previousBuildMetadataURL) {
+            let previousMetadata = try? JSONDecoder().decode(BuildMetadata.self, from: previousMetadataData)
             self.versions = previousMetadata?.versions
         }
         
