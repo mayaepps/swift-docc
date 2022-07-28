@@ -146,6 +146,9 @@ public struct RenderMetadata: VariantContainer {
     
     /// Any tags assigned to the node.
     public var tags: [RenderNode.Tag]?
+    
+    /// The archive version that this node belongs to.
+    public var version: ArchiveVersion?
 }
 
 extension RenderMetadata: Codable {
@@ -207,6 +210,7 @@ extension RenderMetadata: Codable {
         public static let navigatorTitle = CodingKeys(stringValue: "navigatorTitle")
         public static let sourceFileURI = CodingKeys(stringValue: "sourceFileURI")
         public static let tags = CodingKeys(stringValue: "tags")
+        public static let version = CodingKeys(stringValue: "version")
     }
     
     public init(from decoder: Decoder) throws {
@@ -232,6 +236,7 @@ extension RenderMetadata: Codable {
         navigatorTitleVariants = try container.decodeVariantCollectionIfPresent(ofValueType: [DeclarationRenderSection.Token]?.self, forKey: .navigatorTitle)
         sourceFileURIVariants = try container.decodeVariantCollectionIfPresent(ofValueType: String?.self, forKey: .sourceFileURI)
         tags = try container.decodeIfPresent([RenderNode.Tag].self, forKey: .tags)
+        version = try container.decodeIfPresent(ArchiveVersion.self, forKey: .version)
         
         let extraKeys = Set(container.allKeys).subtracting(
             [
@@ -252,7 +257,8 @@ extension RenderMetadata: Codable {
                 .fragments,
                 .navigatorTitle,
                 .sourceFileURI,
-                .tags
+                .tags,
+                .version
             ]
         )
         for extraKey in extraKeys {
@@ -282,6 +288,7 @@ extension RenderMetadata: Codable {
         try container.encodeVariantCollection(fragmentsVariants, forKey: .fragments, encoder: encoder)
         try container.encodeVariantCollection(navigatorTitleVariants, forKey: .navigatorTitle, encoder: encoder)
         try container.encodeVariantCollection(sourceFileURIVariants, forKey: .sourceFileURI, encoder: encoder)
+        try container.encodeIfPresent(version, forKey: .version)
         if let tags = self.tags, !tags.isEmpty {
             try container.encodeIfPresent(tags, forKey: .tags)
         }
