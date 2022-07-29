@@ -162,6 +162,16 @@ extension RenderMetadata: Codable {
         /// Possible dependencies to the module, we allow for those in the render JSON model
         /// but have no authoring support at the moment.
         public let relatedModules: [String]?
+
+        /// Returns the difference between two RenderMetadata.Modules.
+        public func difference(from other: RenderMetadata.Module, at path: Path) -> Differences {
+            var diffBuilder = DifferenceBuilder(current: self, other: other, basePath: path)
+            
+            diffBuilder.addDifferences(atKeyPath: \.name, forKey: CodingKeys.name)
+            diffBuilder.addDifferences(atKeyPath: \.relatedModules, forKey: CodingKeys.relatedModules)
+
+            return diffBuilder.differences
+        }
     }
 
     public struct CodingKeys: CodingKey, Hashable, Equatable {
@@ -279,5 +289,30 @@ extension RenderMetadata: Codable {
         for (key, value) in extraMetadata {
             try container.encode(AnyMetadata(value), forKey: key)
         }
+    }
+    
+    /// Returns the differences between this RenderMetadata and the given one.
+    public func difference(from other: RenderMetadata, at path: Path) -> Differences {
+
+        var diffBuilder = DifferenceBuilder(current: self, other: other, basePath: path)
+
+        diffBuilder.addDifferences(atKeyPath: \.title, forKey: CodingKeys.title)
+        diffBuilder.addDifferences(atKeyPath: \.externalID, forKey: CodingKeys.externalID)
+        diffBuilder.addDifferences(atKeyPath: \.symbolKind, forKey: CodingKeys.symbolKind)
+        diffBuilder.addDifferences(atKeyPath: \.role, forKey: CodingKeys.role)
+        diffBuilder.addDifferences(atKeyPath: \.roleHeading, forKey: CodingKeys.roleHeading)
+        diffBuilder.addDifferences(atKeyPath: \.version, forKey: CodingKeys.version)
+        diffBuilder.addDifferences(atKeyPath: \.modules, forKey: CodingKeys.modules)
+        diffBuilder.addDifferences(atKeyPath: \.fragments, forKey: CodingKeys.fragments)
+        diffBuilder.addDifferences(atKeyPath: \.navigatorTitle, forKey: CodingKeys.navigatorTitle)
+
+        return diffBuilder.differences
+    }
+
+}
+
+extension RenderMetadata: Diffable {
+    func isSimilar(to other: RenderMetadata) -> Bool {
+        return self.title == other.title
     }
 }
