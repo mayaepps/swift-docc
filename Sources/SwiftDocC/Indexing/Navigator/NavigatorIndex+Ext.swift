@@ -94,7 +94,18 @@ extension RenderNode {
             fragments = metadata.navigatorTitle
         }
         
-        return fragments?.map(\.text).joined() ?? metadata.title
+        if let fragments, let title = metadata.title {
+            var keywordFragments: [String] = []
+            for token in fragments {
+                if token.kind == .keyword || token.kind == .text {
+                    keywordFragments.append(token.text)
+                } else {
+                    break
+                }
+            }
+            return keywordFragments.joined() + title
+        }
+        return metadata.title
     }
     
     /// Returns the NavigatorIndex.PageType indicating the type of the page.

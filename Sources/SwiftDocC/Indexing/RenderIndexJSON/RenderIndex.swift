@@ -273,12 +273,21 @@ extension RenderIndex.Node {
             isDeprecated = false
         }
         
+        var uniqueChildNames: [String] = []
+        var uniqueChildren: [NavigatorTree.Node] = []
+        node.children.forEach { child in
+            if !uniqueChildNames.contains(child.item.title) {
+                uniqueChildNames.append(child.item.title)
+                uniqueChildren.append(child)
+            }
+        }
+        
         return RenderIndex.Node(
             title: node.item.title,
             path: node.item.path,
             pageType: NavigatorIndex.PageType(rawValue: node.item.pageType),
             isDeprecated: isDeprecated,
-            children: node.children.map {
+            children: uniqueChildren.map {
                 RenderIndex.Node.fromNavigatorTreeNode($0, in: navigatorIndex, with: builder)
             },
             icon: node.item.icon
