@@ -275,10 +275,33 @@ extension RenderIndex.Node {
         
         var uniqueChildNames: [String] = []
         var uniqueChildren: [NavigatorTree.Node] = []
+        
+        var overloadedSymbols: [String:Set<String>] = [:]
+        
         node.children.forEach { child in
             if !uniqueChildNames.contains(child.item.title) {
                 uniqueChildNames.append(child.item.title)
                 uniqueChildren.append(child)
+            } else {
+                if overloadedSymbols[child.item.title] != nil {
+                    overloadedSymbols[child.item.title]?.insert(child.item.path)
+                } else {
+                    overloadedSymbols[child.item.title] = [child.item.path]
+                }
+                for uChild in uniqueChildren {
+                    if uChild.item.title == child.item.title {
+                        overloadedSymbols[uChild.item.title]?.insert(uChild.item.path)
+                        break
+                    }
+                }
+            }
+        }
+        
+        if overloadedSymbols.count > 0 {
+            for (symbol, overloads) in overloadedSymbols {
+                print(symbol + ":")
+                print(overloads.joined(separator: "\n"))
+                print()
             }
         }
         
