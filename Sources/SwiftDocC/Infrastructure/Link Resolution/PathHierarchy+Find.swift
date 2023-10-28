@@ -397,6 +397,8 @@ extension PathHierarchy.DisambiguationContainer {
                 return subtree[hash]
             } else if subtree.count == 1 {
                 return subtree.values.first
+            } else if let overloadGroupNode = subtree["overloadGroup"] {
+                return overloadGroupNode
             } else {
                 // Subtree contains more than one match.
                 throw Error.lookupCollision(subtree.map { ($0.value, $0.key) })
@@ -407,6 +409,8 @@ extension PathHierarchy.DisambiguationContainer {
                 return subtree[hash]
             } else if subtree.count == 1 {
                 return subtree.values.first
+            } else if let overloadGroupNode = subtree["overloadGroup"] {
+                return overloadGroupNode
             } else {
                 // Subtree contains more than one match.
                 throw Error.lookupCollision(subtree.map { ($0.value, $0.key) })
@@ -418,6 +422,8 @@ extension PathHierarchy.DisambiguationContainer {
                 return nil
             } else if kinds.count == 1 {
                 return kinds.first!.value[hash]
+            } else if hash == "overloadGroup" {
+                return kinds.first!.value["overloadGroup"]
             } else {
                 // Subtree contains more than one match
                 throw Error.lookupCollision(kinds.map { ($0.value[hash]!, $0.key) })

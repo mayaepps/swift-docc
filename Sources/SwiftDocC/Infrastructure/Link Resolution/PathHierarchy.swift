@@ -294,6 +294,18 @@ struct PathHierarchy {
         return newReference
     }
     
+    mutating func addOverloadGroupChild(parent: ResolvedIdentifier, name: String, kind: String, symbol: SymbolKit.SymbolGraph.Symbol?) -> ResolvedIdentifier {
+        let parent = lookup[parent]!
+        
+        let newReference = ResolvedIdentifier()
+        let newNode = Node(symbol: symbol, name: name)
+        newNode.identifier = newReference
+        self.lookup[newReference] = newNode
+        parent.add(child: newNode, kind: kind, hash: "overloadGroup")
+        
+        return newReference
+    }
+    
     /// Adds a non-symbol technology root.
     /// - Parameters:
     ///   - name: The path component name of the technology root.

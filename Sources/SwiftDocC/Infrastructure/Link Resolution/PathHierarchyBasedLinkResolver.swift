@@ -59,12 +59,12 @@ final class PathHierarchyBasedLinkResolver {
     }
     
     /// Traverse all symbols of the same kind that have collisions.
-    func traverseOverloadedSymbols(_ observe: (_ overloadedSymbols: [ResolvedTopicReference]) -> Void) {
-        for (_, node) in pathHierarchy.lookup {
-            guard node.symbol != nil else { continue }
+    func traverseOverloadedSymbols(_ observe: (_ parent: ResolvedTopicReference, _ overloadedSymbols: [ResolvedTopicReference]) -> Void) {
+        for (id, node) in pathHierarchy.lookup {
+            guard node.symbol != nil, let parent = resolvedReferenceMap[id] else { continue }
             
             pathHierarchy.traverseOverloadedChildren(of: node) { overloadedSymbols in
-                observe(overloadedSymbols.map { resolvedReferenceMap[$0]! })
+                observe(parent, overloadedSymbols.map { resolvedReferenceMap[$0]! })
             }
         }
     }
@@ -199,6 +199,14 @@ final class PathHierarchyBasedLinkResolver {
         let parentID = resolvedReferenceMap[parent]!
         let taskGroupID = pathHierarchy.addNonSymbolChild(parent: parentID, name: urlReadablePath(name), kind: "taskGroup")
         resolvedReferenceMap[taskGroupID] = reference
+    }
+    
+    /// Adds an overload group on a given page to the documentation hierarchy.
+    func addOverloadGroup(named name: String, reference: ResolvedTopicReference, kind: String,
+                          symbol: SymbolKit.SymbolGraph.Symbol?, to parent: ResolvedTopicReference) {
+        let parentID = resolvedReferenceMap[parent]!
+        let overloadGroupID = pathHierarchy.addOverloadGroupChild(parent: parentID, name: urlReadablePath(name), kind: kind, symbol: symbol)
+        resolvedReferenceMap[overloadGroupID] = reference
     }
     
     // MARK: Reference resolving
