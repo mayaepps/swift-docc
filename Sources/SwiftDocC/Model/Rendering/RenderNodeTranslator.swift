@@ -858,6 +858,10 @@ public struct RenderNodeTranslator: SemanticVisitor {
             node.metadata.roleHeading = titleHeading.heading
         } 
         
+        if let filterTags = article.metadata?.filterTags {
+            node.metadata.filterTags = filterTags.map{ $0.tag }
+        }
+        
         collectedTopicReferences.append(contentsOf: topicSectionContentCompiler.collectedTopicReferences)
         node.references = createTopicRenderReferences()
 
@@ -1313,6 +1317,10 @@ public struct RenderNodeTranslator: SemanticVisitor {
             for elem in customMetadatas {
                 metadataCustomDictionary[elem.key] = elem.value
             }
+        }
+        
+        if let filterTags = documentationNode.metadata?.filterTags {
+            node.metadata.filterTags = filterTags.compactMap { $0.tag }
         }
 
         node.metadata.customMetadata = metadataCustomDictionary

@@ -2348,6 +2348,12 @@
                         "items": {
                             "$ref": "#/components/schemas/SymbolTag"
                         }
+                    },
+                    "filterTags": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     }
                 }
             },
