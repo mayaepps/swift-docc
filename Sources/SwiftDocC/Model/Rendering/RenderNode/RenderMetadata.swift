@@ -177,6 +177,9 @@ public struct RenderMetadata: VariantContainer {
     /// It's the renderer's responsibility to fetch the full version of the page, for example using
     /// the ``RenderNode/variants`` property.
     public var hasNoExpandedDocumentation: Bool = false
+    
+    /// Custom tags written for this page that allow the navigator to filter for this page.
+    public var filterTags: [String] = []
 }
 
 extension RenderMetadata: Codable {
@@ -248,6 +251,7 @@ extension RenderMetadata: Codable {
         public static let color = CodingKeys(stringValue: "color")
         public static let customMetadata = CodingKeys(stringValue: "customMetadata")
         public static let hasNoExpandedDocumentation = CodingKeys(stringValue: "hasNoExpandedDocumentation")
+        public static let filterTags = CodingKeys(stringValue: "filterTags")
     }
     
     public init(from decoder: Decoder) throws {
@@ -278,6 +282,7 @@ extension RenderMetadata: Codable {
         remoteSourceVariants = try container.decodeVariantCollectionIfPresent(ofValueType: RemoteSource?.self, forKey: .remoteSource)
         tags = try container.decodeIfPresent([RenderNode.Tag].self, forKey: .tags)
         hasNoExpandedDocumentation = try container.decodeIfPresent(Bool.self, forKey: .hasNoExpandedDocumentation) ?? false
+        filterTags = try container.decodeIfPresent([String].self, forKey: .filterTags) ?? []
         
         let extraKeys = Set(container.allKeys).subtracting(
             [
@@ -301,6 +306,7 @@ extension RenderMetadata: Codable {
                 .remoteSource,
                 .tags,
                 .hasNoExpandedDocumentation,
+                .filterTags,
             ]
         )
         for extraKey in extraKeys {
@@ -343,6 +349,7 @@ extension RenderMetadata: Codable {
         try container.encodeIfPresent(color, forKey: .color)
         try container.encodeIfNotEmpty(customMetadata, forKey: .customMetadata)
         try container.encodeIfTrue(hasNoExpandedDocumentation, forKey: .hasNoExpandedDocumentation)
+        try container.encodeIfNotEmpty(filterTags, forKey: .filterTags)
     }
 }
 
@@ -376,6 +383,7 @@ extension RenderMetadata: RenderJSONDiffable {
         diffBuilder.addDifferences(atKeyPath: \.remoteSource, forKey: CodingKeys.remoteSource)
         diffBuilder.addDifferences(atKeyPath: \.tags, forKey: CodingKeys.tags)
         diffBuilder.addDifferences(atKeyPath: \.hasNoExpandedDocumentation, forKey: CodingKeys.hasNoExpandedDocumentation)
+        diffBuilder.addDifferences(atKeyPath: \.filterTags, forKey: CodingKeys.filterTags)
 
         return diffBuilder.differences
     }
