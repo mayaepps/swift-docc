@@ -227,6 +227,7 @@ extension RenderIndex {
         ///     documentation archive.
         ///   - isBeta: If the current node is in beta.
         ///   - icon: A reference to a custom image for this node.
+        ///   - filterTags: The custom tags that a renderer can filter this node by.
         public init(
             title: String,
             path: String?,
@@ -346,7 +347,8 @@ extension RenderIndex.Node {
             children: node.children.map {
                 RenderIndex.Node.fromNavigatorTreeNode($0, in: navigatorIndex, with: builder)
             },
-            icon: node.item.icon
+            icon: node.item.icon,
+            filterTags: node.item.filterTags
         )
     }
 }
