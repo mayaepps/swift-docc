@@ -30,6 +30,7 @@ class DirectiveIndexTests: XCTestCase {
                 "DeprecationSummary",
                 "DisplayName",
                 "DocumentationExtension",
+                "FilterTag",
                 "Image",
                 "Intro",
                 "Justification",
