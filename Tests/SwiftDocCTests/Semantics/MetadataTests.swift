@@ -408,6 +408,26 @@ class MetadataTests: XCTestCase {
         }
     }
     
+    func testFilterTagSupport() throws {
+        do {
+            let (problems, metadata) = try parseMetadataFromSource(
+            """
+            # Article title
+            
+            @Metadata {
+                @FilterTag(New)
+                @FilterTag(Foundations)
+            }
+            
+            The abstract of this article.
+            """
+            )
+            
+            XCTAssertEqual(problems, [])
+            XCTAssertEqual(metadata.filterTags.map { $0.tag }, ["New", "Foundations"])
+        }
+    }
+    
     func parseMetadataFromSource(
         _ source: String,
         file: StaticString = #file,
