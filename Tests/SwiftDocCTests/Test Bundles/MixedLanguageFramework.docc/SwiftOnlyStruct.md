@@ -1,5 +1,9 @@
 # ``MixedLanguageFramework/SwiftOnlyStruct``
 
+@Metadata {
+    @FilterTag("SwiftOnlyStructTag")
+}
+
 This is the abstract for `SwiftOnlyStruct`, which is only available in Swift.
 
 ## Topics
