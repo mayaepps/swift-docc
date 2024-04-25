@@ -119,7 +119,8 @@ final class RenderIndexTests: XCTestCase {
                       {
                         "title": "Article",
                         "path": "/documentation/mixedlanguageframework/article",
-                        "type": "article"
+                        "type": "article",
+                        "tags": ["LanguageAgnosticArticleTag", "New"]
                       },
                       {
                         "title": "Tutorials",
@@ -163,7 +164,8 @@ final class RenderIndexTests: XCTestCase {
                       {
                         "title": "Article",
                         "path": "/documentation/mixedlanguageframework/article",
-                        "type": "article"
+                        "type": "article",
+                        "tags": ["LanguageAgnosticArticleTag", "New"]
                       },
                       {
                         "title": "APICollection",
@@ -291,7 +293,8 @@ final class RenderIndexTests: XCTestCase {
                           {
                             "path": "\/documentation\/mixedlanguageframework\/articlecuratedinasinglelanguagepage",
                             "title": "Article curated in a single-language page",
-                            "type": "article"
+                            "type": "article",
+                            "tags": ["SwiftOnlyArticleTag"]
                           },
                           {
                             "title": "Instance Methods",
@@ -305,7 +308,8 @@ final class RenderIndexTests: XCTestCase {
                         ],
                         "path": "\/documentation\/mixedlanguageframework\/swiftonlystruct",
                         "title": "SwiftOnlyStruct",
-                        "type": "struct"
+                        "type": "struct",
+                        "tags": ["SwiftOnlyStructTag"]
                       },
                       {
                         "title": "Some Swift-only APIs, some Objective-C–only APIs, some mixed",
@@ -335,7 +339,8 @@ final class RenderIndexTests: XCTestCase {
                       {
                         "title": "Article",
                         "path": "/documentation/mixedlanguageframework/article",
-                        "type": "article"
+                        "type": "article",
+                        "tags": ["LanguageAgnosticArticleTag", "New"]
                       },
                       {
                         "title": "Tutorials",
@@ -379,7 +384,8 @@ final class RenderIndexTests: XCTestCase {
                       {
                         "title": "Article",
                         "path": "/documentation/mixedlanguageframework/article",
-                        "type": "article"
+                        "type": "article",
+                        "tags": ["LanguageAgnosticArticleTag", "New"]
                       },
                       {
                         "path": "/documentation/mixedlanguageframework/apicollection",
@@ -402,7 +408,8 @@ final class RenderIndexTests: XCTestCase {
                               {
                                 "path": "\/documentation\/mixedlanguageframework\/articlecuratedinasinglelanguagepage",
                                 "title": "Article curated in a single-language page",
-                                "type": "article"
+                                "type": "article",
+                                "tags": ["SwiftOnlyArticleTag"]
                               },
                               {
                                 "title": "Instance Methods",
@@ -413,7 +420,8 @@ final class RenderIndexTests: XCTestCase {
                                 "path": "/documentation/mixedlanguageframework/swiftonlystruct/tada()",
                                 "type": "method"
                               }
-                            ]
+                            ],
+                            "tags": ["SwiftOnlyStructTag"]
                           }
                         ]
                       },
