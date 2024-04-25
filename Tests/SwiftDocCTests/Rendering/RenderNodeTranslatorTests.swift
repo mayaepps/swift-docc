@@ -1400,4 +1400,40 @@ class RenderNodeTranslatorTests: XCTestCase {
             }
         }
     }
+    
+    func testFilterTagsInRenderMetadata() throws {
+        let (bundle, context) = try testBundleAndContext(named: "MixedLanguageFramework")
+        
+        let articleReference = ResolvedTopicReference(bundleIdentifier: bundle.identifier, path: "/documentation/MixedLanguageFramework/Article", sourceLanguage: .swift)
+        let article = try XCTUnwrap(context.entity(with: articleReference).semantic as? Article)
+        var articleTranslator = RenderNodeTranslator(
+            context: context,
+            bundle: bundle,
+            identifier: articleReference,
+            source: nil
+        )
+        
+        let articleRenderNode = try XCTUnwrap(articleTranslator.visitArticle(article) as? RenderNode)
+   
+        let encodedArticle = try JSONEncoder().encode(articleRenderNode)
+        let roundTrippedArticle = try JSONDecoder().decode(RenderNode.self, from: encodedArticle)
+        
+        XCTAssertEqual(roundTrippedArticle.metadata.filterTags, ["LanguageAgnosticArticleTag", "New"])
+        
+        let symbolReference = ResolvedTopicReference(bundleIdentifier: bundle.identifier, path: "/documentation/MixedLanguageFramework/SwiftOnlyStruct", sourceLanguage: .swift)
+        let symbol = try XCTUnwrap(context.entity(with: symbolReference).semantic as? Symbol)
+        var symbolTranslator = RenderNodeTranslator(
+            context: context,
+            bundle: bundle,
+            identifier: articleReference,
+            source: nil
+        )
+        
+        let symbolRenderNode = try XCTUnwrap(symbolTranslator.visitSymbol(symbol) as? RenderNode)
+   
+        let encodedSymbol = try JSONEncoder().encode(articleRenderNode)
+        let roundTrippedSymbol = try JSONDecoder().decode(RenderNode.self, from: encodedSymbol)
+        
+        XCTAssertEqual(roundTrippedSymbol.metadata.filterTags, ["SwiftOnlyStructTag"])
+    }
 }
