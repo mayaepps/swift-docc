@@ -16,6 +16,7 @@ protocol NavigatorIndexableRenderNodeRepresentation<Metadata> {
     
     // Information that's the same for all language variants
     var identifier: ResolvedTopicReference { get }
+    var abstract: [RenderInlineContent]? { get }
     var references: [String: RenderReference] { get }
     var kind: RenderNode.Kind { get }
     var sections: [RenderSection] { get }
@@ -112,6 +113,7 @@ struct RenderNodeVariantView: NavigatorIndexableRenderNodeRepresentation {
     var references: [String: any RenderReference] { wrapped.references }
     var kind: RenderNode.Kind { wrapped.kind }
     var sections: [any RenderSection] { wrapped.sections }
+    var abstract: [RenderInlineContent]? { wrapped.abstract }
     
     // Different for each language variant
     var topicSections: [TaskGroupRenderSection] {

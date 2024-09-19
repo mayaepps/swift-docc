@@ -346,7 +346,8 @@ extension RenderIndex.Node {
             children: node.children.map {
                 RenderIndex.Node.fromNavigatorTreeNode($0, in: navigatorIndex, with: builder)
             },
-            icon: node.item.icon
+            icon: node.item.icon,
+            abstract: node.item.abstract
         )
     }
 }

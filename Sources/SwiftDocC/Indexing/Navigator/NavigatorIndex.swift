@@ -764,7 +764,8 @@ extension NavigatorIndex {
                 title: title,
                 platformMask: platformID,
                 availabilityID: UInt64(availabilityID),
-                icon: renderNode.icon
+                icon: renderNode.icon,
+                abstract: renderNode.abstract ?? []
             )
             navigationItem.path = identifierPath
             
