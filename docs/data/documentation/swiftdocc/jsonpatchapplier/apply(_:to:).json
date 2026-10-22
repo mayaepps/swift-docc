@@ -9,8 +9,6 @@
     "paths" : [
       [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderingModel",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/JSONPatchOperation",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/JSONPatchApplier"
       ]
     ]
@@ -21,7 +19,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:9SwiftDocC16JSONPatchApplierV5apply_2to10Foundation4DataVSayAA0C9OperationOG_AHtKF",
+    "externalID" : "s:9SwiftDocC16JSONPatchApplierV5apply_2to20FoundationEssentials4DataVSayAA0C9OperationOG_AHtKF",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -58,7 +56,7 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:10Foundation4DataV",
+        "preciseIdentifier" : "s:20FoundationEssentials4DataV",
         "text" : "Data"
       },
       {
@@ -75,7 +73,7 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:10Foundation4DataV",
+        "preciseIdentifier" : "s:20FoundationEssentials4DataV",
         "text" : "Data"
       }
     ],
@@ -84,6 +82,10 @@
         "name" : "SwiftDocC"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "JSONPatchApplier.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Model\/Rendering\/Variants\/JSONPatchApplier.swift#L27"
+    },
     "role" : "symbol",
     "roleHeading" : "Instance Method",
     "symbolKind" : "method",
@@ -97,7 +99,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -160,7 +162,7 @@
             },
             {
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:10Foundation4DataV",
+              "preciseIdentifier" : "s:20FoundationEssentials4DataV",
               "text" : "Data"
             },
             {
@@ -177,33 +179,13 @@
             },
             {
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:10Foundation4DataV",
+              "preciseIdentifier" : "s:20FoundationEssentials4DataV",
               "text" : "Data"
             }
           ]
         }
       ],
       "kind" : "declarations"
-    },
-    {
-      "content" : [
-        {
-          "anchor" : "return-value",
-          "level" : 2,
-          "text" : "Return Value",
-          "type" : "heading"
-        },
-        {
-          "inlineContent" : [
-            {
-              "text" : "The JSON data with the patch applied.",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
-        }
-      ],
-      "kind" : "content"
     },
     {
       "kind" : "parameters",
@@ -237,6 +219,26 @@
           "name" : "jsonData"
         }
       ]
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "return-value",
+          "level" : 2,
+          "text" : "Return Value",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The JSON data with the patch applied.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
     },
     {
       "content" : [
@@ -277,7 +279,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -304,6 +306,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -318,6 +321,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -352,6 +356,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -382,10 +387,11 @@
 "doc://SwiftDocC/documentation/SwiftDocC/JSONPatchApplier/Error": {
   "abstract" : [
     {
-      "text" : "An error that occured during the application of a JSON patch.",
+      "text" : "An error that occurred during the application of a JSON patch.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -420,6 +426,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -456,7 +463,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10Foundation4DataV",
+      "preciseIdentifier" : "s:20FoundationEssentials4DataV",
       "text" : "Data"
     },
     {
@@ -473,7 +480,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10Foundation4DataV",
+      "preciseIdentifier" : "s:20FoundationEssentials4DataV",
       "text" : "Data"
     }
   ],
@@ -483,54 +490,6 @@
   "title" : "apply(_:to:)",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/jsonpatchapplier\/apply(_:to:)"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/JSONPatchOperation": {
-  "abstract" : [
-    {
-      "text" : "A patch operation to update a JSON value.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "enum"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "JSONPatchOperation"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/JSONPatchOperation",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "JSONPatchOperation"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "JSONPatchOperation",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/jsonpatchoperation"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/RenderingModel": {
-  "abstract" : [
-    {
-      "text" : "Convert documentation nodes into render nodes and save them to disk.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderingModel",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Rendering Model",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/renderingmodel"
 }
 }
 }

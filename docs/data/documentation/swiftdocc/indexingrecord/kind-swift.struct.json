@@ -9,7 +9,6 @@
     "paths" : [
       [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationIndexing",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/IndexingRecord"
       ]
     ]
@@ -46,6 +45,10 @@
         "text" : "Kind"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "IndexingRecord.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Indexing\/IndexingRecord.swift#L39"
+    },
     "role" : "symbol",
     "roleHeading" : "Structure",
     "symbolKind" : "struct",
@@ -59,7 +62,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -86,7 +89,9 @@
         "doc:\/\/SwiftDocC\/Se",
         "doc:\/\/SwiftDocC\/SE",
         "doc:\/\/SwiftDocC\/SQ",
-        "doc:\/\/SwiftDocC\/SY"
+        "doc:\/\/SwiftDocC\/SY",
+        "doc:\/\/SwiftDocC\/s8SendableP",
+        "doc:\/\/SwiftDocC\/s16SendableMetatypeP"
       ],
       "kind" : "relationships",
       "title" : "Conforms To",
@@ -95,7 +100,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -103,18 +108,24 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Initializers",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/IndexingRecord\/Kind-swift.struct\/init(rawValue:)"
       ],
       "title" : "Initializers"
     },
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/IndexingRecord\/Kind-swift.struct\/rawValue"
       ],
       "title" : "Instance Properties"
     },
     {
+      "anchor" : "Type-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/IndexingRecord\/Kind-swift.struct\/article",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/IndexingRecord\/Kind-swift.struct\/overview",
@@ -125,12 +136,11 @@
       "title" : "Type Properties"
     },
     {
+      "anchor" : "Default-Implementations",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/IndexingRecord\/Kind-swift.struct\/Decodable-Implementations",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/IndexingRecord\/Kind-swift.struct\/Encodable-Implementations",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/IndexingRecord\/Kind-swift.struct\/Equatable-Implementations",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/IndexingRecord\/Kind-swift.struct\/RawRepresentable-Implementations"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/IndexingRecord\/Kind-swift.struct\/Encodable-Implementations"
       ],
       "title" : "Default Implementations"
     }
@@ -176,26 +186,13 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
   "title" : "SwiftDocC",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/DocumentationIndexing": {
-  "abstract" : [
-    {
-      "text" : "Create documentation indexes optimized for text search or navigation.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationIndexing",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Documentation Indexing",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/documentationindexing"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/IndexingRecord": {
   "abstract" : [
@@ -213,6 +210,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -247,6 +245,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -296,28 +295,6 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/indexingrecord\/kind-swift.struct\/encodable-implementations"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/IndexingRecord/Kind-swift.struct/Equatable-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/IndexingRecord\/Kind-swift.struct\/Equatable-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Equatable Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/indexingrecord\/kind-swift.struct\/equatable-implementations"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/IndexingRecord/Kind-swift.struct/RawRepresentable-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/IndexingRecord\/Kind-swift.struct\/RawRepresentable-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "RawRepresentable Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/indexingrecord\/kind-swift.struct\/rawrepresentable-implementations"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/IndexingRecord/Kind-swift.struct/article": {
   "abstract" : [
     {
@@ -325,6 +302,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -376,6 +354,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -417,6 +396,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -468,6 +448,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -505,6 +486,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -559,6 +541,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -613,6 +596,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -667,6 +651,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -693,6 +678,16 @@
   "title" : "RenderNode",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/rendernode"
+},
+"doc://SwiftDocC/s16SendableMetatypeP": {
+  "identifier" : "doc:\/\/SwiftDocC\/s16SendableMetatypeP",
+  "title" : "Swift.SendableMetatype",
+  "type" : "unresolvable"
+},
+"doc://SwiftDocC/s8SendableP": {
+  "identifier" : "doc:\/\/SwiftDocC\/s8SendableP",
+  "title" : "Swift.Sendable",
+  "type" : "unresolvable"
 }
 }
 }

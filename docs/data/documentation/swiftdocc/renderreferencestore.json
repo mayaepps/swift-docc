@@ -44,6 +44,10 @@
         "text" : "RenderReferenceStore"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "RenderReferenceStore.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Model\/Rendering\/RenderReferenceStore.swift#L20"
+    },
     "role" : "symbol",
     "roleHeading" : "Structure",
     "symbolKind" : "struct",
@@ -57,7 +61,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -133,7 +137,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -141,6 +145,7 @@
   ],
   "seeAlsoSections" : [
     {
+      "anchor" : "Related-Documentation",
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderContext"
       ],
@@ -149,12 +154,16 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Structures",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderReferenceStore\/TopicContent"
       ],
       "title" : "Structures"
     },
     {
+      "anchor" : "Initializers",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderReferenceStore\/init(from:)",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderReferenceStore\/init(topics:assets:)"
@@ -162,6 +171,8 @@
       "title" : "Initializers"
     },
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderReferenceStore\/assets",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderReferenceStore\/topics"
@@ -169,9 +180,11 @@
       "title" : "Instance Properties"
     },
     {
+      "anchor" : "Instance-Methods",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderReferenceStore\/content(for:)",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderReferenceStore\/content(forAssetNamed:bundleIdentifier:)"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderReferenceStore\/content(forAssetNamed:bundleID:)"
       ],
       "title" : "Instance Methods"
     }
@@ -207,6 +220,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -221,6 +235,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -255,6 +270,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -289,6 +305,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -323,6 +340,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -357,6 +375,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -407,6 +426,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -443,15 +463,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:9SwiftDocC20RenderReferenceStoreV",
-      "text" : "RenderReferenceStore"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:9SwiftDocC20RenderReferenceStoreV12TopicContentV",
       "text" : "TopicContent"
     },
@@ -467,13 +478,14 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/renderreferencestore\/content(for:)"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/RenderReferenceStore/content(forAssetNamed:bundleIdentifier:)": {
+"doc://SwiftDocC/documentation/SwiftDocC/RenderReferenceStore/content(forAssetNamed:bundleID:)": {
   "abstract" : [
     {
       "text" : "Returns asset information for the given asset name.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -510,7 +522,7 @@
     },
     {
       "kind" : "externalParam",
-      "text" : "bundleIdentifier"
+      "text" : "bundleID"
     },
     {
       "kind" : "text",
@@ -518,8 +530,26 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:SS",
-      "text" : "String"
+      "preciseIdentifier" : "s:9SwiftDocC20DocumentationContextC",
+      "text" : "DocumentationContext"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC20DocumentationContextC6InputsV",
+      "text" : "Inputs"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC20DocumentationContextC6InputsV10IdentifierV",
+      "text" : "Identifier"
     },
     {
       "kind" : "text",
@@ -535,17 +565,18 @@
       "text" : "?"
     }
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderReferenceStore\/content(forAssetNamed:bundleIdentifier:)",
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderReferenceStore\/content(forAssetNamed:bundleID:)",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "content(forAssetNamed:bundleIdentifier:)",
+  "title" : "content(forAssetNamed:bundleID:)",
   "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/renderreferencestore\/content(forassetnamed:bundleidentifier:)"
+  "url" : "\/documentation\/swiftdocc\/renderreferencestore\/content(forassetnamed:bundleid:)"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/RenderReferenceStore/init(from:)": {
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -561,7 +592,7 @@
     },
     {
       "kind" : "text",
-      "text" : ": "
+      "text" : ": any "
     },
     {
       "kind" : "typeIdentifier",
@@ -591,6 +622,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -616,15 +648,6 @@
     {
       "kind" : "text",
       "text" : " : "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:9SwiftDocC20RenderReferenceStoreV",
-      "text" : "RenderReferenceStore"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",
@@ -676,6 +699,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -701,15 +725,6 @@
     {
       "kind" : "text",
       "text" : " : "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:9SwiftDocC20RenderReferenceStoreV",
-      "text" : "RenderReferenceStore"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",

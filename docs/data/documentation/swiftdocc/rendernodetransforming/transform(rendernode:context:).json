@@ -9,7 +9,6 @@
     "paths" : [
       [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/PersistingDocumentation",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNodeTransforming"
       ]
     ]
@@ -74,14 +73,6 @@
       },
       {
         "kind" : "typeIdentifier",
-        "text" : "Self"
-      },
-      {
-        "kind" : "text",
-        "text" : "."
-      },
-      {
-        "kind" : "typeIdentifier",
         "preciseIdentifier" : "s:9SwiftDocC22RenderNodeTransformingP0cD20TransformationResulta",
         "text" : "RenderNodeTransformationResult"
       }
@@ -91,6 +82,10 @@
         "name" : "SwiftDocC"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "RenderNodeTransforming.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Converter\/Rewriter\/RenderNodeTransforming.swift#L22"
+    },
     "required" : true,
     "role" : "symbol",
     "roleHeading" : "Instance Method",
@@ -105,7 +100,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -161,14 +156,6 @@
               "text" : ") -> "
             },
             {
-              "kind" : "typeIdentifier",
-              "text" : "Self"
-            },
-            {
-              "kind" : "text",
-              "text" : "."
-            },
-            {
               "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNodeTransforming\/RenderNodeTransformationResult",
               "kind" : "typeIdentifier",
               "preciseIdentifier" : "s:9SwiftDocC22RenderNodeTransformingP0cD20TransformationResulta",
@@ -178,26 +165,6 @@
         }
       ],
       "kind" : "declarations"
-    },
-    {
-      "content" : [
-        {
-          "anchor" : "return-value",
-          "level" : 2,
-          "text" : "Return Value",
-          "type" : "heading"
-        },
-        {
-          "inlineContent" : [
-            {
-              "text" : "The transformed render node and a (possible modified) context.",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
-        }
-      ],
-      "kind" : "content"
     },
     {
       "kind" : "parameters",
@@ -231,11 +198,31 @@
           "name" : "context"
         }
       ]
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "return-value",
+          "level" : 2,
+          "text" : "Return Value",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The transformed render node and a (possible modified) context.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
     }
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -262,26 +249,13 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
   "title" : "SwiftDocC",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/PersistingDocumentation": {
-  "abstract" : [
-    {
-      "text" : "Save compiled documentation to disk.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/PersistingDocumentation",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Persisting Documentation",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/persistingdocumentation"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/RenderNode": {
   "abstract" : [
@@ -290,6 +264,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -324,6 +299,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -358,6 +334,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -392,6 +369,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -426,6 +404,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -476,14 +455,6 @@
     {
       "kind" : "text",
       "text" : ") -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Self"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",

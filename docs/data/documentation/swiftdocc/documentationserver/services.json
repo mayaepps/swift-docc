@@ -56,6 +56,14 @@
         "text" : " : "
       },
       {
+        "kind" : "keyword",
+        "text" : "any"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
         "kind" : "typeIdentifier",
         "preciseIdentifier" : "s:9SwiftDocC20DocumentationServiceP",
         "text" : "DocumentationService"
@@ -70,6 +78,10 @@
         "name" : "SwiftDocC"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "DocumentationServer.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/DocumentationService\/Models\/DocumentationServer.swift#L21"
+    },
     "role" : "symbol",
     "roleHeading" : "Instance Property",
     "symbolKind" : "property",
@@ -83,7 +95,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -123,6 +135,14 @@
               "text" : " : "
             },
             {
+              "kind" : "keyword",
+              "text" : "any"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
               "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationService",
               "kind" : "typeIdentifier",
               "preciseIdentifier" : "s:9SwiftDocC20DocumentationServiceP",
@@ -140,7 +160,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -167,6 +187,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -181,6 +202,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -215,6 +237,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -249,6 +272,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -285,6 +309,14 @@
       "text" : " : "
     },
     {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
       "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:9SwiftDocC20DocumentationServiceP",
       "text" : "DocumentationService"
@@ -308,6 +340,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",

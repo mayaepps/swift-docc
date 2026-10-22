@@ -9,8 +9,6 @@
     "paths" : [
       [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderingModel",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SymbolReferenceRendering",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DiffAvailability"
       ]
     ]
@@ -41,15 +39,6 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:9SwiftDocC16DiffAvailabilityV",
-        "text" : "DiffAvailability"
-      },
-      {
-        "kind" : "text",
-        "text" : "."
-      },
-      {
-        "kind" : "typeIdentifier",
         "preciseIdentifier" : "s:9SwiftDocC16DiffAvailabilityV4InfoV",
         "text" : "Info"
       },
@@ -63,6 +52,10 @@
         "name" : "SwiftDocC"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "DiffAvailability.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Model\/Rendering\/Symbol\/DiffAvailability.swift#L22"
+    },
     "role" : "symbol",
     "roleHeading" : "Instance Property",
     "symbolKind" : "property",
@@ -76,7 +69,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -96,16 +89,6 @@
               "text" : ": "
             },
             {
-              "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DiffAvailability",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:9SwiftDocC16DiffAvailabilityV",
-              "text" : "DiffAvailability"
-            },
-            {
-              "kind" : "text",
-              "text" : "."
-            },
-            {
               "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DiffAvailability\/Info",
               "kind" : "typeIdentifier",
               "preciseIdentifier" : "s:9SwiftDocC16DiffAvailabilityV4InfoV",
@@ -123,7 +106,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -150,6 +133,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -164,6 +148,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -198,6 +183,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -232,6 +218,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -251,15 +238,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:9SwiftDocC16DiffAvailabilityV",
-      "text" : "DiffAvailability"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:9SwiftDocC16DiffAvailabilityV4InfoV",
       "text" : "Info"
     },
@@ -274,34 +252,6 @@
   "title" : "major",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/diffavailability\/major"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/RenderingModel": {
-  "abstract" : [
-    {
-      "text" : "Convert documentation nodes into render nodes and save them to disk.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderingModel",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Rendering Model",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/renderingmodel"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/SymbolReferenceRendering": {
-  "abstract" : [
-    {
-      "text" : "Render rich reference documentation for programming symbols.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SymbolReferenceRendering",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Symbol Reference Rendering",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/symbolreferencerendering"
 }
 }
 }

@@ -8,9 +8,7 @@
   "hierarchy" : {
     "paths" : [
       [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderingModel",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SymbolReferenceRendering"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC"
       ]
     ]
   },
@@ -46,6 +44,10 @@
         "text" : "TopicsSection"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "Topics.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Model\/Section\/Sections\/Topics.swift#L17"
+    },
     "role" : "symbol",
     "roleHeading" : "Structure",
     "symbolKind" : "struct",
@@ -59,7 +61,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -93,7 +95,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -101,6 +103,7 @@
   ],
   "seeAlsoSections" : [
     {
+      "anchor" : "Main-Sections",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/AbstractSection",
@@ -118,23 +121,20 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TopicsSection\/content"
       ],
       "title" : "Instance Properties"
     },
     {
+      "anchor" : "Type-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TopicsSection\/title"
       ],
       "title" : "Type Properties"
-    },
-    {
-      "generated" : true,
-      "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TopicsSection\/GroupedSection-Implementations"
-      ],
-      "title" : "Default Implementations"
     }
   ],
   "variants" : [
@@ -158,6 +158,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -172,6 +173,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -206,6 +208,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -240,6 +243,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -274,6 +278,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -305,6 +310,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -339,6 +345,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -373,6 +380,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -400,20 +408,6 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/parameterssection"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/RenderingModel": {
-  "abstract" : [
-    {
-      "text" : "Convert documentation nodes into render nodes and save them to disk.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderingModel",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Rendering Model",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/renderingmodel"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/ReturnsSection": {
   "abstract" : [
     {
@@ -421,6 +415,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -455,6 +450,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -489,6 +485,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -523,6 +520,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -550,20 +548,6 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/seealsosection"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/SymbolReferenceRendering": {
-  "abstract" : [
-    {
-      "text" : "Render rich reference documentation for programming symbols.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SymbolReferenceRendering",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Symbol Reference Rendering",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/symbolreferencerendering"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/TopicsSection": {
   "abstract" : [
     {
@@ -571,6 +555,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -598,21 +583,11 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/topicssection"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/TopicsSection/GroupedSection-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TopicsSection\/GroupedSection-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "GroupedSection Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/topicssection\/groupedsection-implementations"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/TopicsSection/content": {
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -629,6 +604,14 @@
     {
       "kind" : "text",
       "text" : ": ["
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -651,6 +634,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -662,7 +646,7 @@
     },
     {
       "kind" : "keyword",
-      "text" : "var"
+      "text" : "let"
     },
     {
       "kind" : "text",

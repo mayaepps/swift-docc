@@ -8,9 +8,7 @@
   "hierarchy" : {
     "paths" : [
       [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderingModel",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SymbolReferenceRendering"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC"
       ]
     ]
   },
@@ -46,6 +44,10 @@
         "text" : "Relationship"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "Relationship.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Semantics\/Symbol\/Relationship.swift#L15"
+    },
     "role" : "symbol",
     "roleHeading" : "Enumeration",
     "symbolKind" : "enum",
@@ -59,7 +61,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -82,7 +84,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -90,6 +92,7 @@
   ],
   "seeAlsoSections" : [
     {
+      "anchor" : "Relationship-Sections",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RelationshipsRenderSection",
@@ -104,6 +107,8 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Enumeration-Cases",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Relationship\/conformingType(_:_:)",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Relationship\/conformsTo(_:_:)",
@@ -137,6 +142,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -151,6 +157,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -185,6 +192,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -219,6 +227,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -253,6 +262,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -287,6 +297,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -364,6 +375,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -441,6 +453,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -482,6 +495,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -523,6 +537,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -564,6 +579,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -605,6 +621,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -646,6 +663,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -680,6 +698,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -714,6 +733,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -740,34 +760,6 @@
   "title" : "RelationshipsSection",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/relationshipssection"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/RenderingModel": {
-  "abstract" : [
-    {
-      "text" : "Convert documentation nodes into render nodes and save them to disk.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderingModel",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Rendering Model",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/renderingmodel"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/SymbolReferenceRendering": {
-  "abstract" : [
-    {
-      "text" : "Render rich reference documentation for programming symbols.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SymbolReferenceRendering",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Symbol Reference Rendering",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/symbolreferencerendering"
 }
 }
 }

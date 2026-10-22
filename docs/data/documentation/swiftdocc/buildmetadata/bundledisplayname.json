@@ -1,7 +1,7 @@
 {
   "abstract" : [
     {
-      "text" : "The display name of the documentation bundle that DocC built.",
+      "text" : "The display name of the documentation archive that DocC built.",
       "type" : "text"
     }
   ],
@@ -48,6 +48,10 @@
         "name" : "SwiftDocC"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "BuildMetadata.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Model\/BuildMetadata.swift#L24"
+    },
     "role" : "symbol",
     "roleHeading" : "Instance Property",
     "symbolKind" : "property",
@@ -61,7 +65,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -93,7 +97,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -120,6 +124,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -130,10 +135,11 @@
 "doc://SwiftDocC/documentation/SwiftDocC/BuildMetadata": {
   "abstract" : [
     {
-      "text" : "A value that encapsulates metadata for a documentation bundle that DocC built.",
+      "text" : "A value that encapsulates metadata for a documentation archive that DocC built.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -164,10 +170,11 @@
 "doc://SwiftDocC/documentation/SwiftDocC/BuildMetadata/bundleDisplayName": {
   "abstract" : [
     {
-      "text" : "The display name of the documentation bundle that DocC built.",
+      "text" : "The display name of the documentation archive that DocC built.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",

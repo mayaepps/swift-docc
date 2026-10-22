@@ -1,15 +1,19 @@
 {
-  "abstract" : [
+  "deprecationSummary" : [
     {
-      "text" : "A textual replacement.",
-      "type" : "text"
+      "inlineContent" : [
+        {
+          "text" : "Use 'Solution.Replacement' instead. This deprecated API will be removed after 6.5 is released.",
+          "type" : "text"
+        }
+      ],
+      "type" : "paragraph"
     }
   ],
   "hierarchy" : {
     "paths" : [
       [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/EmittingDiagnostics"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC"
       ]
     ]
   },
@@ -19,11 +23,11 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:9SwiftDocC11ReplacementV",
+    "externalID" : "s:9SwiftDocC11Replacementa",
     "fragments" : [
       {
         "kind" : "keyword",
-        "text" : "struct"
+        "text" : "typealias"
       },
       {
         "kind" : "text",
@@ -45,9 +49,13 @@
         "text" : "Replacement"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "Replacement.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Infrastructure\/Diagnostics\/Replacement.swift#L31"
+    },
     "role" : "symbol",
-    "roleHeading" : "Structure",
-    "symbolKind" : "struct",
+    "roleHeading" : "Type Alias",
+    "symbolKind" : "typealias",
     "title" : "Replacement"
   },
   "primaryContentSections" : [
@@ -58,12 +66,12 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
               "kind" : "keyword",
-              "text" : "struct"
+              "text" : "typealias"
             },
             {
               "kind" : "text",
@@ -71,6 +79,26 @@
             },
             {
               "kind" : "identifier",
+              "text" : "Replacement"
+            },
+            {
+              "kind" : "text",
+              "text" : " = "
+            },
+            {
+              "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Solution",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:9SwiftDocC8SolutionV",
+              "text" : "Solution"
+            },
+            {
+              "kind" : "text",
+              "text" : "."
+            },
+            {
+              "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Solution\/Replacement",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:9SwiftDocC8SolutionV11ReplacementV",
               "text" : "Replacement"
             }
           ]
@@ -81,7 +109,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -89,26 +117,12 @@
   ],
   "seeAlsoSections" : [
     {
+      "anchor" : "Suggested-Recovery-Solutions",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Solution"
       ],
       "title" : "Suggested Recovery Solutions"
-    }
-  ],
-  "topicSections" : [
-    {
-      "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Replacement\/init(range:replacement:)"
-      ],
-      "title" : "Initializers"
-    },
-    {
-      "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Replacement\/range",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Replacement\/replacement"
-      ],
-      "title" : "Instance Properties"
     }
   ],
   "variants" : [
@@ -132,6 +146,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -139,31 +154,15 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/EmittingDiagnostics": {
-  "abstract" : [
-    {
-      "text" : "Vend warnings and errors as part of an operation’s result.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/EmittingDiagnostics",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Emitting Diagnostics",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/emittingdiagnostics"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/Replacement": {
   "abstract" : [
-    {
-      "text" : "A textual replacement.",
-      "type" : "text"
-    }
+
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "struct"
+      "text" : "typealias"
     },
     {
       "kind" : "text",
@@ -187,150 +186,14 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/replacement"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/Replacement/init(range:replacement:)": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "identifier",
-      "text" : "init"
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "range"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:8Markdown11SourceRangea",
-      "text" : "SourceRange"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "replacement"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:SS",
-      "text" : "String"
-    },
-    {
-      "kind" : "text",
-      "text" : ")"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Replacement\/init(range:replacement:)",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "init(range:replacement:)",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/replacement\/init(range:replacement:)"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/Replacement/range": {
-  "abstract" : [
-    {
-      "text" : "The range to replace.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "var"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "range"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:8Markdown11SourceRangea",
-      "text" : "SourceRange"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Replacement\/range",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "range",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/replacement\/range"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/Replacement/replacement": {
-  "abstract" : [
-    {
-      "text" : "The replacement text.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "var"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "replacement"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:SS",
-      "text" : "String"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Replacement\/replacement",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "replacement",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/replacement\/replacement"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/Solution": {
   "abstract" : [
     {
-      "text" : "A solution to a ",
-      "type" : "text"
-    },
-    {
-      "code" : "Problem",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "A possible solution to a problem or issue that’s reported about in a diagnostic.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -357,6 +220,41 @@
   "title" : "Solution",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/solution"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/Solution/Replacement": {
+  "abstract" : [
+    {
+      "text" : "A textual replacement that makes up part of a solution to resolve the specific problem or issue with the end-user’s documentation.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Replacement"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Solution\/Replacement",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Replacement"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Solution.Replacement",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/solution\/replacement"
 }
 }
 }

@@ -1,15 +1,19 @@
 {
-  "abstract" : [
+  "deprecationSummary" : [
     {
-      "text" : "A hint.",
-      "type" : "text"
+      "inlineContent" : [
+        {
+          "text" : "Use either 'DiagnosticNote' or 'Solution' instead. This deprecated API will be removed after 6.5 is released.",
+          "type" : "text"
+        }
+      ],
+      "type" : "paragraph"
     }
   ],
   "hierarchy" : {
     "paths" : [
       [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/EmittingDiagnostics",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DiagnosticSeverity"
       ]
     ]
@@ -40,6 +44,10 @@
         "name" : "SwiftDocC"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "DiagnosticSeverity.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Infrastructure\/Diagnostics\/DiagnosticSeverity.swift#L41"
+    },
     "role" : "symbol",
     "roleHeading" : "Case",
     "symbolKind" : "case",
@@ -53,7 +61,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -72,31 +80,11 @@
         }
       ],
       "kind" : "declarations"
-    },
-    {
-      "content" : [
-        {
-          "anchor" : "discussion",
-          "level" : 2,
-          "text" : "Discussion",
-          "type" : "heading"
-        },
-        {
-          "inlineContent" : [
-            {
-              "text" : "A hint may be used to provide recommendations to resolve errors or warnings or may provide recommendations to the user proactively.",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
-        }
-      ],
-      "kind" : "content"
     }
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -123,6 +111,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -137,6 +126,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -166,11 +156,9 @@
 },
 "doc://SwiftDocC/documentation/SwiftDocC/DiagnosticSeverity/hint": {
   "abstract" : [
-    {
-      "text" : "A hint.",
-      "type" : "text"
-    }
+
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -191,20 +179,6 @@
   "title" : "DiagnosticSeverity.hint",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/diagnosticseverity\/hint"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/EmittingDiagnostics": {
-  "abstract" : [
-    {
-      "text" : "Vend warnings and errors as part of an operation’s result.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/EmittingDiagnostics",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Emitting Diagnostics",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/emittingdiagnostics"
 }
 }
 }

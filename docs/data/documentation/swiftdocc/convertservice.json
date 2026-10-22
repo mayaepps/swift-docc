@@ -44,6 +44,10 @@
         "text" : "ConvertService"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "ConvertService.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/DocumentationService\/Convert\/ConvertService.swift#L18"
+    },
     "role" : "symbol",
     "roleHeading" : "Structure",
     "symbolKind" : "struct",
@@ -57,7 +61,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -127,7 +131,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -135,18 +139,25 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Initializers",
+      "generated" : true,
       "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ConvertService\/init(linkResolvingServer:)"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ConvertService\/init(linkResolvingServer:allowArbitraryCatalogDirectories:)"
       ],
       "title" : "Initializers"
     },
     {
+      "anchor" : "Instance-Methods",
+      "generated" : true,
       "identifiers" : [
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ConvertService\/process(_:)",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ConvertService\/process(_:completion:)"
       ],
       "title" : "Instance Methods"
     },
     {
+      "anchor" : "Type-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ConvertService\/convertMessageType",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ConvertService\/convertResponseErrorMessageType",
@@ -177,6 +188,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -191,6 +203,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -225,6 +238,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -259,6 +273,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -313,6 +328,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -367,6 +383,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -418,6 +435,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -469,13 +487,14 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/convertservice\/handlingtypes"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/ConvertService/init(linkResolvingServer:)": {
+"doc://SwiftDocC/documentation/SwiftDocC/ConvertService/init(linkResolvingServer:allowArbitraryCatalogDirectories:)": {
   "abstract" : [
     {
       "text" : "Creates a conversion service, which converts in-memory documentation data.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -500,20 +519,108 @@
     },
     {
       "kind" : "text",
-      "text" : "?)"
+      "text" : "?, "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "allowArbitraryCatalogDirectories"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
     }
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ConvertService\/init(linkResolvingServer:)",
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ConvertService\/init(linkResolvingServer:allowArbitraryCatalogDirectories:)",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "init(linkResolvingServer:)",
+  "title" : "init(linkResolvingServer:allowArbitraryCatalogDirectories:)",
   "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/convertservice\/init(linkresolvingserver:)"
+  "url" : "\/documentation\/swiftdocc\/convertservice\/init(linkresolvingserver:allowarbitrarycatalogdirectories:)"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/ConvertService/process(_:)": {
+  "abstract" : [
+
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "process"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC19DocumentationServerC",
+      "text" : "DocumentationServer"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC19DocumentationServerC7MessageV",
+      "text" : "Message"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "async"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC19DocumentationServerC",
+      "text" : "DocumentationServer"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC19DocumentationServerC7MessageV",
+      "text" : "Message"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ConvertService\/process(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "process(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/convertservice\/process(_:)"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/ConvertService/process(_:completion:)": {
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -590,6 +697,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",

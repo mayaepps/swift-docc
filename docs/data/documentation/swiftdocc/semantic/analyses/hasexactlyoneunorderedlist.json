@@ -1,10 +1,4 @@
 {
-  "abstract" : [
-    {
-      "text" : "No overview available.",
-      "type" : "text"
-    }
-  ],
   "hierarchy" : {
     "paths" : [
       [
@@ -47,6 +41,10 @@
         "text" : "HasExactlyOneUnorderedList"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "HasExactlyOne.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Semantics\/General%20Purpose%20Analyses\/HasExactlyOne.swift#L261"
+    },
     "role" : "symbol",
     "roleHeading" : "Structure",
     "symbolKind" : "struct",
@@ -60,7 +58,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -134,23 +132,6 @@
               "kind" : "typeIdentifier",
               "preciseIdentifier" : "s:9SwiftDocC20DirectiveConvertibleP",
               "text" : "DirectiveConvertible"
-            },
-            {
-              "kind" : "text",
-              "text" : ", "
-            },
-            {
-              "kind" : "typeIdentifier",
-              "text" : "ListElement"
-            },
-            {
-              "kind" : "text",
-              "text" : " : "
-            },
-            {
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:8Markdown6MarkupP",
-              "text" : "Markup"
             }
           ]
         }
@@ -158,19 +139,9 @@
       "kind" : "declarations"
     }
   ],
-  "relationshipsSections" : [
-    {
-      "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SemanticAnalysis"
-      ],
-      "kind" : "relationships",
-      "title" : "Conforms To",
-      "type" : "conformsTo"
-    }
-  ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -178,8 +149,10 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Instance-Methods",
+      "generated" : true,
       "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Semantic\/Analyses\/HasExactlyOneUnorderedList\/analyze(_:children:source:for:in:problems:)"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Semantic\/Analyses\/HasExactlyOneUnorderedList\/analyze(_:children:source:problems:)"
       ],
       "title" : "Instance Methods"
     }
@@ -205,6 +178,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -219,6 +193,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -253,6 +228,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -287,6 +263,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -318,6 +295,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -345,10 +323,11 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/semantic\/analyses\/hasexactlyoneunorderedlist"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/Semantic/Analyses/HasExactlyOneUnorderedList/analyze(_:children:source:for:in:problems:)": {
+"doc://SwiftDocC/documentation/SwiftDocC/Semantic/Analyses/HasExactlyOneUnorderedList/analyze(_:children:source:problems:)": {
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -364,15 +343,7 @@
     },
     {
       "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "genericParameter",
-      "text" : "Children"
-    },
-    {
-      "kind" : "text",
-      "text" : ">("
+      "text" : "("
     },
     {
       "kind" : "typeIdentifier",
@@ -392,12 +363,38 @@
       "text" : ": "
     },
     {
-      "kind" : "typeIdentifier",
-      "text" : "Children"
+      "kind" : "keyword",
+      "text" : "some"
     },
     {
       "kind" : "text",
-      "text" : ", "
+      "text" : " "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:ST",
+      "text" : "Sequence"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8Markdown6MarkupP",
+      "text" : "Markup"
+    },
+    {
+      "kind" : "text",
+      "text" : ">, "
     },
     {
       "kind" : "externalParam",
@@ -409,46 +406,12 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10Foundation3URLV",
+      "preciseIdentifier" : "s:20FoundationEssentials3URLV",
       "text" : "URL"
     },
     {
       "kind" : "text",
       "text" : "?, "
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "for"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:9SwiftDocC19DocumentationBundleV",
-      "text" : "DocumentationBundle"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "in"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:9SwiftDocC20DocumentationContextC",
-      "text" : "DocumentationContext"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
     },
     {
       "kind" : "externalParam",
@@ -477,6 +440,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC8SemanticC8AnalysesO26HasExactlyOneUnorderedListV0I7Elementq_mfp",
       "text" : "ListElement"
     },
     {
@@ -484,54 +448,12 @@
       "text" : "]?"
     }
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Semantic\/Analyses\/HasExactlyOneUnorderedList\/analyze(_:children:source:for:in:problems:)",
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Semantic\/Analyses\/HasExactlyOneUnorderedList\/analyze(_:children:source:problems:)",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "analyze(_:children:source:for:in:problems:)",
+  "title" : "analyze(_:children:source:problems:)",
   "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/semantic\/analyses\/hasexactlyoneunorderedlist\/analyze(_:children:source:for:in:problems:)"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/SemanticAnalysis": {
-  "abstract" : [
-    {
-      "text" : "A focused semantic analysis of a ",
-      "type" : "text"
-    },
-    {
-      "code" : "BlockDirective",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ", recording problems and producing a result.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "protocol"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "SemanticAnalysis"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SemanticAnalysis",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "SemanticAnalysis"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "SemanticAnalysis",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/semanticanalysis"
+  "url" : "\/documentation\/swiftdocc\/semantic\/analyses\/hasexactlyoneunorderedlist\/analyze(_:children:source:problems:)"
 }
 }
 }

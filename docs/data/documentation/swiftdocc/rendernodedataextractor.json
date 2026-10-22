@@ -8,8 +8,7 @@
   "hierarchy" : {
     "paths" : [
       [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationIndexing"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC"
       ]
     ]
   },
@@ -45,6 +44,10 @@
         "text" : "RenderNodeDataExtractor"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "RenderNodeDataExtractor.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Utility\/RenderNodeDataExtractor.swift#L19"
+    },
     "role" : "symbol",
     "roleHeading" : "Class",
     "symbolKind" : "class",
@@ -58,7 +61,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -125,7 +128,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -133,10 +136,10 @@
   ],
   "seeAlsoSections" : [
     {
+      "anchor" : "Navigation-Metadata",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/AvailabilityIndex",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNodeProvider",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Serializable",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/AnyCodable",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/AnyMetadata",
@@ -150,12 +153,16 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Initializers",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNodeDataExtractor\/init(with:)"
       ],
       "title" : "Initializers"
     },
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNodeDataExtractor\/projectFiles"
       ],
@@ -183,6 +190,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -197,6 +205,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -231,6 +240,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -265,6 +275,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -315,6 +326,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -342,20 +354,6 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/availabilityindex"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/DocumentationIndexing": {
-  "abstract" : [
-    {
-      "text" : "Create documentation indexes optimized for text search or navigation.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationIndexing",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Documentation Indexing",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/documentationindexing"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/InterfaceLanguage": {
   "abstract" : [
     {
@@ -363,6 +361,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -397,6 +396,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -428,6 +428,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -462,6 +463,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -496,6 +498,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -515,7 +518,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10Foundation4DataV",
+      "preciseIdentifier" : "s:20FoundationEssentials4DataV",
       "text" : "Data"
     },
     {
@@ -541,6 +544,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -564,7 +568,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10Foundation3URLV",
+      "preciseIdentifier" : "s:20FoundationEssentials3URLV",
       "text" : "URL"
     },
     {
@@ -592,40 +596,6 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/rendernodedataextractor\/projectfiles"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/RenderNodeProvider": {
-  "abstract" : [
-    {
-      "text" : "A protocol to provide data to be indexed.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "protocol"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "RenderNodeProvider"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNodeProvider",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "RenderNodeProvider"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "RenderNodeProvider",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/rendernodeprovider"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/Serializable": {
   "abstract" : [
     {
@@ -633,6 +603,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",

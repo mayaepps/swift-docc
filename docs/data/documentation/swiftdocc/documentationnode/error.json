@@ -1,15 +1,8 @@
 {
-  "abstract" : [
-    {
-      "text" : "No overview available.",
-      "type" : "text"
-    }
-  ],
   "hierarchy" : {
     "paths" : [
       [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationContextGroup",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationNode"
       ]
     ]
@@ -46,6 +39,10 @@
         "text" : "Error"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "DocumentationNode.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Model\/DocumentationNode.swift#L883"
+    },
     "role" : "symbol",
     "roleHeading" : "Enumeration",
     "symbolKind" : "enum",
@@ -59,7 +56,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -84,11 +81,12 @@
     {
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DescribedError",
-        "doc:\/\/SwiftDocC\/10Foundation14LocalizedErrorP",
+        "doc:\/\/SwiftDocC\/20FoundationEssentials14LocalizedErrorP",
         "doc:\/\/SwiftDocC\/SQ",
         "doc:\/\/SwiftDocC\/s5ErrorP",
         "doc:\/\/SwiftDocC\/SH",
-        "doc:\/\/SwiftDocC\/s8SendableP"
+        "doc:\/\/SwiftDocC\/s8SendableP",
+        "doc:\/\/SwiftDocC\/s16SendableMetatypeP"
       ],
       "kind" : "relationships",
       "title" : "Conforms To",
@@ -97,7 +95,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -105,26 +103,20 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Enumeration-Cases",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationNode\/Error\/missingMarkup"
       ],
       "title" : "Enumeration Cases"
     },
     {
-      "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationNode\/Error\/errorDescription-7vzxp"
-      ],
-      "title" : "Instance Properties"
-    },
-    {
+      "anchor" : "Instance-Properties",
       "generated" : true,
       "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationNode\/Error\/DescribedError-Implementations",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationNode\/Error\/Equatable-Implementations",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationNode\/Error\/Error-Implementations",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationNode\/Error\/LocalizedError-Implementations"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationNode\/Error\/errorDescription"
       ],
-      "title" : "Default Implementations"
+      "title" : "Instance Properties"
     }
   ],
   "variants" : [
@@ -141,9 +133,9 @@
   ]
 , 
 "references": {
-"doc://SwiftDocC/10Foundation14LocalizedErrorP": {
-  "identifier" : "doc:\/\/SwiftDocC\/10Foundation14LocalizedErrorP",
-  "title" : "Foundation.LocalizedError",
+"doc://SwiftDocC/20FoundationEssentials14LocalizedErrorP": {
+  "identifier" : "doc:\/\/SwiftDocC\/20FoundationEssentials14LocalizedErrorP",
+  "title" : "FoundationEssentials.LocalizedError",
   "type" : "unresolvable"
 },
 "doc://SwiftDocC/SH": {
@@ -163,6 +155,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -177,6 +170,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -204,20 +198,6 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/describederror"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/DocumentationContextGroup": {
-  "abstract" : [
-    {
-      "text" : "Build and query the in-memory documentation model.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationContextGroup",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Documentation Context",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/documentationcontextgroup"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/DocumentationNode": {
   "abstract" : [
     {
@@ -225,6 +205,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -256,6 +237,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -283,54 +265,11 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/documentationnode\/error"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/DocumentationNode/Error/DescribedError-Implementations": {
+"doc://SwiftDocC/documentation/SwiftDocC/DocumentationNode/Error/errorDescription": {
   "abstract" : [
 
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationNode\/Error\/DescribedError-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "DescribedError Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/documentationnode\/error\/describederror-implementations"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/DocumentationNode/Error/Equatable-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationNode\/Error\/Equatable-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Equatable Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/documentationnode\/error\/equatable-implementations"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/DocumentationNode/Error/Error-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationNode\/Error\/Error-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Error Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/documentationnode\/error\/error-implementations"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/DocumentationNode/Error/LocalizedError-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationNode\/Error\/LocalizedError-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "LocalizedError Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/documentationnode\/error\/localizederror-implementations"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/DocumentationNode/Error/errorDescription-7vzxp": {
-  "abstract" : [
-
-  ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -354,17 +293,18 @@
       "text" : "String"
     }
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationNode\/Error\/errorDescription-7vzxp",
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationNode\/Error\/errorDescription",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : "errorDescription",
   "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/documentationnode\/error\/errordescription-7vzxp"
+  "url" : "\/documentation\/swiftdocc\/documentationnode\/error\/errordescription"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/DocumentationNode/Error/missingMarkup": {
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -385,6 +325,11 @@
   "title" : "DocumentationNode.Error.missingMarkup",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/documentationnode\/error\/missingmarkup"
+},
+"doc://SwiftDocC/s16SendableMetatypeP": {
+  "identifier" : "doc:\/\/SwiftDocC\/s16SendableMetatypeP",
+  "title" : "Swift.SendableMetatype",
+  "type" : "unresolvable"
 },
 "doc://SwiftDocC/s5ErrorP": {
   "identifier" : "doc:\/\/SwiftDocC\/s5ErrorP",

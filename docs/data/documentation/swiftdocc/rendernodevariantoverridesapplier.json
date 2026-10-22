@@ -8,9 +8,7 @@
   "hierarchy" : {
     "paths" : [
       [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderingModel",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/VariantOverrides"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC"
       ]
     ]
   },
@@ -46,6 +44,10 @@
         "text" : "RenderNodeVariantOverridesApplier"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "RenderNodeVariantOverridesApplier.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Model\/Rendering\/Variants\/RenderNodeVariantOverridesApplier.swift#L14"
+    },
     "role" : "symbol",
     "roleHeading" : "Structure",
     "symbolKind" : "struct",
@@ -59,7 +61,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -82,7 +84,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -90,22 +92,20 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Initializers",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNodeVariantOverridesApplier\/init()"
       ],
       "title" : "Initializers"
     },
     {
+      "anchor" : "Instance-Methods",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNodeVariantOverridesApplier\/applyVariantOverrides(in:for:)"
       ],
       "title" : "Instance Methods"
-    },
-    {
-      "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNodeVariantOverridesApplier\/Error"
-      ],
-      "title" : "Enumerations"
     }
   ],
   "variants" : [
@@ -129,6 +129,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -143,6 +144,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -170,40 +172,6 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/rendernodevariantoverridesapplier"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/RenderNodeVariantOverridesApplier/Error": {
-  "abstract" : [
-    {
-      "text" : "An error that occured while applying overrides in a render node.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "enum"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "Error"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNodeVariantOverridesApplier\/Error",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "Error"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "RenderNodeVariantOverridesApplier.Error",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/rendernodevariantoverridesapplier\/error"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/RenderNodeVariantOverridesApplier/applyVariantOverrides(in:for:)": {
   "abstract" : [
     {
@@ -211,6 +179,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -238,7 +207,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10Foundation4DataV",
+      "preciseIdentifier" : "s:20FoundationEssentials4DataV",
       "text" : "Data"
     },
     {
@@ -290,7 +259,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10Foundation4DataV",
+      "preciseIdentifier" : "s:20FoundationEssentials4DataV",
       "text" : "Data"
     }
   ],
@@ -308,6 +277,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -324,54 +294,6 @@
   "title" : "init()",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/rendernodevariantoverridesapplier\/init()"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/RenderingModel": {
-  "abstract" : [
-    {
-      "text" : "Convert documentation nodes into render nodes and save them to disk.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderingModel",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Rendering Model",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/renderingmodel"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/VariantOverrides": {
-  "abstract" : [
-    {
-      "text" : "Defines the overrides for variants of documentation content.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "class"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "VariantOverrides"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/VariantOverrides",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "VariantOverrides"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "VariantOverrides",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/variantoverrides"
 }
 }
 }

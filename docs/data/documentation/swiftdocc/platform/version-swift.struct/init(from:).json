@@ -17,10 +17,8 @@
     "paths" : [
       [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationIndexing",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Platform",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Platform\/Version-swift.struct",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Platform\/Version-swift.struct\/Decodable-Implementations"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Platform\/Version-swift.struct"
       ]
     ]
   },
@@ -47,7 +45,7 @@
       },
       {
         "kind" : "text",
-        "text" : ": "
+        "text" : ": any "
       },
       {
         "kind" : "typeIdentifier",
@@ -81,7 +79,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -106,7 +104,7 @@
             },
             {
               "kind" : "text",
-              "text" : ": "
+              "text" : ": any "
             },
             {
               "kind" : "typeIdentifier",
@@ -129,7 +127,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -156,6 +154,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -163,24 +162,11 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/DocumentationIndexing": {
-  "abstract" : [
-    {
-      "text" : "Create documentation indexes optimized for text search or navigation.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationIndexing",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Documentation Indexing",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/documentationindexing"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/Platform": {
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -212,6 +198,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -239,21 +226,11 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/platform\/version-swift.struct"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/Platform/Version-swift.struct/Decodable-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Platform\/Version-swift.struct\/Decodable-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Decodable Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/platform\/version-swift.struct\/decodable-implementations"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/Platform/Version-swift.struct/init(from:)": {
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -269,7 +246,7 @@
     },
     {
       "kind" : "text",
-      "text" : ": "
+      "text" : ": any "
     },
     {
       "kind" : "typeIdentifier",

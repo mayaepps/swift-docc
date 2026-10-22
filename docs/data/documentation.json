@@ -1,0 +1,87 @@
+{
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/SwiftDocC\/documentation"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "role" : "collection",
+    "roleHeading" : "Package",
+    "title" : "SwiftDocC"
+  },
+  "references" : {
+    "doc:\/\/DocCCommandLine\/documentation\/DocCCommandLine" : {
+      "abstract" : [
+        {
+          "text" : "Build custom documentation workflows by leveraging the DocC compiler pipeline.",
+          "type" : "text"
+        }
+      ],
+      "deprecated" : true,
+      "identifier" : "doc:\/\/DocCCommandLine\/documentation\/DocCCommandLine",
+      "kind" : "symbol",
+      "role" : "collection",
+      "title" : "DocCCommandLine",
+      "type" : "topic",
+      "url" : "\/documentation\/docccommandline"
+    },
+    "doc:\/\/DocCCommon\/documentation\/DocCCommon" : {
+      "abstract" : [
+
+      ],
+      "deprecated" : true,
+      "identifier" : "doc:\/\/DocCCommon\/documentation\/DocCCommon",
+      "kind" : "symbol",
+      "role" : "collection",
+      "title" : "DocCCommon",
+      "type" : "topic",
+      "url" : "\/documentation\/docccommon"
+    },
+    "doc:\/\/DocCHTML\/documentation\/DocCHTML" : {
+      "abstract" : [
+
+      ],
+      "deprecated" : true,
+      "identifier" : "doc:\/\/DocCHTML\/documentation\/DocCHTML",
+      "kind" : "symbol",
+      "role" : "collection",
+      "title" : "DocCHTML",
+      "type" : "topic",
+      "url" : "\/documentation\/docchtml"
+    },
+    "doc:\/\/SwiftDocC\/documentation\/SwiftDocC" : {
+      "abstract" : [
+        {
+          "text" : "Combine code comments with markup prose to produce structured, semantic documentation.",
+          "type" : "text"
+        }
+      ],
+      "deprecated" : true,
+      "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
+      "kind" : "symbol",
+      "role" : "collection",
+      "title" : "SwiftDocC",
+      "type" : "topic",
+      "url" : "\/documentation\/swiftdocc"
+    }
+  },
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/DocCCommandLine\/documentation\/DocCCommandLine",
+        "doc:\/\/DocCCommon\/documentation\/DocCCommon",
+        "doc:\/\/DocCHTML\/documentation\/DocCHTML",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC"
+      ]
+    }
+  ],
+  "topicSectionsStyle" : "detailedGrid"
+}

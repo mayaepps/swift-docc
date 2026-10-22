@@ -24,6 +24,7 @@
       }
     ],
     "role" : "collectionGroup",
+    "roleHeading" : "API Collection",
     "title" : "Benchmarking"
   },
   "primaryContentSections" : [
@@ -38,15 +39,15 @@
         {
           "inlineContent" : [
             {
-              "text" : "DocC has metric logging built right in; it is disabled by default but it can be enabled easily via an environment variable or when running the included ",
+              "text" : "DocC has metric logging built right in; it is disabled by default but it can be enabled easily via an environment variable or when running the tools in the ",
               "type" : "text"
             },
             {
-              "code" : "bin\/benchmark.swift",
+              "code" : "bin\/benchmark",
               "type" : "codeVoice"
             },
             {
-              "text" : " script.",
+              "text" : " Swift package.",
               "type" : "text"
             }
           ],
@@ -78,7 +79,7 @@
               "type" : "codeVoice"
             },
             {
-              "text" : " command with a given documentation bundle ",
+              "text" : " command with a given documentation catalog ",
               "type" : "text"
             },
             {
@@ -94,15 +95,21 @@
         },
         {
           "code" : [
-            "swift bin\/benchmark.swift convert MyFramework.docc"
+            "swift run --package-path bin\/benchmark benchmark --docc-arguments convert MyFramework.docc"
           ],
+          "copyToClipboard" : true,
+          "lineAnnotations" : [
+
+          ],
+          "showLineNumbers" : false,
           "syntax" : null,
-          "type" : "codeListing"
+          "type" : "codeListing",
+          "wrap" : 0
         },
         {
           "inlineContent" : [
             {
-              "text" : "The automation script will enable metrics logging, do five sequential runs of the ",
+              "text" : "The tool will enable metrics logging, do five sequential runs of the ",
               "type" : "text"
             },
             {
@@ -110,7 +117,7 @@
               "type" : "codeVoice"
             },
             {
-              "text" : " command, and finally save a JSON file with the results on disk.",
+              "text" : " command with the given inputs and options, and write the results to a JSON file on disk.",
               "type" : "text"
             }
           ],
@@ -119,15 +126,15 @@
         {
           "inlineContent" : [
             {
-              "text" : "Provide the ",
+              "text" : "For pull requests where you want to compare the local changes against another version of the—the HEAD commits of the branch that the pull request is targeting—you can use the ",
               "type" : "text"
             },
             {
-              "code" : "--base-benchmark",
+              "code" : "compare-against-commit",
               "type" : "codeVoice"
             },
             {
-              "text" : " option in order to compare the current benchmark with a previous JSON file you already have on disk to evaluate improvements or track that you are not regressing.",
+              "text" : " tool:",
               "type" : "text"
             }
           ],
@@ -135,10 +142,88 @@
         },
         {
           "code" : [
-            "swift bin\/benchmark.swift --base-benchmark baseline-benchmark.json convert MyFramework.docc"
+            "swift run --package-path bin\/benchmark benchmark compare-to <commit-ish> --docc-arguments convert MyFramework.docc"
           ],
+          "copyToClipboard" : true,
+          "lineAnnotations" : [
+
+          ],
+          "showLineNumbers" : false,
           "syntax" : null,
-          "type" : "codeListing"
+          "type" : "codeListing",
+          "wrap" : 0
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This tool will gather metrics for both the local changes (same as the default ",
+              "type" : "text"
+            },
+            {
+              "code" : "measure",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " tool) and for the other commit of docc, write both results to JSON files on disk, and perform a statistical analysis comparing the two benchmark results.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If the analysis shows results that you want to investigate further and you want to continue comparing to the same baseline results from the other commit, you can switch to the ",
+              "type" : "text"
+            },
+            {
+              "code" : "measure",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " tool and pass the ",
+              "type" : "text"
+            },
+            {
+              "code" : "benchmark-<commit-hash>.json",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " file for the ",
+              "type" : "text"
+            },
+            {
+              "code" : "--base-benchmark",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " argument.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "swift run --package-path bin\/benchmark benchmark measure --base-benchmark benchmark-<commit-hash>.json --docc-arguments convert MyFramework.docc"
+          ],
+          "copyToClipboard" : true,
+          "lineAnnotations" : [
+
+          ],
+          "showLineNumbers" : false,
+          "syntax" : null,
+          "type" : "codeListing",
+          "wrap" : 0
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This will only gather new metrics for the local changes, as you iterate, but will still compare the new metrics against the results from the other commit and output the comparison of the two benchmark results.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
         },
         {
           "anchor" : "Adding-a-Custom-Metric",
@@ -194,8 +279,14 @@
             "  }",
             "}"
           ],
+          "copyToClipboard" : true,
+          "lineAnnotations" : [
+
+          ],
+          "showLineNumbers" : false,
           "syntax" : "swift",
-          "type" : "codeListing"
+          "type" : "codeListing",
+          "wrap" : 0
         },
         {
           "inlineContent" : [
@@ -219,8 +310,14 @@
           "code" : [
             "benchmark(add: BundlesCount(context: context))"
           ],
+          "copyToClipboard" : true,
+          "lineAnnotations" : [
+
+          ],
+          "showLineNumbers" : false,
           "syntax" : "swift",
-          "type" : "codeListing"
+          "type" : "codeListing",
+          "wrap" : 0
         }
       ],
       "kind" : "content"
@@ -228,7 +325,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -236,9 +333,11 @@
   ],
   "seeAlsoSections" : [
     {
+      "anchor" : "Diagnostics-and-Analysis",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/EmittingDiagnostics",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Adding-Diagnostics",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/StaticAnalysis"
       ],
       "title" : "Diagnostics and Analysis"
@@ -246,6 +345,7 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Benchmark-Log",
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Benchmark",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Benchmark\/main"
@@ -253,9 +353,11 @@
       "title" : "Benchmark Log"
     },
     {
+      "anchor" : "Default-Metrics",
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Benchmark\/Duration",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Benchmark\/OutputSize",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Benchmark\/DataDirectoryOutputSize",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Benchmark\/IndexDirectoryOutputSize",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Benchmark\/PeakMemory",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Benchmark\/TopicGraphHash",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Benchmark\/ExternalTopicsHash"
@@ -263,6 +365,7 @@
       "title" : "Default Metrics"
     },
     {
+      "anchor" : "Logging-Metrics",
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/benchmark(add:benchmarkLog:)",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/benchmark(begin:benchmarkLog:)",
@@ -293,12 +396,27 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
   "title" : "SwiftDocC",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/Adding-Diagnostics": {
+  "abstract" : [
+    {
+      "text" : "Display information to the developer about actionable issues with their documentation.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Adding-Diagnostics",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Adding user-facing diagnostics",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/adding-diagnostics"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/Benchmark": {
   "abstract" : [
@@ -307,6 +425,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -334,6 +453,41 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/benchmark"
 },
+"doc://SwiftDocC/documentation/SwiftDocC/Benchmark/DataDirectoryOutputSize": {
+  "abstract" : [
+    {
+      "text" : "Measures the output size of the data subdirectory in a DocC archive.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "DataDirectoryOutputSize"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Benchmark\/DataDirectoryOutputSize",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "DataDirectoryOutputSize"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Benchmark.DataDirectoryOutputSize",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/benchmark\/datadirectoryoutputsize"
+},
 "doc://SwiftDocC/documentation/SwiftDocC/Benchmark/Duration": {
   "abstract" : [
     {
@@ -341,6 +495,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -371,10 +526,11 @@
 "doc://SwiftDocC/documentation/SwiftDocC/Benchmark/ExternalTopicsHash": {
   "abstract" : [
     {
-      "text" : "A hash metric produced off the externally resolved links and symbols.",
+      "text" : "A hash metric produced off the externally resolved links.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -402,17 +558,18 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/benchmark\/externaltopicshash"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/Benchmark/OutputSize": {
+"doc://SwiftDocC/documentation/SwiftDocC/Benchmark/IndexDirectoryOutputSize": {
   "abstract" : [
     {
-      "text" : "A disk size metric for a given directory.",
+      "text" : "Measures the output size of the index subdirectory in a DocC archive.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "class"
+      "text" : "struct"
     },
     {
       "kind" : "text",
@@ -420,21 +577,21 @@
     },
     {
       "kind" : "identifier",
-      "text" : "OutputSize"
+      "text" : "IndexDirectoryOutputSize"
     }
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Benchmark\/OutputSize",
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Benchmark\/IndexDirectoryOutputSize",
   "kind" : "symbol",
   "navigatorTitle" : [
     {
       "kind" : "identifier",
-      "text" : "OutputSize"
+      "text" : "IndexDirectoryOutputSize"
     }
   ],
   "role" : "symbol",
-  "title" : "Benchmark.OutputSize",
+  "title" : "Benchmark.IndexDirectoryOutputSize",
   "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/benchmark\/outputsize"
+  "url" : "\/documentation\/swiftdocc\/benchmark\/indexdirectoryoutputsize"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/Benchmark/PeakMemory": {
   "abstract" : [
@@ -443,6 +600,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -477,6 +635,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -511,6 +670,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -556,6 +716,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -618,6 +779,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -649,10 +811,19 @@
     },
     {
       "kind" : "text",
-      "text" : ": () -> "
+      "text" : ": "
+    },
+    {
+      "kind" : "attribute",
+      "text" : "@autoclosure"
+    },
+    {
+      "kind" : "text",
+      "text" : " () -> "
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC9benchmark3add0C3LogyxyXK_AA9BenchmarkCtAA0F6MetricRzlF1EL_xmfp",
       "text" : "E"
     },
     {
@@ -687,10 +858,11 @@
 "doc://SwiftDocC/documentation/SwiftDocC/benchmark(begin:benchmarkLog:)": {
   "abstract" : [
     {
-      "text" : "Starts the given metric.",
+      "text" : "Begins the given metric.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -722,10 +894,19 @@
     },
     {
       "kind" : "text",
-      "text" : ": () -> "
+      "text" : ": "
+    },
+    {
+      "kind" : "attribute",
+      "text" : "@autoclosure"
+    },
+    {
+      "kind" : "text",
+      "text" : " () -> "
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC9benchmark5begin0C3LogxSgxyXK_AA9BenchmarkCtAA0F11BlockMetricRzlF1EL_xmfp",
       "text" : "E"
     },
     {
@@ -751,6 +932,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC9benchmark5begin0C3LogxSgxyXK_AA9BenchmarkCtAA0F11BlockMetricRzlF1EL_xmfp",
       "text" : "E"
     },
     {
@@ -772,6 +954,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -803,10 +986,19 @@
     },
     {
       "kind" : "text",
-      "text" : ": () -> "
+      "text" : ": "
+    },
+    {
+      "kind" : "attribute",
+      "text" : "@autoclosure"
+    },
+    {
+      "kind" : "text",
+      "text" : " () -> "
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC9benchmark3end0C3LogyxSgyXK_AA9BenchmarkCtAA0F11BlockMetricRzlF1EL_xmfp",
       "text" : "E"
     },
     {
@@ -840,11 +1032,9 @@
 },
 "doc://SwiftDocC/documentation/SwiftDocC/benchmark(wrap:benchmarkLog:body:)": {
   "abstract" : [
-    {
-      "text" : "Ends the given metric and adds it to the log.",
-      "type" : "text"
-    }
+
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -884,10 +1074,19 @@
     },
     {
       "kind" : "text",
-      "text" : ": () -> "
+      "text" : ": "
+    },
+    {
+      "kind" : "attribute",
+      "text" : "@autoclosure"
+    },
+    {
+      "kind" : "text",
+      "text" : " () -> "
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC9benchmark4wrap0C3Log4bodyq_xyXK_AA9BenchmarkCq_yKXEtKAA0G11BlockMetricRzr0_lF1EL_xmfp",
       "text" : "E"
     },
     {
@@ -929,6 +1128,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC9benchmark4wrap0C3Log4bodyq_xyXK_AA9BenchmarkCq_yKXEtKAA0G11BlockMetricRzr0_lF6ResultL_q_mfp",
       "text" : "Result"
     },
     {
@@ -945,6 +1145,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC9benchmark4wrap0C3Log4bodyq_xyXK_AA9BenchmarkCq_yKXEtKAA0G11BlockMetricRzr0_lF6ResultL_q_mfp",
       "text" : "Result"
     }
   ],

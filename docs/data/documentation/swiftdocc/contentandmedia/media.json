@@ -37,7 +37,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:9SwiftDocC15ContentAndMediaC5mediaAA0E0CSgvp",
+    "externalID" : "s:9SwiftDocC15ContentAndMediaC5mediaAA0E0_pSgvp",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -53,16 +53,24 @@
       },
       {
         "kind" : "text",
-        "text" : ": "
+        "text" : ": ("
+      },
+      {
+        "kind" : "keyword",
+        "text" : "any"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:9SwiftDocC5MediaC",
+        "preciseIdentifier" : "s:9SwiftDocC5MediaP",
         "text" : "Media"
       },
       {
         "kind" : "text",
-        "text" : "?"
+        "text" : ")?"
       }
     ],
     "modules" : [
@@ -70,6 +78,10 @@
         "name" : "SwiftDocC"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "ContentAndMedia.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Semantics\/ContentAndMedia.swift#L45"
+    },
     "role" : "symbol",
     "roleHeading" : "Instance Property",
     "symbolKind" : "property",
@@ -83,7 +95,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -100,17 +112,25 @@
             },
             {
               "kind" : "text",
-              "text" : ": "
+              "text" : ": ("
+            },
+            {
+              "kind" : "keyword",
+              "text" : "any"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
             },
             {
               "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Media",
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:9SwiftDocC5MediaC",
+              "preciseIdentifier" : "s:9SwiftDocC5MediaP",
               "text" : "Media"
             },
             {
               "kind" : "text",
-              "text" : "?"
+              "text" : ")?"
             }
           ]
         }
@@ -120,7 +140,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -147,6 +167,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -161,6 +182,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -195,6 +217,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -250,6 +273,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -265,16 +289,24 @@
     },
     {
       "kind" : "text",
-      "text" : ": "
+      "text" : ": ("
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:9SwiftDocC5MediaC",
+      "preciseIdentifier" : "s:9SwiftDocC5MediaP",
       "text" : "Media"
     },
     {
       "kind" : "text",
-      "text" : "?"
+      "text" : ")?"
     }
   ],
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ContentAndMedia\/media",
@@ -291,10 +323,11 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "class"
+      "text" : "protocol"
     },
     {
       "kind" : "text",

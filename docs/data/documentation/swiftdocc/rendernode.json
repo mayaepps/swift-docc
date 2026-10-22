@@ -8,8 +8,7 @@
   "hierarchy" : {
     "paths" : [
       [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderingModel"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC"
       ]
     ]
   },
@@ -45,6 +44,10 @@
         "text" : "RenderNode"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "RenderNode.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Model\/Rendering\/RenderNode.swift#L91"
+    },
     "role" : "symbol",
     "roleHeading" : "Structure",
     "symbolKind" : "struct",
@@ -58,7 +61,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -77,6 +80,12 @@
         }
       ],
       "kind" : "declarations"
+    },
+    {
+      "kind" : "mentions",
+      "mentions" : [
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/CompilerPipeline"
+      ]
     },
     {
       "content" : [
@@ -267,7 +276,7 @@
               "type" : "text"
             },
             {
-              "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderJSONEncoder\/makeEncoder(prettyPrint:emitVariantOverrides:)",
+              "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderJSONEncoder\/makeEncoder(prettyPrint:emitVariantOverrides:assetPrefixComponent:)",
               "isActive" : true,
               "type" : "reference"
             },
@@ -359,7 +368,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -367,6 +376,7 @@
   ],
   "seeAlsoSections" : [
     {
+      "anchor" : "Render-Nodes",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNodeTranslator",
@@ -381,12 +391,12 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "General",
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNode\/schemaVersion",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNode\/kind-swift.property",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNode\/sections",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNode\/references",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNode\/hierarchy",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNode\/metadata"
       ],
       "title" : "General"
@@ -398,6 +408,7 @@
           "type" : "text"
         }
       ],
+      "anchor" : "Reference-Documentation-Data",
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNode\/abstract",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNode\/primaryContentSections",
@@ -418,6 +429,7 @@
           "type" : "text"
         }
       ],
+      "anchor" : "Multi-Language-Reference-Documentation-Data",
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNode\/abstractVariants",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNode\/primaryContentSectionsVariants",
@@ -425,7 +437,8 @@
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNode\/relationshipSectionsVariants",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNode\/defaultImplementationsSectionsVariants",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNode\/seeAlsoSectionsVariants",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNode\/deprecationSummaryVariants"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNode\/deprecationSummaryVariants",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNode\/hierarchyVariants"
       ],
       "title" : "Multi-Language Reference Documentation Data"
     },
@@ -436,68 +449,83 @@
           "type" : "text"
         }
       ],
+      "anchor" : "Sample-Code-Data",
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNode\/sampleDownload"
       ],
       "title" : "Sample Code Data"
     },
     {
+      "anchor" : "Models",
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNode\/Variant"
       ],
       "title" : "Models"
     },
     {
+      "anchor" : "Structures",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNode\/Tag"
       ],
       "title" : "Structures"
     },
     {
+      "anchor" : "Initializers",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNode\/init(identifier:kind:)"
       ],
       "title" : "Initializers"
     },
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNode\/assetReferences",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNode\/downloadNotAvailableSummary",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNode\/headings",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNode\/identifier"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNode\/identifier",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNode\/topicSectionsStyle",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNode\/variantOverrides"
       ],
       "title" : "Instance Properties"
     },
     {
+      "anchor" : "Instance-Methods",
+      "generated" : true,
       "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNode\/childrenRelationship(for:)",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNode\/downloadReferences()",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNode\/encodeToJSON(with:renderReferenceCache:)",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNode\/navigatorPageType()",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNode\/projectFiles()"
       ],
       "title" : "Instance Methods"
     },
     {
+      "anchor" : "Type-Methods",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNode\/decode(fromJSON:with:)"
       ],
       "title" : "Type Methods"
     },
     {
+      "anchor" : "Enumerations",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNode\/CodingError",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNode\/Kind-swift.enum"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNode\/Kind-swift.enum",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNode\/TopicsSectionStyle"
       ],
       "title" : "Enumerations"
     },
     {
+      "anchor" : "Default-Implementations",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNode\/Decodable-Implementations",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNode\/Encodable-Implementations",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNode\/Indexable-Implementations",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNode\/VariantContainer-Implementations"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNode\/Indexable-Implementations"
       ],
       "title" : "Default Implementations"
     }
@@ -533,12 +561,27 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
   "title" : "SwiftDocC",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/CompilerPipeline": {
+  "abstract" : [
+    {
+      "text" : "Get to know the steps involved in documentation compilation.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/CompilerPipeline",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "The Swift-DocC Pipeline",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/compilerpipeline"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/Indexable": {
   "abstract" : [
@@ -547,6 +590,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -581,6 +625,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -608,13 +653,14 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/renderhierarchy"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/RenderJSONEncoder/makeEncoder(prettyPrint:emitVariantOverrides:)": {
+"doc://SwiftDocC/documentation/SwiftDocC/RenderJSONEncoder/makeEncoder(prettyPrint:emitVariantOverrides:assetPrefixComponent:)": {
   "abstract" : [
     {
       "text" : "Creates a new JSON encoder for render node values.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -672,20 +718,37 @@
     },
     {
       "kind" : "text",
-      "text" : ") -> "
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "assetPrefixComponent"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10Foundation11JSONEncoderC",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : "?) -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:20FoundationEssentials11JSONEncoderC",
       "text" : "JSONEncoder"
     }
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderJSONEncoder\/makeEncoder(prettyPrint:emitVariantOverrides:)",
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderJSONEncoder\/makeEncoder(prettyPrint:emitVariantOverrides:assetPrefixComponent:)",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "makeEncoder(prettyPrint:emitVariantOverrides:)",
+  "title" : "makeEncoder(prettyPrint:emitVariantOverrides:assetPrefixComponent:)",
   "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/renderjsonencoder\/makeencoder(prettyprint:emitvariantoverrides:)"
+  "url" : "\/documentation\/swiftdocc\/renderjsonencoder\/makeencoder(prettyprint:emitvariantoverrides:assetprefixcomponent:)"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/RenderMetadata": {
   "abstract" : [
@@ -694,6 +757,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -728,6 +792,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -762,6 +827,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -829,6 +895,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -863,6 +930,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -890,6 +958,41 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/rendernode\/tag"
 },
+"doc://SwiftDocC/documentation/SwiftDocC/RenderNode/TopicsSectionStyle": {
+  "abstract" : [
+    {
+      "text" : "The rendering style of the topics section.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "TopicsSectionStyle"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNode\/TopicsSectionStyle",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "TopicsSectionStyle"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "RenderNode.TopicsSectionStyle",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/rendernode\/topicssectionstyle"
+},
 "doc://SwiftDocC/documentation/SwiftDocC/RenderNode/Variant": {
   "abstract" : [
     {
@@ -897,6 +1000,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -924,17 +1028,6 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/rendernode\/variant"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/RenderNode/VariantContainer-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNode\/VariantContainer-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "VariantContainer Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/rendernode\/variantcontainer-implementations"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/RenderNode/abstract": {
   "abstract" : [
     {
@@ -942,6 +1035,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -983,6 +1077,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1033,6 +1128,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1060,6 +1156,14 @@
       "text" : " : ["
     },
     {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
       "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:9SwiftDocC15RenderReferenceP",
       "text" : "RenderReference"
@@ -1076,64 +1180,6 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/rendernode\/assetreferences"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/RenderNode/childrenRelationship(for:)": {
-  "abstract" : [
-    {
-      "text" : "Returns a list of references for children pages.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "childrenRelationship"
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "for"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:SS",
-      "text" : "String"
-    },
-    {
-      "kind" : "text",
-      "text" : "?) -> ["
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:9SwiftDocC24RenderRelationshipsGroupV",
-      "text" : "RenderRelationshipsGroup"
-    },
-    {
-      "kind" : "text",
-      "text" : "]"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNode\/childrenRelationship(for:)",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "childrenRelationship(for:)",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/rendernode\/childrenrelationship(for:)"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/RenderNode/decode(fromJSON:with:)": {
   "abstract" : [
     {
@@ -1141,6 +1187,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1176,7 +1223,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10Foundation4DataV",
+      "preciseIdentifier" : "s:20FoundationEssentials4DataV",
       "text" : "Data"
     },
     {
@@ -1193,7 +1240,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10Foundation11JSONDecoderC",
+      "preciseIdentifier" : "s:20FoundationEssentials11JSONDecoderC",
       "text" : "JSONDecoder"
     },
     {
@@ -1228,6 +1275,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1269,6 +1317,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1319,6 +1368,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1360,6 +1410,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1410,6 +1461,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1451,6 +1503,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1500,6 +1553,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1541,6 +1595,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1568,7 +1623,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10Foundation11JSONEncoderC",
+      "preciseIdentifier" : "s:20FoundationEssentials11JSONEncoderC",
       "text" : "JSONEncoder"
     },
     {
@@ -1602,7 +1657,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10Foundation4DataV",
+      "preciseIdentifier" : "s:20FoundationEssentials4DataV",
       "text" : "Data"
     }
   ],
@@ -1617,6 +1672,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1651,13 +1707,14 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/rendernode\/headings"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/RenderNode/hierarchy": {
+"doc://SwiftDocC/documentation/SwiftDocC/RenderNode/hierarchyVariants": {
   "abstract" : [
     {
       "text" : "Hierarchy information about the context in which this documentation node is placed.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1669,11 +1726,20 @@
     },
     {
       "kind" : "identifier",
-      "text" : "hierarchy"
+      "text" : "hierarchyVariants"
     },
     {
       "kind" : "text",
       "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC17VariantCollectionV",
+      "text" : "VariantCollection"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
     },
     {
       "kind" : "typeIdentifier",
@@ -1682,15 +1748,15 @@
     },
     {
       "kind" : "text",
-      "text" : "?"
+      "text" : "?>"
     }
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNode\/hierarchy",
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNode\/hierarchyVariants",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "hierarchy",
+  "title" : "hierarchyVariants",
   "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/rendernode\/hierarchy"
+  "url" : "\/documentation\/swiftdocc\/rendernode\/hierarchyvariants"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/RenderNode/identifier": {
   "abstract" : [
@@ -1699,6 +1765,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1736,6 +1803,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -1772,15 +1840,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:9SwiftDocC10RenderNodeV",
-      "text" : "RenderNode"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:9SwiftDocC10RenderNodeV4KindO",
       "text" : "Kind"
     },
@@ -1803,6 +1862,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1819,15 +1879,6 @@
     {
       "kind" : "text",
       "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:9SwiftDocC10RenderNodeV",
-      "text" : "RenderNode"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",
@@ -1849,6 +1900,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1879,52 +1931,6 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/rendernode\/metadata"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/RenderNode/navigatorPageType()": {
-  "abstract" : [
-    {
-      "text" : "Returns the NavigatorIndex.PageType indicating the type of the page.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "navigatorPageType"
-    },
-    {
-      "kind" : "text",
-      "text" : "() -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:9SwiftDocC14NavigatorIndexC",
-      "text" : "NavigatorIndex"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:9SwiftDocC14NavigatorIndexC8PageTypeO",
-      "text" : "PageType"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNode\/navigatorPageType()",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "navigatorPageType()",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/rendernode\/navigatorpagetype()"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/RenderNode/primaryContentSections": {
   "abstract" : [
     {
@@ -1932,6 +1938,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1948,6 +1955,14 @@
     {
       "kind" : "text",
       "text" : ": ["
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -1973,6 +1988,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -2031,6 +2047,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -2068,10 +2085,11 @@
 "doc://SwiftDocC/documentation/SwiftDocC/RenderNode/references": {
   "abstract" : [
     {
-      "text" : "The values of the references used in documentation node. These can be references to other nodes, media, and more.",
+      "text" : "The references used in the render node. These can be references to other nodes, media, and more.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -2099,6 +2117,14 @@
       "text" : " : "
     },
     {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
       "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:9SwiftDocC15RenderReferenceP",
       "text" : "RenderReference"
@@ -2122,6 +2148,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -2163,6 +2190,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -2213,6 +2241,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -2254,6 +2283,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -2291,6 +2321,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -2307,6 +2338,14 @@
     {
       "kind" : "text",
       "text" : ": ["
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -2332,6 +2371,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -2373,6 +2413,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -2423,6 +2464,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -2457,6 +2499,44 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/rendernode\/topicsections"
 },
+"doc://SwiftDocC/documentation/SwiftDocC/RenderNode/topicSectionsStyle": {
+  "abstract" : [
+    {
+      "text" : "The visual style that should be used when rendering this page’s Topics section.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "topicSectionsStyle"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC10RenderNodeV18TopicsSectionStyleO",
+      "text" : "TopicsSectionStyle"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNode\/topicSectionsStyle",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "topicSectionsStyle",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/rendernode\/topicsectionsstyle"
+},
 "doc://SwiftDocC/documentation/SwiftDocC/RenderNode/topicSectionsVariants": {
   "abstract" : [
     {
@@ -2464,6 +2544,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -2514,6 +2595,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -2555,6 +2637,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -2605,6 +2688,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -2639,6 +2723,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -2670,6 +2755,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -2701,6 +2787,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -2732,6 +2819,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -2759,20 +2847,6 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/rendertree"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/RenderingModel": {
-  "abstract" : [
-    {
-      "text" : "Convert documentation nodes into render nodes and save them to disk.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderingModel",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Rendering Model",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/renderingmodel"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/VariantContainer": {
   "abstract" : [
     {
@@ -2780,6 +2854,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",

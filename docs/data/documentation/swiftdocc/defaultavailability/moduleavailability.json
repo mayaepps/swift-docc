@@ -9,7 +9,6 @@
     "paths" : [
       [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationWorkspaceGroup",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DefaultAvailability"
       ]
     ]
@@ -46,6 +45,10 @@
         "text" : "ModuleAvailability"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "DefaultAvailability.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Infrastructure\/Workspace\/DefaultAvailability.swift#L47"
+    },
     "role" : "symbol",
     "roleHeading" : "Structure",
     "symbolKind" : "struct",
@@ -59,7 +62,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -95,7 +98,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -103,24 +106,31 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Initializers",
+      "generated" : true,
       "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DefaultAvailability\/ModuleAvailability\/init(from:)"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DefaultAvailability\/ModuleAvailability\/init(from:)",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DefaultAvailability\/ModuleAvailability\/init(platformName:platformVersion:)",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DefaultAvailability\/ModuleAvailability\/init(unavailablePlatformName:)"
       ],
       "title" : "Initializers"
     },
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DefaultAvailability\/ModuleAvailability\/platformName",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DefaultAvailability\/ModuleAvailability\/platformVersion"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DefaultAvailability\/ModuleAvailability\/introducedVersion",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DefaultAvailability\/ModuleAvailability\/platformName"
       ],
       "title" : "Instance Properties"
     },
     {
+      "anchor" : "Instance-Methods",
       "generated" : true,
       "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DefaultAvailability\/ModuleAvailability\/Equatable-Implementations"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DefaultAvailability\/ModuleAvailability\/encode(to:)"
       ],
-      "title" : "Default Implementations"
+      "title" : "Instance Methods"
     }
   ],
   "variants" : [
@@ -164,6 +174,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -178,6 +189,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -212,6 +224,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -239,21 +252,70 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/defaultavailability\/moduleavailability"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/DefaultAvailability/ModuleAvailability/Equatable-Implementations": {
+"doc://SwiftDocC/documentation/SwiftDocC/DefaultAvailability/ModuleAvailability/encode(to:)": {
   "abstract" : [
 
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DefaultAvailability\/ModuleAvailability\/Equatable-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Equatable Implementations",
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "encode"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "to"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s7EncoderP",
+      "text" : "Encoder"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DefaultAvailability\/ModuleAvailability\/encode(to:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "encode(to:)",
   "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/defaultavailability\/moduleavailability\/equatable-implementations"
+  "url" : "\/documentation\/swiftdocc\/defaultavailability\/moduleavailability\/encode(to:)"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/DefaultAvailability/ModuleAvailability/init(from:)": {
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -270,6 +332,14 @@
     {
       "kind" : "text",
       "text" : ": "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -292,6 +362,157 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/defaultavailability\/moduleavailability\/init(from:)"
 },
+"doc://SwiftDocC/documentation/SwiftDocC/DefaultAvailability/ModuleAvailability/init(platformName:platformVersion:)": {
+  "abstract" : [
+    {
+      "text" : "Creates a new module availability with a given platform name and platform version.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "platformName"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC12PlatformNameV",
+      "text" : "PlatformName"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "platformVersion"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : "?)"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DefaultAvailability\/ModuleAvailability\/init(platformName:platformVersion:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(platformName:platformVersion:)",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/defaultavailability\/moduleavailability\/init(platformname:platformversion:)"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/DefaultAvailability/ModuleAvailability/init(unavailablePlatformName:)": {
+  "abstract" : [
+    {
+      "text" : "Creates a new module availability with a given platform name and platform availability set as unavailable.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "unavailablePlatformName"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC12PlatformNameV",
+      "text" : "PlatformName"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DefaultAvailability\/ModuleAvailability\/init(unavailablePlatformName:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(unavailablePlatformName:)",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/defaultavailability\/moduleavailability\/init(unavailableplatformname:)"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/DefaultAvailability/ModuleAvailability/introducedVersion": {
+  "abstract" : [
+    {
+      "text" : "A string representation of the version for this platform",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "or nil if it’s unavailable.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "introducedVersion"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DefaultAvailability\/ModuleAvailability\/introducedVersion",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "introducedVersion",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/defaultavailability\/moduleavailability\/introducedversion"
+},
 "doc://SwiftDocC/documentation/SwiftDocC/DefaultAvailability/ModuleAvailability/platformName": {
   "abstract" : [
     {
@@ -299,6 +520,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -328,57 +550,6 @@
   "title" : "platformName",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/defaultavailability\/moduleavailability\/platformname"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/DefaultAvailability/ModuleAvailability/platformVersion": {
-  "abstract" : [
-    {
-      "text" : "A string representation of the version for this platform.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "var"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "platformVersion"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:SS",
-      "text" : "String"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DefaultAvailability\/ModuleAvailability\/platformVersion",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "platformVersion",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/defaultavailability\/moduleavailability\/platformversion"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/DocumentationWorkspaceGroup": {
-  "abstract" : [
-    {
-      "text" : "Learn how to explore a documentation workspace and discover bundles.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationWorkspaceGroup",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Bundle Discovery",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/documentationworkspacegroup"
 }
 }
 }

@@ -8,8 +8,7 @@
   "hierarchy" : {
     "paths" : [
       [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Utilities"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC"
       ]
     ]
   },
@@ -45,6 +44,10 @@
         "text" : "ValidatedURL"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "ValidatedURL.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Utility\/ValidatedURL.swift#L25"
+    },
     "role" : "symbol",
     "roleHeading" : "Structure",
     "symbolKind" : "struct",
@@ -58,7 +61,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -216,7 +219,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -224,6 +227,7 @@
   ],
   "seeAlsoSections" : [
     {
+      "anchor" : "Related-Documentation",
       "identifiers" : [
         "http:\/\/www.ietf.org\/rfc\/rfc3986.txt"
       ],
@@ -232,17 +236,12 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ValidatedURL\/components"
       ],
       "title" : "Instance Properties"
-    },
-    {
-      "generated" : true,
-      "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ValidatedURL\/Equatable-Implementations"
-      ],
-      "title" : "Default Implementations"
     }
   ],
   "variants" : [
@@ -276,23 +275,13 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
   "title" : "SwiftDocC",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/Utilities": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Utilities",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Utility APIs",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/utilities"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/ValidatedURL": {
   "abstract" : [
@@ -301,6 +290,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -328,17 +318,6 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/validatedurl"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/ValidatedURL/Equatable-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ValidatedURL\/Equatable-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Equatable Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/validatedurl\/equatable-implementations"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/ValidatedURL/components": {
   "abstract" : [
     {
@@ -346,6 +325,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -365,7 +345,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10Foundation13URLComponentsV",
+      "preciseIdentifier" : "s:20FoundationEssentials13URLComponentsV",
       "text" : "URLComponents"
     }
   ],

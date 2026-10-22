@@ -9,8 +9,6 @@
     "paths" : [
       [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationContextGroup",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TopicReference",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/UnresolvedTopicReference"
       ]
     ]
@@ -71,6 +69,10 @@
         "name" : "SwiftDocC"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "Identifier.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Model\/Identifier.swift#L585"
+    },
     "role" : "symbol",
     "roleHeading" : "Initializer",
     "symbolKind" : "init",
@@ -84,7 +86,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -171,7 +173,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -198,60 +200,13 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
   "title" : "SwiftDocC",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/DocumentationContextGroup": {
-  "abstract" : [
-    {
-      "text" : "Build and query the in-memory documentation model.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationContextGroup",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Documentation Context",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/documentationcontextgroup"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/TopicReference": {
-  "abstract" : [
-    {
-      "text" : "A resolved or unresolved reference to a piece of documentation.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "enum"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "TopicReference"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TopicReference",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "TopicReference"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "TopicReference",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/topicreference"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/UnresolvedTopicReference": {
   "abstract" : [
@@ -260,6 +215,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -294,6 +250,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -352,6 +309,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",

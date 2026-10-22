@@ -17,11 +17,8 @@
     "paths" : [
       [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderingModel",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialsRendering",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialSectionsRenderSection",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialSectionsRenderSection\/Section",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialSectionsRenderSection\/Section\/TextIndexing-Implementations"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialSectionsRenderSection\/Section"
       ]
     ]
   },
@@ -65,6 +62,10 @@
         "name" : "SwiftDocC"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "RenderSection+TextIndexing.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Indexing\/RenderSection+TextIndexing.swift#L123"
+    },
     "role" : "symbol",
     "roleHeading" : "Instance Property",
     "symbolKind" : "property",
@@ -78,7 +79,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -122,7 +123,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -149,26 +150,13 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
   "title" : "SwiftDocC",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/RenderingModel": {
-  "abstract" : [
-    {
-      "text" : "Convert documentation nodes into render nodes and save them to disk.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderingModel",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Rendering Model",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/renderingmodel"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/TutorialSectionsRenderSection": {
   "abstract" : [
@@ -177,6 +165,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -211,6 +200,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -238,21 +228,11 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/tutorialsectionsrendersection\/section"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/TutorialSectionsRenderSection/Section/TextIndexing-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialSectionsRenderSection\/Section\/TextIndexing-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "TextIndexing Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/tutorialsectionsrendersection\/section\/textindexing-implementations"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/TutorialSectionsRenderSection/Section/headings": {
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -286,20 +266,6 @@
   "title" : "headings",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/tutorialsectionsrendersection\/section\/headings"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/TutorialsRendering": {
-  "abstract" : [
-    {
-      "text" : "Render tutorial-based, interactive, learning experiences.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialsRendering",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Tutorials Rendering",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/tutorialsrendering"
 }
 }
 }

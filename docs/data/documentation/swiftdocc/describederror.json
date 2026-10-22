@@ -8,8 +8,7 @@
   "hierarchy" : {
     "paths" : [
       [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Utilities"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC"
       ]
     ]
   },
@@ -45,6 +44,10 @@
         "text" : "DescribedError"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "DescribedError.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Utility\/Errors\/DescribedError.swift#L14"
+    },
     "role" : "symbol",
     "roleHeading" : "Protocol",
     "symbolKind" : "protocol",
@@ -58,7 +61,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -79,7 +82,7 @@
             },
             {
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:10Foundation14LocalizedErrorP",
+              "preciseIdentifier" : "s:20FoundationEssentials14LocalizedErrorP",
               "text" : "LocalizedError"
             }
           ]
@@ -91,9 +94,10 @@
   "relationshipsSections" : [
     {
       "identifiers" : [
-        "doc:\/\/SwiftDocC\/10Foundation14LocalizedErrorP",
+        "doc:\/\/SwiftDocC\/20FoundationEssentials14LocalizedErrorP",
         "doc:\/\/SwiftDocC\/s5ErrorP",
-        "doc:\/\/SwiftDocC\/s8SendableP"
+        "doc:\/\/SwiftDocC\/s8SendableP",
+        "doc:\/\/SwiftDocC\/s16SendableMetatypeP"
       ],
       "kind" : "relationships",
       "title" : "Inherits From",
@@ -103,21 +107,18 @@
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ConvertServiceError",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/CoverageDataEntry\/Error",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Diagnostic",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationBundle\/PropertyListError",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationContext\/ContextError",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationContext\/Inputs\/PropertyListError",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationNode\/Error",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationServerError",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationWorkspace\/WorkspaceError",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ErrorWithProblems",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ErrorsEncountered",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/IndexingError",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/JSONPatchApplier\/Error",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/MarkdownOutputNode\/MarkdownOutputNodeDecodingError",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NavigatorIndex\/Error",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NavigatorTree\/Error",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNode\/CodingError",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNode\/Variant\/Trait\/Error",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNodeVariantOverridesApplier\/Error"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNode\/Variant\/Trait\/Error"
       ],
       "kind" : "relationships",
       "title" : "Conforming Types",
@@ -126,27 +127,28 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
 
   ],
-  "seeAlsoSections" : [
-    {
-      "generated" : true,
-      "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ErrorWithProblems"
-      ],
-      "title" : "Errors"
-    }
-  ],
   "topicSections" : [
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DescribedError\/errorDescription-3e16y"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DescribedError\/errorDescription"
       ],
       "title" : "Instance Properties"
+    },
+    {
+      "anchor" : "Default-Implementations",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DescribedError\/LocalizedError-Implementations"
+      ],
+      "title" : "Default Implementations"
     }
   ],
   "variants" : [
@@ -163,9 +165,9 @@
   ]
 , 
 "references": {
-"doc://SwiftDocC/10Foundation14LocalizedErrorP": {
-  "identifier" : "doc:\/\/SwiftDocC\/10Foundation14LocalizedErrorP",
-  "title" : "Foundation.LocalizedError",
+"doc://SwiftDocC/20FoundationEssentials14LocalizedErrorP": {
+  "identifier" : "doc:\/\/SwiftDocC\/20FoundationEssentials14LocalizedErrorP",
+  "title" : "FoundationEssentials.LocalizedError",
   "type" : "unresolvable"
 },
 "doc://SwiftDocC/documentation/SwiftDocC": {
@@ -175,6 +177,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -189,6 +192,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -220,6 +224,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -254,6 +259,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -281,7 +287,18 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/describederror"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/DescribedError/errorDescription-3e16y": {
+"doc://SwiftDocC/documentation/SwiftDocC/DescribedError/LocalizedError-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DescribedError\/LocalizedError-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "LocalizedError Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/describederror\/localizederror-implementations"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/DescribedError/errorDescription": {
   "abstract" : [
     {
       "text" : "A plain-text description of the error.",
@@ -289,6 +306,7 @@
     }
   ],
   "defaultImplementations" : 1,
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -312,78 +330,13 @@
       "text" : "String"
     }
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DescribedError\/errorDescription-3e16y",
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DescribedError\/errorDescription",
   "kind" : "symbol",
   "required" : true,
   "role" : "symbol",
   "title" : "errorDescription",
   "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/describederror\/errordescription-3e16y"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/Diagnostic": {
-  "abstract" : [
-    {
-      "text" : "A diagnostic explains a problem or issue that needs the end-user’s attention.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "struct"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "Diagnostic"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Diagnostic",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "Diagnostic"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "Diagnostic",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/diagnostic"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/DocumentationBundle/PropertyListError": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "enum"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "PropertyListError"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationBundle\/PropertyListError",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "PropertyListError"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "DocumentationBundle.PropertyListError",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/documentationbundle\/propertylisterror"
+  "url" : "\/documentation\/swiftdocc\/describederror\/errordescription"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/DocumentationContext": {
   "abstract" : [
@@ -392,6 +345,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -435,6 +389,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -462,10 +417,43 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/documentationcontext\/contexterror"
 },
+"doc://SwiftDocC/documentation/SwiftDocC/DocumentationContext/Inputs/PropertyListError": {
+  "abstract" : [
+
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "PropertyListError"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationContext\/Inputs\/PropertyListError",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "PropertyListError"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "DocumentationContext.Inputs.PropertyListError",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/documentationcontext\/inputs\/propertylisterror"
+},
 "doc://SwiftDocC/documentation/SwiftDocC/DocumentationNode/Error": {
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -500,6 +488,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -527,75 +516,6 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/documentationservererror"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/DocumentationWorkspace/WorkspaceError": {
-  "abstract" : [
-    {
-      "text" : "An error when requesting information from a workspace.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "enum"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "WorkspaceError"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationWorkspace\/WorkspaceError",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "WorkspaceError"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "DocumentationWorkspace.WorkspaceError",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/documentationworkspace\/workspaceerror"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/ErrorWithProblems": {
-  "abstract" : [
-    {
-      "text" : "An error that contains a list of problems.",
-      "type" : "text"
-    }
-  ],
-  "deprecated" : true,
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "struct"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "ErrorWithProblems"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ErrorWithProblems",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "ErrorWithProblems"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "ErrorWithProblems",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/errorwithproblems"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/ErrorsEncountered": {
   "abstract" : [
     {
@@ -603,6 +523,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -634,6 +555,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -664,10 +586,11 @@
 "doc://SwiftDocC/documentation/SwiftDocC/JSONPatchApplier/Error": {
   "abstract" : [
     {
-      "text" : "An error that occured during the application of a JSON patch.",
+      "text" : "An error that occurred during the application of a JSON patch.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -695,6 +618,38 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/jsonpatchapplier\/error"
 },
+"doc://SwiftDocC/documentation/SwiftDocC/MarkdownOutputNode/MarkdownOutputNodeDecodingError": {
+  "abstract" : [
+
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "MarkdownOutputNodeDecodingError"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/MarkdownOutputNode\/MarkdownOutputNodeDecodingError",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "MarkdownOutputNodeDecodingError"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "MarkdownOutputNode.MarkdownOutputNodeDecodingError",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/markdownoutputnode\/markdownoutputnodedecodingerror"
+},
 "doc://SwiftDocC/documentation/SwiftDocC/NavigatorIndex/Error": {
   "abstract" : [
     {
@@ -710,6 +665,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -741,6 +697,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -775,6 +732,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -806,6 +764,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -833,50 +792,10 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/rendernode\/variant\/trait\/error"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/RenderNodeVariantOverridesApplier/Error": {
-  "abstract" : [
-    {
-      "text" : "An error that occured while applying overrides in a render node.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "enum"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "Error"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNodeVariantOverridesApplier\/Error",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "Error"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "RenderNodeVariantOverridesApplier.Error",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/rendernodevariantoverridesapplier\/error"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/Utilities": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Utilities",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Utility APIs",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/utilities"
+"doc://SwiftDocC/s16SendableMetatypeP": {
+  "identifier" : "doc:\/\/SwiftDocC\/s16SendableMetatypeP",
+  "title" : "Swift.SendableMetatype",
+  "type" : "unresolvable"
 },
 "doc://SwiftDocC/s5ErrorP": {
   "identifier" : "doc:\/\/SwiftDocC\/s5ErrorP",

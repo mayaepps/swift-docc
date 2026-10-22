@@ -9,7 +9,6 @@
     "paths" : [
       [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationContextGroup",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SymbolReference"
       ]
     ]
@@ -20,7 +19,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:9SwiftDocC15SymbolReferenceV14pathComponents17interfaceLanguageACSaySSG_AA06SourceH0Vtcfc",
+    "externalID" : "s:9SwiftDocC15SymbolReferenceV14pathComponents17interfaceLanguageACSaySSG_0B7CCommon06SourceH0Vtcfc",
     "fragments" : [
       {
         "kind" : "identifier",
@@ -57,7 +56,7 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:9SwiftDocC14SourceLanguageV",
+        "preciseIdentifier" : "s:9SwiftDocC14SourceLanguagea",
         "text" : "SourceLanguage"
       },
       {
@@ -70,6 +69,10 @@
         "name" : "SwiftDocC"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "SymbolReference.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Infrastructure\/Symbol%20Graph\/SymbolReference.swift#L149"
+    },
     "role" : "symbol",
     "roleHeading" : "Initializer",
     "symbolKind" : "init",
@@ -83,7 +86,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -122,7 +125,7 @@
             {
               "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SourceLanguage",
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:9SwiftDocC14SourceLanguageV",
+              "preciseIdentifier" : "s:9SwiftDocC14SourceLanguagea",
               "text" : "SourceLanguage"
             },
             {
@@ -170,7 +173,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -197,6 +200,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -204,31 +208,15 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/DocumentationContextGroup": {
-  "abstract" : [
-    {
-      "text" : "Build and query the in-memory documentation model.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationContextGroup",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Documentation Context",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/documentationcontextgroup"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/SourceLanguage": {
   "abstract" : [
-    {
-      "text" : "A programming language.",
-      "type" : "text"
-    }
+
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "struct"
+      "text" : "typealias"
     },
     {
       "kind" : "text",
@@ -259,6 +247,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -293,6 +282,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -329,7 +319,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:9SwiftDocC14SourceLanguageV",
+      "preciseIdentifier" : "s:9SwiftDocC14SourceLanguagea",
       "text" : "SourceLanguage"
     },
     {

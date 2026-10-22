@@ -44,6 +44,10 @@
         "text" : "XcodeRequirementReference"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "XcodeRequirementReference.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Model\/Rendering\/Tutorial\/References\/XcodeRequirementReference.swift#L14"
+    },
     "role" : "symbol",
     "roleHeading" : "Structure",
     "symbolKind" : "struct",
@@ -57,7 +61,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -83,7 +87,8 @@
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderReference",
         "doc:\/\/SwiftDocC\/Se",
-        "doc:\/\/SwiftDocC\/SE"
+        "doc:\/\/SwiftDocC\/SE",
+        "doc:\/\/SwiftDocC\/SQ"
       ],
       "kind" : "relationships",
       "title" : "Conforms To",
@@ -92,7 +97,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -100,6 +105,8 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Initializers",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/XcodeRequirementReference\/init(from:)",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/XcodeRequirementReference\/init(identifier:title:url:)"
@@ -107,6 +114,8 @@
       "title" : "Initializers"
     },
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/XcodeRequirementReference\/identifier",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/XcodeRequirementReference\/title",
@@ -135,6 +144,11 @@
   "title" : "Swift.Encodable",
   "type" : "unresolvable"
 },
+"doc://SwiftDocC/SQ": {
+  "identifier" : "doc:\/\/SwiftDocC\/SQ",
+  "title" : "Swift.Equatable",
+  "type" : "unresolvable"
+},
 "doc://SwiftDocC/Se": {
   "identifier" : "doc:\/\/SwiftDocC\/Se",
   "title" : "Swift.Decodable",
@@ -147,6 +161,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -161,6 +176,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -195,6 +211,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -226,6 +243,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -260,6 +278,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -275,7 +294,7 @@
     },
     {
       "kind" : "text",
-      "text" : ": "
+      "text" : ": any "
     },
     {
       "kind" : "typeIdentifier",
@@ -305,6 +324,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -358,7 +378,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10Foundation3URLV",
+      "preciseIdentifier" : "s:20FoundationEssentials3URLV",
       "text" : "URL"
     },
     {
@@ -380,6 +400,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -414,6 +435,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -451,6 +473,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -470,7 +493,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10Foundation3URLV",
+      "preciseIdentifier" : "s:20FoundationEssentials3URLV",
       "text" : "URL"
     }
   ],

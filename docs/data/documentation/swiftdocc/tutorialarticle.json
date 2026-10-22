@@ -44,6 +44,10 @@
         "text" : "TutorialArticle"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "TutorialArticle.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Semantics\/TutorialArticle\/TutorialArticle.swift#L25"
+    },
     "role" : "symbol",
     "roleHeading" : "Class",
     "symbolKind" : "class",
@@ -57,7 +61,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -99,8 +103,14 @@
             "    Intro",
             "    Markup | Stack | ContentAndMedia"
           ],
+          "copyToClipboard" : true,
+          "lineAnnotations" : [
+
+          ],
+          "showLineNumbers" : false,
           "syntax" : "plain",
-          "type" : "codeListing"
+          "type" : "codeListing",
+          "wrap" : 0
         },
         {
           "inlineContent" : [
@@ -145,21 +155,48 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
 
   ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "Tutorials-Directives",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Tutorial",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/XcodeRequirement",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialSection",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Code",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Step",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Steps",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Assessments",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/MultipleChoice",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Choice",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Justification",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Intro",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Landmark",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Stack",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/MarkupLayout"
+      ],
+      "title" : "Tutorials Directives"
+    }
+  ],
   "topicSections" : [
     {
+      "anchor" : "Initializers",
+      "generated" : true,
       "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialArticle\/init()",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialArticle\/init(from:source:for:in:problems:)"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialArticle\/init(from:source:for:featureFlags:diagnostics:)",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialArticle\/init(from:source:for:featureFlags:problems:)"
       ],
       "title" : "Initializers"
     },
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialArticle\/abstract",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialArticle\/assessments",
@@ -175,23 +212,21 @@
       "title" : "Instance Properties"
     },
     {
+      "anchor" : "Instance-Methods",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialArticle\/accept(_:)"
       ],
       "title" : "Instance Methods"
     },
     {
-      "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialArticle\/directiveName"
-      ],
-      "title" : "Type Properties"
-    },
-    {
+      "anchor" : "Type-Properties",
       "generated" : true,
       "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialArticle\/DirectiveConvertible-Implementations"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialArticle\/directiveName",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialArticle\/introducedVersion"
       ],
-      "title" : "Default Implementations"
+      "title" : "Type Properties"
     }
   ],
   "variants" : [
@@ -220,12 +255,136 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
   "title" : "SwiftDocC",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/Assessments": {
+  "abstract" : [
+    {
+      "text" : "A collection of questions about the concepts the documentation presents.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Assessments"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Assessments",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Assessments"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Assessments",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/assessments"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/Choice": {
+  "abstract" : [
+    {
+      "text" : "One of possibly many choices in a ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/MultipleChoice",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " question.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Choice"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Choice",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Choice"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Choice",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/choice"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/Code": {
+  "abstract" : [
+    {
+      "text" : "A code file to display alongside a ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Step",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Code"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Code",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Code"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Code",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/code"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/DirectiveConvertible": {
   "abstract" : [
@@ -234,6 +393,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -261,6 +421,190 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/directiveconvertible"
 },
+"doc://SwiftDocC/documentation/SwiftDocC/Intro": {
+  "abstract" : [
+    {
+      "text" : "An introductory section for instructional pages.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Intro"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Intro",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Intro"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Intro",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/intro"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/Justification": {
+  "abstract" : [
+    {
+      "text" : "A short justification as to whether a ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Choice",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " is correct for a question.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Justification"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Justification",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Justification"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Justification",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/justification"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/Landmark": {
+  "abstract" : [
+    {
+      "text" : "A linkable point on a page.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Landmark"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Landmark",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Landmark"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Landmark",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/landmark"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/MarkupLayout": {
+  "abstract" : [
+    {
+      "text" : "A collection of markup elements that you arrange with a specified layout.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "MarkupLayout"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/MarkupLayout",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "MarkupLayout"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "MarkupLayout",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/markuplayout"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/MultipleChoice": {
+  "abstract" : [
+    {
+      "text" : "A multiple-choice question.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "MultipleChoice"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/MultipleChoice",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "MultipleChoice"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "MultipleChoice",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/multiplechoice"
+},
 "doc://SwiftDocC/documentation/SwiftDocC/Semantic": {
   "abstract" : [
     {
@@ -268,6 +612,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -302,6 +647,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -329,6 +675,134 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/stack"
 },
+"doc://SwiftDocC/documentation/SwiftDocC/Step": {
+  "abstract" : [
+    {
+      "text" : "An instructional step to complete as a part of a ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialSection",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : ". ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DirectiveConvertible",
+      "isActive" : true,
+      "type" : "reference"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Step"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Step",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Step"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Step",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/step"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/Steps": {
+  "abstract" : [
+    {
+      "text" : "Wraps a series of ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Step",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : "s in a tutorial task section.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Steps"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Steps",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Steps"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Steps",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/steps"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/Tutorial": {
+  "abstract" : [
+    {
+      "text" : "A tutorial to complete in order to gain knowledge of a technology.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Tutorial"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Tutorial",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Tutorial"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Tutorial",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/tutorial"
+},
 "doc://SwiftDocC/documentation/SwiftDocC/TutorialArticle": {
   "abstract" : [
     {
@@ -336,6 +810,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -363,21 +838,11 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/tutorialarticle"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/TutorialArticle/DirectiveConvertible-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialArticle\/DirectiveConvertible-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "DirectiveConvertible Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/tutorialarticle\/directiveconvertible-implementations"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/TutorialArticle/abstract": {
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -416,6 +881,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -451,6 +917,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC15TutorialArticleC6accepty6ResultQzxzAA15SemanticVisitorRzlF1VL_xmfp",
       "text" : "V"
     },
     {
@@ -459,6 +926,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC15TutorialArticleC6accepty6ResultQzxzAA15SemanticVisitorRzlF1VL_xmfp",
       "text" : "V"
     },
     {
@@ -467,6 +935,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC15SemanticVisitorP6ResultQa",
       "text" : "Result"
     }
   ],
@@ -484,6 +953,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -525,6 +995,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -566,6 +1037,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -604,6 +1076,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -646,6 +1119,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -680,40 +1154,12 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/tutorialarticle\/durationminutes"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/TutorialArticle/init()": {
+"doc://SwiftDocC/documentation/SwiftDocC/TutorialArticle/init(from:source:for:featureFlags:diagnostics:)": {
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
-    {
-      "kind" : "identifier",
-      "text" : "init"
-    },
-    {
-      "kind" : "text",
-      "text" : "()"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialArticle\/init()",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "init()",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/tutorialarticle\/init()"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/TutorialArticle/init(from:source:for:in:problems:)": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "convenience"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
     {
       "kind" : "identifier",
       "text" : "init"
@@ -749,7 +1195,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10Foundation3URLV",
+      "preciseIdentifier" : "s:20FoundationEssentials3URLV",
       "text" : "URL"
     },
     {
@@ -766,7 +1212,131 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:9SwiftDocC19DocumentationBundleV",
+      "preciseIdentifier" : "s:9SwiftDocC20DocumentationContextC",
+      "text" : "DocumentationContext"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC20DocumentationContextC6InputsV",
+      "text" : "Inputs"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "featureFlags"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC12FeatureFlagsV",
+      "text" : "FeatureFlags"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "diagnostics"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "inout"
+    },
+    {
+      "kind" : "text",
+      "text" : " ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC10DiagnosticV",
+      "text" : "Diagnostic"
+    },
+    {
+      "kind" : "text",
+      "text" : "])"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialArticle\/init(from:source:for:featureFlags:diagnostics:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(from:source:for:featureFlags:diagnostics:)",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/tutorialarticle\/init(from:source:for:featureflags:diagnostics:)"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/TutorialArticle/init(from:source:for:featureFlags:problems:)": {
+  "abstract" : [
+
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "?("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "from"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8Markdown14BlockDirectiveV",
+      "text" : "BlockDirective"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "source"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:20FoundationEssentials3URLV",
+      "text" : "URL"
+    },
+    {
+      "kind" : "text",
+      "text" : "?, "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "for"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC19DocumentationBundlea",
       "text" : "DocumentationBundle"
     },
     {
@@ -775,7 +1345,7 @@
     },
     {
       "kind" : "externalParam",
-      "text" : "in"
+      "text" : "featureFlags"
     },
     {
       "kind" : "text",
@@ -783,8 +1353,8 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:9SwiftDocC20DocumentationContextC",
-      "text" : "DocumentationContext"
+      "preciseIdentifier" : "s:9SwiftDocC12FeatureFlagsV",
+      "text" : "FeatureFlags"
     },
     {
       "kind" : "text",
@@ -816,12 +1386,12 @@
       "text" : "])"
     }
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialArticle\/init(from:source:for:in:problems:)",
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialArticle\/init(from:source:for:featureFlags:problems:)",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "init(from:source:for:in:problems:)",
+  "title" : "init(from:source:for:featureFlags:problems:)",
   "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/tutorialarticle\/init(from:source:for:in:problems:)"
+  "url" : "\/documentation\/swiftdocc\/tutorialarticle\/init(from:source:for:featureflags:problems:)"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/TutorialArticle/intro": {
   "abstract" : [
@@ -830,6 +1400,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -864,6 +1435,49 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/tutorialarticle\/intro"
 },
+"doc://SwiftDocC/documentation/SwiftDocC/TutorialArticle/introducedVersion": {
+  "abstract" : [
+
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "introducedVersion"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialArticle\/introducedVersion",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "introducedVersion",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/tutorialarticle\/introducedversion"
+},
 "doc://SwiftDocC/documentation/SwiftDocC/TutorialArticle/landmarks": {
   "abstract" : [
     {
@@ -871,6 +1485,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -887,6 +1502,14 @@
     {
       "kind" : "text",
       "text" : ": ["
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -909,6 +1532,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -943,6 +1567,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -981,6 +1606,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1014,6 +1640,94 @@
   "title" : "title",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/tutorialarticle\/title"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/TutorialSection": {
+  "abstract" : [
+    {
+      "text" : "A section containing steps to complete to finish a ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Tutorial",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "TutorialSection"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialSection",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "TutorialSection"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "TutorialSection",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/tutorialsection"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/XcodeRequirement": {
+  "abstract" : [
+    {
+      "text" : "An informal Xcode requirement for completing an instructional ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Tutorial",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "XcodeRequirement"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/XcodeRequirement",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "XcodeRequirement"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "XcodeRequirement",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/xcoderequirement"
 }
 }
 }

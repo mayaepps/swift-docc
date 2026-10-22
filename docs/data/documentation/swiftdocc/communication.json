@@ -24,11 +24,12 @@
       }
     ],
     "role" : "collectionGroup",
+    "roleHeading" : "API Collection",
     "title" : "Communication Bridge"
   },
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -36,6 +37,7 @@
   ],
   "seeAlsoSections" : [
     {
+      "anchor" : "Utilities-and-Communication",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Concurrency",
@@ -46,12 +48,10 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Communication-Bridge",
       "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/WebKitCommunicationBridge",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/CommunicationBridge",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/CommunicationBridgeError",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationSchemeHandler",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TopicReferenceSchemeHandler",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Message",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/MessageType",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/CodeColors",
@@ -60,10 +60,10 @@
       "title" : "Communication Bridge"
     },
     {
+      "anchor" : "Communication-File-Server",
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/FileServerProvider",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/FileServer",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/FileSystemRenderNodeProvider",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/FileSystemServerProvider",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/MemoryFileServerProvider"
       ],
@@ -91,6 +91,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -105,6 +106,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -139,6 +141,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -173,6 +176,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -207,6 +211,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -247,37 +252,6 @@
   "title" : "Concurrency",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/concurrency"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/DocumentationSchemeHandler": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "class"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "DocumentationSchemeHandler"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationSchemeHandler",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "DocumentationSchemeHandler"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "DocumentationSchemeHandler",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/documentationschemehandler"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/FileServer": {
   "abstract" : [
@@ -330,6 +304,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -372,6 +347,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -399,68 +375,11 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/fileserverprovider"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/FileSystemRenderNodeProvider": {
-  "abstract" : [
-    {
-      "text" : "This class provides a simple way to transform a ",
-      "type" : "text"
-    },
-    {
-      "code" : "FileSystemProvider",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " into a ",
-      "type" : "text"
-    },
-    {
-      "code" : "RenderNodeProvider",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " to feed an index builder.",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "The data from the disk is fetched and processed in an efficient way to build a navigator index.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "class"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "FileSystemRenderNodeProvider"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/FileSystemRenderNodeProvider",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "FileSystemRenderNodeProvider"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "FileSystemRenderNodeProvider",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/filesystemrendernodeprovider"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/FileSystemServerProvider": {
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -492,6 +411,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -526,6 +446,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -560,6 +481,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -587,38 +509,6 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/messagetype"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/TopicReferenceSchemeHandler": {
-  "abstract" : [
-
-  ],
-  "deprecated" : true,
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "typealias"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "TopicReferenceSchemeHandler"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TopicReferenceSchemeHandler",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "TopicReferenceSchemeHandler"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "TopicReferenceSchemeHandler",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/topicreferenceschemehandler"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/Utilities": {
   "abstract" : [
 
@@ -629,40 +519,6 @@
   "title" : "Utility APIs",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/utilities"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/WebKitCommunicationBridge": {
-  "abstract" : [
-    {
-      "text" : "Provides bi-directional communication with a documentation renderer via JavaScript calls in a web view.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "struct"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "WebKitCommunicationBridge"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/WebKitCommunicationBridge",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "WebKitCommunicationBridge"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "WebKitCommunicationBridge",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/webkitcommunicationbridge"
 }
 }
 }

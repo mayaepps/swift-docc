@@ -1,7 +1,7 @@
 {
   "abstract" : [
     {
-      "text" : "The engine that collects problems encountered while registering and processing the documentation bundles in this context.",
+      "text" : "The engine that collects diagnostics encountered while registering and processing the documentation bundles in this context.",
       "type" : "text"
     }
   ],
@@ -9,7 +9,6 @@
     "paths" : [
       [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationContextGroup",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationContext"
       ]
     ]
@@ -49,6 +48,10 @@
         "name" : "SwiftDocC"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "DocumentationContext.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Infrastructure\/DocumentationContext.swift#L166"
+    },
     "role" : "symbol",
     "roleHeading" : "Instance Property",
     "symbolKind" : "property",
@@ -62,7 +65,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -95,7 +98,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -122,6 +125,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -136,6 +140,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -170,6 +175,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -200,10 +206,11 @@
 "doc://SwiftDocC/documentation/SwiftDocC/DocumentationContext/diagnosticEngine": {
   "abstract" : [
     {
-      "text" : "The engine that collects problems encountered while registering and processing the documentation bundles in this context.",
+      "text" : "The engine that collects diagnostics encountered while registering and processing the documentation bundles in this context.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -233,20 +240,6 @@
   "title" : "diagnosticEngine",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/documentationcontext\/diagnosticengine"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/DocumentationContextGroup": {
-  "abstract" : [
-    {
-      "text" : "Build and query the in-memory documentation model.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationContextGroup",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Documentation Context",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/documentationcontextgroup"
 }
 }
 }

@@ -13,11 +13,21 @@
       "type" : "text"
     }
   ],
+  "deprecationSummary" : [
+    {
+      "inlineContent" : [
+        {
+          "text" : "This type is only used in the outdated, and no longer recommended, version of the out-of-process external resolver communication protocol.",
+          "type" : "text"
+        }
+      ],
+      "type" : "paragraph"
+    }
+  ],
   "hierarchy" : {
     "paths" : [
       [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationContextGroup",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver\/ResolvedInformation",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver\/ResolvedInformation\/Variant"
@@ -50,30 +60,12 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:Sq",
-        "text" : "Optional"
+        "preciseIdentifier" : "s:9SwiftDocC29OutOfProcessReferenceResolverC19ResolvedInformationV7VariantV0J5Valuea",
+        "text" : "VariantValue"
       },
       {
         "kind" : "text",
         "text" : "<"
-      },
-      {
-        "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:9SwiftDocC29OutOfProcessReferenceResolverC",
-        "text" : "OutOfProcessReferenceResolver"
-      },
-      {
-        "kind" : "text",
-        "text" : "."
-      },
-      {
-        "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:9SwiftDocC29OutOfProcessReferenceResolverC19ResolvedInformationV",
-        "text" : "ResolvedInformation"
-      },
-      {
-        "kind" : "text",
-        "text" : "."
       },
       {
         "kind" : "typeIdentifier",
@@ -90,6 +82,10 @@
         "name" : "SwiftDocC"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "OutOfProcessReferenceResolver+DeprecatedCommunication.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Infrastructure\/External%20Data\/OutOfProcessReferenceResolver+DeprecatedCommunication.swift#L267"
+    },
     "role" : "symbol",
     "roleHeading" : "Instance Property",
     "symbolKind" : "property",
@@ -103,7 +99,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -123,33 +119,14 @@
               "text" : ": "
             },
             {
+              "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver\/ResolvedInformation\/Variant\/VariantValue",
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:Sq",
-              "text" : "Optional"
+              "preciseIdentifier" : "s:9SwiftDocC29OutOfProcessReferenceResolverC19ResolvedInformationV7VariantV0J5Valuea",
+              "text" : "VariantValue"
             },
             {
               "kind" : "text",
               "text" : "<"
-            },
-            {
-              "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:9SwiftDocC29OutOfProcessReferenceResolverC",
-              "text" : "OutOfProcessReferenceResolver"
-            },
-            {
-              "kind" : "text",
-              "text" : "."
-            },
-            {
-              "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver\/ResolvedInformation",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:9SwiftDocC29OutOfProcessReferenceResolverC19ResolvedInformationV",
-              "text" : "ResolvedInformation"
-            },
-            {
-              "kind" : "text",
-              "text" : "."
             },
             {
               "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver\/ResolvedInformation\/DeclarationFragments-swift.typealias",
@@ -177,6 +154,15 @@
         {
           "inlineContent" : [
             {
+              "text" : "This is expected to be an abbreviated declaration for the symbol.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
               "text" : "If the resolver information has a declaration but the variant doesn’t, this property will be ",
               "type" : "text"
             },
@@ -197,7 +183,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -224,26 +210,13 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
   "title" : "SwiftDocC",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/DocumentationContextGroup": {
-  "abstract" : [
-    {
-      "text" : "Build and query the in-memory documentation model.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationContextGroup",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Documentation Context",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/documentationcontextgroup"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/OutOfProcessReferenceResolver": {
   "abstract" : [
@@ -252,6 +225,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -282,10 +256,11 @@
 "doc://SwiftDocC/documentation/SwiftDocC/OutOfProcessReferenceResolver/ResolvedInformation": {
   "abstract" : [
     {
-      "text" : "A type used to transfer information about a resolved reference to DocC from from a reference resolver in another executable.",
+      "text" : "A type used to transfer information about a resolved reference in the outdated and no longer recommended version of the external resolver communication protocol.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -320,6 +295,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -354,6 +330,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -381,6 +358,41 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/outofprocessreferenceresolver\/resolvedinformation\/variant"
 },
+"doc://SwiftDocC/documentation/SwiftDocC/OutOfProcessReferenceResolver/ResolvedInformation/Variant/VariantValue": {
+  "abstract" : [
+    {
+      "text" : "A wrapper for variant values that can either be specified, meaning the variant has a custom value, or not, meaning the variant has the same value as the resolved information.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "typealias"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "VariantValue"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver\/ResolvedInformation\/Variant\/VariantValue",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "VariantValue"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "OutOfProcessReferenceResolver.ResolvedInformation.Variant.VariantValue",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/outofprocessreferenceresolver\/resolvedinformation\/variant\/variantvalue"
+},
 "doc://SwiftDocC/documentation/SwiftDocC/OutOfProcessReferenceResolver/ResolvedInformation/Variant/declarationFragments": {
   "abstract" : [
     {
@@ -396,6 +408,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -415,30 +428,12 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:Sq",
-      "text" : "Optional"
+      "preciseIdentifier" : "s:9SwiftDocC29OutOfProcessReferenceResolverC19ResolvedInformationV7VariantV0J5Valuea",
+      "text" : "VariantValue"
     },
     {
       "kind" : "text",
       "text" : "<"
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:9SwiftDocC29OutOfProcessReferenceResolverC",
-      "text" : "OutOfProcessReferenceResolver"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:9SwiftDocC29OutOfProcessReferenceResolverC19ResolvedInformationV",
-      "text" : "ResolvedInformation"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",

@@ -1,7 +1,7 @@
 {
   "abstract" : [
     {
-      "text" : "The list of level-2 headings with the text “Topics” found in the document.",
+      "text" : "The list of second-level headings named “Topics” that the checker encountered while walking the the document.",
       "type" : "text"
     }
   ],
@@ -9,7 +9,6 @@
     "paths" : [
       [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/StaticAnalysis",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DuplicateTopicsSections"
       ]
     ]
@@ -53,6 +52,10 @@
         "name" : "SwiftDocC"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "DuplicateTopicsSection.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Checker\/Checkers\/DuplicateTopicsSection.swift#L17"
+    },
     "role" : "symbol",
     "roleHeading" : "Instance Property",
     "symbolKind" : "property",
@@ -66,7 +69,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -102,7 +105,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -129,6 +132,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -139,18 +143,11 @@
 "doc://SwiftDocC/documentation/SwiftDocC/DuplicateTopicsSections": {
   "abstract" : [
     {
-      "text" : "A ",
-      "type" : "text"
-    },
-    {
-      "code" : "Document",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " may only have one level-2 “Topics” heading at the top level, since it serves as structured data for a documentation bundle’s hierarchy.",
+      "text" : "A checker that warns about multiple “Topics” sections.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -181,10 +178,11 @@
 "doc://SwiftDocC/documentation/SwiftDocC/DuplicateTopicsSections/foundTopicsHeadings": {
   "abstract" : [
     {
-      "text" : "The list of level-2 headings with the text “Topics” found in the document.",
+      "text" : "The list of second-level headings named “Topics” that the checker encountered while walking the the document.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -218,20 +216,6 @@
   "title" : "foundTopicsHeadings",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/duplicatetopicssections\/foundtopicsheadings"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/StaticAnalysis": {
-  "abstract" : [
-    {
-      "text" : "Run static analysis checks on markup files.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/StaticAnalysis",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Static Analysis",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/staticanalysis"
 }
 }
 }

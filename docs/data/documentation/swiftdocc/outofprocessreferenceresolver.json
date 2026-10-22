@@ -8,8 +8,7 @@
   "hierarchy" : {
     "paths" : [
       [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationContextGroup"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC"
       ]
     ]
   },
@@ -45,6 +44,10 @@
         "text" : "OutOfProcessReferenceResolver"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "OutOfProcessReferenceResolver.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Infrastructure\/External%20Data\/OutOfProcessReferenceResolver.swift#L87"
+    },
     "role" : "symbol",
     "roleHeading" : "Class",
     "symbolKind" : "class",
@@ -58,7 +61,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -112,31 +115,145 @@
           "type" : "paragraph"
         },
         {
+          "anchor" : "Launching-and-responding-to-requests",
+          "level" : 2,
+          "text" : "Launching and responding to requests",
+          "type" : "heading"
+        },
+        {
           "inlineContent" : [
             {
-              "text" : "The launched executable is expected to follow the flow outlined below, sending ",
+              "text" : "When creating an out-of-process resolver using ",
               "type" : "text"
             },
             {
-              "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver\/Request",
+              "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver\/init(processLocation:errorOutputHandler:)",
               "isActive" : true,
               "type" : "reference"
+            },
+            {
+              "text" : " to communicate with another executable;",
+              "type" : "text"
             },
             {
               "text" : " ",
               "type" : "text"
             },
             {
-              "text" : "and ",
+              "text" : "DocC launches your link resolver executable and declares ",
               "type" : "text"
             },
             {
-              "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver\/Response",
+              "inlineContent" : [
+                {
+                  "text" : "its",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : " own ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver\/Capabilities",
               "isActive" : true,
               "type" : "reference"
             },
             {
-              "text" : " values back and forth:",
+              "text" : " as a raw value passed via the ",
+              "type" : "text"
+            },
+            {
+              "code" : "--capabilities",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " option.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Your link resolver executable is expected to respond with a ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver\/ResponseV2\/identifierAndCapabilities(_:_:)",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " message that declares:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "The documentation identifier that the executable can resolve links for.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "The capabilities that the resolver supports.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "After this “handshake” your link resolver executable is expected to wait for ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver\/RequestV2",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " messages from DocC and respond with exactly one ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver\/ResponseV2",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " per message.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "A visual representation of this flow of execution can be seen in the diagram below:",
               "type" : "text"
             }
           ],
@@ -144,34 +261,81 @@
         },
         {
           "code" : [
-            "          │",
-            " 1        ▼",
-            "┌──────────────────┐",
-            "│ Output bundle ID │",
-            "└──────────────────┘",
-            "          │",
-            " 2        ▼",
-            "┌──────────────────┐",
-            "│  Wait for input  │◀───┐",
-            "└──────────────────┘    │",
-            "          │             │",
-            " 3        ▼             │ repeat",
-            "┌──────────────────┐    │",
-            "│ Output resolved  │    │",
-            "│   information    │────┘",
-            "└──────────────────┘"
+            "    DocC                link resolver executable",
+            "    ┌─┐                              ╎",
+            "    │ ├─────────── Launch ──────────▶┴┐",
+            "    │ │        --capabilities       │ │",
+            "    │ │                             │ │",
+            "    │ ◀───────── Handshake ─────────┤ │",
+            "    │ │  { \"identifier\"   : ... ,   │ │",
+            "    │ │    \"capabilities\" : ... }   │ │",
+            "┏ loop ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓",
+            "┃   │ │                             │ │   ┃",
+            "┃   │ ├────────── Request ──────────▶ │   ┃",
+            "┃   │ │  { \"link\"   : ... }  OR     │ │   ┃",
+            "┃   │ │  { \"symbol\" : ... }         │ │   ┃",
+            "┃   │ │                             │ │   ┃",
+            "┃   │ ◀────────── Response ─────────┤ │   ┃",
+            "┃   │ │  { \"resolved\" : ... }  OR   │ │   ┃",
+            "┃   │ │  { \"failure\"  : ... }       │ │   ┃",
+            "┃   │ │                             │ │   ┃",
+            "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛",
+            "    │ │                             └─┘",
+            "    │ │                              ╎"
           ],
+          "copyToClipboard" : true,
+          "lineAnnotations" : [
+
+          ],
+          "showLineNumbers" : false,
           "syntax" : null,
-          "type" : "codeListing"
+          "type" : "codeListing",
+          "wrap" : 0
+        },
+        {
+          "anchor" : "Interacting-with-a-Convert-Service",
+          "level" : 2,
+          "text" : "Interacting with a Convert Service",
+          "type" : "heading"
         },
         {
           "inlineContent" : [
             {
-              "text" : "When resolving against a server, the server is expected to be able to handle messages of type “resolve-reference” with a",
+              "text" : "When creating an out-of-process resolver using ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver\/init(id:server:convertRequestIdentifier:)",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " to communicate with another process using a ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ConvertService",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ";",
               "type" : "text"
             },
             {
               "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "DocC sends that service ",
+              "type" : "text"
+            },
+            {
+              "code" : "\"resolve-reference\"",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " messages with a",
               "type" : "text"
             },
             {
@@ -180,15 +344,15 @@
               "type" : "reference"
             },
             {
-              "text" : " payload and respond with messages of type “resolved-reference-response”",
+              "text" : " payload and expects a ",
               "type" : "text"
             },
             {
-              "text" : " ",
-              "type" : "text"
+              "code" : "\"resolved-reference-response\"",
+              "type" : "codeVoice"
             },
             {
-              "text" : "with a ",
+              "text" : " responses with a ",
               "type" : "text"
             },
             {
@@ -202,6 +366,78 @@
             }
           ],
           "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Because the ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ConvertService",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " messages are ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "implicitly",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : " tied to these outdated—and no longer recommended—request and response types, the richness of its responses is limited.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "When interacting with a ",
+                  "type" : "text"
+                },
+                {
+                  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ConvertService",
+                  "isActive" : true,
+                  "type" : "reference"
+                },
+                {
+                  "text" : " your service also needs to handle “asset” requests (",
+                  "type" : "text"
+                },
+                {
+                  "code" : "OutOfProcessReferenceResolver\/Request\/asset(_:)",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " and responses that (",
+                  "type" : "text"
+                },
+                {
+                  "code" : "OutOfProcessReferenceResolver\/Response\/asset(_:)",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : ") that link resolver executables don’t need to handle.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
         }
       ],
       "kind" : "content"
@@ -210,10 +446,8 @@
   "relationshipsSections" : [
     {
       "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ExternalReferenceResolver",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ExternalSymbolResolver",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/FallbackAssetResolver",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/FallbackReferenceResolver"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ExternalDocumentationSource",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/GlobalExternalSymbolResolver"
       ],
       "kind" : "relationships",
       "title" : "Conforms To",
@@ -222,7 +456,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -230,64 +464,94 @@
   ],
   "seeAlsoSections" : [
     {
+      "anchor" : "Related-Documentation",
       "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationContext\/externalReferenceResolvers",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationContext\/fallbackReferenceResolvers",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationContext\/externalSymbolResolver",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver\/Request",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver\/Response"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationContext\/Configuration-swift.struct\/ExternalDocumentationConfiguration-swift.struct\/sources",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationContext\/Configuration-swift.struct\/ExternalDocumentationConfiguration-swift.struct\/globalSymbolResolver"
       ],
       "title" : "Related Documentation"
     },
     {
+      "anchor" : "External-Documentation-Sources",
       "generated" : true,
       "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ExternalReferenceResolver",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ExternalSymbolResolver"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ExternalDocumentationSource",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/GlobalExternalSymbolResolver"
       ],
-      "title" : "External Documentation"
+      "title" : "External Documentation Sources"
     }
   ],
   "topicSections" : [
     {
+      "abstract" : [
+        {
+          "text" : "Requests that DocC sends to your link resolver executable and the responses that it should send back.",
+          "type" : "text"
+        }
+      ],
+      "anchor" : "Messages",
+      "identifiers" : [
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver\/RequestV2",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver\/ResponseV2"
+      ],
+      "title" : "Messages"
+    },
+    {
+      "abstract" : [
+        {
+          "text" : "Ways that your link resolver executable can signal any optional capabilities that it supports.",
+          "type" : "text"
+        }
+      ],
+      "anchor" : "Finding-common-capabilities",
+      "identifiers" : [
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver\/ResponseV2\/identifierAndCapabilities(_:_:)",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver\/Capabilities"
+      ],
+      "title" : "Finding common capabilities"
+    },
+    {
+      "anchor" : "Deprecated-messages",
+      "identifiers" : [
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver\/Request",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver\/Response"
+      ],
+      "title" : "Deprecated messages"
+    },
+    {
+      "anchor" : "Structures",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver\/ResolvedInformation"
       ],
       "title" : "Structures"
     },
     {
+      "anchor" : "Initializers",
+      "generated" : true,
       "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver\/init(bundleIdentifier:server:convertRequestIdentifier:)",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver\/init(bundleID:server:convertRequestIdentifier:)",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver\/init(id:server:convertRequestIdentifier:)",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver\/init(processLocation:errorOutputHandler:)"
       ],
       "title" : "Initializers"
     },
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver\/bundleIdentifier"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver\/bundleID",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver\/id"
       ],
       "title" : "Instance Properties"
     },
     {
+      "anchor" : "Instance-Methods",
+      "generated" : true,
       "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver\/entity(with:)",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver\/entityIfPreviouslyResolved(with:)",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver\/preciseIdentifier(forExternalSymbolReference:)",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver\/resolve(_:sourceLanguage:)",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver\/resolve(assetNamed:bundleIdentifier:)",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver\/symbolEntity(withPreciseIdentifier:)",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver\/urlForResolvedReference(_:)",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver\/urlForResolvedReferenceIfPreviouslyResolved(_:)",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver\/urlForResolvedSymbol(reference:)"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver\/resolve(_:)"
       ],
       "title" : "Instance Methods"
-    },
-    {
-      "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver\/Request",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver\/Response"
-      ],
-      "title" : "Enumerations"
     }
   ],
   "variants" : [
@@ -311,6 +575,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -318,13 +583,49 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/DocumentationContext/externalReferenceResolvers": {
+"doc://SwiftDocC/documentation/SwiftDocC/ConvertService": {
   "abstract" : [
     {
-      "text" : "The dictionary mapping external documentation bundle identifiers to external reference resolvers.",
+      "text" : "A service that converts documentation.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ConvertService"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ConvertService",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ConvertService"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ConvertService",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/convertservice"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/DocumentationContext/Configuration-swift.struct/ExternalDocumentationConfiguration-swift.struct/globalSymbolResolver": {
+  "abstract" : [
+    {
+      "text" : "A type that resolves all symbols that are referenced in symbol graph files but can’t be found in any of the locally available symbol graph files.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -336,7 +637,57 @@
     },
     {
       "kind" : "identifier",
-      "text" : "externalReferenceResolvers"
+      "text" : "globalSymbolResolver"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ("
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC28GlobalExternalSymbolResolverP",
+      "text" : "GlobalExternalSymbolResolver"
+    },
+    {
+      "kind" : "text",
+      "text" : ")?"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationContext\/Configuration-swift.struct\/ExternalDocumentationConfiguration-swift.struct\/globalSymbolResolver",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "globalSymbolResolver",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/documentationcontext\/configuration-swift.struct\/externaldocumentationconfiguration-swift.struct\/globalsymbolresolver"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/DocumentationContext/Configuration-swift.struct/ExternalDocumentationConfiguration-swift.struct/sources": {
+  "abstract" : [
+    {
+      "text" : "The lookup of external documentation sources by their source identifiers.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "sources"
     },
     {
       "kind" : "text",
@@ -344,142 +695,64 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:9SwiftDocC16BundleIdentifiera",
-      "text" : "BundleIdentifier"
+      "preciseIdentifier" : "s:9SwiftDocC20DocumentationContextC",
+      "text" : "DocumentationContext"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC20DocumentationContextC6InputsV",
+      "text" : "Inputs"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC20DocumentationContextC6InputsV10IdentifierV",
+      "text" : "Identifier"
     },
     {
       "kind" : "text",
       "text" : " : "
     },
     {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:9SwiftDocC25ExternalReferenceResolverP",
-      "text" : "ExternalReferenceResolver"
+      "preciseIdentifier" : "s:9SwiftDocC27ExternalDocumentationSourceP",
+      "text" : "ExternalDocumentationSource"
     },
     {
       "kind" : "text",
       "text" : "]"
     }
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationContext\/externalReferenceResolvers",
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationContext\/Configuration-swift.struct\/ExternalDocumentationConfiguration-swift.struct\/sources",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "externalReferenceResolvers",
+  "title" : "sources",
   "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/documentationcontext\/externalreferenceresolvers"
+  "url" : "\/documentation\/swiftdocc\/documentationcontext\/configuration-swift.struct\/externaldocumentationconfiguration-swift.struct\/sources"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/DocumentationContext/externalSymbolResolver": {
+"doc://SwiftDocC/documentation/SwiftDocC/ExternalDocumentationSource": {
   "abstract" : [
     {
-      "text" : "A type that resolves symbols that are references from a symbol graph file but isn’t included in any of the processed symbol graph files.",
+      "text" : "A type that resolves references to documentation from other sources.",
       "type" : "text"
     }
   ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "var"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "externalSymbolResolver"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:9SwiftDocC22ExternalSymbolResolverP",
-      "text" : "ExternalSymbolResolver"
-    },
-    {
-      "kind" : "text",
-      "text" : "?"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationContext\/externalSymbolResolver",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "externalSymbolResolver",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/documentationcontext\/externalsymbolresolver"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/DocumentationContext/fallbackReferenceResolvers": {
-  "abstract" : [
-    {
-      "text" : "The dictionary mapping known documentation bundle identifiers to fallback reference resolvers.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "var"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "fallbackReferenceResolvers"
-    },
-    {
-      "kind" : "text",
-      "text" : ": ["
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:9SwiftDocC16BundleIdentifiera",
-      "text" : "BundleIdentifier"
-    },
-    {
-      "kind" : "text",
-      "text" : " : "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:9SwiftDocC25FallbackReferenceResolverP",
-      "text" : "FallbackReferenceResolver"
-    },
-    {
-      "kind" : "text",
-      "text" : "]"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationContext\/fallbackReferenceResolvers",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "fallbackReferenceResolvers",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/documentationcontext\/fallbackreferenceresolvers"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/DocumentationContextGroup": {
-  "abstract" : [
-    {
-      "text" : "Build and query the in-memory documentation model.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationContextGroup",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Documentation Context",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/documentationcontextgroup"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/ExternalReferenceResolver": {
-  "abstract" : [
-    {
-      "text" : "A type that resolves references to documentation outside of the documentation bundle, and creates documentation nodes with basic information about the resolved references.",
-      "type" : "text"
-    }
-  ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -491,29 +764,30 @@
     },
     {
       "kind" : "identifier",
-      "text" : "ExternalReferenceResolver"
+      "text" : "ExternalDocumentationSource"
     }
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ExternalReferenceResolver",
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ExternalDocumentationSource",
   "kind" : "symbol",
   "navigatorTitle" : [
     {
       "kind" : "identifier",
-      "text" : "ExternalReferenceResolver"
+      "text" : "ExternalDocumentationSource"
     }
   ],
   "role" : "symbol",
-  "title" : "ExternalReferenceResolver",
+  "title" : "ExternalDocumentationSource",
   "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/externalreferenceresolver"
+  "url" : "\/documentation\/swiftdocc\/externaldocumentationsource"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/ExternalSymbolResolver": {
+"doc://SwiftDocC/documentation/SwiftDocC/GlobalExternalSymbolResolver": {
   "abstract" : [
     {
-      "text" : "A type that resolves references to symbols outside of the documentation bundle and creates documentation nodes with basic information about the resolved symbol.",
+      "text" : "A type that resolves symbol identifiers for symbols in all non-local modules.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -525,89 +799,21 @@
     },
     {
       "kind" : "identifier",
-      "text" : "ExternalSymbolResolver"
+      "text" : "GlobalExternalSymbolResolver"
     }
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ExternalSymbolResolver",
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/GlobalExternalSymbolResolver",
   "kind" : "symbol",
   "navigatorTitle" : [
     {
       "kind" : "identifier",
-      "text" : "ExternalSymbolResolver"
+      "text" : "GlobalExternalSymbolResolver"
     }
   ],
   "role" : "symbol",
-  "title" : "ExternalSymbolResolver",
+  "title" : "GlobalExternalSymbolResolver",
   "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/externalsymbolresolver"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/FallbackAssetResolver": {
-  "abstract" : [
-    {
-      "text" : "An asset resolver that can be used to resolve assets that couldn’t be resolved locally.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "protocol"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "FallbackAssetResolver"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/FallbackAssetResolver",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "FallbackAssetResolver"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "FallbackAssetResolver",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/fallbackassetresolver"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/FallbackReferenceResolver": {
-  "abstract" : [
-    {
-      "text" : "An reference resolver that can be used to resolve references that couldn’t be resolved locally.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "protocol"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "FallbackReferenceResolver"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/FallbackReferenceResolver",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "FallbackReferenceResolver"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "FallbackReferenceResolver",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/fallbackreferenceresolver"
+  "url" : "\/documentation\/swiftdocc\/globalexternalsymbolresolver"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/OutOfProcessReferenceResolver": {
   "abstract" : [
@@ -616,6 +822,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -643,17 +850,53 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/outofprocessreferenceresolver"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/OutOfProcessReferenceResolver/Request": {
+"doc://SwiftDocC/documentation/SwiftDocC/OutOfProcessReferenceResolver/Capabilities": {
   "abstract" : [
     {
-      "text" : "A request message to send to the external link resolver.",
+      "text" : "A set of optional capabilities that either DocC or your external link resolver declares that it supports.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "enum"
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Capabilities"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver\/Capabilities",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Capabilities"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "OutOfProcessReferenceResolver.Capabilities",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/outofprocessreferenceresolver\/capabilities"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/OutOfProcessReferenceResolver/Request": {
+  "abstract" : [
+    {
+      "text" : "An outdated version of a request message to send to the external link resolver.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "typealias"
     },
     {
       "kind" : "text",
@@ -677,13 +920,49 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/outofprocessreferenceresolver\/request"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/OutOfProcessReferenceResolver/ResolvedInformation": {
+"doc://SwiftDocC/documentation/SwiftDocC/OutOfProcessReferenceResolver/RequestV2": {
   "abstract" : [
     {
-      "text" : "A type used to transfer information about a resolved reference to DocC from from a reference resolver in another executable.",
+      "text" : "Request messages that DocC sends to the configured external link resolver.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "RequestV2"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver\/RequestV2",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "RequestV2"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "OutOfProcessReferenceResolver.RequestV2",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/outofprocessreferenceresolver\/requestv2"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/OutOfProcessReferenceResolver/ResolvedInformation": {
+  "abstract" : [
+    {
+      "text" : "A type used to transfer information about a resolved reference in the outdated and no longer recommended version of the external resolver communication protocol.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -714,14 +993,15 @@
 "doc://SwiftDocC/documentation/SwiftDocC/OutOfProcessReferenceResolver/Response": {
   "abstract" : [
     {
-      "text" : "A response message from the external link resolver.",
+      "text" : "An outdated version of a response message from the external link resolver.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "enum"
+      "text" : "typealias"
     },
     {
       "kind" : "text",
@@ -745,17 +1025,18 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/outofprocessreferenceresolver\/response"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/OutOfProcessReferenceResolver/bundleIdentifier": {
+"doc://SwiftDocC/documentation/SwiftDocC/OutOfProcessReferenceResolver/ResponseV2": {
   "abstract" : [
     {
-      "text" : "The bundle identifier for the reference resolver in the other process.",
+      "text" : "Response messages that the external link resolver sends back to DocC for each received request..",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "let"
+      "text" : "enum"
     },
     {
       "kind" : "text",
@@ -763,36 +1044,34 @@
     },
     {
       "kind" : "identifier",
-      "text" : "bundleIdentifier"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:SS",
-      "text" : "String"
+      "text" : "ResponseV2"
     }
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver\/bundleIdentifier",
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver\/ResponseV2",
   "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ResponseV2"
+    }
+  ],
   "role" : "symbol",
-  "title" : "bundleIdentifier",
+  "title" : "OutOfProcessReferenceResolver.ResponseV2",
   "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/outofprocessreferenceresolver\/bundleidentifier"
+  "url" : "\/documentation\/swiftdocc\/outofprocessreferenceresolver\/responsev2"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/OutOfProcessReferenceResolver/entity(with:)": {
+"doc://SwiftDocC/documentation/SwiftDocC/OutOfProcessReferenceResolver/ResponseV2/identifierAndCapabilities(_:_:)": {
   "abstract" : [
     {
-      "text" : "Creates a new documentation node for the external reference by calling a reference resolver in another process.",
+      "text" : "The initial identifier-and-capabilities message.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "func"
+      "text" : "case"
     },
     {
       "kind" : "text",
@@ -800,58 +1079,65 @@
     },
     {
       "kind" : "identifier",
-      "text" : "entity"
+      "text" : "identifierAndCapabilities"
     },
     {
       "kind" : "text",
       "text" : "("
     },
     {
-      "kind" : "externalParam",
-      "text" : "with"
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC20DocumentationContextC",
+      "text" : "DocumentationContext"
     },
     {
       "kind" : "text",
-      "text" : ": "
+      "text" : "."
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:9SwiftDocC22ResolvedTopicReferenceV",
-      "text" : "ResolvedTopicReference"
+      "preciseIdentifier" : "s:9SwiftDocC20DocumentationContextC6InputsV",
+      "text" : "Inputs"
     },
     {
       "kind" : "text",
-      "text" : ") "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "throws"
-    },
-    {
-      "kind" : "text",
-      "text" : " -> "
+      "text" : "."
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:9SwiftDocC17DocumentationNodeV",
-      "text" : "DocumentationNode"
+      "preciseIdentifier" : "s:9SwiftDocC20DocumentationContextC6InputsV10IdentifierV",
+      "text" : "Identifier"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC29OutOfProcessReferenceResolverC12CapabilitiesV",
+      "text" : "Capabilities"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
     }
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver\/entity(with:)",
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver\/ResponseV2\/identifierAndCapabilities(_:_:)",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "entity(with:)",
+  "title" : "OutOfProcessReferenceResolver.ResponseV2.identifierAndCapabilities(_:_:)",
   "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/outofprocessreferenceresolver\/entity(with:)"
+  "url" : "\/documentation\/swiftdocc\/outofprocessreferenceresolver\/responsev2\/identifierandcapabilities(_:_:)"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/OutOfProcessReferenceResolver/entityIfPreviouslyResolved(with:)": {
+"doc://SwiftDocC/documentation/SwiftDocC/OutOfProcessReferenceResolver/bundleID": {
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "func"
+      "text" : "var"
     },
     {
       "kind" : "text",
@@ -859,15 +1145,7 @@
     },
     {
       "kind" : "identifier",
-      "text" : "entityIfPreviouslyResolved"
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "with"
+      "text" : "bundleID"
     },
     {
       "kind" : "text",
@@ -875,45 +1153,96 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:9SwiftDocC22ResolvedTopicReferenceV",
-      "text" : "ResolvedTopicReference"
+      "preciseIdentifier" : "s:9SwiftDocC20DocumentationContextC",
+      "text" : "DocumentationContext"
     },
     {
       "kind" : "text",
-      "text" : ") "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "throws"
-    },
-    {
-      "kind" : "text",
-      "text" : " -> "
+      "text" : "."
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:9SwiftDocC17DocumentationNodeV",
-      "text" : "DocumentationNode"
+      "preciseIdentifier" : "s:9SwiftDocC20DocumentationContextC6InputsV",
+      "text" : "Inputs"
     },
     {
       "kind" : "text",
-      "text" : "?"
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC20DocumentationContextC6InputsV10IdentifierV",
+      "text" : "Identifier"
     }
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver\/entityIfPreviouslyResolved(with:)",
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver\/bundleID",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "entityIfPreviouslyResolved(with:)",
+  "title" : "bundleID",
   "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/outofprocessreferenceresolver\/entityifpreviouslyresolved(with:)"
+  "url" : "\/documentation\/swiftdocc\/outofprocessreferenceresolver\/bundleid"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/OutOfProcessReferenceResolver/init(bundleIdentifier:server:convertRequestIdentifier:)": {
+"doc://SwiftDocC/documentation/SwiftDocC/OutOfProcessReferenceResolver/id": {
   "abstract" : [
     {
-      "text" : "Creates a new reference resolver that interacts with a documentation service.",
+      "text" : "The identifier for the reference resolver in the other process.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "id"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC20DocumentationContextC",
+      "text" : "DocumentationContext"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC20DocumentationContextC6InputsV",
+      "text" : "Inputs"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC20DocumentationContextC6InputsV10IdentifierV",
+      "text" : "Identifier"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver\/id",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "id",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/outofprocessreferenceresolver\/id"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/OutOfProcessReferenceResolver/init(bundleID:server:convertRequestIdentifier:)": {
+  "abstract" : [
+
+  ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -925,7 +1254,7 @@
     },
     {
       "kind" : "externalParam",
-      "text" : "bundleIdentifier"
+      "text" : "bundleID"
     },
     {
       "kind" : "text",
@@ -933,8 +1262,26 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:SS",
-      "text" : "String"
+      "preciseIdentifier" : "s:9SwiftDocC20DocumentationContextC",
+      "text" : "DocumentationContext"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC20DocumentationContextC6InputsV",
+      "text" : "Inputs"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC20DocumentationContextC6InputsV10IdentifierV",
+      "text" : "Identifier"
     },
     {
       "kind" : "text",
@@ -979,12 +1326,110 @@
       "text" : "throws"
     }
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver\/init(bundleIdentifier:server:convertRequestIdentifier:)",
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver\/init(bundleID:server:convertRequestIdentifier:)",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "init(bundleIdentifier:server:convertRequestIdentifier:)",
+  "title" : "init(bundleID:server:convertRequestIdentifier:)",
   "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/outofprocessreferenceresolver\/init(bundleidentifier:server:convertrequestidentifier:)"
+  "url" : "\/documentation\/swiftdocc\/outofprocessreferenceresolver\/init(bundleid:server:convertrequestidentifier:)"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/OutOfProcessReferenceResolver/init(id:server:convertRequestIdentifier:)": {
+  "abstract" : [
+    {
+      "text" : "Creates a new reference resolver that interacts with a documentation service.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "id"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC20DocumentationContextC",
+      "text" : "DocumentationContext"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC20DocumentationContextC6InputsV",
+      "text" : "Inputs"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC20DocumentationContextC6InputsV10IdentifierV",
+      "text" : "Identifier"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "server"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC19DocumentationServerC",
+      "text" : "DocumentationServer"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "convertRequestIdentifier"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : "?) "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver\/init(id:server:convertRequestIdentifier:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(id:server:convertRequestIdentifier:)",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/outofprocessreferenceresolver\/init(id:server:convertrequestidentifier:)"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/OutOfProcessReferenceResolver/init(processLocation:errorOutputHandler:)": {
   "abstract" : [
@@ -993,6 +1438,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -1012,7 +1458,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10Foundation3URLV",
+      "preciseIdentifier" : "s:20FoundationEssentials3URLV",
       "text" : "URL"
     },
     {
@@ -1057,71 +1503,11 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/outofprocessreferenceresolver\/init(processlocation:erroroutputhandler:)"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/OutOfProcessReferenceResolver/preciseIdentifier(forExternalSymbolReference:)": {
+"doc://SwiftDocC/documentation/SwiftDocC/OutOfProcessReferenceResolver/resolve(_:)": {
   "abstract" : [
-    {
-      "text" : "Attempts to find the precise identifier for an authored symbol reference.",
-      "type" : "text"
-    }
+
   ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "preciseIdentifier"
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "forExternalSymbolReference"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:9SwiftDocC14TopicReferenceO",
-      "text" : "TopicReference"
-    },
-    {
-      "kind" : "text",
-      "text" : ") -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:SS",
-      "text" : "String"
-    },
-    {
-      "kind" : "text",
-      "text" : "?"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver\/preciseIdentifier(forExternalSymbolReference:)",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "preciseIdentifier(forExternalSymbolReference:)",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/outofprocessreferenceresolver\/preciseidentifier(forexternalsymbolreference:)"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/OutOfProcessReferenceResolver/resolve(_:sourceLanguage:)": {
-  "abstract" : [
-    {
-      "text" : "Attempts to resolve an unresolved reference using a reference resolver in another process.",
-      "type" : "text"
-    }
-  ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1143,23 +1529,6 @@
       "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:9SwiftDocC14TopicReferenceO",
       "text" : "TopicReference"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "sourceLanguage"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:9SwiftDocC14SourceLanguageV",
-      "text" : "SourceLanguage"
     },
     {
       "kind" : "text",
@@ -1171,297 +1540,12 @@
       "text" : "TopicReferenceResolutionResult"
     }
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver\/resolve(_:sourceLanguage:)",
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver\/resolve(_:)",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "resolve(_:sourceLanguage:)",
+  "title" : "resolve(_:)",
   "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/outofprocessreferenceresolver\/resolve(_:sourcelanguage:)"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/OutOfProcessReferenceResolver/resolve(assetNamed:bundleIdentifier:)": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "resolve"
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "assetNamed"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:SS",
-      "text" : "String"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "bundleIdentifier"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:SS",
-      "text" : "String"
-    },
-    {
-      "kind" : "text",
-      "text" : ") -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:9SwiftDocC9DataAssetV",
-      "text" : "DataAsset"
-    },
-    {
-      "kind" : "text",
-      "text" : "?"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver\/resolve(assetNamed:bundleIdentifier:)",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "resolve(assetNamed:bundleIdentifier:)",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/outofprocessreferenceresolver\/resolve(assetnamed:bundleidentifier:)"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/OutOfProcessReferenceResolver/symbolEntity(withPreciseIdentifier:)": {
-  "abstract" : [
-    {
-      "text" : "Creates a documentation node with a subset of the documentation content for the external symbol based on its precise identifier.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "symbolEntity"
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "withPreciseIdentifier"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:SS",
-      "text" : "String"
-    },
-    {
-      "kind" : "text",
-      "text" : ") "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "throws"
-    },
-    {
-      "kind" : "text",
-      "text" : " -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:9SwiftDocC17DocumentationNodeV",
-      "text" : "DocumentationNode"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver\/symbolEntity(withPreciseIdentifier:)",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "symbolEntity(withPreciseIdentifier:)",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/outofprocessreferenceresolver\/symbolentity(withpreciseidentifier:)"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/OutOfProcessReferenceResolver/urlForResolvedReference(_:)": {
-  "abstract" : [
-    {
-      "text" : "Returns the web URL for the external topic.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "urlForResolvedReference"
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:9SwiftDocC22ResolvedTopicReferenceV",
-      "text" : "ResolvedTopicReference"
-    },
-    {
-      "kind" : "text",
-      "text" : ") -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10Foundation3URLV",
-      "text" : "URL"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver\/urlForResolvedReference(_:)",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "urlForResolvedReference(_:)",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/outofprocessreferenceresolver\/urlforresolvedreference(_:)"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/OutOfProcessReferenceResolver/urlForResolvedReferenceIfPreviouslyResolved(_:)": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "urlForResolvedReferenceIfPreviouslyResolved"
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:9SwiftDocC22ResolvedTopicReferenceV",
-      "text" : "ResolvedTopicReference"
-    },
-    {
-      "kind" : "text",
-      "text" : ") -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10Foundation3URLV",
-      "text" : "URL"
-    },
-    {
-      "kind" : "text",
-      "text" : "?"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver\/urlForResolvedReferenceIfPreviouslyResolved(_:)",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "urlForResolvedReferenceIfPreviouslyResolved(_:)",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/outofprocessreferenceresolver\/urlforresolvedreferenceifpreviouslyresolved(_:)"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/OutOfProcessReferenceResolver/urlForResolvedSymbol(reference:)": {
-  "abstract" : [
-    {
-      "text" : "Returns the web URL for the external symbol.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "urlForResolvedSymbol"
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "reference"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:9SwiftDocC22ResolvedTopicReferenceV",
-      "text" : "ResolvedTopicReference"
-    },
-    {
-      "kind" : "text",
-      "text" : ") -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10Foundation3URLV",
-      "text" : "URL"
-    },
-    {
-      "kind" : "text",
-      "text" : "?"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/OutOfProcessReferenceResolver\/urlForResolvedSymbol(reference:)",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "urlForResolvedSymbol(reference:)",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/outofprocessreferenceresolver\/urlforresolvedsymbol(reference:)"
+  "url" : "\/documentation\/swiftdocc\/outofprocessreferenceresolver\/resolve(_:)"
 }
 }
 }

@@ -9,7 +9,6 @@
     "paths" : [
       [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/PersistingDocumentation",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RemoveUnusedReferencesTransformation"
       ]
     ]
@@ -36,6 +35,10 @@
         "name" : "SwiftDocC"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "RemoveUnusedReferencesTransformation.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Converter\/Rewriter\/RemoveUnusedReferencesTransformation.swift#L14"
+    },
     "role" : "symbol",
     "roleHeading" : "Initializer",
     "symbolKind" : "init",
@@ -49,7 +52,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -68,7 +71,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -95,26 +98,13 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
   "title" : "SwiftDocC",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/PersistingDocumentation": {
-  "abstract" : [
-    {
-      "text" : "Save compiled documentation to disk.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/PersistingDocumentation",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Persisting Documentation",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/persistingdocumentation"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/RemoveUnusedReferencesTransformation": {
   "abstract" : [
@@ -123,6 +113,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -157,6 +148,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",

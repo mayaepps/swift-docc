@@ -19,7 +19,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:9SwiftDocC19DocumentationServerC20synchronizationQueueSo17OS_dispatch_queueCvp",
+    "externalID" : "s:9SwiftDocC19DocumentationServerC20synchronizationQueue8Dispatch0gF0Cvp",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -39,7 +39,7 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "c:objc(cs)OS_dispatch_queue",
+        "preciseIdentifier" : "s:8Dispatch0A5QueueC",
         "text" : "DispatchQueue"
       }
     ],
@@ -48,6 +48,10 @@
         "name" : "SwiftDocC"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "DocumentationServer.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/DocumentationService\/Models\/DocumentationServer.swift#L26"
+    },
     "role" : "symbol",
     "roleHeading" : "Instance Property",
     "symbolKind" : "property",
@@ -61,7 +65,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -82,7 +86,7 @@
             },
             {
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "c:objc(cs)OS_dispatch_queue",
+              "preciseIdentifier" : "s:8Dispatch0A5QueueC",
               "text" : "DispatchQueue"
             }
           ]
@@ -113,7 +117,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -140,6 +144,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -154,6 +159,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -188,6 +194,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -207,7 +214,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "c:objc(cs)OS_dispatch_queue",
+      "preciseIdentifier" : "s:8Dispatch0A5QueueC",
       "text" : "DispatchQueue"
     }
   ],

@@ -8,8 +8,7 @@
   "hierarchy" : {
     "paths" : [
       [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Symbol"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC"
       ]
     ]
   },
@@ -45,6 +44,10 @@
         "text" : "DocumentationDataVariants"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "DocumentationDataVariants.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Semantics\/Symbol\/DocumentationDataVariants.swift#L19"
+    },
     "role" : "symbol",
     "roleHeading" : "Structure",
     "symbolKind" : "struct",
@@ -58,7 +61,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -131,7 +134,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -139,6 +142,7 @@
   ],
   "seeAlsoSections" : [
     {
+      "anchor" : "Variants",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationDataVariantsTrait"
@@ -148,37 +152,40 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Initializers",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationDataVariants\/init(values:defaultVariantValue:)"
       ],
       "title" : "Initializers"
     },
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationDataVariants\/allValues",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationDataVariants\/hasAnyValue",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationDataVariants\/hasAnyVariants",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationDataVariants\/isEmpty"
       ],
       "title" : "Instance Properties"
     },
     {
+      "anchor" : "Instance-Methods",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationDataVariants\/hasVariant(for:)"
       ],
       "title" : "Instance Methods"
     },
     {
+      "anchor" : "Subscripts",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationDataVariants\/subscript(_:)",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationDataVariants\/subscript(_:default:)"
       ],
       "title" : "Subscripts"
-    },
-    {
-      "generated" : true,
-      "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationDataVariants\/Equatable-Implementations"
-      ],
-      "title" : "Default Implementations"
     }
   ],
   "variants" : [
@@ -207,6 +214,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -221,6 +229,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -248,17 +257,6 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/documentationdatavariants"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/DocumentationDataVariants/Equatable-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationDataVariants\/Equatable-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Equatable Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/documentationdatavariants\/equatable-implementations"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/DocumentationDataVariants/allValues": {
   "abstract" : [
     {
@@ -266,6 +264,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -302,6 +301,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC25DocumentationDataVariantsV7Variantxmfp",
       "text" : "Variant"
     },
     {
@@ -316,6 +316,82 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/documentationdatavariants\/allvalues"
 },
+"doc://SwiftDocC/documentation/SwiftDocC/DocumentationDataVariants/hasAnyValue": {
+  "abstract" : [
+    {
+      "text" : "Whether this variant collection has a default value or any variant set.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "hasAnyValue"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationDataVariants\/hasAnyValue",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "hasAnyValue",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/documentationdatavariants\/hasanyvalue"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/DocumentationDataVariants/hasAnyVariants": {
+  "abstract" : [
+    {
+      "text" : "Whether there are any variants for this piece of information about the documentation node",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "hasAnyVariants"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationDataVariants\/hasAnyVariants",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "hasAnyVariants",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/documentationdatavariants\/hasanyvariants"
+},
 "doc://SwiftDocC/documentation/SwiftDocC/DocumentationDataVariants/hasVariant(for:)": {
   "abstract" : [
     {
@@ -323,6 +399,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -377,6 +454,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -405,6 +483,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC25DocumentationDataVariantsV7Variantxmfp",
       "text" : "Variant"
     },
     {
@@ -421,6 +500,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC25DocumentationDataVariantsV7Variantxmfp",
       "text" : "Variant"
     },
     {
@@ -442,6 +522,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -479,6 +560,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -499,6 +581,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC25DocumentationDataVariantsV7Variantxmfp",
       "text" : "Variant"
     },
     {
@@ -528,6 +611,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -556,6 +640,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC25DocumentationDataVariantsV7Variantxmfp",
       "text" : "Variant"
     },
     {
@@ -564,6 +649,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC25DocumentationDataVariantsV7Variantxmfp",
       "text" : "Variant"
     }
   ],
@@ -581,6 +667,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -607,40 +694,6 @@
   "title" : "DocumentationDataVariantsTrait",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/documentationdatavariantstrait"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/Symbol": {
-  "abstract" : [
-    {
-      "text" : "A programming symbol semantic type.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "class"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "Symbol"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Symbol",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "Symbol"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "Symbol",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/symbol"
 }
 }
 }

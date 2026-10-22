@@ -9,7 +9,6 @@
     "paths" : [
       [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationWorkspaceGroup",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DataTraitCollection"
       ]
     ]
@@ -53,6 +52,10 @@
         "name" : "SwiftDocC"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "DataAssetManager.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Infrastructure\/Bundle%20Assets\/DataAssetManager.swift#L262"
+    },
     "role" : "symbol",
     "roleHeading" : "Initializer",
     "symbolKind" : "init",
@@ -66,7 +69,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -111,7 +114,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -138,6 +141,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -152,6 +156,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -186,6 +191,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -219,20 +225,6 @@
   "title" : "init(traitsFrom:)",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/datatraitcollection\/init(traitsfrom:)"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/DocumentationWorkspaceGroup": {
-  "abstract" : [
-    {
-      "text" : "Learn how to explore a documentation workspace and discover bundles.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationWorkspaceGroup",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Bundle Discovery",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/documentationworkspacegroup"
 }
 }
 }

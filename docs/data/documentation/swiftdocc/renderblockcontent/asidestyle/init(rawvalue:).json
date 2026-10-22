@@ -1,15 +1,7 @@
 {
   "abstract" : [
     {
-      "text" : "Inherited from ",
-      "type" : "text"
-    },
-    {
-      "code" : "RawRepresentable.init(rawValue:)",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "Creates an aside style.",
       "type" : "text"
     }
   ],
@@ -17,7 +9,6 @@
     "paths" : [
       [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderingModel",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderBlockContent",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderBlockContent\/AsideStyle"
       ]
@@ -29,7 +20,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:9SwiftDocC18RenderBlockContentO10AsideStyleO8rawValueAESgSS_tcfc",
+    "externalID" : "s:9SwiftDocC18RenderBlockContentO10AsideStyleV8rawValueAESS_tcfc",
     "fragments" : [
       {
         "kind" : "identifier",
@@ -37,7 +28,7 @@
       },
       {
         "kind" : "text",
-        "text" : "?("
+        "text" : "("
       },
       {
         "kind" : "externalParam",
@@ -62,6 +53,10 @@
         "name" : "SwiftDocC"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "RenderBlockContent.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Model\/Rendering\/Content\/RenderBlockContent.swift#L629"
+    },
     "role" : "symbol",
     "roleHeading" : "Initializer",
     "symbolKind" : "init",
@@ -75,7 +70,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -84,7 +79,7 @@
             },
             {
               "kind" : "text",
-              "text" : "?("
+              "text" : "("
             },
             {
               "kind" : "externalParam",
@@ -107,11 +102,90 @@
         }
       ],
       "kind" : "declarations"
+    },
+    {
+      "kind" : "parameters",
+      "parameters" : [
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "The underlying raw string value.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "rawValue"
+        }
+      ]
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The new aside style’s underlying raw string value will be lowercased.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "If the lowercased raw value doesn’t match one of the aside styles supported",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "by DocC Render (one of note, tip, experiment, important, or warning) the",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "new aside style’s raw value will be set to note.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        }
+      ],
+      "kind" : "content"
     }
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -138,6 +212,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -152,6 +227,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -182,14 +258,15 @@
 "doc://SwiftDocC/documentation/SwiftDocC/RenderBlockContent/AsideStyle": {
   "abstract" : [
     {
-      "text" : "An aside style.",
+      "text" : "A type the describes an aside style.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "enum"
+      "text" : "struct"
     },
     {
       "kind" : "text",
@@ -215,8 +292,12 @@
 },
 "doc://SwiftDocC/documentation/SwiftDocC/RenderBlockContent/AsideStyle/init(rawValue:)": {
   "abstract" : [
-
+    {
+      "text" : "Creates an aside style.",
+      "type" : "text"
+    }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -224,7 +305,7 @@
     },
     {
       "kind" : "text",
-      "text" : "?("
+      "text" : "("
     },
     {
       "kind" : "externalParam",
@@ -250,20 +331,6 @@
   "title" : "init(rawValue:)",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/renderblockcontent\/asidestyle\/init(rawvalue:)"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/RenderingModel": {
-  "abstract" : [
-    {
-      "text" : "Convert documentation nodes into render nodes and save them to disk.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderingModel",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Rendering Model",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/renderingmodel"
 }
 }
 }

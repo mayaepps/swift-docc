@@ -17,8 +17,6 @@
     "paths" : [
       [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderingModel",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialsRendering",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/LineHighlighter",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/LineHighlighter\/Highlight"
       ]
@@ -63,6 +61,10 @@
         "name" : "SwiftDocC"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "LineHighlighter.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Model\/Rendering\/Tutorial\/LineHighlighter.swift#L55"
+    },
     "role" : "symbol",
     "roleHeading" : "Instance Property",
     "symbolKind" : "property",
@@ -76,7 +78,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -112,7 +114,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -139,6 +141,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -162,6 +165,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -227,6 +231,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -261,6 +266,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -303,6 +309,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -337,20 +344,6 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/linehighlighter\/highlight\/length"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/RenderingModel": {
-  "abstract" : [
-    {
-      "text" : "Convert documentation nodes into render nodes and save them to disk.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderingModel",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Rendering Model",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/renderingmodel"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/Step": {
   "abstract" : [
     {
@@ -372,6 +365,7 @@
       "type" : "reference"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -415,6 +409,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -441,20 +436,6 @@
   "title" : "TutorialSection",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/tutorialsection"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/TutorialsRendering": {
-  "abstract" : [
-    {
-      "text" : "Render tutorial-based, interactive, learning experiences.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialsRendering",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Tutorials Rendering",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/tutorialsrendering"
 }
 }
 }

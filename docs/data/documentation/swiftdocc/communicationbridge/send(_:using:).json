@@ -9,7 +9,6 @@
     "paths" : [
       [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Communication",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/CommunicationBridge"
       ]
     ]
@@ -57,14 +56,7 @@
       },
       {
         "kind" : "typeIdentifier",
-        "text" : "Self"
-      },
-      {
-        "kind" : "text",
-        "text" : "."
-      },
-      {
-        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:9SwiftDocC19CommunicationBridgeP11SendHandlerQa",
         "text" : "SendHandler"
       },
       {
@@ -81,6 +73,10 @@
         "name" : "SwiftDocC"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "CommunicationBridge.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Infrastructure\/Communication\/CommunicationBridge.swift#L25"
+    },
     "required" : true,
     "role" : "symbol",
     "roleHeading" : "Instance Method",
@@ -95,7 +91,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -157,15 +153,9 @@
               "text" : ": "
             },
             {
+              "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/CommunicationBridge\/SendHandler",
               "kind" : "typeIdentifier",
-              "text" : "Self"
-            },
-            {
-              "kind" : "text",
-              "text" : "."
-            },
-            {
-              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:9SwiftDocC19CommunicationBridgeP11SendHandlerQa",
               "text" : "SendHandler"
             },
             {
@@ -252,7 +242,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -279,26 +269,13 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
   "title" : "SwiftDocC",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/Communication": {
-  "abstract" : [
-    {
-      "text" : "Offer native integration of DocC in your IDE.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Communication",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Communication Bridge",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/communication"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/CommunicationBridge": {
   "abstract" : [
@@ -307,6 +284,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -334,6 +312,36 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/communicationbridge"
 },
+"doc://SwiftDocC/documentation/SwiftDocC/CommunicationBridge/SendHandler": {
+  "abstract" : [
+    {
+      "text" : "Handler for sending messages.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "associatedtype"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SendHandler"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/CommunicationBridge\/SendHandler",
+  "kind" : "symbol",
+  "required" : true,
+  "role" : "symbol",
+  "title" : "SendHandler",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/communicationbridge\/sendhandler"
+},
 "doc://SwiftDocC/documentation/SwiftDocC/CommunicationBridge/send(_:using:)": {
   "abstract" : [
     {
@@ -341,6 +349,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -377,14 +386,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "text" : "Self"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC19CommunicationBridgeP11SendHandlerQa",
       "text" : "SendHandler"
     },
     {
@@ -411,6 +413,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",

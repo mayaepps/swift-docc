@@ -17,17 +17,7 @@
     "paths" : [
       [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderingModel",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderHierarchy",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderTutorialsHierarchy",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderTutorialsHierarchy\/Decodable-Implementations"
-      ],
-      [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderingModel",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialsRendering",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderTutorialsHierarchy",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderTutorialsHierarchy\/Decodable-Implementations"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderTutorialsHierarchy"
       ]
     ]
   },
@@ -57,6 +47,14 @@
         "text" : ": "
       },
       {
+        "kind" : "keyword",
+        "text" : "any"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
         "kind" : "typeIdentifier",
         "preciseIdentifier" : "s:s7DecoderP",
         "text" : "Decoder"
@@ -75,6 +73,10 @@
         "name" : "SwiftDocC"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "RenderTutorialsHierarchy.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Model\/Rendering\/Navigation%20Tree\/RenderTutorialsHierarchy.swift#L42"
+    },
     "role" : "symbol",
     "roleHeading" : "Initializer",
     "symbolKind" : "init",
@@ -88,7 +90,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -116,6 +118,14 @@
               "text" : ": "
             },
             {
+              "kind" : "keyword",
+              "text" : "any"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
               "kind" : "typeIdentifier",
               "preciseIdentifier" : "s:s7DecoderP",
               "text" : "Decoder"
@@ -136,7 +146,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -163,46 +173,13 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
   "title" : "SwiftDocC",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/RenderHierarchy": {
-  "abstract" : [
-    {
-      "text" : "Hierarchical information for a render node.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "enum"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "RenderHierarchy"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderHierarchy",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "RenderHierarchy"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "RenderHierarchy",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/renderhierarchy"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/RenderTutorialsHierarchy": {
   "abstract" : [
@@ -211,6 +188,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -238,21 +216,11 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/rendertutorialshierarchy"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/RenderTutorialsHierarchy/Decodable-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderTutorialsHierarchy\/Decodable-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Decodable Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/rendertutorialshierarchy\/decodable-implementations"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/RenderTutorialsHierarchy/init(from:)": {
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -269,6 +237,14 @@
     {
       "kind" : "text",
       "text" : ": "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -290,34 +266,6 @@
   "title" : "init(from:)",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/rendertutorialshierarchy\/init(from:)"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/RenderingModel": {
-  "abstract" : [
-    {
-      "text" : "Convert documentation nodes into render nodes and save them to disk.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderingModel",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Rendering Model",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/renderingmodel"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/TutorialsRendering": {
-  "abstract" : [
-    {
-      "text" : "Render tutorial-based, interactive, learning experiences.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialsRendering",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Tutorials Rendering",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/tutorialsrendering"
 }
 }
 }

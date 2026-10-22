@@ -9,7 +9,6 @@
     "paths" : [
       [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/StaticAnalysis",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/MissingAbstract"
       ]
     ]
@@ -20,7 +19,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:9SwiftDocC15MissingAbstractV10sourceFileAC10Foundation3URLVSg_tcfc",
+    "externalID" : "s:9SwiftDocC15MissingAbstractV10sourceFileAC20FoundationEssentials3URLVSg_tcfc",
     "fragments" : [
       {
         "kind" : "identifier",
@@ -40,7 +39,7 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:10Foundation3URLV",
+        "preciseIdentifier" : "s:20FoundationEssentials3URLV",
         "text" : "URL"
       },
       {
@@ -53,6 +52,10 @@
         "name" : "SwiftDocC"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "MissingAbstract.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Checker\/Checkers\/MissingAbstract.swift#L27"
+    },
     "role" : "symbol",
     "roleHeading" : "Initializer",
     "symbolKind" : "init",
@@ -66,7 +69,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -87,7 +90,7 @@
             },
             {
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:10Foundation3URLV",
+              "preciseIdentifier" : "s:20FoundationEssentials3URLV",
               "text" : "URL"
             },
             {
@@ -107,20 +110,6 @@
             {
               "inlineContent" : [
                 {
-                  "text" : "The documentation node that the checker checks.",
-                  "type" : "text"
-                }
-              ],
-              "type" : "paragraph"
-            }
-          ],
-          "name" : "document"
-        },
-        {
-          "content" : [
-            {
-              "inlineContent" : [
-                {
                   "text" : "The URL to the documentation file that the checker checks.",
                   "type" : "text"
                 }
@@ -135,7 +124,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -162,6 +151,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -176,6 +166,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -210,6 +201,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -229,7 +221,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10Foundation3URLV",
+      "preciseIdentifier" : "s:20FoundationEssentials3URLV",
       "text" : "URL"
     },
     {
@@ -243,20 +235,6 @@
   "title" : "init(sourceFile:)",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/missingabstract\/init(sourcefile:)"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/StaticAnalysis": {
-  "abstract" : [
-    {
-      "text" : "Run static analysis checks on markup files.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/StaticAnalysis",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Static Analysis",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/staticanalysis"
 }
 }
 }

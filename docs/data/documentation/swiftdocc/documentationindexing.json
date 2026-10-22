@@ -24,6 +24,7 @@
       }
     ],
     "role" : "collectionGroup",
+    "roleHeading" : "API Collection",
     "title" : "Documentation Indexing"
   },
   "primaryContentSections" : [
@@ -59,7 +60,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -67,6 +68,7 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Search-Index",
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Indexable",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TextIndexing",
@@ -78,6 +80,7 @@
       "title" : "Search Index"
     },
     {
+      "anchor" : "Navigation-Index",
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NavigatorIndex",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NavigatorTree",
@@ -87,10 +90,10 @@
       "title" : "Navigation Index"
     },
     {
+      "anchor" : "Navigation-Metadata",
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/AvailabilityIndex",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNodeDataExtractor",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNodeProvider",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Serializable",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/AnyCodable",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/AnyMetadata",
@@ -123,6 +126,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -137,6 +141,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -171,6 +176,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -205,6 +211,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -255,6 +262,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -289,6 +297,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -320,6 +329,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -363,6 +373,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -397,6 +408,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -431,6 +443,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -497,6 +510,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -539,6 +553,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -581,6 +596,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -612,6 +628,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -646,6 +663,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -680,6 +698,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -714,6 +733,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -741,40 +761,6 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/rendernodedataextractor"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/RenderNodeProvider": {
-  "abstract" : [
-    {
-      "text" : "A protocol to provide data to be indexed.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "protocol"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "RenderNodeProvider"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNodeProvider",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "RenderNodeProvider"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "RenderNodeProvider",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/rendernodeprovider"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/RenderRelationshipsGroup": {
   "abstract" : [
     {
@@ -790,6 +776,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -821,6 +808,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -855,6 +843,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -889,6 +878,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",

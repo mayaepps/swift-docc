@@ -5,11 +5,21 @@
       "type" : "text"
     }
   ],
+  "deprecationSummary" : [
+    {
+      "inlineContent" : [
+        {
+          "text" : "Use 'Diagnostic' instead. This deprecated API will be removed after 6.5 is released.",
+          "type" : "text"
+        }
+      ],
+      "type" : "paragraph"
+    }
+  ],
   "hierarchy" : {
     "paths" : [
       [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/EmittingDiagnostics",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Problem"
       ]
     ]
@@ -53,6 +63,10 @@
         "name" : "SwiftDocC"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "Problem.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Infrastructure\/Diagnostics\/Problem.swift#L22"
+    },
     "role" : "symbol",
     "roleHeading" : "Instance Property",
     "symbolKind" : "property",
@@ -66,7 +80,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -93,7 +107,23 @@
             },
             {
               "kind" : "text",
-              "text" : "]"
+              "text" : "] { "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "get"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "set"
+            },
+            {
+              "kind" : "text",
+              "text" : " }"
             }
           ]
         }
@@ -103,7 +133,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -130,26 +160,13 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
   "title" : "SwiftDocC",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/EmittingDiagnostics": {
-  "abstract" : [
-    {
-      "text" : "Vend warnings and errors as part of an operation’s result.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/EmittingDiagnostics",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Emitting Diagnostics",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/emittingdiagnostics"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/Problem": {
   "abstract" : [
@@ -158,6 +175,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -192,6 +210,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -229,18 +248,11 @@
 "doc://SwiftDocC/documentation/SwiftDocC/Solution": {
   "abstract" : [
     {
-      "text" : "A solution to a ",
-      "type" : "text"
-    },
-    {
-      "code" : "Problem",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "A possible solution to a problem or issue that’s reported about in a diagnostic.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",

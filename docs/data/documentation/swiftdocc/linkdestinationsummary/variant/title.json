@@ -17,7 +17,6 @@
     "paths" : [
       [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/PersistingDocumentation",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/LinkDestinationSummary",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/LinkDestinationSummary\/Variant"
       ]
@@ -29,7 +28,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:9SwiftDocC22LinkDestinationSummaryV7VariantV5titleSSSgSgvp",
+    "externalID" : "s:9SwiftDocC22LinkDestinationSummaryV7VariantV5titleSSSgvp",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -49,8 +48,8 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:Sq",
-        "text" : "Optional"
+        "preciseIdentifier" : "s:9SwiftDocC22LinkDestinationSummaryV7VariantV0F5Valuea",
+        "text" : "VariantValue"
       },
       {
         "kind" : "text",
@@ -63,7 +62,7 @@
       },
       {
         "kind" : "text",
-        "text" : "?>"
+        "text" : ">"
       }
     ],
     "modules" : [
@@ -71,6 +70,10 @@
         "name" : "SwiftDocC"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "LinkDestinationSummary.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/LinkTargets\/LinkDestinationSummary.swift#L184"
+    },
     "role" : "symbol",
     "roleHeading" : "Instance Property",
     "symbolKind" : "property",
@@ -84,7 +87,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -104,9 +107,10 @@
               "text" : ": "
             },
             {
+              "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/LinkDestinationSummary\/Variant\/VariantValue",
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:Sq",
-              "text" : "Optional"
+              "preciseIdentifier" : "s:9SwiftDocC22LinkDestinationSummaryV7VariantV0F5Valuea",
+              "text" : "VariantValue"
             },
             {
               "kind" : "text",
@@ -119,7 +123,7 @@
             },
             {
               "kind" : "text",
-              "text" : "?>"
+              "text" : ">"
             }
           ]
         }
@@ -129,7 +133,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -156,6 +160,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -166,10 +171,11 @@
 "doc://SwiftDocC/documentation/SwiftDocC/LinkDestinationSummary": {
   "abstract" : [
     {
-      "text" : "A summary of an element that you can link to from outside the documentation bundle.",
+      "text" : "A summary of an element that you can link to from outside the local documentation.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -204,6 +210,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -231,6 +238,41 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/linkdestinationsummary\/variant"
 },
+"doc://SwiftDocC/documentation/SwiftDocC/LinkDestinationSummary/Variant/VariantValue": {
+  "abstract" : [
+    {
+      "text" : "A wrapper for variant values that can either be specified, meaning the variant has a custom value, or not, meaning the variant has the same value as the summarized element.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "typealias"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "VariantValue"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/LinkDestinationSummary\/Variant\/VariantValue",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "VariantValue"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "LinkDestinationSummary.Variant.VariantValue",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/linkdestinationsummary\/variant\/variantvalue"
+},
 "doc://SwiftDocC/documentation/SwiftDocC/LinkDestinationSummary/Variant/title": {
   "abstract" : [
     {
@@ -246,6 +288,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -265,8 +308,8 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:Sq",
-      "text" : "Optional"
+      "preciseIdentifier" : "s:9SwiftDocC22LinkDestinationSummaryV7VariantV0F5Valuea",
+      "text" : "VariantValue"
     },
     {
       "kind" : "text",
@@ -279,7 +322,7 @@
     },
     {
       "kind" : "text",
-      "text" : "?>"
+      "text" : ">"
     }
   ],
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/LinkDestinationSummary\/Variant\/title",
@@ -288,20 +331,6 @@
   "title" : "title",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/linkdestinationsummary\/variant\/title"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/PersistingDocumentation": {
-  "abstract" : [
-    {
-      "text" : "Save compiled documentation to disk.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/PersistingDocumentation",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Persisting Documentation",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/persistingdocumentation"
 }
 }
 }

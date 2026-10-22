@@ -9,7 +9,6 @@
     "paths" : [
       [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/EmittingDiagnostics",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DiagnosticEngine"
       ]
     ]
@@ -39,6 +38,14 @@
         "text" : "("
       },
       {
+        "kind" : "keyword",
+        "text" : "any"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
         "kind" : "typeIdentifier",
         "preciseIdentifier" : "s:9SwiftDocC18DiagnosticConsumerP",
         "text" : "DiagnosticConsumer"
@@ -53,6 +60,10 @@
         "name" : "SwiftDocC"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "DiagnosticEngine.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Infrastructure\/Diagnostics\/DiagnosticEngine.swift#L160"
+    },
     "role" : "symbol",
     "roleHeading" : "Instance Method",
     "symbolKind" : "method",
@@ -66,7 +77,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -100,6 +111,14 @@
             {
               "kind" : "text",
               "text" : ": "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "any"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
             },
             {
               "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DiagnosticConsumer",
@@ -138,7 +157,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -165,6 +184,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -179,6 +199,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -213,6 +234,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -247,6 +269,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -265,6 +288,14 @@
       "text" : "("
     },
     {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
       "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:9SwiftDocC18DiagnosticConsumerP",
       "text" : "DiagnosticConsumer"
@@ -280,20 +311,6 @@
   "title" : "add(_:)",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/diagnosticengine\/add(_:)"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/EmittingDiagnostics": {
-  "abstract" : [
-    {
-      "text" : "Vend warnings and errors as part of an operation’s result.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/EmittingDiagnostics",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Emitting Diagnostics",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/emittingdiagnostics"
 }
 }
 }

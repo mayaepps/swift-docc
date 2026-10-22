@@ -8,9 +8,7 @@
   "hierarchy" : {
     "paths" : [
       [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationContextGroup",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TopicReference"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC"
       ]
     ]
   },
@@ -46,6 +44,10 @@
         "text" : "TopicReferenceResolutionResult"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "Identifier.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Model\/Identifier.swift#L55"
+    },
     "role" : "symbol",
     "roleHeading" : "Enumeration",
     "symbolKind" : "enum",
@@ -59,7 +61,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -94,7 +96,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -102,6 +104,7 @@
   ],
   "seeAlsoSections" : [
     {
+      "anchor" : "Topic-References",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/UnresolvedTopicReference",
@@ -113,24 +116,21 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Enumeration-Cases",
+      "generated" : true,
       "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TopicReferenceResolutionResult\/failure(_:errorMessage:)",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TopicReferenceResolutionResult\/failure(_:_:)",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TopicReferenceResolutionResult\/success(_:)"
       ],
       "title" : "Enumeration Cases"
     },
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TopicReferenceResolutionResult\/description"
       ],
       "title" : "Instance Properties"
-    },
-    {
-      "generated" : true,
-      "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TopicReferenceResolutionResult\/Equatable-Implementations"
-      ],
-      "title" : "Default Implementations"
     }
   ],
   "variants" : [
@@ -164,26 +164,13 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
   "title" : "SwiftDocC",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/DocumentationContextGroup": {
-  "abstract" : [
-    {
-      "text" : "Build and query the in-memory documentation model.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationContextGroup",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Documentation Context",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/documentationcontextgroup"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/ResolvedTopicReference": {
   "abstract" : [
@@ -192,6 +179,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -221,15 +209,13 @@
 },
 "doc://SwiftDocC/documentation/SwiftDocC/SourceLanguage": {
   "abstract" : [
-    {
-      "text" : "A programming language.",
-      "type" : "text"
-    }
+
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "struct"
+      "text" : "typealias"
     },
     {
       "kind" : "text",
@@ -253,40 +239,6 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/sourcelanguage"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/TopicReference": {
-  "abstract" : [
-    {
-      "text" : "A resolved or unresolved reference to a piece of documentation.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "enum"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "TopicReference"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TopicReference",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "TopicReference"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "TopicReference",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/topicreference"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/TopicReferenceResolutionResult": {
   "abstract" : [
     {
@@ -294,6 +246,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -321,21 +274,11 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/topicreferenceresolutionresult"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/TopicReferenceResolutionResult/Equatable-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TopicReferenceResolutionResult\/Equatable-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Equatable Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/topicreferenceresolutionresult\/equatable-implementations"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/TopicReferenceResolutionResult/description": {
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -366,13 +309,14 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/topicreferenceresolutionresult\/description"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/TopicReferenceResolutionResult/failure(_:errorMessage:)": {
+"doc://SwiftDocC/documentation/SwiftDocC/TopicReferenceResolutionResult/failure(_:_:)": {
   "abstract" : [
     {
       "text" : "A topic reference that has failed to resolve to known documentation and an error message with information about why the reference failed to resolve.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -400,29 +344,21 @@
       "text" : ", "
     },
     {
-      "kind" : "externalParam",
-      "text" : "errorMessage"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:SS",
-      "text" : "String"
+      "preciseIdentifier" : "s:9SwiftDocC33TopicReferenceResolutionErrorInfoV",
+      "text" : "TopicReferenceResolutionErrorInfo"
     },
     {
       "kind" : "text",
       "text" : ")"
     }
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TopicReferenceResolutionResult\/failure(_:errorMessage:)",
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TopicReferenceResolutionResult\/failure(_:_:)",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "TopicReferenceResolutionResult.failure(_:errorMessage:)",
+  "title" : "TopicReferenceResolutionResult.failure(_:_:)",
   "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/topicreferenceresolutionresult\/failure(_:errormessage:)"
+  "url" : "\/documentation\/swiftdocc\/topicreferenceresolutionresult\/failure(_:_:)"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/TopicReferenceResolutionResult/success(_:)": {
   "abstract" : [
@@ -431,6 +367,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -472,6 +409,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",

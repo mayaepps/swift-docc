@@ -9,7 +9,6 @@
     "paths" : [
       [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationContextGroup",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationContext"
       ]
     ]
@@ -46,6 +45,10 @@
         "text" : "AssetType"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "DocumentationContext.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Infrastructure\/DocumentationContext.swift#L1688"
+    },
     "role" : "symbol",
     "roleHeading" : "Enumeration",
     "symbolKind" : "enum",
@@ -59,7 +62,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -83,6 +86,7 @@
   "relationshipsSections" : [
     {
       "identifiers" : [
+        "doc:\/\/SwiftDocC\/s23CustomStringConvertibleP",
         "doc:\/\/SwiftDocC\/SQ",
         "doc:\/\/SwiftDocC\/SH"
       ],
@@ -93,7 +97,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -101,6 +105,8 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Enumeration-Cases",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationContext\/AssetType\/image",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationContext\/AssetType\/video"
@@ -108,11 +114,12 @@
       "title" : "Enumeration Cases"
     },
     {
+      "anchor" : "Instance-Properties",
       "generated" : true,
       "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationContext\/AssetType\/Equatable-Implementations"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationContext\/AssetType\/description"
       ],
-      "title" : "Default Implementations"
+      "title" : "Instance Properties"
     }
   ],
   "variants" : [
@@ -146,6 +153,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -160,6 +168,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -194,6 +203,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -221,16 +231,40 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/documentationcontext\/assettype"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/DocumentationContext/AssetType/Equatable-Implementations": {
+"doc://SwiftDocC/documentation/SwiftDocC/DocumentationContext/AssetType/description": {
   "abstract" : [
 
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationContext\/AssetType\/Equatable-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Equatable Implementations",
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "description"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationContext\/AssetType\/description",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "description",
   "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/documentationcontext\/assettype\/equatable-implementations"
+  "url" : "\/documentation\/swiftdocc\/documentationcontext\/assettype\/description"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/DocumentationContext/AssetType/image": {
   "abstract" : [
@@ -239,6 +273,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -267,6 +302,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -288,19 +324,10 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/documentationcontext\/assettype\/video"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/DocumentationContextGroup": {
-  "abstract" : [
-    {
-      "text" : "Build and query the in-memory documentation model.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationContextGroup",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Documentation Context",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/documentationcontextgroup"
+"doc://SwiftDocC/s23CustomStringConvertibleP": {
+  "identifier" : "doc:\/\/SwiftDocC\/s23CustomStringConvertibleP",
+  "title" : "Swift.CustomStringConvertible",
+  "type" : "unresolvable"
 }
 }
 }

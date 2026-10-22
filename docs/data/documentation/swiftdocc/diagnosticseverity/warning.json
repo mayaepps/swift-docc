@@ -9,7 +9,6 @@
     "paths" : [
       [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/EmittingDiagnostics",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DiagnosticSeverity"
       ]
     ]
@@ -40,6 +39,10 @@
         "name" : "SwiftDocC"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "DiagnosticSeverity.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Infrastructure\/Diagnostics\/DiagnosticSeverity.swift#L29"
+    },
     "role" : "symbol",
     "roleHeading" : "Case",
     "symbolKind" : "case",
@@ -53,7 +56,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -72,6 +75,12 @@
         }
       ],
       "kind" : "declarations"
+    },
+    {
+      "kind" : "mentions",
+      "mentions" : [
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Adding-Diagnostics"
+      ]
     },
     {
       "content" : [
@@ -96,7 +105,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -123,12 +132,27 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
   "title" : "SwiftDocC",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/Adding-Diagnostics": {
+  "abstract" : [
+    {
+      "text" : "Display information to the developer about actionable issues with their documentation.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Adding-Diagnostics",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Adding user-facing diagnostics",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/adding-diagnostics"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/DiagnosticSeverity": {
   "abstract" : [
@@ -137,6 +161,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -171,6 +196,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -191,20 +217,6 @@
   "title" : "DiagnosticSeverity.warning",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/diagnosticseverity\/warning"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/EmittingDiagnostics": {
-  "abstract" : [
-    {
-      "text" : "Vend warnings and errors as part of an operation’s result.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/EmittingDiagnostics",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Emitting Diagnostics",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/emittingdiagnostics"
 }
 }
 }

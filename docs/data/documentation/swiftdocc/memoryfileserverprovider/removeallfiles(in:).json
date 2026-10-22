@@ -1,7 +1,7 @@
 {
   "abstract" : [
     {
-      "text" : "Removes all files served matching a give subpath.",
+      "text" : "Removes all files served by the server matching a given subpath.",
       "type" : "text"
     }
   ],
@@ -9,7 +9,6 @@
     "paths" : [
       [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Communication",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/MemoryFileServerProvider"
       ]
     ]
@@ -61,6 +60,10 @@
         "name" : "SwiftDocC"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "FileServer.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Servers\/FileServer.swift#L283"
+    },
     "role" : "symbol",
     "roleHeading" : "Instance Method",
     "symbolKind" : "method",
@@ -74,7 +77,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -103,7 +106,7 @@
             },
             {
               "kind" : "internalParam",
-              "text" : "subPath"
+              "text" : "directory"
             },
             {
               "kind" : "text",
@@ -131,21 +134,21 @@
             {
               "inlineContent" : [
                 {
-                  "text" : "The path used to match the files.",
+                  "text" : "The path to a directory to remove",
                   "type" : "text"
                 }
               ],
               "type" : "paragraph"
             }
           ],
-          "name" : "path"
+          "name" : "directory"
         }
       ]
     }
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -172,6 +175,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -179,24 +183,11 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/Communication": {
-  "abstract" : [
-    {
-      "text" : "Offer native integration of DocC in your IDE.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Communication",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Communication Bridge",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/communication"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/MemoryFileServerProvider": {
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -227,10 +218,11 @@
 "doc://SwiftDocC/documentation/SwiftDocC/MemoryFileServerProvider/removeAllFiles(in:)": {
   "abstract" : [
     {
-      "text" : "Removes all files served matching a give subpath.",
+      "text" : "Removes all files served by the server matching a given subpath.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",

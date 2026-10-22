@@ -24,11 +24,12 @@
       }
     ],
     "role" : "collectionGroup",
+    "roleHeading" : "API Collection",
     "title" : "Static Analysis"
   },
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -36,9 +37,11 @@
   ],
   "seeAlsoSections" : [
     {
+      "anchor" : "Diagnostics-and-Analysis",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/EmittingDiagnostics",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Adding-Diagnostics",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Benchmarking"
       ],
       "title" : "Diagnostics and Analysis"
@@ -46,6 +49,7 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Generic-Checks",
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Checker",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/AnyChecker",
@@ -54,15 +58,14 @@
       "title" : "Generic Checks"
     },
     {
+      "anchor" : "Predefined-Checks",
       "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/AbstractContainsFormattedTextOnly",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DuplicateTopicsSections",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/InvalidAdditionalTitle",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/MissingAbstract",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NonInclusiveLanguageChecker",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NonOverviewHeadingChecker",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SeeAlsoInTopicsHeadingChecker",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TopicsSectionWithoutSubheading"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SeeAlsoInTopicsHeadingChecker"
       ],
       "title" : "Predefined Checks"
     }
@@ -88,6 +91,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -95,39 +99,19 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/AbstractContainsFormattedTextOnly": {
+"doc://SwiftDocC/documentation/SwiftDocC/Adding-Diagnostics": {
   "abstract" : [
     {
-      "text" : "A document’s abstract may only contain formatted text. Images and links are not allowed.",
+      "text" : "Display information to the developer about actionable issues with their documentation.",
       "type" : "text"
     }
   ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "struct"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "AbstractContainsFormattedTextOnly"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/AbstractContainsFormattedTextOnly",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "AbstractContainsFormattedTextOnly"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "AbstractContainsFormattedTextOnly",
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Adding-Diagnostics",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Adding user-facing diagnostics",
   "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/abstractcontainsformattedtextonly"
+  "url" : "\/documentation\/swiftdocc\/adding-diagnostics"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/AnyChecker": {
   "abstract" : [
@@ -144,6 +128,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -192,6 +177,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -234,6 +220,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -264,18 +251,11 @@
 "doc://SwiftDocC/documentation/SwiftDocC/DuplicateTopicsSections": {
   "abstract" : [
     {
-      "text" : "A ",
-      "type" : "text"
-    },
-    {
-      "code" : "Document",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " may only have one level-2 “Topics” heading at the top level, since it serves as structured data for a documentation bundle’s hierarchy.",
+      "text" : "A checker that warns about multiple “Topics” sections.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -320,10 +300,11 @@
 "doc://SwiftDocC/documentation/SwiftDocC/InvalidAdditionalTitle": {
   "abstract" : [
     {
-      "text" : "A document should have a single title, i.e. a single first-level heading.",
+      "text" : "A checker that warns about additional first-level headings.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -358,6 +339,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -392,6 +374,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -423,6 +406,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -454,6 +438,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -480,40 +465,6 @@
   "title" : "SeeAlsoInTopicsHeadingChecker",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/seealsointopicsheadingchecker"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/TopicsSectionWithoutSubheading": {
-  "abstract" : [
-    {
-      "text" : "A Topics section  should have at least one subheading.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "struct"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "TopicsSectionWithoutSubheading"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TopicsSectionWithoutSubheading",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "TopicsSectionWithoutSubheading"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "TopicsSectionWithoutSubheading",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/topicssectionwithoutsubheading"
 }
 }
 }

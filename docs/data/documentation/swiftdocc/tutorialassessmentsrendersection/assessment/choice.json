@@ -17,8 +17,6 @@
     "paths" : [
       [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderingModel",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialsRendering",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialAssessmentsRenderSection",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialAssessmentsRenderSection\/Assessment"
       ]
@@ -56,6 +54,10 @@
         "text" : "Choice"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "TutorialAssessmentsRenderSection.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Model\/Rendering\/Tutorial\/Sections\/TutorialAssessmentsRenderSection.swift#L46"
+    },
     "role" : "symbol",
     "roleHeading" : "Structure",
     "symbolKind" : "struct",
@@ -69,7 +71,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -95,7 +97,8 @@
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderTree",
         "doc:\/\/SwiftDocC\/Se",
-        "doc:\/\/SwiftDocC\/SE"
+        "doc:\/\/SwiftDocC\/SE",
+        "doc:\/\/SwiftDocC\/SQ"
       ],
       "kind" : "relationships",
       "title" : "Conforms To",
@@ -104,7 +107,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -112,6 +115,8 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Initializers",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialAssessmentsRenderSection\/Assessment\/Choice\/init(content:isCorrect:justification:reaction:)",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialAssessmentsRenderSection\/Assessment\/Choice\/init(from:)"
@@ -119,6 +124,8 @@
       "title" : "Initializers"
     },
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialAssessmentsRenderSection\/Assessment\/Choice\/content",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialAssessmentsRenderSection\/Assessment\/Choice\/isCorrect",
@@ -147,6 +154,11 @@
   "title" : "Swift.Encodable",
   "type" : "unresolvable"
 },
+"doc://SwiftDocC/SQ": {
+  "identifier" : "doc:\/\/SwiftDocC\/SQ",
+  "title" : "Swift.Equatable",
+  "type" : "unresolvable"
+},
 "doc://SwiftDocC/Se": {
   "identifier" : "doc:\/\/SwiftDocC\/Se",
   "title" : "Swift.Decodable",
@@ -159,6 +171,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -170,6 +183,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -197,20 +211,6 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/rendertree"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/RenderingModel": {
-  "abstract" : [
-    {
-      "text" : "Convert documentation nodes into render nodes and save them to disk.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderingModel",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Rendering Model",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/renderingmodel"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/TutorialAssessmentsRenderSection": {
   "abstract" : [
     {
@@ -218,6 +218,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -252,6 +253,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -294,6 +296,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -328,6 +331,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -369,6 +373,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -458,6 +463,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -473,7 +479,7 @@
     },
     {
       "kind" : "text",
-      "text" : ": "
+      "text" : ": any "
     },
     {
       "kind" : "typeIdentifier",
@@ -503,6 +509,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -540,6 +547,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -581,6 +589,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -614,20 +623,6 @@
   "title" : "reaction",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/tutorialassessmentsrendersection\/assessment\/choice\/reaction"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/TutorialsRendering": {
-  "abstract" : [
-    {
-      "text" : "Render tutorial-based, interactive, learning experiences.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialsRendering",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Tutorials Rendering",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/tutorialsrendering"
 }
 }
 }

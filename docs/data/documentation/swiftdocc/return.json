@@ -8,9 +8,7 @@
   "hierarchy" : {
     "paths" : [
       [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderingModel",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SymbolReferenceRendering"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC"
       ]
     ]
   },
@@ -46,6 +44,10 @@
         "text" : "Return"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "Return.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Model\/Semantics\/Return.swift#L14"
+    },
     "role" : "symbol",
     "roleHeading" : "Structure",
     "symbolKind" : "struct",
@@ -59,7 +61,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -82,7 +84,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -90,6 +92,7 @@
   ],
   "seeAlsoSections" : [
     {
+      "anchor" : "Callouts",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SimpleTag",
@@ -101,12 +104,17 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Initializers",
+      "generated" : true,
       "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Return\/init(contents:)"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Return\/init(_:)",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Return\/init(contents:range:)"
       ],
       "title" : "Initializers"
     },
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Return\/contents"
       ],
@@ -134,6 +142,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -148,6 +157,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -175,20 +185,6 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/parameter"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/RenderingModel": {
-  "abstract" : [
-    {
-      "text" : "Convert documentation nodes into render nodes and save them to disk.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderingModel",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Rendering Model",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/renderingmodel"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/Return": {
   "abstract" : [
     {
@@ -196,6 +192,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -230,6 +227,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -248,6 +246,14 @@
       "text" : ": ["
     },
     {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
       "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:8Markdown6MarkupP",
       "text" : "Markup"
@@ -264,13 +270,48 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/return\/contents"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/Return/init(contents:)": {
+"doc://SwiftDocC/documentation/SwiftDocC/Return/init(_:)": {
   "abstract" : [
     {
       "text" : "Initialize a value to describe documentation about a symbol’s return value.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8Markdown14DoxygenReturnsV",
+      "text" : "DoxygenReturns"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Return\/init(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/return\/init(_:)"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/Return/init(contents:range:)": {
+  "abstract" : [
+    {
+      "text" : "Initialize a value to describe documentation about a symbol’s return value.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -289,21 +330,46 @@
       "text" : ": ["
     },
     {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
       "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:8Markdown6MarkupP",
       "text" : "Markup"
     },
     {
       "kind" : "text",
-      "text" : "])"
+      "text" : "], "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "range"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8Markdown11SourceRangea",
+      "text" : "SourceRange"
+    },
+    {
+      "kind" : "text",
+      "text" : "?)"
     }
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Return\/init(contents:)",
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Return\/init(contents:range:)",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "init(contents:)",
+  "title" : "init(contents:range:)",
   "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/return\/init(contents:)"
+  "url" : "\/documentation\/swiftdocc\/return\/init(contents:range:)"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/SimpleTag": {
   "abstract" : [
@@ -312,6 +378,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -339,20 +406,6 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/simpletag"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/SymbolReferenceRendering": {
-  "abstract" : [
-    {
-      "text" : "Render rich reference documentation for programming symbols.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SymbolReferenceRendering",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Symbol Reference Rendering",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/symbolreferencerendering"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/Throw": {
   "abstract" : [
     {
@@ -360,6 +413,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",

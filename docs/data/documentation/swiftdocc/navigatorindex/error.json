@@ -17,7 +17,6 @@
     "paths" : [
       [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationIndexing",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NavigatorIndex"
       ]
     ]
@@ -54,6 +53,10 @@
         "text" : "Error"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "NavigatorIndex.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Indexing\/Navigator\/NavigatorIndex.swift#L52"
+    },
     "role" : "symbol",
     "roleHeading" : "Enumeration",
     "symbolKind" : "enum",
@@ -67,7 +70,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -92,9 +95,10 @@
     {
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DescribedError",
-        "doc:\/\/SwiftDocC\/10Foundation14LocalizedErrorP",
+        "doc:\/\/SwiftDocC\/20FoundationEssentials14LocalizedErrorP",
         "doc:\/\/SwiftDocC\/s5ErrorP",
-        "doc:\/\/SwiftDocC\/s8SendableP"
+        "doc:\/\/SwiftDocC\/s8SendableP",
+        "doc:\/\/SwiftDocC\/s16SendableMetatypeP"
       ],
       "kind" : "relationships",
       "title" : "Conforms To",
@@ -103,7 +107,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -111,27 +115,22 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Enumeration-Cases",
+      "generated" : true,
       "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NavigatorIndex\/Error\/missingBundleIndentifier",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NavigatorIndex\/Error\/missingBundleIdentifier",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NavigatorIndex\/Error\/missingTitle(description:)",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NavigatorIndex\/Error\/navigatorIndexIsNil"
       ],
       "title" : "Enumeration Cases"
     },
     {
-      "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NavigatorIndex\/Error\/errorDescription-93gj"
-      ],
-      "title" : "Instance Properties"
-    },
-    {
+      "anchor" : "Instance-Properties",
       "generated" : true,
       "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NavigatorIndex\/Error\/DescribedError-Implementations",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NavigatorIndex\/Error\/Error-Implementations",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NavigatorIndex\/Error\/LocalizedError-Implementations"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NavigatorIndex\/Error\/errorDescription"
       ],
-      "title" : "Default Implementations"
+      "title" : "Instance Properties"
     }
   ],
   "variants" : [
@@ -148,9 +147,9 @@
   ]
 , 
 "references": {
-"doc://SwiftDocC/10Foundation14LocalizedErrorP": {
-  "identifier" : "doc:\/\/SwiftDocC\/10Foundation14LocalizedErrorP",
-  "title" : "Foundation.LocalizedError",
+"doc://SwiftDocC/20FoundationEssentials14LocalizedErrorP": {
+  "identifier" : "doc:\/\/SwiftDocC\/20FoundationEssentials14LocalizedErrorP",
+  "title" : "FoundationEssentials.LocalizedError",
   "type" : "unresolvable"
 },
 "doc://SwiftDocC/documentation/SwiftDocC": {
@@ -160,6 +159,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -174,6 +174,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -200,20 +201,6 @@
   "title" : "DescribedError",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/describederror"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/DocumentationIndexing": {
-  "abstract" : [
-    {
-      "text" : "Create documentation indexes optimized for text search or navigation.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationIndexing",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Documentation Indexing",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/documentationindexing"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/NavigatorIndex": {
   "abstract" : [
@@ -254,6 +241,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -296,6 +284,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -323,43 +312,11 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/navigatorindex\/error"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/NavigatorIndex/Error/DescribedError-Implementations": {
+"doc://SwiftDocC/documentation/SwiftDocC/NavigatorIndex/Error/errorDescription": {
   "abstract" : [
 
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NavigatorIndex\/Error\/DescribedError-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "DescribedError Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/navigatorindex\/error\/describederror-implementations"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/NavigatorIndex/Error/Error-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NavigatorIndex\/Error\/Error-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Error Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/navigatorindex\/error\/error-implementations"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/NavigatorIndex/Error/LocalizedError-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NavigatorIndex\/Error\/LocalizedError-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "LocalizedError Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/navigatorindex\/error\/localizederror-implementations"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/NavigatorIndex/Error/errorDescription-93gj": {
-  "abstract" : [
-
-  ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -383,20 +340,21 @@
       "text" : "String"
     }
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NavigatorIndex\/Error\/errorDescription-93gj",
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NavigatorIndex\/Error\/errorDescription",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : "errorDescription",
   "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/navigatorindex\/error\/errordescription-93gj"
+  "url" : "\/documentation\/swiftdocc\/navigatorindex\/error\/errordescription"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/NavigatorIndex/Error/missingBundleIndentifier": {
+"doc://SwiftDocC/documentation/SwiftDocC/NavigatorIndex/Error/missingBundleIdentifier": {
   "abstract" : [
     {
       "text" : "Missing bundle identifier.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -408,15 +366,15 @@
     },
     {
       "kind" : "identifier",
-      "text" : "missingBundleIndentifier"
+      "text" : "missingBundleIdentifier"
     }
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NavigatorIndex\/Error\/missingBundleIndentifier",
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NavigatorIndex\/Error\/missingBundleIdentifier",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "NavigatorIndex.Error.missingBundleIndentifier",
+  "title" : "NavigatorIndex.Error.missingBundleIdentifier",
   "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/navigatorindex\/error\/missingbundleindentifier"
+  "url" : "\/documentation\/swiftdocc\/navigatorindex\/error\/missingbundleidentifier"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/NavigatorIndex/Error/missingTitle(description:)": {
   "abstract" : [
@@ -425,6 +383,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -474,6 +433,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -494,6 +454,11 @@
   "title" : "NavigatorIndex.Error.navigatorIndexIsNil",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/navigatorindex\/error\/navigatorindexisnil"
+},
+"doc://SwiftDocC/s16SendableMetatypeP": {
+  "identifier" : "doc:\/\/SwiftDocC\/s16SendableMetatypeP",
+  "title" : "Swift.SendableMetatype",
+  "type" : "unresolvable"
 },
 "doc://SwiftDocC/s5ErrorP": {
   "identifier" : "doc:\/\/SwiftDocC\/s5ErrorP",

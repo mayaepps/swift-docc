@@ -24,6 +24,7 @@
       }
     ],
     "role" : "collectionGroup",
+    "roleHeading" : "API Collection",
     "title" : "Persisting Documentation"
   },
   "primaryContentSections" : [
@@ -59,7 +60,7 @@
               "type" : "text"
             },
             {
-              "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Converter",
+              "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationNodeConverter",
               "isActive" : true,
               "type" : "reference"
             },
@@ -72,12 +73,17 @@
         },
         {
           "code" : [
-            "let converter = DocumentationNodeConverter(bundle: myBundle, context: myContext)",
-            "let renderNode = converter.convert(documentationNode, ",
-            "    at: sourceURL, from: bundle)"
+            "let converter = DocumentationNodeConverter(context: myContext)",
+            "let renderNode = converter.convert(documentationNode)"
           ],
+          "copyToClipboard" : true,
+          "lineAnnotations" : [
+
+          ],
+          "showLineNumbers" : false,
           "syntax" : "swift",
-          "type" : "codeListing"
+          "type" : "codeListing",
+          "wrap" : 0
         },
         {
           "inlineContent" : [
@@ -102,8 +108,14 @@
             "    fileManager: FileManager.default)",
             "try writer.write(renderNode)"
           ],
+          "copyToClipboard" : true,
+          "lineAnnotations" : [
+
+          ],
+          "showLineNumbers" : false,
           "syntax" : "swift",
-          "type" : "codeListing"
+          "type" : "codeListing",
+          "wrap" : 0
         },
         {
           "inlineContent" : [
@@ -120,7 +132,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -128,6 +140,7 @@
   ],
   "seeAlsoSections" : [
     {
+      "anchor" : "Rendering",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderingModel"
@@ -137,16 +150,17 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Node-Persistence",
       "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Converter",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationNodeConverter",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/LinkDestinationSummary"
       ],
       "title" : "Node Persistence"
     },
     {
+      "anchor" : "Render-Node-Rewriter",
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNodeTransforming",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RemoveAutomaticallyCuratedSeeAlsoSectionsTransformation",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RemoveUnusedReferencesTransformation",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNodeTransformationComposition",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNodeTransformationContext",
@@ -176,6 +190,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -183,10 +198,10 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/Converter": {
+"doc://SwiftDocC/documentation/SwiftDocC/DocumentationNodeConverter": {
   "abstract" : [
     {
-      "text" : "A converter that coverts documentation nodes to render nodes.",
+      "text" : "A converter from documentation nodes to render nodes.",
       "type" : "text"
     }
   ],
@@ -194,7 +209,7 @@
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "typealias"
+      "text" : "struct"
     },
     {
       "kind" : "text",
@@ -202,29 +217,30 @@
     },
     {
       "kind" : "identifier",
-      "text" : "Converter"
+      "text" : "DocumentationNodeConverter"
     }
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Converter",
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationNodeConverter",
   "kind" : "symbol",
   "navigatorTitle" : [
     {
       "kind" : "identifier",
-      "text" : "Converter"
+      "text" : "DocumentationNodeConverter"
     }
   ],
   "role" : "symbol",
-  "title" : "Converter",
+  "title" : "DocumentationNodeConverter",
   "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/converter"
+  "url" : "\/documentation\/swiftdocc\/documentationnodeconverter"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/LinkDestinationSummary": {
   "abstract" : [
     {
-      "text" : "A summary of an element that you can link to from outside the documentation bundle.",
+      "text" : "A summary of an element that you can link to from outside the local documentation.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -252,40 +268,6 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/linkdestinationsummary"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/RemoveAutomaticallyCuratedSeeAlsoSectionsTransformation": {
-  "abstract" : [
-    {
-      "text" : "A transformation that removes automatically curated See Also sections.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "struct"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "RemoveAutomaticallyCuratedSeeAlsoSectionsTransformation"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RemoveAutomaticallyCuratedSeeAlsoSectionsTransformation",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "RemoveAutomaticallyCuratedSeeAlsoSectionsTransformation"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "RemoveAutomaticallyCuratedSeeAlsoSectionsTransformation",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/removeautomaticallycuratedseealsosectionstransformation"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/RemoveUnusedReferencesTransformation": {
   "abstract" : [
     {
@@ -293,6 +275,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -327,6 +310,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -361,6 +345,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -395,6 +380,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -429,6 +415,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",

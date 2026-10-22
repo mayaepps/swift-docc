@@ -8,9 +8,7 @@
   "hierarchy" : {
     "paths" : [
       [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationContextGroup",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TopicReference"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC"
       ]
     ]
   },
@@ -46,6 +44,10 @@
         "text" : "UnresolvedTopicReference"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "Identifier.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Model\/Identifier.swift#L540"
+    },
     "role" : "symbol",
     "roleHeading" : "Structure",
     "symbolKind" : "struct",
@@ -59,7 +61,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -166,7 +168,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -174,6 +176,7 @@
   ],
   "seeAlsoSections" : [
     {
+      "anchor" : "Topic-References",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ResolvedTopicReference",
@@ -185,6 +188,8 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Initializers",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/UnresolvedTopicReference\/init(parent:unresolvedChild:)",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/UnresolvedTopicReference\/init(topicURL:)",
@@ -193,8 +198,10 @@
       "title" : "Initializers"
     },
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/UnresolvedTopicReference\/bundleIdentifier",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/UnresolvedTopicReference\/bundleID",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/UnresolvedTopicReference\/description",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/UnresolvedTopicReference\/fragment",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/UnresolvedTopicReference\/path",
@@ -202,13 +209,6 @@
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/UnresolvedTopicReference\/topicURL"
       ],
       "title" : "Instance Properties"
-    },
-    {
-      "generated" : true,
-      "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/UnresolvedTopicReference\/Equatable-Implementations"
-      ],
-      "title" : "Default Implementations"
     }
   ],
   "variants" : [
@@ -242,26 +242,13 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
   "title" : "SwiftDocC",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/DocumentationContextGroup": {
-  "abstract" : [
-    {
-      "text" : "Build and query the in-memory documentation model.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationContextGroup",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Documentation Context",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/documentationcontextgroup"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/ResolvedTopicReference": {
   "abstract" : [
@@ -270,6 +257,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -299,15 +287,13 @@
 },
 "doc://SwiftDocC/documentation/SwiftDocC/SourceLanguage": {
   "abstract" : [
-    {
-      "text" : "A programming language.",
-      "type" : "text"
-    }
+
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "struct"
+      "text" : "typealias"
     },
     {
       "kind" : "text",
@@ -331,40 +317,6 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/sourcelanguage"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/TopicReference": {
-  "abstract" : [
-    {
-      "text" : "A resolved or unresolved reference to a piece of documentation.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "enum"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "TopicReference"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TopicReference",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "TopicReference"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "TopicReference",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/topicreference"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/TopicReferenceResolutionResult": {
   "abstract" : [
     {
@@ -372,6 +324,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -406,6 +359,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -433,24 +387,14 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/unresolvedtopicreference"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/UnresolvedTopicReference/Equatable-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/UnresolvedTopicReference\/Equatable-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Equatable Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/unresolvedtopicreference\/equatable-implementations"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/UnresolvedTopicReference/bundleIdentifier": {
+"doc://SwiftDocC/documentation/SwiftDocC/UnresolvedTopicReference/bundleID": {
   "abstract" : [
     {
       "text" : "The bundle identifier, if one was provided in the host name component of the original URL.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -462,7 +406,7 @@
     },
     {
       "kind" : "identifier",
-      "text" : "bundleIdentifier"
+      "text" : "bundleID"
     },
     {
       "kind" : "text",
@@ -470,25 +414,44 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:SS",
-      "text" : "String"
+      "preciseIdentifier" : "s:9SwiftDocC20DocumentationContextC",
+      "text" : "DocumentationContext"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC20DocumentationContextC6InputsV",
+      "text" : "Inputs"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC20DocumentationContextC6InputsV10IdentifierV",
+      "text" : "Identifier"
     },
     {
       "kind" : "text",
       "text" : "?"
     }
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/UnresolvedTopicReference\/bundleIdentifier",
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/UnresolvedTopicReference\/bundleID",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "bundleIdentifier",
+  "title" : "bundleID",
   "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/unresolvedtopicreference\/bundleidentifier"
+  "url" : "\/documentation\/swiftdocc\/unresolvedtopicreference\/bundleid"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/UnresolvedTopicReference/description": {
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -526,6 +489,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -567,6 +531,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -625,6 +590,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -666,6 +632,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -724,6 +691,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -761,6 +729,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -802,6 +771,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",

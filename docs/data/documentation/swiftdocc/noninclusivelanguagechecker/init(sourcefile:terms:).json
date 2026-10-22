@@ -1,15 +1,8 @@
 {
-  "abstract" : [
-    {
-      "text" : "No overview available.",
-      "type" : "text"
-    }
-  ],
   "hierarchy" : {
     "paths" : [
       [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/StaticAnalysis",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NonInclusiveLanguageChecker"
       ]
     ]
@@ -20,7 +13,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:9SwiftDocC27NonInclusiveLanguageCheckerV10sourceFile5termsAC10Foundation3URLVSg_SayAC4TermVGSgtcfc",
+    "externalID" : "s:9SwiftDocC27NonInclusiveLanguageCheckerV10sourceFile5termsAC20FoundationEssentials3URLVSg_SayAC4TermVGSgtcfc",
     "fragments" : [
       {
         "kind" : "identifier",
@@ -40,7 +33,7 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:10Foundation3URLV",
+        "preciseIdentifier" : "s:20FoundationEssentials3URLV",
         "text" : "URL"
       },
       {
@@ -57,15 +50,6 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:9SwiftDocC27NonInclusiveLanguageCheckerV",
-        "text" : "NonInclusiveLanguageChecker"
-      },
-      {
-        "kind" : "text",
-        "text" : "."
-      },
-      {
-        "kind" : "typeIdentifier",
         "preciseIdentifier" : "s:9SwiftDocC27NonInclusiveLanguageCheckerV4TermV",
         "text" : "Term"
       },
@@ -79,6 +63,10 @@
         "name" : "SwiftDocC"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "NonInclusiveLanguageChecker.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Checker\/Checkers\/NonInclusiveLanguageChecker.swift#L44"
+    },
     "role" : "symbol",
     "roleHeading" : "Initializer",
     "symbolKind" : "init",
@@ -92,7 +80,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -113,7 +101,7 @@
             },
             {
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:10Foundation3URLV",
+              "preciseIdentifier" : "s:20FoundationEssentials3URLV",
               "text" : "URL"
             },
             {
@@ -127,16 +115,6 @@
             {
               "kind" : "text",
               "text" : ": ["
-            },
-            {
-              "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NonInclusiveLanguageChecker",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:9SwiftDocC27NonInclusiveLanguageCheckerV",
-              "text" : "NonInclusiveLanguageChecker"
-            },
-            {
-              "kind" : "text",
-              "text" : "."
             },
             {
               "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NonInclusiveLanguageChecker\/Term",
@@ -156,7 +134,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -183,6 +161,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -197,6 +176,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -231,6 +211,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -262,6 +243,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -281,7 +263,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10Foundation3URLV",
+      "preciseIdentifier" : "s:20FoundationEssentials3URLV",
       "text" : "URL"
     },
     {
@@ -295,15 +277,6 @@
     {
       "kind" : "text",
       "text" : ": ["
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:9SwiftDocC27NonInclusiveLanguageCheckerV",
-      "text" : "NonInclusiveLanguageChecker"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",
@@ -321,20 +294,6 @@
   "title" : "init(sourceFile:terms:)",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/noninclusivelanguagechecker\/init(sourcefile:terms:)"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/StaticAnalysis": {
-  "abstract" : [
-    {
-      "text" : "Run static analysis checks on markup files.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/StaticAnalysis",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Static Analysis",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/staticanalysis"
 }
 }
 }

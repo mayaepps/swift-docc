@@ -1,15 +1,19 @@
 {
-  "abstract" : [
+  "deprecationSummary" : [
     {
-      "text" : "No overview available.",
-      "type" : "text"
+      "inlineContent" : [
+        {
+          "text" : "This error type is no longer used. This deprecated API will be removed after 6.5 is released.",
+          "type" : "text"
+        }
+      ],
+      "type" : "paragraph"
     }
   ],
   "hierarchy" : {
     "paths" : [
       [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationIndexing"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC"
       ]
     ]
   },
@@ -45,6 +49,10 @@
         "text" : "IndexingError"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "IndexingError.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Indexing\/IndexingError.swift#L14"
+    },
     "role" : "symbol",
     "roleHeading" : "Enumeration",
     "symbolKind" : "enum",
@@ -58,7 +66,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -83,9 +91,10 @@
     {
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DescribedError",
-        "doc:\/\/SwiftDocC\/10Foundation14LocalizedErrorP",
+        "doc:\/\/SwiftDocC\/20FoundationEssentials14LocalizedErrorP",
         "doc:\/\/SwiftDocC\/s5ErrorP",
-        "doc:\/\/SwiftDocC\/s8SendableP"
+        "doc:\/\/SwiftDocC\/s8SendableP",
+        "doc:\/\/SwiftDocC\/s16SendableMetatypeP"
       ],
       "kind" : "relationships",
       "title" : "Conforms To",
@@ -94,7 +103,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -102,6 +111,7 @@
   ],
   "seeAlsoSections" : [
     {
+      "anchor" : "Search-Index",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Indexable",
@@ -115,25 +125,20 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Enumeration-Cases",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/IndexingError\/missingTitle(_:)"
       ],
       "title" : "Enumeration Cases"
     },
     {
-      "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/IndexingError\/errorDescription-evx1"
-      ],
-      "title" : "Instance Properties"
-    },
-    {
+      "anchor" : "Instance-Properties",
       "generated" : true,
       "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/IndexingError\/DescribedError-Implementations",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/IndexingError\/Error-Implementations",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/IndexingError\/LocalizedError-Implementations"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/IndexingError\/errorDescription"
       ],
-      "title" : "Default Implementations"
+      "title" : "Instance Properties"
     }
   ],
   "variants" : [
@@ -150,9 +155,9 @@
   ]
 , 
 "references": {
-"doc://SwiftDocC/10Foundation14LocalizedErrorP": {
-  "identifier" : "doc:\/\/SwiftDocC\/10Foundation14LocalizedErrorP",
-  "title" : "Foundation.LocalizedError",
+"doc://SwiftDocC/20FoundationEssentials14LocalizedErrorP": {
+  "identifier" : "doc:\/\/SwiftDocC\/20FoundationEssentials14LocalizedErrorP",
+  "title" : "FoundationEssentials.LocalizedError",
   "type" : "unresolvable"
 },
 "doc://SwiftDocC/documentation/SwiftDocC": {
@@ -162,6 +167,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -176,6 +182,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -203,20 +210,6 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/describederror"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/DocumentationIndexing": {
-  "abstract" : [
-    {
-      "text" : "Create documentation indexes optimized for text search or navigation.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationIndexing",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Documentation Indexing",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/documentationindexing"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/Indexable": {
   "abstract" : [
     {
@@ -224,6 +217,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -255,6 +249,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -282,43 +277,11 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/indexingerror"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/IndexingError/DescribedError-Implementations": {
+"doc://SwiftDocC/documentation/SwiftDocC/IndexingError/errorDescription": {
   "abstract" : [
 
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/IndexingError\/DescribedError-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "DescribedError Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/indexingerror\/describederror-implementations"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/IndexingError/Error-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/IndexingError\/Error-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Error Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/indexingerror\/error-implementations"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/IndexingError/LocalizedError-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/IndexingError\/LocalizedError-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "LocalizedError Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/indexingerror\/localizederror-implementations"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/IndexingError/errorDescription-evx1": {
-  "abstract" : [
-
-  ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -342,12 +305,12 @@
       "text" : "String"
     }
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/IndexingError\/errorDescription-evx1",
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/IndexingError\/errorDescription",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : "errorDescription",
   "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/indexingerror\/errordescription-evx1"
+  "url" : "\/documentation\/swiftdocc\/indexingerror\/errordescription"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/IndexingError/missingTitle(_:)": {
   "abstract" : [
@@ -364,6 +327,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -414,6 +378,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -448,6 +413,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -490,6 +456,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -521,6 +488,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -555,6 +523,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -581,6 +550,11 @@
   "title" : "TextIndexing",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/textindexing"
+},
+"doc://SwiftDocC/s16SendableMetatypeP": {
+  "identifier" : "doc:\/\/SwiftDocC\/s16SendableMetatypeP",
+  "title" : "Swift.SendableMetatype",
+  "type" : "unresolvable"
 },
 "doc://SwiftDocC/s5ErrorP": {
   "identifier" : "doc:\/\/SwiftDocC\/s5ErrorP",

@@ -1,15 +1,8 @@
 {
-  "abstract" : [
-    {
-      "text" : "No overview available.",
-      "type" : "text"
-    }
-  ],
   "hierarchy" : {
     "paths" : [
       [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/StaticAnalysis",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NonOverviewHeadingChecker"
       ]
     ]
@@ -20,7 +13,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:9SwiftDocC25NonOverviewHeadingCheckerV10sourceFileAC10Foundation3URLVSg_tcfc",
+    "externalID" : "s:9SwiftDocC25NonOverviewHeadingCheckerV10sourceFileAC20FoundationEssentials3URLVSg_tcfc",
     "fragments" : [
       {
         "kind" : "identifier",
@@ -40,7 +33,7 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:10Foundation3URLV",
+        "preciseIdentifier" : "s:20FoundationEssentials3URLV",
         "text" : "URL"
       },
       {
@@ -53,6 +46,10 @@
         "name" : "SwiftDocC"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "NonOverviewHeadingChecker.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Checker\/Checkers\/NonOverviewHeadingChecker.swift#L55"
+    },
     "role" : "symbol",
     "roleHeading" : "Initializer",
     "symbolKind" : "init",
@@ -66,7 +63,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -87,7 +84,7 @@
             },
             {
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:10Foundation3URLV",
+              "preciseIdentifier" : "s:20FoundationEssentials3URLV",
               "text" : "URL"
             },
             {
@@ -102,7 +99,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -129,6 +126,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -140,6 +138,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -171,6 +170,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -190,7 +190,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10Foundation3URLV",
+      "preciseIdentifier" : "s:20FoundationEssentials3URLV",
       "text" : "URL"
     },
     {
@@ -204,20 +204,6 @@
   "title" : "init(sourceFile:)",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/nonoverviewheadingchecker\/init(sourcefile:)"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/StaticAnalysis": {
-  "abstract" : [
-    {
-      "text" : "Run static analysis checks on markup files.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/StaticAnalysis",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Static Analysis",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/staticanalysis"
 }
 }
 }

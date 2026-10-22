@@ -38,6 +38,14 @@
         "text" : ": ["
       },
       {
+        "kind" : "keyword",
+        "text" : "any"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
         "kind" : "typeIdentifier",
         "preciseIdentifier" : "s:9SwiftDocC8LandmarkP",
         "text" : "Landmark"
@@ -52,6 +60,10 @@
         "name" : "SwiftDocC"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "Tutorial.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Semantics\/Tutorial\/Tutorial.swift#L46"
+    },
     "role" : "symbol",
     "roleHeading" : "Instance Property",
     "symbolKind" : "property",
@@ -65,7 +77,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -83,6 +95,14 @@
             {
               "kind" : "text",
               "text" : ": ["
+            },
+            {
+              "kind" : "keyword",
+              "text" : "any"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
             },
             {
               "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Landmark",
@@ -130,7 +150,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -157,6 +177,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -171,6 +192,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -198,56 +220,14 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/landmark"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/Technology": {
-  "abstract" : [
-    {
-      "text" : "An overview of the educational materials under a specific technology or technology area.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "class"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "Technology"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Technology",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "Technology"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "Technology",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/technology"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/Tutorial": {
   "abstract" : [
     {
-      "text" : "A tutorial to complete in order to gain knowledge of a ",
-      "type" : "text"
-    },
-    {
-      "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Technology",
-      "isActive" : true,
-      "type" : "reference"
-    },
-    {
-      "text" : ".",
+      "text" : "A tutorial to complete in order to gain knowledge of a technology.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -282,6 +262,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -298,6 +279,14 @@
     {
       "kind" : "text",
       "text" : ": ["
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",

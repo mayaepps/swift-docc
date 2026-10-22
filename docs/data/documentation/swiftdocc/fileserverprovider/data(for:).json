@@ -17,7 +17,6 @@
     "paths" : [
       [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Communication",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/FileServerProvider"
       ]
     ]
@@ -28,7 +27,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:9SwiftDocC18FileServerProviderP4data3for10Foundation4DataVSgSS_tF",
+    "externalID" : "s:9SwiftDocC18FileServerProviderP4data3for20FoundationEssentials4DataVSgSS_tF",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -65,7 +64,7 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:10Foundation4DataV",
+        "preciseIdentifier" : "s:20FoundationEssentials4DataV",
         "text" : "Data"
       },
       {
@@ -78,6 +77,10 @@
         "name" : "SwiftDocC"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "FileServer.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Servers\/FileServer.swift#L179"
+    },
     "required" : true,
     "role" : "symbol",
     "roleHeading" : "Instance Method",
@@ -92,7 +95,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -138,7 +141,7 @@
             },
             {
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:10Foundation4DataV",
+              "preciseIdentifier" : "s:20FoundationEssentials4DataV",
               "text" : "Data"
             },
             {
@@ -149,6 +152,25 @@
         }
       ],
       "kind" : "declarations"
+    },
+    {
+      "kind" : "parameters",
+      "parameters" : [
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "The path.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "path"
+        }
+      ]
     },
     {
       "content" : [
@@ -169,30 +191,11 @@
         }
       ],
       "kind" : "content"
-    },
-    {
-      "kind" : "parameters",
-      "parameters" : [
-        {
-          "content" : [
-            {
-              "inlineContent" : [
-                {
-                  "text" : "The path.",
-                  "type" : "text"
-                }
-              ],
-              "type" : "paragraph"
-            }
-          ],
-          "name" : "path"
-        }
-      ]
     }
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -219,26 +222,13 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
   "title" : "SwiftDocC",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/Communication": {
-  "abstract" : [
-    {
-      "text" : "Offer native integration of DocC in your IDE.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Communication",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Communication Bridge",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/communication"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/FileServerProvider": {
   "abstract" : [
@@ -255,6 +245,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -297,6 +288,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -333,7 +325,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10Foundation4DataV",
+      "preciseIdentifier" : "s:20FoundationEssentials4DataV",
       "text" : "Data"
     },
     {

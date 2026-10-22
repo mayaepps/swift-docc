@@ -1,7 +1,7 @@
 {
   "abstract" : [
     {
-      "text" : "No overview available.",
+      "text" : "Embeds a code example from the project’s code snippets.",
       "type" : "text"
     }
   ],
@@ -44,6 +44,10 @@
         "text" : "Snippet"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "Snippet.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Semantics\/Snippets\/Snippet.swift#L40"
+    },
     "role" : "symbol",
     "roleHeading" : "Class",
     "symbolKind" : "class",
@@ -57,7 +61,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -84,6 +88,236 @@
         }
       ],
       "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Use a ",
+              "type" : "text"
+            },
+            {
+              "code" : "Snippet",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " directive to embed a code example from the project’s “Snippets” directory on the page.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "The ",
+              "type" : "text"
+            },
+            {
+              "code" : "path",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " argument is the relative path from the package’s top-level “Snippets” directory to your snippet file without the ",
+              "type" : "text"
+            },
+            {
+              "code" : ".swift",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " extension.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "@Snippet(path: \"example-snippet\", slice: \"setup\")"
+          ],
+          "copyToClipboard" : true,
+          "lineAnnotations" : [
+
+          ],
+          "showLineNumbers" : false,
+          "syntax" : "markdown",
+          "type" : "codeListing",
+          "wrap" : 0
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If you prefer, you can specify the relative path from the package’s ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "root",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : " directory (by including a “Snippets\/” prefix).",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "You can also include the package name—as defined in ",
+              "type" : "text"
+            },
+            {
+              "code" : "Package.swift",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : "—before the “Snippets\/” prefix.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Neither of these leading path components are necessary because all your snippet code files are always located in your package’s “Snippets” directory.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "Before Swift-DocC 6.2.1, the ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "@Snippet",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " path needed to include both the package name component and the “Snippets” component:",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            },
+            {
+              "code" : [
+                "@Snippet(path: \"my-package\/Snippets\/example-snippet\")"
+              ],
+              "copyToClipboard" : true,
+              "lineAnnotations" : [
+
+              ],
+              "showLineNumbers" : false,
+              "syntax" : "markdown",
+              "type" : "codeListing",
+              "wrap" : 0
+            }
+          ],
+          "name" : "Earlier Versions",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "You can define named slices of your snippet by annotating the snippet file with ",
+              "type" : "text"
+            },
+            {
+              "code" : "\/\/ snippet.<name>",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " and ",
+              "type" : "text"
+            },
+            {
+              "code" : "\/\/ snippet.end",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " lines.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "A named slice automatically ends at the start of the next named slice, without an explicit ",
+              "type" : "text"
+            },
+            {
+              "code" : "snippet.end",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " annotation.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If the referenced snippet includes annotated slices, you can limit the embedded code example to a certain line range by specifying a ",
+              "type" : "text"
+            },
+            {
+              "code" : "slice",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " name.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "By default, the embedded code example includes the full snippet. For more information, see ",
+              "type" : "text"
+            },
+            {
+              "text" : "doc:adding-code-snippets-to-your-content#Slice-up-your-snippet-to-break-it-up-in-your-content",
+              "type" : "text"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
     }
   ],
   "relationshipsSections" : [
@@ -107,7 +341,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -115,31 +349,22 @@
   ],
   "topicSections" : [
     {
-      "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Snippet\/init()",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Snippet\/init(from:source:for:in:problems:)"
-      ],
-      "title" : "Initializers"
-    },
-    {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Snippet\/originalMarkup",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Snippet\/path"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Snippet\/path",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Snippet\/slice"
       ],
       "title" : "Instance Properties"
     },
     {
-      "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Snippet\/directiveName"
-      ],
-      "title" : "Type Properties"
-    },
-    {
+      "anchor" : "Type-Properties",
       "generated" : true,
       "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Snippet\/DirectiveConvertible-Implementations"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Snippet\/introducedVersion"
       ],
-      "title" : "Default Implementations"
+      "title" : "Type Properties"
     }
   ],
   "variants" : [
@@ -168,6 +393,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -182,6 +408,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -216,6 +443,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -245,8 +473,12 @@
 },
 "doc://SwiftDocC/documentation/SwiftDocC/Snippet": {
   "abstract" : [
-
+    {
+      "text" : "Embeds a code example from the project’s code snippets.",
+      "type" : "text"
+    }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -274,21 +506,11 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/snippet"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/Snippet/DirectiveConvertible-Implementations": {
+"doc://SwiftDocC/documentation/SwiftDocC/Snippet/introducedVersion": {
   "abstract" : [
 
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Snippet\/DirectiveConvertible-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "DirectiveConvertible Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/snippet\/directiveconvertible-implementations"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/Snippet/directiveName": {
-  "abstract" : [
-
-  ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -308,7 +530,7 @@
     },
     {
       "kind" : "identifier",
-      "text" : "directiveName"
+      "text" : "introducedVersion"
     },
     {
       "kind" : "text",
@@ -320,152 +542,18 @@
       "text" : "String"
     }
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Snippet\/directiveName",
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Snippet\/introducedVersion",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "directiveName",
+  "title" : "introducedVersion",
   "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/snippet\/directivename"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/Snippet/init()": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "identifier",
-      "text" : "init"
-    },
-    {
-      "kind" : "text",
-      "text" : "()"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Snippet\/init()",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "init()",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/snippet\/init()"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/Snippet/init(from:source:for:in:problems:)": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "identifier",
-      "text" : "init"
-    },
-    {
-      "kind" : "text",
-      "text" : "?("
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "from"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:8Markdown14BlockDirectiveV",
-      "text" : "BlockDirective"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "source"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10Foundation3URLV",
-      "text" : "URL"
-    },
-    {
-      "kind" : "text",
-      "text" : "?, "
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "for"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:9SwiftDocC19DocumentationBundleV",
-      "text" : "DocumentationBundle"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "in"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:9SwiftDocC20DocumentationContextC",
-      "text" : "DocumentationContext"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "problems"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "inout"
-    },
-    {
-      "kind" : "text",
-      "text" : " ["
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:9SwiftDocC7ProblemV",
-      "text" : "Problem"
-    },
-    {
-      "kind" : "text",
-      "text" : "])"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Snippet\/init(from:source:for:in:problems:)",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "init(from:source:for:in:problems:)",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/snippet\/init(from:source:for:in:problems:)"
+  "url" : "\/documentation\/swiftdocc\/snippet\/introducedversion"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/Snippet/originalMarkup": {
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -498,12 +586,24 @@
 },
 "doc://SwiftDocC/documentation/SwiftDocC/Snippet/path": {
   "abstract" : [
-
+    {
+      "text" : "The relative path from your package’s top-level “Snippets” directory to the snippet file that you want to embed in the page, without the ",
+      "type" : "text"
+    },
+    {
+      "code" : ".swift",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " file extension.",
+      "type" : "text"
+    }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "let"
+      "text" : "var"
     },
     {
       "kind" : "text",
@@ -529,6 +629,48 @@
   "title" : "path",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/snippet\/path"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/Snippet/slice": {
+  "abstract" : [
+    {
+      "text" : "The name of a snippet slice to limit the embedded code example to a certain line range.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "slice"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Snippet\/slice",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "slice",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/snippet\/slice"
 }
 }
 }

@@ -70,6 +70,10 @@
         "text" : "TutorialReference"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "TutorialReference.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Semantics\/Technology\/Volume\/Chapter\/TutorialReference.swift#L15"
+    },
     "role" : "symbol",
     "roleHeading" : "Class",
     "symbolKind" : "class",
@@ -83,7 +87,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -133,21 +137,31 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
 
   ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "Tutorial-Table-of-Contents-Directives",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialTableOfContents",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Volume",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Chapter",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Resources",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Tile",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Article"
+      ],
+      "title" : "Tutorial Table of Contents Directives"
+    }
+  ],
   "topicSections" : [
     {
-      "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialReference\/init()",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialReference\/init(from:source:for:in:problems:)"
-      ],
-      "title" : "Initializers"
-    },
-    {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialReference\/originalMarkup",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialReference\/topic"
@@ -155,23 +169,20 @@
       "title" : "Instance Properties"
     },
     {
+      "anchor" : "Instance-Methods",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialReference\/accept(_:)"
       ],
       "title" : "Instance Methods"
     },
     {
-      "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialReference\/directiveName"
-      ],
-      "title" : "Type Properties"
-    },
-    {
+      "anchor" : "Type-Properties",
       "generated" : true,
       "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialReference\/DirectiveConvertible-Implementations"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialReference\/introducedVersion"
       ],
-      "title" : "Default Implementations"
+      "title" : "Type Properties"
     }
   ],
   "variants" : [
@@ -200,12 +211,92 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
   "title" : "SwiftDocC",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/Article": {
+  "abstract" : [
+    {
+      "text" : "The in-memory representation of an article.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Article"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Article",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Article"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Article",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/article"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/Chapter": {
+  "abstract" : [
+    {
+      "text" : "A chapter containing ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Tutorial",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : "s to complete.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Chapter"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Chapter",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Chapter"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Chapter",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/chapter"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/DirectiveConvertible": {
   "abstract" : [
@@ -214,6 +305,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -241,6 +333,41 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/directiveconvertible"
 },
+"doc://SwiftDocC/documentation/SwiftDocC/Resources": {
+  "abstract" : [
+    {
+      "text" : "Additional resources that help users learn a technology.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Resources"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Resources",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Resources"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Resources",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/resources"
+},
 "doc://SwiftDocC/documentation/SwiftDocC/Semantic": {
   "abstract" : [
     {
@@ -248,6 +375,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -275,13 +403,14 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/semantic"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/Technology": {
+"doc://SwiftDocC/documentation/SwiftDocC/Tile": {
   "abstract" : [
     {
-      "text" : "An overview of the educational materials under a specific technology or technology area.",
+      "text" : "A semantic model for a view that links to a content type that you specify.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -293,38 +422,30 @@
     },
     {
       "kind" : "identifier",
-      "text" : "Technology"
+      "text" : "Tile"
     }
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Technology",
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Tile",
   "kind" : "symbol",
   "navigatorTitle" : [
     {
       "kind" : "identifier",
-      "text" : "Technology"
+      "text" : "Tile"
     }
   ],
   "role" : "symbol",
-  "title" : "Technology",
+  "title" : "Tile",
   "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/technology"
+  "url" : "\/documentation\/swiftdocc\/tile"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/Tutorial": {
   "abstract" : [
     {
-      "text" : "A tutorial to complete in order to gain knowledge of a ",
-      "type" : "text"
-    },
-    {
-      "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Technology",
-      "isActive" : true,
-      "type" : "reference"
-    },
-    {
-      "text" : ".",
+      "text" : "A tutorial to complete in order to gain knowledge of a technology.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -359,6 +480,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -419,6 +541,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -446,21 +569,11 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/tutorialreference"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/TutorialReference/DirectiveConvertible-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialReference\/DirectiveConvertible-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "DirectiveConvertible Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/tutorialreference\/directiveconvertible-implementations"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/TutorialReference/accept(_:)": {
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -496,6 +609,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC17TutorialReferenceC6accepty6ResultQzxzAA15SemanticVisitorRzlF1VL_xmfp",
       "text" : "V"
     },
     {
@@ -504,6 +618,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC17TutorialReferenceC6accepty6ResultQzxzAA15SemanticVisitorRzlF1VL_xmfp",
       "text" : "V"
     },
     {
@@ -512,6 +627,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC15SemanticVisitorP6ResultQa",
       "text" : "Result"
     }
   ],
@@ -522,10 +638,11 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/tutorialreference\/accept(_:)"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/TutorialReference/directiveName": {
+"doc://SwiftDocC/documentation/SwiftDocC/TutorialReference/introducedVersion": {
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -545,7 +662,7 @@
     },
     {
       "kind" : "identifier",
-      "text" : "directiveName"
+      "text" : "introducedVersion"
     },
     {
       "kind" : "text",
@@ -557,160 +674,18 @@
       "text" : "String"
     }
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialReference\/directiveName",
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialReference\/introducedVersion",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "directiveName",
+  "title" : "introducedVersion",
   "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/tutorialreference\/directivename"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/TutorialReference/init()": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "identifier",
-      "text" : "init"
-    },
-    {
-      "kind" : "text",
-      "text" : "()"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialReference\/init()",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "init()",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/tutorialreference\/init()"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/TutorialReference/init(from:source:for:in:problems:)": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "convenience"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "init"
-    },
-    {
-      "kind" : "text",
-      "text" : "?("
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "from"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:8Markdown14BlockDirectiveV",
-      "text" : "BlockDirective"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "source"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10Foundation3URLV",
-      "text" : "URL"
-    },
-    {
-      "kind" : "text",
-      "text" : "?, "
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "for"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:9SwiftDocC19DocumentationBundleV",
-      "text" : "DocumentationBundle"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "in"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:9SwiftDocC20DocumentationContextC",
-      "text" : "DocumentationContext"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "problems"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "inout"
-    },
-    {
-      "kind" : "text",
-      "text" : " ["
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:9SwiftDocC7ProblemV",
-      "text" : "Problem"
-    },
-    {
-      "kind" : "text",
-      "text" : "])"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialReference\/init(from:source:for:in:problems:)",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "init(from:source:for:in:problems:)",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/tutorialreference\/init(from:source:for:in:problems:)"
+  "url" : "\/documentation\/swiftdocc\/tutorialreference\/introducedversion"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/TutorialReference/originalMarkup": {
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -748,10 +723,11 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "let"
+      "text" : "var"
     },
     {
       "kind" : "text",
@@ -777,6 +753,76 @@
   "title" : "topic",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/tutorialreference\/topic"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/TutorialTableOfContents": {
+  "abstract" : [
+    {
+      "text" : "A top-level page that organizes a collection of tutorials into a hierarchy of volumes and chapters.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "TutorialTableOfContents"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialTableOfContents",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "TutorialTableOfContents"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "TutorialTableOfContents",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/tutorialtableofcontents"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/Volume": {
+  "abstract" : [
+    {
+      "text" : "A grouping of chapters within a larger collection of tutorials.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Volume"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Volume",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Volume"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Volume",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/volume"
 }
 }
 }

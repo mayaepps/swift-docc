@@ -1,7 +1,7 @@
 {
   "abstract" : [
     {
-      "text" : "The markup file data included in the documentation bundle to convert.",
+      "text" : "The article and documentation extension file data included in the documentation bundle to convert.",
       "type" : "text"
     }
   ],
@@ -19,7 +19,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:9SwiftDocC14ConvertRequestV11markupFilesSay10Foundation4DataVGvp",
+    "externalID" : "s:9SwiftDocC14ConvertRequestV11markupFilesSay20FoundationEssentials4DataVGvp",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -39,7 +39,7 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:10Foundation4DataV",
+        "preciseIdentifier" : "s:20FoundationEssentials4DataV",
         "text" : "Data"
       },
       {
@@ -52,6 +52,10 @@
         "name" : "SwiftDocC"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "ConvertRequest.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/DocumentationService\/Models\/Services\/Convert\/ConvertRequest.swift#L79"
+    },
     "role" : "symbol",
     "roleHeading" : "Instance Property",
     "symbolKind" : "property",
@@ -65,7 +69,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -86,7 +90,7 @@
             },
             {
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:10Foundation4DataV",
+              "preciseIdentifier" : "s:20FoundationEssentials4DataV",
               "text" : "Data"
             },
             {
@@ -101,7 +105,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -109,8 +113,9 @@
   ],
   "seeAlsoSections" : [
     {
+      "anchor" : "Related-Documentation",
       "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationBundle\/markupURLs"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationContext\/Inputs\/markupURLs"
       ],
       "title" : "Related Documentation"
     }
@@ -136,6 +141,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -150,6 +156,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -180,10 +187,11 @@
 "doc://SwiftDocC/documentation/SwiftDocC/ConvertRequest/markupFiles": {
   "abstract" : [
     {
-      "text" : "The markup file data included in the documentation bundle to convert.",
+      "text" : "The article and documentation extension file data included in the documentation bundle to convert.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -203,7 +211,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10Foundation4DataV",
+      "preciseIdentifier" : "s:20FoundationEssentials4DataV",
       "text" : "Data"
     },
     {
@@ -218,13 +226,14 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/convertrequest\/markupfiles"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/DocumentationBundle/markupURLs": {
+"doc://SwiftDocC/documentation/SwiftDocC/DocumentationContext/Inputs/markupURLs": {
   "abstract" : [
     {
-      "text" : "DocC Markup files of the bundle.",
+      "text" : "Documentation markup input files for this unit of documentation.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -244,7 +253,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10Foundation3URLV",
+      "preciseIdentifier" : "s:20FoundationEssentials3URLV",
       "text" : "URL"
     },
     {
@@ -252,12 +261,12 @@
       "text" : "]"
     }
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationBundle\/markupURLs",
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationContext\/Inputs\/markupURLs",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : "markupURLs",
   "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/documentationbundle\/markupurls"
+  "url" : "\/documentation\/swiftdocc\/documentationcontext\/inputs\/markupurls"
 }
 }
 }

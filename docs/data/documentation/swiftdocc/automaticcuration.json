@@ -8,12 +8,7 @@
   "hierarchy" : {
     "paths" : [
       [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationContextGroup"
-      ],
-      [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationIndexing"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC"
       ]
     ]
   },
@@ -49,6 +44,10 @@
         "text" : "AutomaticCuration"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "AutomaticCuration.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Infrastructure\/Topic%20Graph\/AutomaticCuration.swift#L21"
+    },
     "role" : "symbol",
     "roleHeading" : "Structure",
     "symbolKind" : "struct",
@@ -62,7 +61,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -85,7 +84,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -93,11 +92,10 @@
   ],
   "seeAlsoSections" : [
     {
+      "anchor" : "Documentation-Context",
       "generated" : true,
       "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationContext",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationContextDataProvider",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationContextDataProviderDelegate"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationContext"
       ],
       "title" : "Documentation Context"
     }
@@ -123,6 +121,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -137,6 +136,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -171,6 +171,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -197,102 +198,6 @@
   "title" : "DocumentationContext",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/documentationcontext"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/DocumentationContextDataProvider": {
-  "abstract" : [
-    {
-      "text" : "A type that provides information about documentation bundles and their content.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "protocol"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "DocumentationContextDataProvider"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationContextDataProvider",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "DocumentationContextDataProvider"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "DocumentationContextDataProvider",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/documentationcontextdataprovider"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/DocumentationContextDataProviderDelegate": {
-  "abstract" : [
-    {
-      "text" : "An object that responds to changes in available documentation bundles for a specific provider.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "protocol"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "DocumentationContextDataProviderDelegate"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationContextDataProviderDelegate",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "DocumentationContextDataProviderDelegate"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "DocumentationContextDataProviderDelegate",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/documentationcontextdataproviderdelegate"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/DocumentationContextGroup": {
-  "abstract" : [
-    {
-      "text" : "Build and query the in-memory documentation model.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationContextGroup",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Documentation Context",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/documentationcontextgroup"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/DocumentationIndexing": {
-  "abstract" : [
-    {
-      "text" : "Create documentation indexes optimized for text search or navigation.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationIndexing",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Documentation Indexing",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/documentationindexing"
 }
 }
 }

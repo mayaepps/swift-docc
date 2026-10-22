@@ -8,8 +8,7 @@
   "hierarchy" : {
     "paths" : [
       [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationWorkspaceGroup"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC"
       ]
     ]
   },
@@ -45,6 +44,10 @@
         "text" : "ExternalMetadata"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "ExternalMetadata.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Infrastructure\/External%20Data\/ExternalMetadata.swift#L67"
+    },
     "role" : "symbol",
     "roleHeading" : "Structure",
     "symbolKind" : "struct",
@@ -58,7 +61,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -81,7 +84,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -89,6 +92,7 @@
   ],
   "seeAlsoSections" : [
     {
+      "anchor" : "Bundle-Metadata",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DefaultAvailability",
@@ -99,6 +103,8 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ExternalMetadata\/currentPlatforms",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ExternalMetadata\/diagnosticLevel",
@@ -129,6 +135,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -143,6 +150,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -170,20 +178,6 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/defaultavailability"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/DocumentationWorkspaceGroup": {
-  "abstract" : [
-    {
-      "text" : "Learn how to explore a documentation workspace and discover bundles.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationWorkspaceGroup",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Bundle Discovery",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/documentationworkspacegroup"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/ExternalMetadata": {
   "abstract" : [
     {
@@ -191,6 +185,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -225,6 +220,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -275,6 +271,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -320,6 +317,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -361,10 +359,11 @@
       "type" : "codeVoice"
     },
     {
-      "text" : ", there is no source bundle on disk and the inputs were passed via command line parameters.",
+      "text" : ", there is no source catalog on disk and the inputs were passed via command line parameters.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -402,6 +401,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",

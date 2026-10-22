@@ -17,8 +17,6 @@
     "paths" : [
       [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationWorkspaceGroup",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/PlatformVersion",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Version"
       ]
     ]
@@ -48,6 +46,14 @@
         "text" : ": "
       },
       {
+        "kind" : "keyword",
+        "text" : "any"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
         "kind" : "typeIdentifier",
         "preciseIdentifier" : "s:s7DecoderP",
         "text" : "Decoder"
@@ -66,6 +72,10 @@
         "name" : "SwiftDocC"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "Version.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Utility\/Version.swift#L58"
+    },
     "role" : "symbol",
     "roleHeading" : "Initializer",
     "symbolKind" : "init",
@@ -79,7 +89,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -107,6 +117,14 @@
               "text" : ": "
             },
             {
+              "kind" : "keyword",
+              "text" : "any"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
               "kind" : "typeIdentifier",
               "preciseIdentifier" : "s:s7DecoderP",
               "text" : "Decoder"
@@ -127,7 +145,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -154,60 +172,13 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
   "title" : "SwiftDocC",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/DocumentationWorkspaceGroup": {
-  "abstract" : [
-    {
-      "text" : "Learn how to explore a documentation workspace and discover bundles.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationWorkspaceGroup",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Bundle Discovery",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/documentationworkspacegroup"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/PlatformVersion": {
-  "abstract" : [
-    {
-      "text" : "A pair of a version number and beta information for a platform.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "struct"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "PlatformVersion"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/PlatformVersion",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "PlatformVersion"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "PlatformVersion",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/platformversion"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/Version": {
   "abstract" : [
@@ -216,6 +187,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -247,6 +219,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -263,6 +236,14 @@
     {
       "kind" : "text",
       "text" : ": "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",

@@ -8,8 +8,7 @@
   "hierarchy" : {
     "paths" : [
       [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderingModel"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC"
       ]
     ]
   },
@@ -45,6 +44,10 @@
         "text" : "VariantCollection"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "VariantCollection.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Model\/Rendering\/Variants\/VariantCollection.swift#L19"
+    },
     "role" : "symbol",
     "roleHeading" : "Structure",
     "symbolKind" : "struct",
@@ -58,7 +61,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -204,7 +207,8 @@
     {
       "identifiers" : [
         "doc:\/\/SwiftDocC\/Se",
-        "doc:\/\/SwiftDocC\/SE"
+        "doc:\/\/SwiftDocC\/SE",
+        "doc:\/\/SwiftDocC\/SQ"
       ],
       "kind" : "relationships",
       "title" : "Conforms To",
@@ -213,7 +217,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -221,6 +225,7 @@
   ],
   "seeAlsoSections" : [
     {
+      "anchor" : "Variants",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNode\/variantOverrides",
@@ -237,12 +242,16 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Structures",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/VariantCollection\/Variant"
       ],
       "title" : "Structures"
     },
     {
+      "anchor" : "Initializers",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/VariantCollection\/init(defaultValue:variants:)",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/VariantCollection\/init(from:)",
@@ -259,6 +268,8 @@
       "title" : "Initializers"
     },
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/VariantCollection\/defaultValue",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/VariantCollection\/variants"
@@ -266,11 +277,21 @@
       "title" : "Instance Properties"
     },
     {
+      "anchor" : "Instance-Methods",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/VariantCollection\/encode(to:)",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/VariantCollection\/mapValues(_:)"
       ],
       "title" : "Instance Methods"
+    },
+    {
+      "anchor" : "Default-Implementations",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/VariantCollection\/Equatable-Implementations"
+      ],
+      "title" : "Default Implementations"
     }
   ],
   "variants" : [
@@ -292,6 +313,11 @@
   "title" : "Swift.Encodable",
   "type" : "unresolvable"
 },
+"doc://SwiftDocC/SQ": {
+  "identifier" : "doc:\/\/SwiftDocC\/SQ",
+  "title" : "Swift.Equatable",
+  "type" : "unresolvable"
+},
 "doc://SwiftDocC/Se": {
   "identifier" : "doc:\/\/SwiftDocC\/Se",
   "title" : "Swift.Decodable",
@@ -304,6 +330,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -318,6 +345,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -352,6 +380,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -386,6 +415,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -420,6 +450,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -454,20 +485,6 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/rendernode\/variantoverrides"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/RenderingModel": {
-  "abstract" : [
-    {
-      "text" : "Convert documentation nodes into render nodes and save them to disk.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderingModel",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Rendering Model",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/renderingmodel"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/VariantCollection": {
   "abstract" : [
     {
@@ -475,6 +492,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -501,6 +519,17 @@
   "title" : "VariantCollection",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/variantcollection"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/VariantCollection/Equatable-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/VariantCollection\/Equatable-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Equatable Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/variantcollection\/equatable-implementations"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/VariantCollection/Variant": {
   "abstract" : [
@@ -549,6 +578,7 @@
       }
     ]
   },
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -583,6 +613,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -602,6 +633,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC17VariantCollectionV5Valuexmfp",
       "text" : "Value"
     }
   ],
@@ -616,6 +648,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -640,6 +673,14 @@
     {
       "kind" : "text",
       "text" : ": "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -669,6 +710,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -688,6 +730,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC17VariantCollectionV5Valuexmfp",
       "text" : "Value"
     },
     {
@@ -704,37 +747,12 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:9SwiftDocC17VariantCollectionV",
-      "text" : "VariantCollection"
-    },
-    {
-      "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Value"
-    },
-    {
-      "kind" : "text",
-      "text" : ">."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:9SwiftDocC17VariantCollectionV0C0V",
       "text" : "Variant"
     },
     {
       "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Value"
-    },
-    {
-      "kind" : "text",
-      "text" : ">])"
+      "text" : "])"
     }
   ],
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/VariantCollection\/init(defaultValue:variants:)",
@@ -748,6 +766,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -764,6 +783,14 @@
     {
       "kind" : "text",
       "text" : ": "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -833,6 +860,7 @@
       }
     ]
   },
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -885,6 +913,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC17VariantCollectionV4from__9transformACyxGSgAA25DocumentationDataVariantsVyqd__G_AIyqd_0_GAIyqd_1_GxAA0ghI5TraitV_qd__qd_0_qd_1_tXEtcr1_lufc6Value1L_qd__mfp",
       "text" : "Value1"
     },
     {
@@ -902,6 +931,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC17VariantCollectionV4from__9transformACyxGSgAA25DocumentationDataVariantsVyqd__G_AIyqd_0_GAIyqd_1_GxAA0ghI5TraitV_qd__qd_0_qd_1_tXEtcr1_lufc6Value2L_qd_0_mfp",
       "text" : "Value2"
     },
     {
@@ -919,6 +949,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC17VariantCollectionV4from__9transformACyxGSgAA25DocumentationDataVariantsVyqd__G_AIyqd_0_GAIyqd_1_GxAA0ghI5TraitV_qd__qd_0_qd_1_tXEtcr1_lufc6Value3L_qd_1_mfp",
       "text" : "Value3"
     },
     {
@@ -944,6 +975,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC17VariantCollectionV4from__9transformACyxGSgAA25DocumentationDataVariantsVyqd__G_AIyqd_0_GAIyqd_1_GxAA0ghI5TraitV_qd__qd_0_qd_1_tXEtcr1_lufc6Value1L_qd__mfp",
       "text" : "Value1"
     },
     {
@@ -952,6 +984,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC17VariantCollectionV4from__9transformACyxGSgAA25DocumentationDataVariantsVyqd__G_AIyqd_0_GAIyqd_1_GxAA0ghI5TraitV_qd__qd_0_qd_1_tXEtcr1_lufc6Value2L_qd_0_mfp",
       "text" : "Value2"
     },
     {
@@ -960,6 +993,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC17VariantCollectionV4from__9transformACyxGSgAA25DocumentationDataVariantsVyqd__G_AIyqd_0_GAIyqd_1_GxAA0ghI5TraitV_qd__qd_0_qd_1_tXEtcr1_lufc6Value3L_qd_1_mfp",
       "text" : "Value3"
     },
     {
@@ -968,6 +1002,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC17VariantCollectionV5Valuexmfp",
       "text" : "Value"
     },
     {
@@ -1029,6 +1064,7 @@
       }
     ]
   },
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -1073,6 +1109,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC17VariantCollectionV4from_9transformACyxGSgAA25DocumentationDataVariantsVyqd__G_AIyqd_0_GxAA0ghI5TraitV_qd__qd_0_tXEtcr0_lufc6Value1L_qd__mfp",
       "text" : "Value1"
     },
     {
@@ -1090,6 +1127,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC17VariantCollectionV4from_9transformACyxGSgAA25DocumentationDataVariantsVyqd__G_AIyqd_0_GxAA0ghI5TraitV_qd__qd_0_tXEtcr0_lufc6Value2L_qd_0_mfp",
       "text" : "Value2"
     },
     {
@@ -1115,6 +1153,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC17VariantCollectionV4from_9transformACyxGSgAA25DocumentationDataVariantsVyqd__G_AIyqd_0_GxAA0ghI5TraitV_qd__qd_0_tXEtcr0_lufc6Value1L_qd__mfp",
       "text" : "Value1"
     },
     {
@@ -1123,6 +1162,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC17VariantCollectionV4from_9transformACyxGSgAA25DocumentationDataVariantsVyqd__G_AIyqd_0_GxAA0ghI5TraitV_qd__qd_0_tXEtcr0_lufc6Value2L_qd_0_mfp",
       "text" : "Value2"
     },
     {
@@ -1131,6 +1171,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC17VariantCollectionV5Valuexmfp",
       "text" : "Value"
     },
     {
@@ -1192,6 +1233,7 @@
       }
     ]
   },
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -1237,6 +1279,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC17VariantCollectionV5Valuexmfp",
       "text" : "Value"
     },
     {
@@ -1262,6 +1305,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC17VariantCollectionV5Valuexmfp",
       "text" : "Value"
     },
     {
@@ -1323,6 +1367,7 @@
       }
     ]
   },
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -1375,6 +1420,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC17VariantCollectionV4from13optionalValue9transformACyqd_1_SgGSgAA25DocumentationDataVariantsVyqd__G_AKyqd_0_GAgA0ijK5TraitV_qd__qd_0_SgtXEtcAGRszSeRd_1_SERd_1_r1_lufc6Value1L_qd__mfp",
       "text" : "Value1"
     },
     {
@@ -1400,6 +1446,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC17VariantCollectionV4from13optionalValue9transformACyqd_1_SgGSgAA25DocumentationDataVariantsVyqd__G_AKyqd_0_GAgA0ijK5TraitV_qd__qd_0_SgtXEtcAGRszSeRd_1_SERd_1_r1_lufc6Value2L_qd_0_mfp",
       "text" : "Value2"
     },
     {
@@ -1425,6 +1472,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC17VariantCollectionV4from13optionalValue9transformACyqd_1_SgGSgAA25DocumentationDataVariantsVyqd__G_AKyqd_0_GAgA0ijK5TraitV_qd__qd_0_SgtXEtcAGRszSeRd_1_SERd_1_r1_lufc6Value1L_qd__mfp",
       "text" : "Value1"
     },
     {
@@ -1433,6 +1481,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC17VariantCollectionV4from13optionalValue9transformACyqd_1_SgGSgAA25DocumentationDataVariantsVyqd__G_AKyqd_0_GAgA0ijK5TraitV_qd__qd_0_SgtXEtcAGRszSeRd_1_SERd_1_r1_lufc6Value2L_qd_0_mfp",
       "text" : "Value2"
     },
     {
@@ -1441,6 +1490,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC17VariantCollectionV5Valuexmfp",
       "text" : "Value"
     },
     {
@@ -1502,6 +1552,7 @@
       }
     ]
   },
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -1546,6 +1597,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC17VariantCollectionV4from13optionalValue9transformACyxGSgAA25DocumentationDataVariantsVyqd__G_AJyqd_0_GxAA0ijK5TraitV_qd__qd_0_SgtXEtcr0_lufc6Value1L_qd__mfp",
       "text" : "Value1"
     },
     {
@@ -1571,6 +1623,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC17VariantCollectionV4from13optionalValue9transformACyxGSgAA25DocumentationDataVariantsVyqd__G_AJyqd_0_GxAA0ijK5TraitV_qd__qd_0_SgtXEtcr0_lufc6Value2L_qd_0_mfp",
       "text" : "Value2"
     },
     {
@@ -1596,6 +1649,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC17VariantCollectionV4from13optionalValue9transformACyxGSgAA25DocumentationDataVariantsVyqd__G_AJyqd_0_GxAA0ijK5TraitV_qd__qd_0_SgtXEtcr0_lufc6Value1L_qd__mfp",
       "text" : "Value1"
     },
     {
@@ -1604,6 +1658,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC17VariantCollectionV4from13optionalValue9transformACyxGSgAA25DocumentationDataVariantsVyqd__G_AJyqd_0_GxAA0ijK5TraitV_qd__qd_0_SgtXEtcr0_lufc6Value2L_qd_0_mfp",
       "text" : "Value2"
     },
     {
@@ -1612,6 +1667,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC17VariantCollectionV5Valuexmfp",
       "text" : "Value"
     },
     {
@@ -1673,6 +1729,7 @@
       }
     ]
   },
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -1709,6 +1766,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC17VariantCollectionV4from9transformACyqd__SgGAA25DocumentationDataVariantsVyqd__G_AfA0ghI5TraitV_AFtXEtcAFRszSeRd__SERd__lufc7WrappedL_qd__mfp",
       "text" : "Wrapped"
     },
     {
@@ -1734,6 +1792,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC17VariantCollectionV5Valuexmfp",
       "text" : "Value"
     },
     {
@@ -1742,6 +1801,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC17VariantCollectionV5Valuexmfp",
       "text" : "Value"
     },
     {
@@ -1803,6 +1863,7 @@
       }
     ]
   },
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -1839,6 +1900,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC17VariantCollectionV4from9transformACyxGSgAA25DocumentationDataVariantsVyqd__G_xAA0ghI5TraitV_qd__tXEtclufc11SymbolValueL_qd__mfp",
       "text" : "SymbolValue"
     },
     {
@@ -1864,6 +1926,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC17VariantCollectionV4from9transformACyxGSgAA25DocumentationDataVariantsVyqd__G_xAA0ghI5TraitV_qd__tXEtclufc11SymbolValueL_qd__mfp",
       "text" : "SymbolValue"
     },
     {
@@ -1872,6 +1935,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC17VariantCollectionV5Valuexmfp",
       "text" : "Value"
     },
     {
@@ -1933,6 +1997,7 @@
       }
     ]
   },
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -1969,6 +2034,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC17VariantCollectionV4from9transformACyxGAA25DocumentationDataVariantsVyqd__G_xAA0ghI5TraitV_qd__tSgXEtclufc11SymbolValueL_qd__mfp",
       "text" : "SymbolValue"
     },
     {
@@ -1994,6 +2060,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC17VariantCollectionV4from9transformACyxGAA25DocumentationDataVariantsVyqd__G_xAA0ghI5TraitV_qd__tSgXEtclufc11SymbolValueL_qd__mfp",
       "text" : "SymbolValue"
     },
     {
@@ -2002,6 +2069,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC17VariantCollectionV5Valuexmfp",
       "text" : "Value"
     },
     {
@@ -2063,6 +2131,7 @@
       }
     ]
   },
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -2091,6 +2160,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC17VariantCollectionV5Valuexmfp",
       "text" : "Value"
     },
     {
@@ -2116,6 +2186,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC17VariantCollectionV5Valuexmfp",
       "text" : "Value"
     },
     {
@@ -2124,6 +2195,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC17VariantCollectionV5Valuexmfp",
       "text" : "Value"
     },
     {
@@ -2145,6 +2217,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -2172,6 +2245,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC17VariantCollectionV5Valuexmfp",
       "text" : "Value"
     },
     {
@@ -2180,6 +2254,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC17VariantCollectionV9mapValuesyACyqd__Gqd__xXESeRd__SERd__lF16TransformedValueL_qd__mfp",
       "text" : "TransformedValue"
     },
     {
@@ -2197,6 +2272,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC17VariantCollectionV9mapValuesyACyqd__Gqd__xXESeRd__SERd__lF16TransformedValueL_qd__mfp",
       "text" : "TransformedValue"
     },
     {
@@ -2218,6 +2294,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -2237,37 +2314,12 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:9SwiftDocC17VariantCollectionV",
-      "text" : "VariantCollection"
-    },
-    {
-      "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Value"
-    },
-    {
-      "kind" : "text",
-      "text" : ">."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:9SwiftDocC17VariantCollectionV0C0V",
       "text" : "Variant"
     },
     {
       "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Value"
-    },
-    {
-      "kind" : "text",
-      "text" : ">]"
+      "text" : "]"
     }
   ],
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/VariantCollection\/variants",
@@ -2284,6 +2336,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -2318,6 +2371,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -2352,6 +2406,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -2386,6 +2441,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",

@@ -44,6 +44,10 @@
         "text" : "RenderJSONEncoder"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "RenderNode+Coding.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Converter\/RenderNode+Coding.swift#L96"
+    },
     "role" : "symbol",
     "roleHeading" : "Enumeration",
     "symbolKind" : "enum",
@@ -57,7 +61,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -80,7 +84,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -88,8 +92,10 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Type-Methods",
+      "generated" : true,
       "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderJSONEncoder\/makeEncoder(prettyPrint:emitVariantOverrides:)"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderJSONEncoder\/makeEncoder(prettyPrint:emitVariantOverrides:assetPrefixComponent:)"
       ],
       "title" : "Type Methods"
     }
@@ -115,6 +121,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -129,6 +136,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -156,13 +164,14 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/renderjsonencoder"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/RenderJSONEncoder/makeEncoder(prettyPrint:emitVariantOverrides:)": {
+"doc://SwiftDocC/documentation/SwiftDocC/RenderJSONEncoder/makeEncoder(prettyPrint:emitVariantOverrides:assetPrefixComponent:)": {
   "abstract" : [
     {
       "text" : "Creates a new JSON encoder for render node values.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -220,20 +229,37 @@
     },
     {
       "kind" : "text",
-      "text" : ") -> "
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "assetPrefixComponent"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10Foundation11JSONEncoderC",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : "?) -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:20FoundationEssentials11JSONEncoderC",
       "text" : "JSONEncoder"
     }
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderJSONEncoder\/makeEncoder(prettyPrint:emitVariantOverrides:)",
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderJSONEncoder\/makeEncoder(prettyPrint:emitVariantOverrides:assetPrefixComponent:)",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "makeEncoder(prettyPrint:emitVariantOverrides:)",
+  "title" : "makeEncoder(prettyPrint:emitVariantOverrides:assetPrefixComponent:)",
   "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/renderjsonencoder\/makeencoder(prettyprint:emitvariantoverrides:)"
+  "url" : "\/documentation\/swiftdocc\/renderjsonencoder\/makeencoder(prettyprint:emitvariantoverrides:assetprefixcomponent:)"
 }
 }
 }

@@ -1,7 +1,7 @@
 {
   "abstract" : [
     {
-      "text" : "A unique reverse-DNS-style string identifier used for looking up explanations for diagnostics.",
+      "text" : "An opaque identifier that diagnostic consumers and tools can use to identify specific types of diagnostics.",
       "type" : "text"
     }
   ],
@@ -9,7 +9,6 @@
     "paths" : [
       [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/EmittingDiagnostics",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Diagnostic"
       ]
     ]
@@ -49,6 +48,10 @@
         "name" : "SwiftDocC"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "Diagnostic.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Infrastructure\/Diagnostics\/Diagnostic.swift#L27"
+    },
     "role" : "symbol",
     "roleHeading" : "Instance Property",
     "symbolKind" : "property",
@@ -62,7 +65,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -90,31 +93,11 @@
         }
       ],
       "kind" : "declarations"
-    },
-    {
-      "content" : [
-        {
-          "anchor" : "Example",
-          "level" : 2,
-          "text" : "Example",
-          "type" : "heading"
-        },
-        {
-          "inlineContent" : [
-            {
-              "code" : "org.swift.docc.AbstractContainsLink",
-              "type" : "codeVoice"
-            }
-          ],
-          "type" : "paragraph"
-        }
-      ],
-      "kind" : "content"
     }
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -141,6 +124,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -155,6 +139,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -185,10 +170,11 @@
 "doc://SwiftDocC/documentation/SwiftDocC/Diagnostic/identifier": {
   "abstract" : [
     {
-      "text" : "A unique reverse-DNS-style string identifier used for looking up explanations for diagnostics.",
+      "text" : "An opaque identifier that diagnostic consumers and tools can use to identify specific types of diagnostics.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -218,20 +204,6 @@
   "title" : "identifier",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/diagnostic\/identifier"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/EmittingDiagnostics": {
-  "abstract" : [
-    {
-      "text" : "Vend warnings and errors as part of an operation’s result.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/EmittingDiagnostics",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Emitting Diagnostics",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/emittingdiagnostics"
 }
 }
 }

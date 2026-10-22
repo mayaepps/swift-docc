@@ -24,6 +24,7 @@
       }
     ],
     "role" : "collectionGroup",
+    "roleHeading" : "API Collection",
     "title" : "Directives"
   },
   "primaryContentSections" : [
@@ -87,8 +88,14 @@
             "           alt: \"EmailValidator(string: email.stringValue).validate()\")",
             "}"
           ],
+          "copyToClipboard" : true,
+          "lineAnnotations" : [
+
+          ],
+          "showLineNumbers" : false,
           "syntax" : "markdown",
-          "type" : "codeListing"
+          "type" : "codeListing",
+          "wrap" : 0
         }
       ],
       "kind" : "content"
@@ -96,7 +103,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -104,20 +111,21 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Semantic-Elements",
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Semantic",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SemanticVisitor",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SemanticWalker",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/MarkupContainer",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/MarkupConvertible",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DirectiveConvertible",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TechnologyBound"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DirectiveConvertible"
       ],
       "title" : "Semantic Elements"
     },
     {
+      "anchor" : "Tutorial-Table-of-Contents-Directives",
       "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Technology",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialTableOfContents",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Volume",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Chapter",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialReference",
@@ -125,9 +133,10 @@
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Tile",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Article"
       ],
-      "title" : "Technology Directives"
+      "title" : "Tutorial Table of Contents Directives"
     },
     {
+      "anchor" : "Tutorials-Directives",
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Tutorial",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/XcodeRequirement",
@@ -148,6 +157,7 @@
       "title" : "Tutorials Directives"
     },
     {
+      "anchor" : "Symbol-Reference-Directives",
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DeprecationSummary",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/PlatformName",
@@ -156,6 +166,7 @@
       "title" : "Symbol Reference Directives"
     },
     {
+      "anchor" : "Metadata-Directives",
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationExtension",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Metadata",
@@ -164,6 +175,7 @@
       "title" : "Metadata Directives"
     },
     {
+      "anchor" : "Common-Directives",
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ImageMedia",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Media",
@@ -197,6 +209,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -211,6 +224,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -245,6 +259,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -288,6 +303,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -331,6 +347,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -374,6 +391,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -408,6 +426,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -442,6 +461,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -472,10 +492,11 @@
 "doc://SwiftDocC/documentation/SwiftDocC/DeprecationSummary": {
   "abstract" : [
     {
-      "text" : "A directive to add custom deprecation summary to an already deprecated symbol.",
+      "text" : "A directive that specifies a custom deprecation summary message to an already deprecated symbol.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -510,6 +531,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -540,10 +562,11 @@
 "doc://SwiftDocC/documentation/SwiftDocC/DocumentationExtension": {
   "abstract" : [
     {
-      "text" : "A directive that controls how the documentation-extension file merges with or overrides the in-source documentation.",
+      "text" : "Defines whether the content in a documentation extension file amends or replaces in-source documentation.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -578,6 +601,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -612,6 +636,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -655,6 +680,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -689,6 +715,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -723,6 +750,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -765,6 +793,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -799,6 +828,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -833,6 +863,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -867,10 +898,11 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "class"
+      "text" : "protocol"
     },
     {
       "kind" : "text",
@@ -901,6 +933,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -935,6 +968,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -969,6 +1003,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -999,10 +1034,11 @@
 "doc://SwiftDocC/documentation/SwiftDocC/Redirect": {
   "abstract" : [
     {
-      "text" : "A directive that specifies an additional URL for the page where the directive appears.",
+      "text" : "A directive that specifies a previous URL for the page where the directive appears.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1037,6 +1073,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1071,6 +1108,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1114,6 +1152,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1157,6 +1196,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1191,6 +1231,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1239,6 +1280,7 @@
       "type" : "reference"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1282,6 +1324,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1316,6 +1359,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1343,81 +1387,14 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/symbol"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/Technology": {
-  "abstract" : [
-    {
-      "text" : "An overview of the educational materials under a specific technology or technology area.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "class"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "Technology"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Technology",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "Technology"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "Technology",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/technology"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/TechnologyBound": {
-  "abstract" : [
-    {
-      "text" : "An entity directly referring to the technology it belongs to.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "protocol"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "TechnologyBound"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TechnologyBound",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "TechnologyBound"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "TechnologyBound",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/technologybound"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/TechnologyRoot": {
   "abstract" : [
     {
-      "text" : "A directive to set this page as a documentation root-level node.",
+      "text" : "Configures an article to become a top-level page.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1452,6 +1429,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1482,19 +1460,11 @@
 "doc://SwiftDocC/documentation/SwiftDocC/Tutorial": {
   "abstract" : [
     {
-      "text" : "A tutorial to complete in order to gain knowledge of a ",
-      "type" : "text"
-    },
-    {
-      "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Technology",
-      "isActive" : true,
-      "type" : "reference"
-    },
-    {
-      "text" : ".",
+      "text" : "A tutorial to complete in order to gain knowledge of a technology.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1529,6 +1499,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1589,6 +1560,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1632,6 +1604,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1659,6 +1632,41 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/tutorialsection"
 },
+"doc://SwiftDocC/documentation/SwiftDocC/TutorialTableOfContents": {
+  "abstract" : [
+    {
+      "text" : "A top-level page that organizes a collection of tutorials into a hierarchy of volumes and chapters.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "TutorialTableOfContents"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialTableOfContents",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "TutorialTableOfContents"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "TutorialTableOfContents",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/tutorialtableofcontents"
+},
 "doc://SwiftDocC/documentation/SwiftDocC/VideoMedia": {
   "abstract" : [
     {
@@ -1666,6 +1674,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1700,6 +1709,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1743,6 +1753,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",

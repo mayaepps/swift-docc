@@ -8,8 +8,7 @@
   "hierarchy" : {
     "paths" : [
       [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderingModel"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC"
       ]
     ]
   },
@@ -45,6 +44,10 @@
         "text" : "RenderContentMetadata"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "RenderContentMetadata.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Model\/Rendering\/Content\/RenderContentMetadata.swift#L14"
+    },
     "role" : "symbol",
     "roleHeading" : "Structure",
     "symbolKind" : "struct",
@@ -58,7 +61,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -82,6 +85,7 @@
   "relationshipsSections" : [
     {
       "identifiers" : [
+        "doc:\/\/DocCCommon\/documentation\/DocCCommon\/FastJSONDecodable",
         "doc:\/\/SwiftDocC\/Se",
         "doc:\/\/SwiftDocC\/SE",
         "doc:\/\/SwiftDocC\/SQ"
@@ -93,7 +97,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -101,6 +105,7 @@
   ],
   "seeAlsoSections" : [
     {
+      "anchor" : "Render-Elements",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderBlockContent",
@@ -111,29 +116,38 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Initializers",
+      "generated" : true,
       "identifiers" : [
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderContentMetadata\/init(anchor:title:abstract:deviceFrame:)",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderContentMetadata\/init(from:)"
       ],
       "title" : "Initializers"
     },
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderContentMetadata\/abstract",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderContentMetadata\/anchor",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderContentMetadata\/deviceFrame",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderContentMetadata\/title"
       ],
       "title" : "Instance Properties"
     },
     {
+      "anchor" : "Instance-Methods",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderContentMetadata\/rawIndexableTextContent(references:)"
       ],
       "title" : "Instance Methods"
     },
     {
+      "anchor" : "Default-Implementations",
       "generated" : true,
       "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderContentMetadata\/Equatable-Implementations"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderContentMetadata\/FastJSONDecodable-Implementations"
       ],
       "title" : "Default Implementations"
     }
@@ -152,6 +166,48 @@
   ]
 , 
 "references": {
+"doc://DocCCommon/documentation/DocCCommon/FastJSONDecodable": {
+  "abstract" : [
+    {
+      "text" : "A protocol for types that can be decoded using a ",
+      "type" : "text"
+    },
+    {
+      "code" : "FastSymbolGraphJSONDecoder",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "FastJSONDecodable"
+    }
+  ],
+  "identifier" : "doc:\/\/DocCCommon\/documentation\/DocCCommon\/FastJSONDecodable",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "FastJSONDecodable"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "FastJSONDecodable",
+  "type" : "topic",
+  "url" : "\/documentation\/docccommon\/fastjsondecodable"
+},
 "doc://SwiftDocC/SE": {
   "identifier" : "doc:\/\/SwiftDocC\/SE",
   "title" : "Swift.Encodable",
@@ -174,6 +230,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -188,6 +245,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -222,6 +280,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -249,16 +308,16 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/rendercontentmetadata"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/RenderContentMetadata/Equatable-Implementations": {
+"doc://SwiftDocC/documentation/SwiftDocC/RenderContentMetadata/FastJSONDecodable-Implementations": {
   "abstract" : [
 
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderContentMetadata\/Equatable-Implementations",
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderContentMetadata\/FastJSONDecodable-Implementations",
   "kind" : "article",
   "role" : "collectionGroup",
-  "title" : "Equatable Implementations",
+  "title" : "FastJSONDecodable Implementations",
   "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/rendercontentmetadata\/equatable-implementations"
+  "url" : "\/documentation\/swiftdocc\/rendercontentmetadata\/fastjsondecodable-implementations"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/RenderContentMetadata/abstract": {
   "abstract" : [
@@ -267,6 +326,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -308,6 +368,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -342,10 +403,146 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/rendercontentmetadata\/anchor"
 },
+"doc://SwiftDocC/documentation/SwiftDocC/RenderContentMetadata/deviceFrame": {
+  "abstract" : [
+    {
+      "text" : "An optional identifier for the device frame that should wrap this element.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "deviceFrame"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderContentMetadata\/deviceFrame",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "deviceFrame",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/rendercontentmetadata\/deviceframe"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/RenderContentMetadata/init(anchor:title:abstract:deviceFrame:)": {
+  "abstract" : [
+    {
+      "text" : "Creates a new metadata value for a content element.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "anchor"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : "?, "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "title"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : "?, "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "abstract"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC19RenderInlineContentO",
+      "text" : "RenderInlineContent"
+    },
+    {
+      "kind" : "text",
+      "text" : "]?, "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "deviceFrame"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : "?)"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderContentMetadata\/init(anchor:title:abstract:deviceFrame:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(anchor:title:abstract:deviceFrame:)",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/rendercontentmetadata\/init(anchor:title:abstract:deviceframe:)"
+},
 "doc://SwiftDocC/documentation/SwiftDocC/RenderContentMetadata/init(from:)": {
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -361,7 +558,7 @@
     },
     {
       "kind" : "text",
-      "text" : ": "
+      "text" : ": any "
     },
     {
       "kind" : "typeIdentifier",
@@ -388,6 +585,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -423,6 +621,14 @@
       "text" : " : "
     },
     {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
       "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:9SwiftDocC15RenderReferenceP",
       "text" : "RenderReference"
@@ -451,6 +657,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -492,6 +699,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -518,20 +726,6 @@
   "title" : "RenderInlineContent",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/renderinlinecontent"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/RenderingModel": {
-  "abstract" : [
-    {
-      "text" : "Convert documentation nodes into render nodes and save them to disk.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderingModel",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Rendering Model",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/renderingmodel"
 }
 }
 }

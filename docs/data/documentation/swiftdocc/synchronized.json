@@ -44,6 +44,10 @@
         "text" : "Synchronized"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "Synchronization.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Utility\/Synchronization.swift#L27"
+    },
     "role" : "symbol",
     "roleHeading" : "Class",
     "symbolKind" : "class",
@@ -57,7 +61,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -123,8 +127,14 @@
             "\/\/ Access the value",
             "let value = index.sync { $0[\"key\"] }"
           ],
+          "copyToClipboard" : true,
+          "lineAnnotations" : [
+
+          ],
+          "showLineNumbers" : false,
           "syntax" : "swift",
-          "type" : "codeListing"
+          "type" : "codeListing",
+          "wrap" : 0
         }
       ],
       "kind" : "content"
@@ -132,7 +142,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -140,6 +150,8 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Initializers",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Synchronized\/init()",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Synchronized\/init(_:)"
@@ -147,9 +159,11 @@
       "title" : "Initializers"
     },
     {
+      "anchor" : "Instance-Methods",
+      "generated" : true,
       "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Synchronized\/sync(_:)-17wqu",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Synchronized\/sync(_:)-2cxyk"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Synchronized\/sync(_:)-2zm7p",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Synchronized\/sync(_:)-b3sw"
       ],
       "title" : "Instance Methods"
     }
@@ -175,6 +189,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -189,6 +204,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -246,7 +262,7 @@
         "type" : "text"
       },
       {
-        "code" : "Void",
+        "code" : "()",
         "type" : "codeVoice"
       },
       {
@@ -255,15 +271,8 @@
       }
     ]
   },
+  "deprecated" : true,
   "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "convenience"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
     {
       "kind" : "identifier",
       "text" : "init"
@@ -287,6 +296,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -298,6 +308,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC12SynchronizedC5Valuexmfp",
       "text" : "Value"
     },
     {
@@ -312,91 +323,7 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/synchronized\/init(_:)"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/Synchronized/sync(_:)-17wqu": {
-  "abstract" : [
-    {
-      "text" : "Performs a given block of code while synchronizing over the type’s stored value.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "sync"
-    },
-    {
-      "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "genericParameter",
-      "text" : "Result"
-    },
-    {
-      "kind" : "text",
-      "text" : ">(("
-    },
-    {
-      "kind" : "keyword",
-      "text" : "inout"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Value"
-    },
-    {
-      "kind" : "text",
-      "text" : ") "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "throws"
-    },
-    {
-      "kind" : "text",
-      "text" : " -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Result"
-    },
-    {
-      "kind" : "text",
-      "text" : ") "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "rethrows"
-    },
-    {
-      "kind" : "text",
-      "text" : " -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Result"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Synchronized\/sync(_:)-17wqu",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "sync(_:)",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/synchronized\/sync(_:)-17wqu"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/Synchronized/sync(_:)-2cxyk": {
+"doc://SwiftDocC/documentation/SwiftDocC/Synchronized/sync(_:)-2zm7p": {
   "abstract" : [
 
   ],
@@ -423,7 +350,7 @@
         "type" : "text"
       },
       {
-        "code" : "Void",
+        "code" : "()",
         "type" : "codeVoice"
       },
       {
@@ -432,6 +359,7 @@
       }
     ]
   },
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -455,6 +383,14 @@
     },
     {
       "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "Error"
+    },
+    {
+      "kind" : "text",
       "text" : ">(() "
     },
     {
@@ -463,10 +399,20 @@
     },
     {
       "kind" : "text",
-      "text" : " -> "
+      "text" : "("
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC12SynchronizedCAAytRszlE4syncyqd__qd__yqd_0_YKXEqd_0_YKs5ErrorRd_0_r0_lFAEL_qd_0_mfp",
+      "text" : "Error"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC12SynchronizedCAAytRszlE4syncyqd__qd__yqd_0_YKXEqd_0_YKs5ErrorRd_0_r0_lF6ResultL_qd__mfp",
       "text" : "Result"
     },
     {
@@ -475,23 +421,147 @@
     },
     {
       "kind" : "keyword",
-      "text" : "rethrows"
+      "text" : "throws"
     },
     {
       "kind" : "text",
-      "text" : " -> "
+      "text" : "("
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC12SynchronizedCAAytRszlE4syncyqd__qd__yqd_0_YKXEqd_0_YKs5ErrorRd_0_r0_lFAEL_qd_0_mfp",
+      "text" : "Error"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC12SynchronizedCAAytRszlE4syncyqd__qd__yqd_0_YKXEqd_0_YKs5ErrorRd_0_r0_lF6ResultL_qd__mfp",
       "text" : "Result"
     }
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Synchronized\/sync(_:)-2cxyk",
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Synchronized\/sync(_:)-2zm7p",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : "sync(_:)",
   "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/synchronized\/sync(_:)-2cxyk"
+  "url" : "\/documentation\/swiftdocc\/synchronized\/sync(_:)-2zm7p"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/Synchronized/sync(_:)-b3sw": {
+  "abstract" : [
+    {
+      "text" : "Performs a given block of code while synchronizing over the type’s stored value.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "sync"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "Result"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "Error"
+    },
+    {
+      "kind" : "text",
+      "text" : ">(("
+    },
+    {
+      "kind" : "keyword",
+      "text" : "inout"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC12SynchronizedC5Valuexmfp",
+      "text" : "Value"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC12SynchronizedC4syncyqd__qd__xzqd_0_YKXEqd_0_YKs5ErrorRd_0_r0_lFAEL_qd_0_mfp",
+      "text" : "Error"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC12SynchronizedC4syncyqd__qd__xzqd_0_YKXEqd_0_YKs5ErrorRd_0_r0_lF6ResultL_qd__mfp",
+      "text" : "Result"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC12SynchronizedC4syncyqd__qd__xzqd_0_YKXEqd_0_YKs5ErrorRd_0_r0_lFAEL_qd_0_mfp",
+      "text" : "Error"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC12SynchronizedC4syncyqd__qd__xzqd_0_YKXEqd_0_YKs5ErrorRd_0_r0_lF6ResultL_qd__mfp",
+      "text" : "Result"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Synchronized\/sync(_:)-b3sw",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "sync(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/synchronized\/sync(_:)-b3sw"
 }
 }
 }

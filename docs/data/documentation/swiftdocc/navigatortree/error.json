@@ -1,15 +1,8 @@
 {
-  "abstract" : [
-    {
-      "text" : "No overview available.",
-      "type" : "text"
-    }
-  ],
   "hierarchy" : {
     "paths" : [
       [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationIndexing",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NavigatorTree"
       ]
     ]
@@ -46,6 +39,10 @@
         "text" : "Error"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "NavigatorTree.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Indexing\/Navigator\/NavigatorTree.swift#L38"
+    },
     "role" : "symbol",
     "roleHeading" : "Enumeration",
     "symbolKind" : "enum",
@@ -59,7 +56,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -84,9 +81,10 @@
     {
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DescribedError",
-        "doc:\/\/SwiftDocC\/10Foundation14LocalizedErrorP",
+        "doc:\/\/SwiftDocC\/20FoundationEssentials14LocalizedErrorP",
         "doc:\/\/SwiftDocC\/s5ErrorP",
-        "doc:\/\/SwiftDocC\/s8SendableP"
+        "doc:\/\/SwiftDocC\/s8SendableP",
+        "doc:\/\/SwiftDocC\/s16SendableMetatypeP"
       ],
       "kind" : "relationships",
       "title" : "Conforms To",
@@ -95,7 +93,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -103,6 +101,8 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Enumeration-Cases",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NavigatorTree\/Error\/cannotCreateFile(path:)",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NavigatorTree\/Error\/cannotOpenFile(path:)",
@@ -111,19 +111,12 @@
       "title" : "Enumeration Cases"
     },
     {
-      "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NavigatorTree\/Error\/errorDescription-8zwtr"
-      ],
-      "title" : "Instance Properties"
-    },
-    {
+      "anchor" : "Instance-Properties",
       "generated" : true,
       "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NavigatorTree\/Error\/DescribedError-Implementations",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NavigatorTree\/Error\/Error-Implementations",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NavigatorTree\/Error\/LocalizedError-Implementations"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NavigatorTree\/Error\/errorDescription"
       ],
-      "title" : "Default Implementations"
+      "title" : "Instance Properties"
     }
   ],
   "variants" : [
@@ -140,9 +133,9 @@
   ]
 , 
 "references": {
-"doc://SwiftDocC/10Foundation14LocalizedErrorP": {
-  "identifier" : "doc:\/\/SwiftDocC\/10Foundation14LocalizedErrorP",
-  "title" : "Foundation.LocalizedError",
+"doc://SwiftDocC/20FoundationEssentials14LocalizedErrorP": {
+  "identifier" : "doc:\/\/SwiftDocC\/20FoundationEssentials14LocalizedErrorP",
+  "title" : "FoundationEssentials.LocalizedError",
   "type" : "unresolvable"
 },
 "doc://SwiftDocC/documentation/SwiftDocC": {
@@ -152,6 +145,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -166,6 +160,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -193,20 +188,6 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/describederror"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/DocumentationIndexing": {
-  "abstract" : [
-    {
-      "text" : "Create documentation indexes optimized for text search or navigation.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationIndexing",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Documentation Indexing",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/documentationindexing"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/NavigatorTree": {
   "abstract" : [
     {
@@ -222,6 +203,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -253,6 +235,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -280,39 +263,6 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/navigatortree\/error"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/NavigatorTree/Error/DescribedError-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NavigatorTree\/Error\/DescribedError-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "DescribedError Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/navigatortree\/error\/describederror-implementations"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/NavigatorTree/Error/Error-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NavigatorTree\/Error\/Error-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Error Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/navigatortree\/error\/error-implementations"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/NavigatorTree/Error/LocalizedError-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NavigatorTree\/Error\/LocalizedError-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "LocalizedError Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/navigatortree\/error\/localizederror-implementations"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/NavigatorTree/Error/cannotCreateFile(path:)": {
   "abstract" : [
     {
@@ -320,6 +270,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -369,6 +320,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -411,10 +363,11 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/navigatortree\/error\/cannotopenfile(path:)"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/NavigatorTree/Error/errorDescription-8zwtr": {
+"doc://SwiftDocC/documentation/SwiftDocC/NavigatorTree/Error/errorDescription": {
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -438,12 +391,12 @@
       "text" : "String"
     }
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NavigatorTree\/Error\/errorDescription-8zwtr",
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NavigatorTree\/Error\/errorDescription",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : "errorDescription",
   "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/navigatortree\/error\/errordescription-8zwtr"
+  "url" : "\/documentation\/swiftdocc\/navigatortree\/error\/errordescription"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/NavigatorTree/Error/invalidData": {
   "abstract" : [
@@ -452,6 +405,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -472,6 +426,11 @@
   "title" : "NavigatorTree.Error.invalidData",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/navigatortree\/error\/invaliddata"
+},
+"doc://SwiftDocC/s16SendableMetatypeP": {
+  "identifier" : "doc:\/\/SwiftDocC\/s16SendableMetatypeP",
+  "title" : "Swift.SendableMetatype",
+  "type" : "unresolvable"
 },
 "doc://SwiftDocC/s5ErrorP": {
   "identifier" : "doc:\/\/SwiftDocC\/s5ErrorP",

@@ -16,8 +16,7 @@
   "hierarchy" : {
     "paths" : [
       [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Communication"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC"
       ]
     ]
   },
@@ -53,6 +52,10 @@
         "text" : "FileServerProvider"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "FileServer.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Servers\/FileServer.swift#L172"
+    },
     "role" : "symbol",
     "roleHeading" : "Protocol",
     "symbolKind" : "protocol",
@@ -66,7 +69,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -172,7 +175,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -180,10 +183,10 @@
   ],
   "seeAlsoSections" : [
     {
+      "anchor" : "Communication-File-Server",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/FileServer",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/FileSystemRenderNodeProvider",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/FileSystemServerProvider",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/MemoryFileServerProvider"
       ],
@@ -192,6 +195,8 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Instance-Methods",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/FileServerProvider\/data(for:)"
       ],
@@ -219,26 +224,13 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
   "title" : "SwiftDocC",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/Communication": {
-  "abstract" : [
-    {
-      "text" : "Offer native integration of DocC in your IDE.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Communication",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Communication Bridge",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/communication"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/FileServer": {
   "abstract" : [
@@ -291,6 +283,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -333,6 +326,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -375,6 +369,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -411,7 +406,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10Foundation4DataV",
+      "preciseIdentifier" : "s:20FoundationEssentials4DataV",
       "text" : "Data"
     },
     {
@@ -427,68 +422,11 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/fileserverprovider\/data(for:)"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/FileSystemRenderNodeProvider": {
-  "abstract" : [
-    {
-      "text" : "This class provides a simple way to transform a ",
-      "type" : "text"
-    },
-    {
-      "code" : "FileSystemProvider",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " into a ",
-      "type" : "text"
-    },
-    {
-      "code" : "RenderNodeProvider",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " to feed an index builder.",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "The data from the disk is fetched and processed in an efficient way to build a navigator index.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "class"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "FileSystemRenderNodeProvider"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/FileSystemRenderNodeProvider",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "FileSystemRenderNodeProvider"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "FileSystemRenderNodeProvider",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/filesystemrendernodeprovider"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/FileSystemServerProvider": {
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -520,6 +458,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",

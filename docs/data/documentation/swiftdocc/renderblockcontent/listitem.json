@@ -9,7 +9,6 @@
     "paths" : [
       [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderingModel",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderBlockContent"
       ]
     ]
@@ -46,6 +45,10 @@
         "text" : "ListItem"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "RenderBlockContent.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Model\/Rendering\/Content\/RenderBlockContent.swift#L588"
+    },
     "role" : "symbol",
     "roleHeading" : "Structure",
     "symbolKind" : "struct",
@@ -59,7 +62,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -94,7 +97,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -102,24 +105,22 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Initializers",
+      "generated" : true,
       "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderBlockContent\/ListItem\/init(content:)",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderBlockContent\/ListItem\/init(content:checked:)",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderBlockContent\/ListItem\/init(from:)"
       ],
       "title" : "Initializers"
     },
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderBlockContent\/ListItem\/checked",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderBlockContent\/ListItem\/content"
       ],
       "title" : "Instance Properties"
-    },
-    {
-      "generated" : true,
-      "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderBlockContent\/ListItem\/Equatable-Implementations"
-      ],
-      "title" : "Default Implementations"
     }
   ],
   "variants" : [
@@ -158,6 +159,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -172,6 +174,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -206,6 +209,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -233,16 +237,47 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/renderblockcontent\/listitem"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/RenderBlockContent/ListItem/Equatable-Implementations": {
+"doc://SwiftDocC/documentation/SwiftDocC/RenderBlockContent/ListItem/checked": {
   "abstract" : [
-
+    {
+      "text" : "If this list item is a task list item, whether the task should be checked off.",
+      "type" : "text"
+    }
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderBlockContent\/ListItem\/Equatable-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Equatable Implementations",
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "checked"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderBlockContent\/ListItem\/checked",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "checked",
   "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/renderblockcontent\/listitem\/equatable-implementations"
+  "url" : "\/documentation\/swiftdocc\/renderblockcontent\/listitem\/checked"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/RenderBlockContent/ListItem/content": {
   "abstract" : [
@@ -251,6 +286,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -285,13 +321,14 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/renderblockcontent\/listitem\/content"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/RenderBlockContent/ListItem/init(content:)": {
+"doc://SwiftDocC/documentation/SwiftDocC/RenderBlockContent/ListItem/init(content:checked:)": {
   "abstract" : [
     {
       "text" : "Creates a new list item with the given content.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -316,20 +353,38 @@
     },
     {
       "kind" : "text",
-      "text" : "])"
+      "text" : "], "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "checked"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : "?)"
     }
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderBlockContent\/ListItem\/init(content:)",
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderBlockContent\/ListItem\/init(content:checked:)",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "init(content:)",
+  "title" : "init(content:checked:)",
   "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/renderblockcontent\/listitem\/init(content:)"
+  "url" : "\/documentation\/swiftdocc\/renderblockcontent\/listitem\/init(content:checked:)"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/RenderBlockContent/ListItem/init(from:)": {
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -345,7 +400,7 @@
     },
     {
       "kind" : "text",
-      "text" : ": "
+      "text" : ": any "
     },
     {
       "kind" : "typeIdentifier",
@@ -367,20 +422,6 @@
   "title" : "init(from:)",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/renderblockcontent\/listitem\/init(from:)"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/RenderingModel": {
-  "abstract" : [
-    {
-      "text" : "Convert documentation nodes into render nodes and save them to disk.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderingModel",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Rendering Model",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/renderingmodel"
 }
 }
 }

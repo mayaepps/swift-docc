@@ -8,8 +8,7 @@
   "hierarchy" : {
     "paths" : [
       [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/PersistingDocumentation"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC"
       ]
     ]
   },
@@ -45,6 +44,10 @@
         "text" : "RenderNodeTransforming"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "RenderNodeTransforming.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Converter\/Rewriter\/RenderNodeTransforming.swift#L12"
+    },
     "role" : "symbol",
     "roleHeading" : "Protocol",
     "symbolKind" : "protocol",
@@ -58,7 +61,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -82,7 +85,6 @@
   "relationshipsSections" : [
     {
       "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RemoveAutomaticallyCuratedSeeAlsoSectionsTransformation",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RemoveHierarchyTransformation",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RemoveUnusedReferencesTransformation",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNodeTransformationComposition"
@@ -94,7 +96,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -102,9 +104,9 @@
   ],
   "seeAlsoSections" : [
     {
+      "anchor" : "Render-Node-Rewriter",
       "generated" : true,
       "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RemoveAutomaticallyCuratedSeeAlsoSectionsTransformation",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RemoveUnusedReferencesTransformation",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNodeTransformationComposition",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNodeTransformationContext",
@@ -115,6 +117,8 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Instance-Methods",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNodeTransforming\/then(_:)",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNodeTransforming\/transform(renderNode:context:)"
@@ -122,6 +126,8 @@
       "title" : "Instance Methods"
     },
     {
+      "anchor" : "Type-Aliases",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderNodeTransforming\/RenderNodeTransformationResult"
       ],
@@ -149,60 +155,13 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
   "title" : "SwiftDocC",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/PersistingDocumentation": {
-  "abstract" : [
-    {
-      "text" : "Save compiled documentation to disk.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/PersistingDocumentation",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Persisting Documentation",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/persistingdocumentation"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/RemoveAutomaticallyCuratedSeeAlsoSectionsTransformation": {
-  "abstract" : [
-    {
-      "text" : "A transformation that removes automatically curated See Also sections.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "struct"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "RemoveAutomaticallyCuratedSeeAlsoSectionsTransformation"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RemoveAutomaticallyCuratedSeeAlsoSectionsTransformation",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "RemoveAutomaticallyCuratedSeeAlsoSectionsTransformation"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "RemoveAutomaticallyCuratedSeeAlsoSectionsTransformation",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/removeautomaticallycuratedseealsosectionstransformation"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/RemoveHierarchyTransformation": {
   "abstract" : [
@@ -227,6 +186,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -261,6 +221,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -295,6 +256,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -329,6 +291,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -363,6 +326,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -397,6 +361,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -431,6 +396,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -465,6 +431,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -481,6 +448,14 @@
     {
       "kind" : "text",
       "text" : "("
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -511,6 +486,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -561,14 +537,6 @@
     {
       "kind" : "text",
       "text" : ") -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Self"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",

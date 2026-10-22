@@ -1,7 +1,7 @@
 {
   "abstract" : [
     {
-      "text" : "Creates a new metric and stores the checksum of the given documentation context external topics.",
+      "text" : "Creates a new metric that stores the checksum of the successfully externally resolved links.",
       "type" : "text"
     }
   ],
@@ -9,7 +9,7 @@
     "paths" : [
       [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Benchmarking",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Benchmark",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Benchmark\/ExternalTopicsHash"
       ]
     ]
@@ -53,6 +53,10 @@
         "name" : "SwiftDocC"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "ExternalTopicsHash.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Benchmark\/Metrics\/ExternalTopicsHash.swift#L23"
+    },
     "role" : "symbol",
     "roleHeading" : "Initializer",
     "symbolKind" : "init",
@@ -66,7 +70,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -108,7 +112,7 @@
             {
               "inlineContent" : [
                 {
-                  "text" : "A documentation context.",
+                  "text" : "A documentation context that the external links were resolved in.",
                   "type" : "text"
                 }
               ],
@@ -122,7 +126,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -149,6 +153,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -156,13 +161,49 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/Benchmark/ExternalTopicsHash": {
+"doc://SwiftDocC/documentation/SwiftDocC/Benchmark": {
   "abstract" : [
     {
-      "text" : "A hash metric produced off the externally resolved links and symbols.",
+      "text" : "A logger that runs benchmarks and stores the results.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Benchmark"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Benchmark",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Benchmark"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Benchmark",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/benchmark"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/Benchmark/ExternalTopicsHash": {
+  "abstract" : [
+    {
+      "text" : "A hash metric produced off the externally resolved links.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -193,10 +234,11 @@
 "doc://SwiftDocC/documentation/SwiftDocC/Benchmark/ExternalTopicsHash/init(context:)": {
   "abstract" : [
     {
-      "text" : "Creates a new metric and stores the checksum of the given documentation context external topics.",
+      "text" : "Creates a new metric that stores the checksum of the successfully externally resolved links.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -231,20 +273,6 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/benchmark\/externaltopicshash\/init(context:)"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/Benchmarking": {
-  "abstract" : [
-    {
-      "text" : "Produce performance metrics to improve the compilation pipeline and track regressions.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Benchmarking",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Benchmarking",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/benchmarking"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/DocumentationContext": {
   "abstract" : [
     {
@@ -252,6 +280,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",

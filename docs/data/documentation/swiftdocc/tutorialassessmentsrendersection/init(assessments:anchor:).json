@@ -9,8 +9,6 @@
     "paths" : [
       [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderingModel",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialsRendering",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialAssessmentsRenderSection"
       ]
     ]
@@ -38,15 +36,6 @@
       {
         "kind" : "text",
         "text" : ": ["
-      },
-      {
-        "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:9SwiftDocC32TutorialAssessmentsRenderSectionV",
-        "text" : "TutorialAssessmentsRenderSection"
-      },
-      {
-        "kind" : "text",
-        "text" : "."
       },
       {
         "kind" : "typeIdentifier",
@@ -80,6 +69,10 @@
         "name" : "SwiftDocC"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "TutorialAssessmentsRenderSection.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Model\/Rendering\/Tutorial\/Sections\/TutorialAssessmentsRenderSection.swift#L91"
+    },
     "role" : "symbol",
     "roleHeading" : "Initializer",
     "symbolKind" : "init",
@@ -93,7 +86,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -111,16 +104,6 @@
             {
               "kind" : "text",
               "text" : ": ["
-            },
-            {
-              "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialAssessmentsRenderSection",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:9SwiftDocC32TutorialAssessmentsRenderSectionV",
-              "text" : "TutorialAssessmentsRenderSection"
-            },
-            {
-              "kind" : "text",
-              "text" : "."
             },
             {
               "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialAssessmentsRenderSection\/Assessment",
@@ -190,7 +173,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -217,26 +200,13 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
   "title" : "SwiftDocC",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/RenderingModel": {
-  "abstract" : [
-    {
-      "text" : "Convert documentation nodes into render nodes and save them to disk.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderingModel",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Rendering Model",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/renderingmodel"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/TutorialAssessmentsRenderSection": {
   "abstract" : [
@@ -245,6 +215,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -279,6 +250,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -313,6 +285,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -329,15 +302,6 @@
     {
       "kind" : "text",
       "text" : ": ["
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:9SwiftDocC32TutorialAssessmentsRenderSectionV",
-      "text" : "TutorialAssessmentsRenderSection"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",
@@ -372,20 +336,6 @@
   "title" : "init(assessments:anchor:)",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/tutorialassessmentsrendersection\/init(assessments:anchor:)"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/TutorialsRendering": {
-  "abstract" : [
-    {
-      "text" : "Render tutorial-based, interactive, learning experiences.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialsRendering",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Tutorials Rendering",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/tutorialsrendering"
 }
 }
 }

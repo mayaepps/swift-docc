@@ -44,6 +44,10 @@
         "text" : "DocumentationNodeConverter"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "DocumentationNodeConverter.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Converter\/DocumentationNodeConverter.swift#L12"
+    },
     "role" : "symbol",
     "roleHeading" : "Structure",
     "symbolKind" : "struct",
@@ -57,7 +61,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -80,23 +84,36 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
 
   ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "Node-Persistence",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/LinkDestinationSummary"
+      ],
+      "title" : "Node Persistence"
+    }
+  ],
   "topicSections" : [
     {
+      "anchor" : "Initializers",
+      "generated" : true,
       "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationNodeConverter\/init(bundle:context:)"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationNodeConverter\/init(context:)"
       ],
       "title" : "Initializers"
     },
     {
+      "anchor" : "Instance-Methods",
+      "generated" : true,
       "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationNodeConverter\/convert(_:at:)",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationNodeConverter\/convert(_:at:from:)"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationNodeConverter\/convert(_:)"
       ],
       "title" : "Instance Methods"
     }
@@ -122,6 +139,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -136,6 +154,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -163,78 +182,7 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/documentationnodeconverter"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/DocumentationNodeConverter/convert(_:at:)": {
-  "abstract" : [
-    {
-      "text" : "Converts a documentation node to a render node.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "convert"
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:9SwiftDocC17DocumentationNodeV",
-      "text" : "DocumentationNode"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "at"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10Foundation3URLV",
-      "text" : "URL"
-    },
-    {
-      "kind" : "text",
-      "text" : "?) "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "throws"
-    },
-    {
-      "kind" : "text",
-      "text" : " -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:9SwiftDocC10RenderNodeV",
-      "text" : "RenderNode"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationNodeConverter\/convert(_:at:)",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "convert(_:at:)",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/documentationnodeconverter\/convert(_:at:)"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/DocumentationNodeConverter/convert(_:at:from:)": {
+"doc://SwiftDocC/documentation/SwiftDocC/DocumentationNodeConverter/convert(_:)": {
   "abstract" : [
     {
       "text" : "Converts a documentation node to a render node.",
@@ -266,49 +214,7 @@
     },
     {
       "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "at"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10Foundation3URLV",
-      "text" : "URL"
-    },
-    {
-      "kind" : "text",
-      "text" : "?, "
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "from"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:9SwiftDocC19DocumentationBundleV",
-      "text" : "DocumentationBundle"
-    },
-    {
-      "kind" : "text",
-      "text" : ") "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "throws"
-    },
-    {
-      "kind" : "text",
-      "text" : " -> "
+      "text" : ") -> "
     },
     {
       "kind" : "typeIdentifier",
@@ -316,20 +222,21 @@
       "text" : "RenderNode"
     }
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationNodeConverter\/convert(_:at:from:)",
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationNodeConverter\/convert(_:)",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "convert(_:at:from:)",
+  "title" : "convert(_:)",
   "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/documentationnodeconverter\/convert(_:at:from:)"
+  "url" : "\/documentation\/swiftdocc\/documentationnodeconverter\/convert(_:)"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/DocumentationNodeConverter/init(bundle:context:)": {
+"doc://SwiftDocC/documentation/SwiftDocC/DocumentationNodeConverter/init(context:)": {
   "abstract" : [
     {
-      "text" : "Creates a new node converter for the given bundle and context.",
+      "text" : "Creates a new node converter for the given context.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -338,23 +245,6 @@
     {
       "kind" : "text",
       "text" : "("
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "bundle"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:9SwiftDocC19DocumentationBundleV",
-      "text" : "DocumentationBundle"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
     },
     {
       "kind" : "externalParam",
@@ -374,12 +264,47 @@
       "text" : ")"
     }
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationNodeConverter\/init(bundle:context:)",
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationNodeConverter\/init(context:)",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "init(bundle:context:)",
+  "title" : "init(context:)",
   "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/documentationnodeconverter\/init(bundle:context:)"
+  "url" : "\/documentation\/swiftdocc\/documentationnodeconverter\/init(context:)"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/LinkDestinationSummary": {
+  "abstract" : [
+    {
+      "text" : "A summary of an element that you can link to from outside the local documentation.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "LinkDestinationSummary"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/LinkDestinationSummary",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "LinkDestinationSummary"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "LinkDestinationSummary",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/linkdestinationsummary"
 }
 }
 }

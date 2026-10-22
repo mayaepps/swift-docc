@@ -9,7 +9,6 @@
     "paths" : [
       [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationContextGroup",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationContext"
       ]
     ]
@@ -20,7 +19,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:9SwiftDocC20DocumentationContextC8resource4with5trait10Foundation4DataVAA17ResourceReferenceV_AA0I15TraitCollectionVtKF",
+    "externalID" : "s:9SwiftDocC20DocumentationContextC8resource4with5trait20FoundationEssentials4DataVAA17ResourceReferenceV_AA0J15TraitCollectionVtKF",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -82,7 +81,7 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:10Foundation4DataV",
+        "preciseIdentifier" : "s:20FoundationEssentials4DataV",
         "text" : "Data"
       }
     ],
@@ -91,6 +90,10 @@
         "name" : "SwiftDocC"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "DocumentationContext.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Infrastructure\/DocumentationContext.swift#L2886"
+    },
     "role" : "symbol",
     "roleHeading" : "Instance Method",
     "symbolKind" : "method",
@@ -104,7 +107,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -177,7 +180,7 @@
             },
             {
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:10Foundation4DataV",
+              "preciseIdentifier" : "s:20FoundationEssentials4DataV",
               "text" : "Data"
             }
           ]
@@ -252,7 +255,16 @@
             {
               "inlineContent" : [
                 {
-                  "text" : "``ContextError\/notFound(_:)` if a resource with the given was not found.",
+                  "text" : "",
+                  "type" : "text"
+                },
+                {
+                  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationContext\/ContextError\/notFound(_:)",
+                  "isActive" : true,
+                  "type" : "reference"
+                },
+                {
+                  "text" : " if a resource with the given was not found.",
                   "type" : "text"
                 }
               ],
@@ -269,7 +281,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -277,6 +289,7 @@
   ],
   "seeAlsoSections" : [
     {
+      "anchor" : "Getting-documentation-resources",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationContext\/entity(with:)"
@@ -305,6 +318,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -319,6 +333,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -353,6 +368,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -380,6 +396,48 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/documentationcontext"
 },
+"doc://SwiftDocC/documentation/SwiftDocC/DocumentationContext/ContextError/notFound(_:)": {
+  "abstract" : [
+    {
+      "text" : "The node couldn’t be found in the documentation context.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "notFound"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:20FoundationEssentials3URLV",
+      "text" : "URL"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationContext\/ContextError\/notFound(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "DocumentationContext.ContextError.notFound(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/documentationcontext\/contexterror\/notfound(_:)"
+},
 "doc://SwiftDocC/documentation/SwiftDocC/DocumentationContext/entity(with:)": {
   "abstract" : [
     {
@@ -387,6 +445,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -427,7 +486,16 @@
     },
     {
       "kind" : "text",
-      "text" : " -> "
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC20DocumentationContextC0D5ErrorO",
+      "text" : "ContextError"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
     },
     {
       "kind" : "typeIdentifier",
@@ -449,6 +517,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -510,7 +579,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10Foundation4DataV",
+      "preciseIdentifier" : "s:20FoundationEssentials4DataV",
       "text" : "Data"
     }
   ],
@@ -521,20 +590,6 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/documentationcontext\/resource(with:trait:)"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/DocumentationContextGroup": {
-  "abstract" : [
-    {
-      "text" : "Build and query the in-memory documentation model.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationContextGroup",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Documentation Context",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/documentationcontextgroup"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/ResourceReference": {
   "abstract" : [
     {
@@ -542,6 +597,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",

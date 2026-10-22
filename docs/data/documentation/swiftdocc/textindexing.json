@@ -8,8 +8,7 @@
   "hierarchy" : {
     "paths" : [
       [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationIndexing"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC"
       ]
     ]
   },
@@ -45,6 +44,10 @@
         "text" : "TextIndexing"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "Indexable.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Indexing\/Indexable.swift#L14"
+    },
     "role" : "symbol",
     "roleHeading" : "Protocol",
     "symbolKind" : "protocol",
@@ -58,7 +61,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -98,10 +101,16 @@
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DeclarationRenderSection",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DeclarationsRenderSection",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/IntroRenderSection",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/MentionsRenderSection",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ParametersRenderSection",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/PossibleValuesRenderSection",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/PropertiesRenderSection",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/PropertyListDetailsRenderSection",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RESTBodyRenderSection",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RESTEndpointRenderSection",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RESTParametersRenderSection",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RESTResponse",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RESTResponseRenderSection",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RelationshipsRenderSection",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderBlockContent",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderInlineContent",
@@ -125,7 +134,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -133,6 +142,7 @@
   ],
   "seeAlsoSections" : [
     {
+      "anchor" : "Search-Index",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Indexable",
@@ -146,12 +156,16 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TextIndexing\/headings"
       ],
       "title" : "Instance Properties"
     },
     {
+      "anchor" : "Instance-Methods",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TextIndexing\/rawIndexableTextContent(references:)"
       ],
@@ -179,6 +193,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -193,6 +208,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -227,6 +243,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -261,6 +278,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -295,6 +313,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -329,6 +348,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -363,6 +383,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -397,6 +418,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -424,20 +446,6 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/declarationsrendersection"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/DocumentationIndexing": {
-  "abstract" : [
-    {
-      "text" : "Create documentation indexes optimized for text search or navigation.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationIndexing",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Documentation Indexing",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/documentationindexing"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/Indexable": {
   "abstract" : [
     {
@@ -445,6 +453,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -476,6 +485,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -519,6 +529,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -553,6 +564,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -580,6 +592,38 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/introrendersection"
 },
+"doc://SwiftDocC/documentation/SwiftDocC/MentionsRenderSection": {
+  "abstract" : [
+
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "MentionsRenderSection"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/MentionsRenderSection",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "MentionsRenderSection"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "MentionsRenderSection",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/mentionsrendersection"
+},
 "doc://SwiftDocC/documentation/SwiftDocC/ParametersRenderSection": {
   "abstract" : [
     {
@@ -587,6 +631,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -621,6 +666,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -655,6 +701,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -682,6 +729,76 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/propertiesrendersection"
 },
+"doc://SwiftDocC/documentation/SwiftDocC/PropertyListDetailsRenderSection": {
+  "abstract" : [
+    {
+      "text" : "A section that contains details about a property list key.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "PropertyListDetailsRenderSection"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/PropertyListDetailsRenderSection",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "PropertyListDetailsRenderSection"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "PropertyListDetailsRenderSection",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/propertylistdetailsrendersection"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/RESTBodyRenderSection": {
+  "abstract" : [
+    {
+      "text" : "A section that contains a REST request-body details.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "RESTBodyRenderSection"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RESTBodyRenderSection",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "RESTBodyRenderSection"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "RESTBodyRenderSection",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/restbodyrendersection"
+},
 "doc://SwiftDocC/documentation/SwiftDocC/RESTEndpointRenderSection": {
   "abstract" : [
     {
@@ -689,6 +806,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -716,6 +834,119 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/restendpointrendersection"
 },
+"doc://SwiftDocC/documentation/SwiftDocC/RESTParametersRenderSection": {
+  "abstract" : [
+    {
+      "text" : "A section that contains a list of REST parameters.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "RESTParametersRenderSection"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RESTParametersRenderSection",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "RESTParametersRenderSection"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "RESTParametersRenderSection",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/restparametersrendersection"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/RESTResponse": {
+  "abstract" : [
+    {
+      "text" : "A REST response that includes the HTTP status, reason,",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "and the MIME type encoding of the response body.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "RESTResponse"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RESTResponse",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "RESTResponse"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "RESTResponse",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/restresponse"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/RESTResponseRenderSection": {
+  "abstract" : [
+    {
+      "text" : "A section that displays a list of REST responses.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "RESTResponseRenderSection"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RESTResponseRenderSection",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "RESTResponseRenderSection"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "RESTResponseRenderSection",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/restresponserendersection"
+},
 "doc://SwiftDocC/documentation/SwiftDocC/RelationshipsRenderSection": {
   "abstract" : [
     {
@@ -723,6 +954,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -757,6 +989,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -791,6 +1024,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -825,6 +1059,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -867,6 +1102,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -909,6 +1145,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -940,6 +1177,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -982,6 +1220,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1016,6 +1255,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1050,6 +1290,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1084,6 +1325,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1118,6 +1360,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1152,6 +1395,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1194,6 +1438,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1229,6 +1474,14 @@
       "text" : " : "
     },
     {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
       "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:9SwiftDocC15RenderReferenceP",
       "text" : "RenderReference"
@@ -1258,6 +1511,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1292,6 +1546,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1326,6 +1581,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1360,6 +1616,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1394,6 +1651,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1428,6 +1686,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1462,6 +1721,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",

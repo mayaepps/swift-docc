@@ -9,8 +9,6 @@
     "paths" : [
       [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationWorkspaceGroup",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/PlatformVersion",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/VersionTriplet"
       ]
     ]
@@ -64,6 +62,10 @@
         "name" : "SwiftDocC"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "ExternalMetadata.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Infrastructure\/External%20Data\/ExternalMetadata.swift#L37"
+    },
     "role" : "symbol",
     "roleHeading" : "Initializer",
     "symbolKind" : "init",
@@ -77,7 +79,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -218,7 +220,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -245,60 +247,13 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
   "title" : "SwiftDocC",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/DocumentationWorkspaceGroup": {
-  "abstract" : [
-    {
-      "text" : "Learn how to explore a documentation workspace and discover bundles.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationWorkspaceGroup",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Bundle Discovery",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/documentationworkspacegroup"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/PlatformVersion": {
-  "abstract" : [
-    {
-      "text" : "A pair of a version number and beta information for a platform.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "struct"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "PlatformVersion"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/PlatformVersion",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "PlatformVersion"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "PlatformVersion",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/platformversion"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/VersionTriplet": {
   "abstract" : [
@@ -307,6 +262,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -341,6 +297,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",

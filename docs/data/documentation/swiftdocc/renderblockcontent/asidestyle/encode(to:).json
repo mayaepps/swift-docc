@@ -1,15 +1,7 @@
 {
   "abstract" : [
     {
-      "text" : "Inherited from ",
-      "type" : "text"
-    },
-    {
-      "code" : "RawRepresentable.encode(to:)",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "Encodes the aside style into the specified encoder.",
       "type" : "text"
     }
   ],
@@ -17,10 +9,8 @@
     "paths" : [
       [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderingModel",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderBlockContent",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderBlockContent\/AsideStyle",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderBlockContent\/AsideStyle\/RawRepresentable-Implementations"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderBlockContent\/AsideStyle"
       ]
     ]
   },
@@ -30,56 +20,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "conformance" : {
-      "availabilityPrefix" : [
-        {
-          "text" : "Available when",
-          "type" : "text"
-        }
-      ],
-      "conformancePrefix" : [
-        {
-          "text" : "Conforms when",
-          "type" : "text"
-        }
-      ],
-      "constraints" : [
-        {
-          "code" : "Self",
-          "type" : "codeVoice"
-        },
-        {
-          "text" : " conforms to ",
-          "type" : "text"
-        },
-        {
-          "code" : "Encodable",
-          "type" : "codeVoice"
-        },
-        {
-          "text" : " and ",
-          "type" : "text"
-        },
-        {
-          "code" : "RawValue",
-          "type" : "codeVoice"
-        },
-        {
-          "text" : " is ",
-          "type" : "text"
-        },
-        {
-          "code" : "String",
-          "type" : "codeVoice"
-        },
-        {
-          "text" : ".",
-          "type" : "text"
-        }
-      ]
-    },
-    "extendedModule" : "Swift",
-    "externalID" : "s:SYsSERzSS8RawValueSYRtzrlE6encode2toys7Encoder_p_tKF::SYNTHESIZED::s:9SwiftDocC18RenderBlockContentO10AsideStyleO",
+    "externalID" : "s:9SwiftDocC18RenderBlockContentO10AsideStyleV6encode2toys7Encoder_p_tKF",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -106,6 +47,14 @@
         "text" : ": "
       },
       {
+        "kind" : "keyword",
+        "text" : "any"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
         "kind" : "typeIdentifier",
         "preciseIdentifier" : "s:s7EncoderP",
         "text" : "Encoder"
@@ -124,6 +73,10 @@
         "name" : "SwiftDocC"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "RenderBlockContent.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Model\/Rendering\/Content\/RenderBlockContent.swift#L657"
+    },
     "role" : "symbol",
     "roleHeading" : "Instance Method",
     "symbolKind" : "method",
@@ -137,7 +90,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -173,6 +126,14 @@
               "text" : ": "
             },
             {
+              "kind" : "keyword",
+              "text" : "any"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
               "kind" : "typeIdentifier",
               "preciseIdentifier" : "s:s7EncoderP",
               "text" : "Encoder"
@@ -189,11 +150,30 @@
         }
       ],
       "kind" : "declarations"
+    },
+    {
+      "kind" : "parameters",
+      "parameters" : [
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "The encoder to write data to.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "encoder"
+        }
+      ]
     }
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -220,6 +200,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -234,6 +215,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -264,14 +246,15 @@
 "doc://SwiftDocC/documentation/SwiftDocC/RenderBlockContent/AsideStyle": {
   "abstract" : [
     {
-      "text" : "An aside style.",
+      "text" : "A type the describes an aside style.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "enum"
+      "text" : "struct"
     },
     {
       "kind" : "text",
@@ -295,69 +278,14 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/renderblockcontent\/asidestyle"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/RenderBlockContent/AsideStyle/RawRepresentable-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderBlockContent\/AsideStyle\/RawRepresentable-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "RawRepresentable Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/renderblockcontent\/asidestyle\/rawrepresentable-implementations"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/RenderBlockContent/AsideStyle/encode(to:)": {
   "abstract" : [
-
+    {
+      "text" : "Encodes the aside style into the specified encoder.",
+      "type" : "text"
+    }
   ],
-  "conformance" : {
-    "availabilityPrefix" : [
-      {
-        "text" : "Available when",
-        "type" : "text"
-      }
-    ],
-    "conformancePrefix" : [
-      {
-        "text" : "Conforms when",
-        "type" : "text"
-      }
-    ],
-    "constraints" : [
-      {
-        "code" : "Self",
-        "type" : "codeVoice"
-      },
-      {
-        "text" : " conforms to ",
-        "type" : "text"
-      },
-      {
-        "code" : "Encodable",
-        "type" : "codeVoice"
-      },
-      {
-        "text" : " and ",
-        "type" : "text"
-      },
-      {
-        "code" : "RawValue",
-        "type" : "codeVoice"
-      },
-      {
-        "text" : " is ",
-        "type" : "text"
-      },
-      {
-        "code" : "String",
-        "type" : "codeVoice"
-      },
-      {
-        "text" : ".",
-        "type" : "text"
-      }
-    ]
-  },
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -384,6 +312,14 @@
       "text" : ": "
     },
     {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
       "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:s7EncoderP",
       "text" : "Encoder"
@@ -403,20 +339,6 @@
   "title" : "encode(to:)",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/renderblockcontent\/asidestyle\/encode(to:)"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/RenderingModel": {
-  "abstract" : [
-    {
-      "text" : "Convert documentation nodes into render nodes and save them to disk.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderingModel",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Rendering Model",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/renderingmodel"
 }
 }
 }

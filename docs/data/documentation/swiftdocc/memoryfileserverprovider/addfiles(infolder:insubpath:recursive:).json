@@ -1,15 +1,23 @@
 {
   "abstract" : [
     {
-      "text" : "Retrieve the data linked to a given path based on the ",
+      "text" : "Adds files from the ",
       "type" : "text"
     },
     {
-      "code" : "baseURL",
+      "code" : "source",
       "type" : "codeVoice"
     },
     {
-      "text" : ".",
+      "text" : " directory to the ",
+      "type" : "text"
+    },
+    {
+      "code" : "destination",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " directory in the file server.",
       "type" : "text"
     }
   ],
@@ -17,7 +25,6 @@
     "paths" : [
       [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Communication",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/MemoryFileServerProvider"
       ]
     ]
@@ -103,6 +110,10 @@
         "name" : "SwiftDocC"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "FileServer.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Servers\/FileServer.swift#L261"
+    },
     "role" : "symbol",
     "roleHeading" : "Instance Method",
     "symbolKind" : "method",
@@ -116,7 +127,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -145,7 +156,7 @@
             },
             {
               "kind" : "internalParam",
-              "text" : "path"
+              "text" : "source"
             },
             {
               "kind" : "text",
@@ -170,7 +181,7 @@
             },
             {
               "kind" : "internalParam",
-              "text" : "subPath"
+              "text" : "destination"
             },
             {
               "kind" : "text",
@@ -208,26 +219,6 @@
       "kind" : "declarations"
     },
     {
-      "content" : [
-        {
-          "anchor" : "return-value",
-          "level" : 2,
-          "text" : "Return Value",
-          "type" : "heading"
-        },
-        {
-          "inlineContent" : [
-            {
-              "text" : "The data matching the url, if possible.",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
-        }
-      ],
-      "kind" : "content"
-    },
-    {
       "kind" : "parameters",
       "parameters" : [
         {
@@ -235,21 +226,49 @@
             {
               "inlineContent" : [
                 {
-                  "text" : "The path.",
+                  "text" : "The source directory to add files from.",
                   "type" : "text"
                 }
               ],
               "type" : "paragraph"
             }
           ],
-          "name" : "path"
+          "name" : "source"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "The destination directory in the file server to add the files to.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "destination"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Whether or not to recursively add files from the source directory.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "recursive"
         }
       ]
     }
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -276,6 +295,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -283,24 +303,11 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/Communication": {
-  "abstract" : [
-    {
-      "text" : "Offer native integration of DocC in your IDE.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Communication",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Communication Bridge",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/communication"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/MemoryFileServerProvider": {
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -331,18 +338,27 @@
 "doc://SwiftDocC/documentation/SwiftDocC/MemoryFileServerProvider/addFiles(inFolder:inSubPath:recursive:)": {
   "abstract" : [
     {
-      "text" : "Retrieve the data linked to a given path based on the ",
+      "text" : "Adds files from the ",
       "type" : "text"
     },
     {
-      "code" : "baseURL",
+      "code" : "source",
       "type" : "codeVoice"
     },
     {
-      "text" : ".",
+      "text" : " directory to the ",
+      "type" : "text"
+    },
+    {
+      "code" : "destination",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " directory in the file server.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",

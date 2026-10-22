@@ -17,7 +17,6 @@
     "paths" : [
       [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/StaticAnalysis",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Checker"
       ]
     ]
@@ -58,6 +57,10 @@
         "name" : "SwiftDocC"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "Checker.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Checker\/Checker.swift#L276"
+    },
     "role" : "symbol",
     "roleHeading" : "Instance Method",
     "symbolKind" : "method",
@@ -71,7 +74,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -104,7 +107,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -131,6 +134,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -153,6 +157,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -187,6 +192,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -229,6 +235,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -258,20 +265,6 @@
   "title" : "any()",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/checker\/any()"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/StaticAnalysis": {
-  "abstract" : [
-    {
-      "text" : "Run static analysis checks on markup files.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/StaticAnalysis",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Static Analysis",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/staticanalysis"
 }
 }
 }

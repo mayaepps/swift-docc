@@ -9,7 +9,6 @@
     "paths" : [
       [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderingModel",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/VariantCollection",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/VariantCollection\/Variant"
       ]
@@ -21,7 +20,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:9SwiftDocC17VariantCollectionV0C0V8mapPatchyAEyqd0___qd0__Gqd0__qd__XESeRd0__SERd0__lF",
+    "externalID" : "s:9SwiftDocC17VariantCollectionV0C0V8mapPatchyAEyqd___Gqd__xXESeRd__SERd__lF",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -49,6 +48,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:9SwiftDocC17VariantCollectionV5Valuexmfp",
         "text" : "Value"
       },
       {
@@ -57,6 +57,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:9SwiftDocC17VariantCollectionV0C0V8mapPatchyAEyqd___Gqd__xXESeRd__SERd__lF16TransformedValueL_qd__mfp",
         "text" : "TransformedValue"
       },
       {
@@ -74,6 +75,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:9SwiftDocC17VariantCollectionV0C0V8mapPatchyAEyqd___Gqd__xXESeRd__SERd__lF16TransformedValueL_qd__mfp",
         "text" : "TransformedValue"
       },
       {
@@ -84,18 +86,6 @@
         "kind" : "typeIdentifier",
         "preciseIdentifier" : "s:9SwiftDocC17VariantCollectionV0C0V",
         "text" : "Variant"
-      },
-      {
-        "kind" : "text",
-        "text" : "<"
-      },
-      {
-        "kind" : "typeIdentifier",
-        "text" : "TransformedValue"
-      },
-      {
-        "kind" : "text",
-        "text" : ">"
       }
     ],
     "modules" : [
@@ -103,6 +93,10 @@
         "name" : "SwiftDocC"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "VariantCollection+Variant.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Model\/Rendering\/Variants\/VariantCollection+Variant.swift#L31"
+    },
     "role" : "symbol",
     "roleHeading" : "Instance Method",
     "symbolKind" : "method",
@@ -116,7 +110,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -161,6 +155,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:9SwiftDocC17VariantCollectionV5Valuexmfp",
               "text" : "Value"
             },
             {
@@ -169,6 +164,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:9SwiftDocC17VariantCollectionV0C0V8mapPatchyAEyqd___Gqd__xXESeRd__SERd__lF16TransformedValueL_qd__mfp",
               "text" : "TransformedValue"
             },
             {
@@ -187,6 +183,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:9SwiftDocC17VariantCollectionV0C0V8mapPatchyAEyqd___Gqd__xXESeRd__SERd__lF16TransformedValueL_qd__mfp",
               "text" : "TransformedValue"
             },
             {
@@ -201,15 +198,7 @@
             },
             {
               "kind" : "text",
-              "text" : "<"
-            },
-            {
-              "kind" : "typeIdentifier",
-              "text" : "TransformedValue"
-            },
-            {
-              "kind" : "text",
-              "text" : "> "
+              "text" : " "
             },
             {
               "kind" : "keyword",
@@ -257,7 +246,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -284,26 +273,13 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
   "title" : "SwiftDocC",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/RenderingModel": {
-  "abstract" : [
-    {
-      "text" : "Convert documentation nodes into render nodes and save them to disk.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderingModel",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Rendering Model",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/renderingmodel"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/VariantCollection": {
   "abstract" : [
@@ -312,6 +288,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -386,6 +363,7 @@
       }
     ]
   },
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -420,6 +398,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -447,6 +426,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC17VariantCollectionV5Valuexmfp",
       "text" : "Value"
     },
     {
@@ -455,6 +435,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC17VariantCollectionV0C0V8mapPatchyAEyqd___Gqd__xXESeRd__SERd__lF16TransformedValueL_qd__mfp",
       "text" : "TransformedValue"
     },
     {
@@ -472,6 +453,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC17VariantCollectionV0C0V8mapPatchyAEyqd___Gqd__xXESeRd__SERd__lF16TransformedValueL_qd__mfp",
       "text" : "TransformedValue"
     },
     {
@@ -482,18 +464,6 @@
       "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:9SwiftDocC17VariantCollectionV0C0V",
       "text" : "Variant"
-    },
-    {
-      "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "TransformedValue"
-    },
-    {
-      "kind" : "text",
-      "text" : ">"
     }
   ],
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/VariantCollection\/Variant\/mapPatch(_:)",

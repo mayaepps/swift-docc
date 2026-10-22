@@ -1,15 +1,8 @@
 {
-  "abstract" : [
-    {
-      "text" : "No overview available.",
-      "type" : "text"
-    }
-  ],
   "hierarchy" : {
     "paths" : [
       [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/StaticAnalysis"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC"
       ]
     ]
   },
@@ -45,6 +38,10 @@
         "text" : "NonOverviewHeadingChecker"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "NonOverviewHeadingChecker.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Checker\/Checkers\/NonOverviewHeadingChecker.swift#L14"
+    },
     "role" : "symbol",
     "roleHeading" : "Structure",
     "symbolKind" : "struct",
@@ -58,7 +55,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -93,7 +90,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -101,48 +98,44 @@
   ],
   "seeAlsoSections" : [
     {
+      "anchor" : "Predefined-Checks",
       "generated" : true,
       "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/AbstractContainsFormattedTextOnly",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DuplicateTopicsSections",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/InvalidAdditionalTitle",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/MissingAbstract",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NonInclusiveLanguageChecker",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SeeAlsoInTopicsHeadingChecker",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TopicsSectionWithoutSubheading"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SeeAlsoInTopicsHeadingChecker"
       ],
       "title" : "Predefined Checks"
     }
   ],
   "topicSections" : [
     {
+      "anchor" : "Initializers",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NonOverviewHeadingChecker\/init(sourceFile:)"
       ],
       "title" : "Initializers"
     },
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NonOverviewHeadingChecker\/diagnostics",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NonOverviewHeadingChecker\/nonOverviewHeadings",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NonOverviewHeadingChecker\/overviewHeading",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NonOverviewHeadingChecker\/problems"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NonOverviewHeadingChecker\/overviewHeading"
       ],
       "title" : "Instance Properties"
     },
     {
-      "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NonOverviewHeadingChecker\/visitHeading(_:)-9ugjf"
-      ],
-      "title" : "Instance Methods"
-    },
-    {
+      "anchor" : "Instance-Methods",
       "generated" : true,
       "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NonOverviewHeadingChecker\/Checker-Implementations",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NonOverviewHeadingChecker\/MarkupVisitor-Implementations",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NonOverviewHeadingChecker\/MarkupWalker-Implementations"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NonOverviewHeadingChecker\/visitHeading(_:)"
       ],
-      "title" : "Default Implementations"
+      "title" : "Instance Methods"
     }
   ],
   "variants" : [
@@ -176,46 +169,13 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
   "title" : "SwiftDocC",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/AbstractContainsFormattedTextOnly": {
-  "abstract" : [
-    {
-      "text" : "A document’s abstract may only contain formatted text. Images and links are not allowed.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "struct"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "AbstractContainsFormattedTextOnly"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/AbstractContainsFormattedTextOnly",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "AbstractContainsFormattedTextOnly"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "AbstractContainsFormattedTextOnly",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/abstractcontainsformattedtextonly"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/Checker": {
   "abstract" : [
@@ -224,6 +184,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -254,18 +215,11 @@
 "doc://SwiftDocC/documentation/SwiftDocC/DuplicateTopicsSections": {
   "abstract" : [
     {
-      "text" : "A ",
-      "type" : "text"
-    },
-    {
-      "code" : "Document",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " may only have one level-2 “Topics” heading at the top level, since it serves as structured data for a documentation bundle’s hierarchy.",
+      "text" : "A checker that warns about multiple “Topics” sections.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -296,10 +250,11 @@
 "doc://SwiftDocC/documentation/SwiftDocC/InvalidAdditionalTitle": {
   "abstract" : [
     {
-      "text" : "A document should have a single title, i.e. a single first-level heading.",
+      "text" : "A checker that warns about additional first-level headings.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -334,6 +289,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -368,6 +324,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -399,6 +356,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -426,43 +384,50 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/nonoverviewheadingchecker"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/NonOverviewHeadingChecker/Checker-Implementations": {
+"doc://SwiftDocC/documentation/SwiftDocC/NonOverviewHeadingChecker/diagnostics": {
   "abstract" : [
 
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NonOverviewHeadingChecker\/Checker-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Checker Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/nonoverviewheadingchecker\/checker-implementations"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/NonOverviewHeadingChecker/MarkupVisitor-Implementations": {
-  "abstract" : [
-
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "diagnostics"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC10DiagnosticV",
+      "text" : "Diagnostic"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NonOverviewHeadingChecker\/MarkupVisitor-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "MarkupVisitor Implementations",
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NonOverviewHeadingChecker\/diagnostics",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "diagnostics",
   "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/nonoverviewheadingchecker\/markupvisitor-implementations"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/NonOverviewHeadingChecker/MarkupWalker-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NonOverviewHeadingChecker\/MarkupWalker-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "MarkupWalker Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/nonoverviewheadingchecker\/markupwalker-implementations"
+  "url" : "\/documentation\/swiftdocc\/nonoverviewheadingchecker\/diagnostics"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/NonOverviewHeadingChecker/init(sourceFile:)": {
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -482,7 +447,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10Foundation3URLV",
+      "preciseIdentifier" : "s:20FoundationEssentials3URLV",
       "text" : "URL"
     },
     {
@@ -501,6 +466,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -539,6 +505,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -573,48 +540,11 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/nonoverviewheadingchecker\/overviewheading"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/NonOverviewHeadingChecker/problems": {
+"doc://SwiftDocC/documentation/SwiftDocC/NonOverviewHeadingChecker/visitHeading(_:)": {
   "abstract" : [
 
   ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "var"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "problems"
-    },
-    {
-      "kind" : "text",
-      "text" : ": ["
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:9SwiftDocC7ProblemV",
-      "text" : "Problem"
-    },
-    {
-      "kind" : "text",
-      "text" : "]"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NonOverviewHeadingChecker\/problems",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "problems",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/nonoverviewheadingchecker\/problems"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/NonOverviewHeadingChecker/visitHeading(_:)-9ugjf": {
-  "abstract" : [
-
-  ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -642,17 +572,18 @@
       "text" : ")"
     }
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NonOverviewHeadingChecker\/visitHeading(_:)-9ugjf",
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NonOverviewHeadingChecker\/visitHeading(_:)",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : "visitHeading(_:)",
   "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/nonoverviewheadingchecker\/visitheading(_:)-9ugjf"
+  "url" : "\/documentation\/swiftdocc\/nonoverviewheadingchecker\/visitheading(_:)"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/SeeAlsoInTopicsHeadingChecker": {
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -679,54 +610,6 @@
   "title" : "SeeAlsoInTopicsHeadingChecker",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/seealsointopicsheadingchecker"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/StaticAnalysis": {
-  "abstract" : [
-    {
-      "text" : "Run static analysis checks on markup files.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/StaticAnalysis",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Static Analysis",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/staticanalysis"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/TopicsSectionWithoutSubheading": {
-  "abstract" : [
-    {
-      "text" : "A Topics section  should have at least one subheading.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "struct"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "TopicsSectionWithoutSubheading"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TopicsSectionWithoutSubheading",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "TopicsSectionWithoutSubheading"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "TopicsSectionWithoutSubheading",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/topicssectionwithoutsubheading"
 }
 }
 }

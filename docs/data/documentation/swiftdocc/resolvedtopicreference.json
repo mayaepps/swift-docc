@@ -8,9 +8,7 @@
   "hierarchy" : {
     "paths" : [
       [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationContextGroup",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TopicReference"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC"
       ]
     ]
   },
@@ -46,6 +44,10 @@
         "text" : "ResolvedTopicReference"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "Identifier.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Model\/Identifier.swift#L143"
+    },
     "role" : "symbol",
     "roleHeading" : "Structure",
     "symbolKind" : "struct",
@@ -59,7 +61,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -239,6 +241,7 @@
               "type" : "paragraph"
             }
           ],
+          "name" : "Important",
           "style" : "important",
           "type" : "aside"
         }
@@ -262,7 +265,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -270,6 +273,7 @@
   ],
   "seeAlsoSections" : [
     {
+      "anchor" : "Topic-References",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/UnresolvedTopicReference",
@@ -281,22 +285,28 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Operators",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ResolvedTopicReference\/==(_:_:)"
       ],
       "title" : "Operators"
     },
     {
+      "anchor" : "Initializers",
+      "generated" : true,
       "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ResolvedTopicReference\/init(bundleIdentifier:path:fragment:sourceLanguage:)",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ResolvedTopicReference\/init(bundleIdentifier:path:fragment:sourceLanguages:)",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ResolvedTopicReference\/init(bundleID:path:fragment:sourceLanguage:)",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ResolvedTopicReference\/init(bundleID:path:fragment:sourceLanguages:)",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ResolvedTopicReference\/init(from:)"
       ],
       "title" : "Initializers"
     },
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ResolvedTopicReference\/bundleIdentifier",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ResolvedTopicReference\/bundleID",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ResolvedTopicReference\/description",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ResolvedTopicReference\/fragment",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ResolvedTopicReference\/lastPathComponent",
@@ -308,6 +318,8 @@
       "title" : "Instance Properties"
     },
     {
+      "anchor" : "Instance-Methods",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ResolvedTopicReference\/addingSourceLanguages(_:)",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ResolvedTopicReference\/appendingPath(_:)",
@@ -321,23 +333,20 @@
       "title" : "Instance Methods"
     },
     {
+      "anchor" : "Type-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ResolvedTopicReference\/urlScheme"
       ],
       "title" : "Type Properties"
     },
     {
+      "anchor" : "Type-Methods",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ResolvedTopicReference\/urlHasResolvedTopicScheme(_:)"
       ],
       "title" : "Type Methods"
-    },
-    {
-      "generated" : true,
-      "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ResolvedTopicReference\/Equatable-Implementations"
-      ],
-      "title" : "Default Implementations"
     }
   ],
   "variants" : [
@@ -381,26 +390,13 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
   "title" : "SwiftDocC",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/DocumentationContextGroup": {
-  "abstract" : [
-    {
-      "text" : "Build and query the in-memory documentation model.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationContextGroup",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Documentation Context",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/documentationcontextgroup"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/ResolvedTopicReference": {
   "abstract" : [
@@ -409,6 +405,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -440,6 +437,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -500,17 +498,6 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/resolvedtopicreference\/==(_:_:)"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/ResolvedTopicReference/Equatable-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ResolvedTopicReference\/Equatable-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Equatable Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/resolvedtopicreference\/equatable-implementations"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/ResolvedTopicReference/addingSourceLanguages(_:)": {
   "abstract" : [
     {
@@ -518,6 +505,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -536,9 +524,17 @@
       "text" : "("
     },
     {
+      "kind" : "keyword",
+      "text" : "some"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:Sh",
-      "text" : "Set"
+      "preciseIdentifier" : "s:ST",
+      "text" : "Sequence"
     },
     {
       "kind" : "text",
@@ -546,7 +542,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:9SwiftDocC14SourceLanguageV",
+      "preciseIdentifier" : "s:9SwiftDocC14SourceLanguagea",
       "text" : "SourceLanguage"
     },
     {
@@ -573,6 +569,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -619,6 +616,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -658,13 +656,14 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/resolvedtopicreference\/appendingpathofreference(_:)"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/ResolvedTopicReference/bundleIdentifier": {
+"doc://SwiftDocC/documentation/SwiftDocC/ResolvedTopicReference/bundleID": {
   "abstract" : [
     {
-      "text" : "The identifier of the bundle that owns this documentation topic.",
+      "text" : "The identifier of the collection of inputs that owns this documentation topic.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -676,7 +675,7 @@
     },
     {
       "kind" : "identifier",
-      "text" : "bundleIdentifier"
+      "text" : "bundleID"
     },
     {
       "kind" : "text",
@@ -684,21 +683,40 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:SS",
-      "text" : "String"
+      "preciseIdentifier" : "s:9SwiftDocC20DocumentationContextC",
+      "text" : "DocumentationContext"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC20DocumentationContextC6InputsV",
+      "text" : "Inputs"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC20DocumentationContextC6InputsV10IdentifierV",
+      "text" : "Identifier"
     }
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ResolvedTopicReference\/bundleIdentifier",
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ResolvedTopicReference\/bundleID",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "bundleIdentifier",
+  "title" : "bundleID",
   "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/resolvedtopicreference\/bundleidentifier"
+  "url" : "\/documentation\/swiftdocc\/resolvedtopicreference\/bundleid"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/ResolvedTopicReference/description": {
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -733,6 +751,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -757,6 +776,14 @@
     {
       "kind" : "text",
       "text" : ": "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -786,6 +813,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -824,6 +852,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -874,10 +903,11 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/resolvedtopicreference\/hash(into:)"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/ResolvedTopicReference/init(bundleIdentifier:path:fragment:sourceLanguage:)": {
+"doc://SwiftDocC/documentation/SwiftDocC/ResolvedTopicReference/init(bundleID:path:fragment:sourceLanguage:)": {
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -889,7 +919,7 @@
     },
     {
       "kind" : "externalParam",
-      "text" : "bundleIdentifier"
+      "text" : "bundleID"
     },
     {
       "kind" : "text",
@@ -897,8 +927,26 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:SS",
-      "text" : "String"
+      "preciseIdentifier" : "s:9SwiftDocC20DocumentationContextC",
+      "text" : "DocumentationContext"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC20DocumentationContextC6InputsV",
+      "text" : "Inputs"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC20DocumentationContextC6InputsV10IdentifierV",
+      "text" : "Identifier"
     },
     {
       "kind" : "text",
@@ -948,7 +996,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:9SwiftDocC14SourceLanguageV",
+      "preciseIdentifier" : "s:9SwiftDocC14SourceLanguagea",
       "text" : "SourceLanguage"
     },
     {
@@ -956,17 +1004,18 @@
       "text" : ")"
     }
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ResolvedTopicReference\/init(bundleIdentifier:path:fragment:sourceLanguage:)",
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ResolvedTopicReference\/init(bundleID:path:fragment:sourceLanguage:)",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "init(bundleIdentifier:path:fragment:sourceLanguage:)",
+  "title" : "init(bundleID:path:fragment:sourceLanguage:)",
   "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/resolvedtopicreference\/init(bundleidentifier:path:fragment:sourcelanguage:)"
+  "url" : "\/documentation\/swiftdocc\/resolvedtopicreference\/init(bundleid:path:fragment:sourcelanguage:)"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/ResolvedTopicReference/init(bundleIdentifier:path:fragment:sourceLanguages:)": {
+"doc://SwiftDocC/documentation/SwiftDocC/ResolvedTopicReference/init(bundleID:path:fragment:sourceLanguages:)": {
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -978,7 +1027,7 @@
     },
     {
       "kind" : "externalParam",
-      "text" : "bundleIdentifier"
+      "text" : "bundleID"
     },
     {
       "kind" : "text",
@@ -986,8 +1035,26 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:SS",
-      "text" : "String"
+      "preciseIdentifier" : "s:9SwiftDocC20DocumentationContextC",
+      "text" : "DocumentationContext"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC20DocumentationContextC6InputsV",
+      "text" : "Inputs"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC20DocumentationContextC6InputsV10IdentifierV",
+      "text" : "Identifier"
     },
     {
       "kind" : "text",
@@ -1046,7 +1113,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:9SwiftDocC14SourceLanguageV",
+      "preciseIdentifier" : "s:9SwiftDocC14SourceLanguagea",
       "text" : "SourceLanguage"
     },
     {
@@ -1054,17 +1121,18 @@
       "text" : ">)"
     }
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ResolvedTopicReference\/init(bundleIdentifier:path:fragment:sourceLanguages:)",
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ResolvedTopicReference\/init(bundleID:path:fragment:sourceLanguages:)",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "init(bundleIdentifier:path:fragment:sourceLanguages:)",
+  "title" : "init(bundleID:path:fragment:sourceLanguages:)",
   "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/resolvedtopicreference\/init(bundleidentifier:path:fragment:sourcelanguages:)"
+  "url" : "\/documentation\/swiftdocc\/resolvedtopicreference\/init(bundleid:path:fragment:sourcelanguages:)"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/ResolvedTopicReference/init(from:)": {
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -1081,6 +1149,14 @@
     {
       "kind" : "text",
       "text" : ": "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -1110,6 +1186,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1143,7 +1220,7 @@
 "doc://SwiftDocC/documentation/SwiftDocC/ResolvedTopicReference/path": {
   "abstract" : [
     {
-      "text" : "The absolute path from the bundle to this topic, delimited by ",
+      "text" : "The absolute path to this topic, delimited by ",
       "type" : "text"
     },
     {
@@ -1155,6 +1232,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1192,6 +1270,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1229,6 +1308,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1248,7 +1328,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:9SwiftDocC14SourceLanguageV",
+      "preciseIdentifier" : "s:9SwiftDocC14SourceLanguagea",
       "text" : "SourceLanguage"
     }
   ],
@@ -1266,6 +1346,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1294,7 +1375,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:9SwiftDocC14SourceLanguageV",
+      "preciseIdentifier" : "s:9SwiftDocC14SourceLanguagea",
       "text" : "SourceLanguage"
     },
     {
@@ -1316,6 +1397,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1335,7 +1417,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10Foundation3URLV",
+      "preciseIdentifier" : "s:20FoundationEssentials3URLV",
       "text" : "URL"
     }
   ],
@@ -1369,6 +1451,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1396,7 +1479,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10Foundation3URLV",
+      "preciseIdentifier" : "s:20FoundationEssentials3URLV",
       "text" : "URL"
     },
     {
@@ -1431,6 +1514,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1476,6 +1560,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1522,6 +1607,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1550,7 +1636,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:9SwiftDocC14SourceLanguageV",
+      "preciseIdentifier" : "s:9SwiftDocC14SourceLanguagea",
       "text" : "SourceLanguage"
     },
     {
@@ -1572,15 +1658,13 @@
 },
 "doc://SwiftDocC/documentation/SwiftDocC/SourceLanguage": {
   "abstract" : [
-    {
-      "text" : "A programming language.",
-      "type" : "text"
-    }
+
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "struct"
+      "text" : "typealias"
     },
     {
       "kind" : "text",
@@ -1604,40 +1688,6 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/sourcelanguage"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/TopicReference": {
-  "abstract" : [
-    {
-      "text" : "A resolved or unresolved reference to a piece of documentation.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "enum"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "TopicReference"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TopicReference",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "TopicReference"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "TopicReference",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/topicreference"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/TopicReferenceResolutionResult": {
   "abstract" : [
     {
@@ -1645,6 +1695,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1679,6 +1730,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",

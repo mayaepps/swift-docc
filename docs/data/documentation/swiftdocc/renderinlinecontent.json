@@ -8,8 +8,7 @@
   "hierarchy" : {
     "paths" : [
       [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderingModel"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC"
       ]
     ]
   },
@@ -45,6 +44,10 @@
         "text" : "RenderInlineContent"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "RenderInlineContent.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Model\/Rendering\/Content\/RenderInlineContent.swift#L32"
+    },
     "role" : "symbol",
     "roleHeading" : "Enumeration",
     "symbolKind" : "enum",
@@ -58,7 +61,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -147,8 +150,14 @@
             "  ...",
             "]"
           ],
+          "copyToClipboard" : true,
+          "lineAnnotations" : [
+
+          ],
+          "showLineNumbers" : false,
           "syntax" : null,
-          "type" : "codeListing"
+          "type" : "codeListing",
+          "wrap" : 0
         },
         {
           "inlineContent" : [
@@ -174,6 +183,7 @@
   "relationshipsSections" : [
     {
       "identifiers" : [
+        "doc:\/\/DocCCommon\/documentation\/DocCCommon\/FastJSONDecodable",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderTree",
         "doc:\/\/SwiftDocC\/Se",
         "doc:\/\/SwiftDocC\/SE",
@@ -187,7 +197,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -195,6 +205,7 @@
   ],
   "seeAlsoSections" : [
     {
+      "anchor" : "Render-Elements",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderBlockContent",
@@ -205,6 +216,7 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Inline-content-types",
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderInlineContent\/codeVoice(code:)",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderInlineContent\/emphasis(inlineContent:)",
@@ -218,14 +230,22 @@
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderInlineContent\/superscript(inlineContent:)",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderInlineContent\/text(_:)"
       ],
-      "title" : "Enumeration Cases"
+      "title" : "Inline content types"
     },
     {
+      "anchor" : "Getting-a-plain-text-representation",
+      "identifiers" : [
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderInlineContent\/plainText"
+      ],
+      "title" : "Getting a plain text representation"
+    },
+    {
+      "anchor" : "Default-Implementations",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderInlineContent\/Decodable-Implementations",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderInlineContent\/Encodable-Implementations",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderInlineContent\/Equatable-Implementations",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderInlineContent\/FastJSONDecodable-Implementations",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderInlineContent\/TextIndexing-Implementations"
       ],
       "title" : "Default Implementations"
@@ -245,6 +265,48 @@
   ]
 , 
 "references": {
+"doc://DocCCommon/documentation/DocCCommon/FastJSONDecodable": {
+  "abstract" : [
+    {
+      "text" : "A protocol for types that can be decoded using a ",
+      "type" : "text"
+    },
+    {
+      "code" : "FastSymbolGraphJSONDecoder",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "FastJSONDecodable"
+    }
+  ],
+  "identifier" : "doc:\/\/DocCCommon\/documentation\/DocCCommon\/FastJSONDecodable",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "FastJSONDecodable"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "FastJSONDecodable",
+  "type" : "topic",
+  "url" : "\/documentation\/docccommon\/fastjsondecodable"
+},
 "doc://SwiftDocC/SE": {
   "identifier" : "doc:\/\/SwiftDocC\/SE",
   "title" : "Swift.Encodable",
@@ -267,6 +329,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -281,6 +344,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -315,6 +379,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -349,6 +414,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -398,16 +464,16 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/renderinlinecontent\/encodable-implementations"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/RenderInlineContent/Equatable-Implementations": {
+"doc://SwiftDocC/documentation/SwiftDocC/RenderInlineContent/FastJSONDecodable-Implementations": {
   "abstract" : [
 
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderInlineContent\/Equatable-Implementations",
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderInlineContent\/FastJSONDecodable-Implementations",
   "kind" : "article",
   "role" : "collectionGroup",
-  "title" : "Equatable Implementations",
+  "title" : "FastJSONDecodable Implementations",
   "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/renderinlinecontent\/equatable-implementations"
+  "url" : "\/documentation\/swiftdocc\/renderinlinecontent\/fastjsondecodable-implementations"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/RenderInlineContent/TextIndexing-Implementations": {
   "abstract" : [
@@ -427,6 +493,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -476,6 +543,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -525,6 +593,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -591,6 +660,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -640,6 +710,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -682,6 +753,44 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/renderinlinecontent\/newterm(inlinecontent:)"
 },
+"doc://SwiftDocC/documentation/SwiftDocC/RenderInlineContent/plainText": {
+  "abstract" : [
+    {
+      "text" : "Returns a lossy conversion of the formatted content to a plain-text string.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "plainText"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderInlineContent\/plainText",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "plainText",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/renderinlinecontent\/plaintext"
+},
 "doc://SwiftDocC/documentation/SwiftDocC/RenderInlineContent/reference(identifier:isActive:overridingTitle:overridingTitleInlineContent:)": {
   "abstract" : [
     {
@@ -689,6 +798,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -789,6 +899,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -838,6 +949,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -887,6 +999,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -936,6 +1049,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -985,6 +1099,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1023,6 +1138,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1050,20 +1166,6 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/rendertree"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/RenderingModel": {
-  "abstract" : [
-    {
-      "text" : "Convert documentation nodes into render nodes and save them to disk.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderingModel",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Rendering Model",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/renderingmodel"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/TextIndexing": {
   "abstract" : [
     {
@@ -1071,6 +1173,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",

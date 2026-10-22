@@ -8,8 +8,7 @@
   "hierarchy" : {
     "paths" : [
       [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderingModel"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC"
       ]
     ]
   },
@@ -45,6 +44,10 @@
         "text" : "RenderReferenceType"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "RenderReference.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Model\/Rendering\/References\/RenderReference.swift#L28"
+    },
     "role" : "symbol",
     "roleHeading" : "Enumeration",
     "symbolKind" : "enum",
@@ -58,7 +61,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -82,6 +85,7 @@
   "relationshipsSections" : [
     {
       "identifiers" : [
+        "doc:\/\/DocCCommon\/documentation\/DocCCommon\/FastJSONDecodable",
         "doc:\/\/SwiftDocC\/Se",
         "doc:\/\/SwiftDocC\/SE",
         "doc:\/\/SwiftDocC\/SQ",
@@ -95,7 +99,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -103,6 +107,7 @@
   ],
   "seeAlsoSections" : [
     {
+      "anchor" : "References",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderReference",
@@ -114,8 +119,11 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Enumeration-Cases",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderReferenceType\/download",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderReferenceType\/externalLocation",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderReferenceType\/file",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderReferenceType\/fileType",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderReferenceType\/image",
@@ -129,16 +137,18 @@
       "title" : "Enumeration Cases"
     },
     {
+      "anchor" : "Initializers",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderReferenceType\/init(rawValue:)"
       ],
       "title" : "Initializers"
     },
     {
+      "anchor" : "Default-Implementations",
       "generated" : true,
       "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderReferenceType\/Equatable-Implementations",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderReferenceType\/RawRepresentable-Implementations"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderReferenceType\/FastJSONDecodable-Implementations"
       ],
       "title" : "Default Implementations"
     }
@@ -157,6 +167,48 @@
   ]
 , 
 "references": {
+"doc://DocCCommon/documentation/DocCCommon/FastJSONDecodable": {
+  "abstract" : [
+    {
+      "text" : "A protocol for types that can be decoded using a ",
+      "type" : "text"
+    },
+    {
+      "code" : "FastSymbolGraphJSONDecoder",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "FastJSONDecodable"
+    }
+  ],
+  "identifier" : "doc:\/\/DocCCommon\/documentation\/DocCCommon\/FastJSONDecodable",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "FastJSONDecodable"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "FastJSONDecodable",
+  "type" : "topic",
+  "url" : "\/documentation\/docccommon\/fastjsondecodable"
+},
 "doc://SwiftDocC/SE": {
   "identifier" : "doc:\/\/SwiftDocC\/SE",
   "title" : "Swift.Encodable",
@@ -189,6 +241,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -203,6 +256,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -237,6 +291,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -271,6 +326,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -298,32 +354,22 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/renderreferencetype"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/RenderReferenceType/Equatable-Implementations": {
+"doc://SwiftDocC/documentation/SwiftDocC/RenderReferenceType/FastJSONDecodable-Implementations": {
   "abstract" : [
 
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderReferenceType\/Equatable-Implementations",
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderReferenceType\/FastJSONDecodable-Implementations",
   "kind" : "article",
   "role" : "collectionGroup",
-  "title" : "Equatable Implementations",
+  "title" : "FastJSONDecodable Implementations",
   "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/renderreferencetype\/equatable-implementations"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/RenderReferenceType/RawRepresentable-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderReferenceType\/RawRepresentable-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "RawRepresentable Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/renderreferencetype\/rawrepresentable-implementations"
+  "url" : "\/documentation\/swiftdocc\/renderreferencetype\/fastjsondecodable-implementations"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/RenderReferenceType/download": {
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -345,10 +391,37 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/renderreferencetype\/download"
 },
+"doc://SwiftDocC/documentation/SwiftDocC/RenderReferenceType/externalLocation": {
+  "abstract" : [
+
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "externalLocation"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderReferenceType\/externalLocation",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "RenderReferenceType.externalLocation",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/renderreferencetype\/externallocation"
+},
 "doc://SwiftDocC/documentation/SwiftDocC/RenderReferenceType/file": {
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -374,6 +447,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -399,6 +473,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -424,6 +499,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -462,6 +538,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -487,6 +564,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -512,6 +590,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -537,6 +616,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -562,6 +642,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -587,6 +668,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -608,20 +690,6 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/renderreferencetype\/xcoderequirement"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/RenderingModel": {
-  "abstract" : [
-    {
-      "text" : "Convert documentation nodes into render nodes and save them to disk.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderingModel",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Rendering Model",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/renderingmodel"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/URLReference": {
   "abstract" : [
     {
@@ -629,6 +697,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",

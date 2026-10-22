@@ -8,9 +8,7 @@
   "hierarchy" : {
     "paths" : [
       [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationWorkspaceGroup",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/PlatformVersion"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC"
       ]
     ]
   },
@@ -46,6 +44,10 @@
         "text" : "Version"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "Version.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Utility\/Version.swift#L14"
+    },
     "role" : "symbol",
     "roleHeading" : "Structure",
     "symbolKind" : "struct",
@@ -59,7 +61,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -100,7 +102,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -108,6 +110,7 @@
   ],
   "seeAlsoSections" : [
     {
+      "anchor" : "Semantic-Versions",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/VersionTriplet"
@@ -117,6 +120,8 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Initializers",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Version\/init(arrayLiteral:)",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Version\/init(from:)",
@@ -125,6 +130,8 @@
       "title" : "Initializers"
     },
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Version\/description",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Version\/endIndex",
@@ -133,27 +140,20 @@
       "title" : "Instance Properties"
     },
     {
+      "anchor" : "Instance-Methods",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Version\/encode(to:)"
       ],
       "title" : "Instance Methods"
     },
     {
-      "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Version\/subscript(_:)-56ggz"
-      ],
-      "title" : "Subscripts"
-    },
-    {
+      "anchor" : "Subscripts",
       "generated" : true,
       "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Version\/BidirectionalCollection-Implementations",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Version\/Collection-Implementations",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Version\/Equatable-Implementations",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Version\/RandomAccessCollection-Implementations",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Version\/Sequence-Implementations"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Version\/subscript(_:)"
       ],
-      "title" : "Default Implementations"
+      "title" : "Subscripts"
     }
   ],
   "variants" : [
@@ -212,60 +212,13 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
   "title" : "SwiftDocC",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/DocumentationWorkspaceGroup": {
-  "abstract" : [
-    {
-      "text" : "Learn how to explore a documentation workspace and discover bundles.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationWorkspaceGroup",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Bundle Discovery",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/documentationworkspacegroup"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/PlatformVersion": {
-  "abstract" : [
-    {
-      "text" : "A pair of a version number and beta information for a platform.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "struct"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "PlatformVersion"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/PlatformVersion",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "PlatformVersion"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "PlatformVersion",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/platformversion"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/Version": {
   "abstract" : [
@@ -274,6 +227,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -301,61 +255,6 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/version"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/Version/BidirectionalCollection-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Version\/BidirectionalCollection-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "BidirectionalCollection Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/version\/bidirectionalcollection-implementations"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/Version/Collection-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Version\/Collection-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Collection Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/version\/collection-implementations"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/Version/Equatable-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Version\/Equatable-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Equatable Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/version\/equatable-implementations"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/Version/RandomAccessCollection-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Version\/RandomAccessCollection-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "RandomAccessCollection Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/version\/randomaccesscollection-implementations"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/Version/Sequence-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Version\/Sequence-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Sequence Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/version\/sequence-implementations"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/Version/description": {
   "abstract" : [
     {
@@ -363,6 +262,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -397,6 +297,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -421,6 +322,14 @@
     {
       "kind" : "text",
       "text" : ": "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -450,6 +359,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -487,6 +397,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -525,6 +436,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -541,6 +453,14 @@
     {
       "kind" : "text",
       "text" : ": "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -570,6 +490,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -611,6 +532,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -641,13 +563,14 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/version\/startindex"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/Version/subscript(_:)-56ggz": {
+"doc://SwiftDocC/documentation/SwiftDocC/Version/subscript(_:)": {
   "abstract" : [
     {
       "text" : "Returns the version component at the given index.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -672,12 +595,12 @@
       "text" : "Int"
     }
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Version\/subscript(_:)-56ggz",
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Version\/subscript(_:)",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : "subscript(_:)",
   "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/version\/subscript(_:)-56ggz"
+  "url" : "\/documentation\/swiftdocc\/version\/subscript(_:)"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/VersionTriplet": {
   "abstract" : [
@@ -686,6 +609,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",

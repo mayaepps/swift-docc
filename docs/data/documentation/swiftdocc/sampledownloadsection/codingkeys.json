@@ -9,8 +9,6 @@
     "paths" : [
       [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderingModel",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SymbolReferenceRendering",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SampleDownloadSection"
       ]
     ]
@@ -47,6 +45,10 @@
         "text" : "CodingKeys"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "SampleDownloadSection.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Model\/Rendering\/Symbol\/SampleDownloadSection.swift#L30"
+    },
     "role" : "symbol",
     "roleHeading" : "Enumeration",
     "symbolKind" : "enum",
@@ -60,7 +62,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -90,7 +92,8 @@
         "doc:\/\/SwiftDocC\/SQ",
         "doc:\/\/SwiftDocC\/SH",
         "doc:\/\/SwiftDocC\/SY",
-        "doc:\/\/SwiftDocC\/s8SendableP"
+        "doc:\/\/SwiftDocC\/s8SendableP",
+        "doc:\/\/SwiftDocC\/s16SendableMetatypeP"
       ],
       "kind" : "relationships",
       "title" : "Conforms To",
@@ -99,7 +102,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -107,6 +110,8 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Enumeration-Cases",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SampleDownloadSection\/CodingKeys\/action",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SampleDownloadSection\/CodingKeys\/kind"
@@ -114,21 +119,14 @@
       "title" : "Enumeration Cases"
     },
     {
+      "anchor" : "Initializers",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SampleDownloadSection\/CodingKeys\/init(intValue:)",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SampleDownloadSection\/CodingKeys\/init(rawValue:)",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SampleDownloadSection\/CodingKeys\/init(stringValue:)"
       ],
       "title" : "Initializers"
-    },
-    {
-      "generated" : true,
-      "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SampleDownloadSection\/CodingKeys\/CodingKey-Implementations",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SampleDownloadSection\/CodingKeys\/Equatable-Implementations",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SampleDownloadSection\/CodingKeys\/RawRepresentable-Implementations"
-      ],
-      "title" : "Default Implementations"
     }
   ],
   "variants" : [
@@ -167,26 +165,13 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
   "title" : "SwiftDocC",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/RenderingModel": {
-  "abstract" : [
-    {
-      "text" : "Convert documentation nodes into render nodes and save them to disk.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderingModel",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Rendering Model",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/renderingmodel"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/SampleDownloadSection": {
   "abstract" : [
@@ -195,6 +180,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -229,6 +215,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -256,43 +243,11 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/sampledownloadsection\/codingkeys"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/SampleDownloadSection/CodingKeys/CodingKey-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SampleDownloadSection\/CodingKeys\/CodingKey-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "CodingKey Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/sampledownloadsection\/codingkeys\/codingkey-implementations"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/SampleDownloadSection/CodingKeys/Equatable-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SampleDownloadSection\/CodingKeys\/Equatable-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Equatable Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/sampledownloadsection\/codingkeys\/equatable-implementations"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/SampleDownloadSection/CodingKeys/RawRepresentable-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SampleDownloadSection\/CodingKeys\/RawRepresentable-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "RawRepresentable Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/sampledownloadsection\/codingkeys\/rawrepresentable-implementations"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/SampleDownloadSection/CodingKeys/action": {
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -318,6 +273,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -356,6 +312,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -394,6 +351,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -432,6 +390,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -453,19 +412,10 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/sampledownloadsection\/codingkeys\/kind"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/SymbolReferenceRendering": {
-  "abstract" : [
-    {
-      "text" : "Render rich reference documentation for programming symbols.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SymbolReferenceRendering",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Symbol Reference Rendering",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/symbolreferencerendering"
+"doc://SwiftDocC/s16SendableMetatypeP": {
+  "identifier" : "doc:\/\/SwiftDocC\/s16SendableMetatypeP",
+  "title" : "Swift.SendableMetatype",
+  "type" : "unresolvable"
 },
 "doc://SwiftDocC/s23CustomStringConvertibleP": {
   "identifier" : "doc:\/\/SwiftDocC\/s23CustomStringConvertibleP",

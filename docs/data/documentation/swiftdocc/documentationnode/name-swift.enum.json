@@ -9,7 +9,6 @@
     "paths" : [
       [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationContextGroup",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationNode"
       ]
     ]
@@ -47,6 +46,10 @@
         "text" : "Name"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "Name.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Model\/Name.swift#L19"
+    },
     "role" : "symbol",
     "roleHeading" : "Enumeration",
     "symbolKind" : "enum",
@@ -60,7 +63,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -131,7 +134,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -139,30 +142,21 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Enumeration-Cases",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationNode\/Name-swift.enum\/conceptual(title:)",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationNode\/Name-swift.enum\/symbol(declaration:)"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationNode\/Name-swift.enum\/symbol(name:)"
       ],
       "title" : "Enumeration Cases"
     },
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationNode\/Name-swift.enum\/description"
       ],
       "title" : "Instance Properties"
-    },
-    {
-      "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationNode\/Name-swift.enum\/hash(into:)"
-      ],
-      "title" : "Instance Methods"
-    },
-    {
-      "generated" : true,
-      "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationNode\/Name-swift.enum\/Equatable-Implementations"
-      ],
-      "title" : "Default Implementations"
     }
   ],
   "variants" : [
@@ -196,26 +190,13 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
   "title" : "SwiftDocC",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/DocumentationContextGroup": {
-  "abstract" : [
-    {
-      "text" : "Build and query the in-memory documentation model.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationContextGroup",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Documentation Context",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/documentationcontextgroup"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/DocumentationNode": {
   "abstract" : [
@@ -224,6 +205,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -258,6 +240,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -285,17 +268,6 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/documentationnode\/name-swift.enum"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/DocumentationNode/Name-swift.enum/Equatable-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationNode\/Name-swift.enum\/Equatable-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Equatable Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/documentationnode\/name-swift.enum\/equatable-implementations"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/DocumentationNode/Name-swift.enum/conceptual(title:)": {
   "abstract" : [
     {
@@ -303,6 +275,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -349,6 +322,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -379,67 +353,14 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/documentationnode\/name-swift.enum\/description"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/DocumentationNode/Name-swift.enum/hash(into:)": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "hash"
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "into"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "inout"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:s6HasherV",
-      "text" : "Hasher"
-    },
-    {
-      "kind" : "text",
-      "text" : ")"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationNode\/Name-swift.enum\/hash(into:)",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "hash(into:)",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/documentationnode\/name-swift.enum\/hash(into:)"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/DocumentationNode/Name-swift.enum/symbol(declaration:)": {
+"doc://SwiftDocC/documentation/SwiftDocC/DocumentationNode/Name-swift.enum/symbol(name:)": {
   "abstract" : [
     {
-      "text" : "The name of the symbol is derived from its declaration.",
+      "text" : "The name of the symbol.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -459,7 +380,7 @@
     },
     {
       "kind" : "externalParam",
-      "text" : "declaration"
+      "text" : "name"
     },
     {
       "kind" : "text",
@@ -467,29 +388,20 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:9SwiftDocC21AttributedCodeListingV",
-      "text" : "AttributedCodeListing"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:9SwiftDocC21AttributedCodeListingV4LineV",
-      "text" : "Line"
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
     },
     {
       "kind" : "text",
       "text" : ")"
     }
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationNode\/Name-swift.enum\/symbol(declaration:)",
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationNode\/Name-swift.enum\/symbol(name:)",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "DocumentationNode.Name.symbol(declaration:)",
+  "title" : "DocumentationNode.Name.symbol(name:)",
   "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/documentationnode\/name-swift.enum\/symbol(declaration:)"
+  "url" : "\/documentation\/swiftdocc\/documentationnode\/name-swift.enum\/symbol(name:)"
 },
 "doc://SwiftDocC/s23CustomStringConvertibleP": {
   "identifier" : "doc:\/\/SwiftDocC\/s23CustomStringConvertibleP",

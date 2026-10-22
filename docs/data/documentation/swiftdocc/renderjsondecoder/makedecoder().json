@@ -19,7 +19,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:9SwiftDocC17RenderJSONDecoderO11makeDecoder10Foundation0D0CyFZ",
+    "externalID" : "s:9SwiftDocC17RenderJSONDecoderO11makeDecoder20FoundationEssentials0D0CyFZ",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -47,7 +47,7 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:10Foundation11JSONDecoderC",
+        "preciseIdentifier" : "s:20FoundationEssentials11JSONDecoderC",
         "text" : "JSONDecoder"
       }
     ],
@@ -56,6 +56,10 @@
         "name" : "SwiftDocC"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "RenderNode+Coding.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Converter\/RenderNode+Coding.swift#L138"
+    },
     "role" : "symbol",
     "roleHeading" : "Type Method",
     "symbolKind" : "method",
@@ -69,7 +73,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -98,7 +102,7 @@
             },
             {
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:10Foundation11JSONDecoderC",
+              "preciseIdentifier" : "s:20FoundationEssentials11JSONDecoderC",
               "text" : "JSONDecoder"
             }
           ]
@@ -129,7 +133,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -156,6 +160,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -170,6 +175,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -204,6 +210,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -231,7 +238,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10Foundation11JSONDecoderC",
+      "preciseIdentifier" : "s:20FoundationEssentials11JSONDecoderC",
       "text" : "JSONDecoder"
     }
   ],

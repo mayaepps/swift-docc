@@ -1,15 +1,8 @@
 {
-  "abstract" : [
-    {
-      "text" : "No overview available.",
-      "type" : "text"
-    }
-  ],
   "hierarchy" : {
     "paths" : [
       [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationContextGroup",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NodeURLGenerator"
       ]
     ]
@@ -46,6 +39,10 @@
         "text" : "Path"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "NodeURLGenerator.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Infrastructure\/NodeURLGenerator.swift#L41"
+    },
     "role" : "symbol",
     "roleHeading" : "Enumeration",
     "symbolKind" : "enum",
@@ -59,7 +56,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -82,7 +79,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -90,26 +87,33 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Enumeration-Cases",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NodeURLGenerator\/Path\/article(bundleName:articleName:)",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NodeURLGenerator\/Path\/documentation(path:)",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NodeURLGenerator\/Path\/documentationCuration(parentPath:articleName:)",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NodeURLGenerator\/Path\/technology(technologyName:)",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NodeURLGenerator\/Path\/tutorial(bundleName:tutorialName:)"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NodeURLGenerator\/Path\/tutorial(bundleName:tutorialName:)",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NodeURLGenerator\/Path\/tutorialTableOfContents(name:)"
       ],
       "title" : "Enumeration Cases"
     },
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NodeURLGenerator\/Path\/stringValue"
       ],
       "title" : "Instance Properties"
     },
     {
+      "anchor" : "Type-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NodeURLGenerator\/Path\/dataFolderName",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NodeURLGenerator\/Path\/documentationFolder",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NodeURLGenerator\/Path\/documentationFolderName",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NodeURLGenerator\/Path\/indexFolderName",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NodeURLGenerator\/Path\/tutorialsFolder",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NodeURLGenerator\/Path\/tutorialsFolderName"
       ],
@@ -137,6 +141,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -144,24 +149,11 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/DocumentationContextGroup": {
-  "abstract" : [
-    {
-      "text" : "Build and query the in-memory documentation model.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationContextGroup",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Documentation Context",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/documentationcontextgroup"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/NodeURLGenerator": {
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -193,6 +185,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -224,6 +217,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -287,6 +281,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -329,6 +324,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -375,6 +371,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -438,6 +435,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -480,6 +478,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -518,6 +517,49 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/nodeurlgenerator\/path\/documentationfoldername"
 },
+"doc://SwiftDocC/documentation/SwiftDocC/NodeURLGenerator/Path/indexFolderName": {
+  "abstract" : [
+
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "indexFolderName"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NodeURLGenerator\/Path\/indexFolderName",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "indexFolderName",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/nodeurlgenerator\/path\/indexfoldername"
+},
 "doc://SwiftDocC/documentation/SwiftDocC/NodeURLGenerator/Path/stringValue": {
   "abstract" : [
     {
@@ -525,6 +567,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -555,56 +598,11 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/nodeurlgenerator\/path\/stringvalue"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/NodeURLGenerator/Path/technology(technologyName:)": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "case"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "technology"
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "technologyName"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:SS",
-      "text" : "String"
-    },
-    {
-      "kind" : "text",
-      "text" : ")"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NodeURLGenerator\/Path\/technology(technologyName:)",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "NodeURLGenerator.Path.technology(technologyName:)",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/nodeurlgenerator\/path\/technology(technologyname:)"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/NodeURLGenerator/Path/tutorial(bundleName:tutorialName:)": {
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -664,10 +662,58 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/nodeurlgenerator\/path\/tutorial(bundlename:tutorialname:)"
 },
+"doc://SwiftDocC/documentation/SwiftDocC/NodeURLGenerator/Path/tutorialTableOfContents(name:)": {
+  "abstract" : [
+
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "tutorialTableOfContents"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "name"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NodeURLGenerator\/Path\/tutorialTableOfContents(name:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "NodeURLGenerator.Path.tutorialTableOfContents(name:)",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/nodeurlgenerator\/path\/tutorialtableofcontents(name:)"
+},
 "doc://SwiftDocC/documentation/SwiftDocC/NodeURLGenerator/Path/tutorialsFolder": {
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -710,6 +756,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",

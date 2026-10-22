@@ -53,6 +53,10 @@
         "text" : "SemanticVisitor"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "SemanticVisitor.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Semantics\/Visitor\/SemanticVisitor.swift#L16"
+    },
     "role" : "symbol",
     "roleHeading" : "Protocol",
     "symbolKind" : "protocol",
@@ -66,7 +70,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -106,6 +110,7 @@
               "type" : "paragraph"
             }
           ],
+          "name" : "Note",
           "style" : "note",
           "type" : "aside"
         }
@@ -133,22 +138,40 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
 
   ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "Semantic-Elements",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Semantic",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SemanticWalker",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/MarkupContainer",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/MarkupConvertible",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DirectiveConvertible"
+      ],
+      "title" : "Semantic Elements"
+    }
+  ],
   "topicSections" : [
     {
+      "anchor" : "Associated-Types",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SemanticVisitor\/Result"
       ],
       "title" : "Associated Types"
     },
     {
+      "anchor" : "Instance-Methods",
+      "generated" : true,
       "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SemanticVisitor\/visit(_:)-8wzl8",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SemanticVisitor\/visit(_:)",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SemanticVisitor\/visitArticle(_:)",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SemanticVisitor\/visitAssessments(_:)",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SemanticVisitor\/visitChapter(_:)",
@@ -167,12 +190,12 @@
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SemanticVisitor\/visitStep(_:)",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SemanticVisitor\/visitSteps(_:)",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SemanticVisitor\/visitSymbol(_:)",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SemanticVisitor\/visitTechnology(_:)",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SemanticVisitor\/visitTile(_:)",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SemanticVisitor\/visitTutorial(_:)",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SemanticVisitor\/visitTutorialArticle(_:)",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SemanticVisitor\/visitTutorialReference(_:)",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SemanticVisitor\/visitTutorialSection(_:)",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SemanticVisitor\/visitTutorialTableOfContents(_:)",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SemanticVisitor\/visitVideoMedia(_:)",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SemanticVisitor\/visitVolume(_:)",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SemanticVisitor\/visitXcodeRequirement(_:)"
@@ -201,6 +224,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -215,6 +239,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -258,6 +283,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -301,6 +327,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -344,6 +371,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -378,6 +406,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -412,6 +441,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -439,6 +469,41 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/contentandmedia"
 },
+"doc://SwiftDocC/documentation/SwiftDocC/DirectiveConvertible": {
+  "abstract" : [
+    {
+      "text" : "A semantic object formed from a directive after a series of semantic analysis checks.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "DirectiveConvertible"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DirectiveConvertible",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "DirectiveConvertible"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "DirectiveConvertible",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/directiveconvertible"
+},
 "doc://SwiftDocC/documentation/SwiftDocC/ImageMedia": {
   "abstract" : [
     {
@@ -446,6 +511,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -480,6 +546,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -523,6 +590,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -565,6 +633,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -592,6 +661,41 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/markupcontainer"
 },
+"doc://SwiftDocC/documentation/SwiftDocC/MarkupConvertible": {
+  "abstract" : [
+    {
+      "text" : "A type that can be initialized from markup.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "MarkupConvertible"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/MarkupConvertible",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "MarkupConvertible"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "MarkupConvertible",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/markupconvertible"
+},
 "doc://SwiftDocC/documentation/SwiftDocC/MultipleChoice": {
   "abstract" : [
     {
@@ -599,6 +703,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -633,6 +738,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -667,6 +773,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -701,6 +808,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -744,6 +852,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -778,6 +887,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -800,7 +910,7 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/semanticvisitor\/result"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/SemanticVisitor/visit(_:)-8wzl8": {
+"doc://SwiftDocC/documentation/SwiftDocC/SemanticVisitor/visit(_:)": {
   "abstract" : [
     {
       "text" : "Visit any kind of ",
@@ -817,6 +927,7 @@
     }
   ],
   "defaultImplementations" : 1,
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -845,29 +956,23 @@
     },
     {
       "kind" : "typeIdentifier",
-      "text" : "Self"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC15SemanticVisitorP6ResultQa",
       "text" : "Result"
     }
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SemanticVisitor\/visit(_:)-8wzl8",
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SemanticVisitor\/visit(_:)",
   "kind" : "symbol",
   "required" : true,
   "role" : "symbol",
   "title" : "visit(_:)",
   "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/semanticvisitor\/visit(_:)-8wzl8"
+  "url" : "\/documentation\/swiftdocc\/semanticvisitor\/visit(_:)"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/SemanticVisitor/visitArticle(_:)": {
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -896,14 +1001,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "text" : "Self"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC15SemanticVisitorP6ResultQa",
       "text" : "Result"
     }
   ],
@@ -931,6 +1029,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -959,14 +1058,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "text" : "Self"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC15SemanticVisitorP6ResultQa",
       "text" : "Result"
     }
   ],
@@ -994,6 +1086,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1022,14 +1115,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "text" : "Self"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC15SemanticVisitorP6ResultQa",
       "text" : "Result"
     }
   ],
@@ -1057,6 +1143,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1085,14 +1172,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "text" : "Self"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC15SemanticVisitorP6ResultQa",
       "text" : "Result"
     }
   ],
@@ -1120,6 +1200,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1148,14 +1229,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "text" : "Self"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC15SemanticVisitorP6ResultQa",
       "text" : "Result"
     }
   ],
@@ -1183,6 +1257,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1211,14 +1286,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "text" : "Self"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC15SemanticVisitorP6ResultQa",
       "text" : "Result"
     }
   ],
@@ -1246,6 +1314,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1274,14 +1343,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "text" : "Self"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC15SemanticVisitorP6ResultQa",
       "text" : "Result"
     }
   ],
@@ -1297,6 +1359,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1325,14 +1388,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "text" : "Self"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC15SemanticVisitorP6ResultQa",
       "text" : "Result"
     }
   ],
@@ -1360,6 +1416,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1388,14 +1445,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "text" : "Self"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC15SemanticVisitorP6ResultQa",
       "text" : "Result"
     }
   ],
@@ -1423,6 +1473,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1451,14 +1502,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "text" : "Self"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC15SemanticVisitorP6ResultQa",
       "text" : "Result"
     }
   ],
@@ -1486,6 +1530,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1514,14 +1559,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "text" : "Self"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC15SemanticVisitorP6ResultQa",
       "text" : "Result"
     }
   ],
@@ -1549,6 +1587,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1577,14 +1616,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "text" : "Self"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC15SemanticVisitorP6ResultQa",
       "text" : "Result"
     }
   ],
@@ -1612,6 +1644,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1640,14 +1673,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "text" : "Self"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC15SemanticVisitorP6ResultQa",
       "text" : "Result"
     }
   ],
@@ -1675,6 +1701,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1703,14 +1730,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "text" : "Self"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC15SemanticVisitorP6ResultQa",
       "text" : "Result"
     }
   ],
@@ -1726,6 +1746,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1754,14 +1775,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "text" : "Self"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC15SemanticVisitorP6ResultQa",
       "text" : "Result"
     }
   ],
@@ -1789,6 +1803,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1817,14 +1832,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "text" : "Self"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC15SemanticVisitorP6ResultQa",
       "text" : "Result"
     }
   ],
@@ -1852,6 +1860,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1880,14 +1889,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "text" : "Self"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC15SemanticVisitorP6ResultQa",
       "text" : "Result"
     }
   ],
@@ -1903,6 +1905,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1931,14 +1934,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "text" : "Self"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC15SemanticVisitorP6ResultQa",
       "text" : "Result"
     }
   ],
@@ -1949,69 +1945,6 @@
   "title" : "visitSymbol(_:)",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/semanticvisitor\/visitsymbol(_:)"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/SemanticVisitor/visitTechnology(_:)": {
-  "abstract" : [
-    {
-      "text" : "Visit a ",
-      "type" : "text"
-    },
-    {
-      "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Technology",
-      "isActive" : true,
-      "type" : "reference"
-    },
-    {
-      "text" : " and return the result.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "visitTechnology"
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:9SwiftDocC10TechnologyC",
-      "text" : "Technology"
-    },
-    {
-      "kind" : "text",
-      "text" : ") -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Self"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Result"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SemanticVisitor\/visitTechnology(_:)",
-  "kind" : "symbol",
-  "required" : true,
-  "role" : "symbol",
-  "title" : "visitTechnology(_:)",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/semanticvisitor\/visittechnology(_:)"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/SemanticVisitor/visitTile(_:)": {
   "abstract" : [
@@ -2029,6 +1962,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -2057,14 +1991,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "text" : "Self"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC15SemanticVisitorP6ResultQa",
       "text" : "Result"
     }
   ],
@@ -2092,6 +2019,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -2120,14 +2048,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "text" : "Self"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC15SemanticVisitorP6ResultQa",
       "text" : "Result"
     }
   ],
@@ -2143,6 +2064,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -2171,14 +2093,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "text" : "Self"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC15SemanticVisitorP6ResultQa",
       "text" : "Result"
     }
   ],
@@ -2206,6 +2121,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -2234,14 +2150,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "text" : "Self"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC15SemanticVisitorP6ResultQa",
       "text" : "Result"
     }
   ],
@@ -2269,6 +2178,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -2297,14 +2207,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "text" : "Self"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC15SemanticVisitorP6ResultQa",
       "text" : "Result"
     }
   ],
@@ -2315,6 +2218,63 @@
   "title" : "visitTutorialSection(_:)",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/semanticvisitor\/visittutorialsection(_:)"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/SemanticVisitor/visitTutorialTableOfContents(_:)": {
+  "abstract" : [
+    {
+      "text" : "Visit a ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialTableOfContents",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " and return the result.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "visitTutorialTableOfContents"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC23TutorialTableOfContentsC",
+      "text" : "TutorialTableOfContents"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC15SemanticVisitorP6ResultQa",
+      "text" : "Result"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SemanticVisitor\/visitTutorialTableOfContents(_:)",
+  "kind" : "symbol",
+  "required" : true,
+  "role" : "symbol",
+  "title" : "visitTutorialTableOfContents(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/semanticvisitor\/visittutorialtableofcontents(_:)"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/SemanticVisitor/visitVideoMedia(_:)": {
   "abstract" : [
@@ -2332,6 +2292,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -2360,14 +2321,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "text" : "Self"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC15SemanticVisitorP6ResultQa",
       "text" : "Result"
     }
   ],
@@ -2395,6 +2349,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -2423,14 +2378,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "text" : "Self"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC15SemanticVisitorP6ResultQa",
       "text" : "Result"
     }
   ],
@@ -2458,6 +2406,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -2486,14 +2435,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "text" : "Self"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC15SemanticVisitorP6ResultQa",
       "text" : "Result"
     }
   ],
@@ -2521,6 +2463,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -2569,6 +2512,7 @@
       "type" : "reference"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -2612,6 +2556,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -2639,40 +2584,6 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/steps"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/Technology": {
-  "abstract" : [
-    {
-      "text" : "An overview of the educational materials under a specific technology or technology area.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "class"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "Technology"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Technology",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "Technology"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "Technology",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/technology"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/Tile": {
   "abstract" : [
     {
@@ -2680,6 +2591,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -2710,19 +2622,11 @@
 "doc://SwiftDocC/documentation/SwiftDocC/Tutorial": {
   "abstract" : [
     {
-      "text" : "A tutorial to complete in order to gain knowledge of a ",
-      "type" : "text"
-    },
-    {
-      "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Technology",
-      "isActive" : true,
-      "type" : "reference"
-    },
-    {
-      "text" : ".",
+      "text" : "A tutorial to complete in order to gain knowledge of a technology.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -2783,6 +2687,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -2826,6 +2731,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -2853,6 +2759,41 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/tutorialsection"
 },
+"doc://SwiftDocC/documentation/SwiftDocC/TutorialTableOfContents": {
+  "abstract" : [
+    {
+      "text" : "A top-level page that organizes a collection of tutorials into a hierarchy of volumes and chapters.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "TutorialTableOfContents"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TutorialTableOfContents",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "TutorialTableOfContents"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "TutorialTableOfContents",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/tutorialtableofcontents"
+},
 "doc://SwiftDocC/documentation/SwiftDocC/VideoMedia": {
   "abstract" : [
     {
@@ -2860,6 +2801,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -2894,6 +2836,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -2937,6 +2880,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",

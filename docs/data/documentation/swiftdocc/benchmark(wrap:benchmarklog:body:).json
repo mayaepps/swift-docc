@@ -1,15 +1,8 @@
 {
-  "abstract" : [
-    {
-      "text" : "Ends the given metric and adds it to the log.",
-      "type" : "text"
-    }
-  ],
   "hierarchy" : {
     "paths" : [
       [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Benchmarking"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC"
       ]
     ]
   },
@@ -59,10 +52,19 @@
       },
       {
         "kind" : "text",
-        "text" : ": () -> "
+        "text" : ": "
+      },
+      {
+        "kind" : "attribute",
+        "text" : "@autoclosure"
+      },
+      {
+        "kind" : "text",
+        "text" : " () -> "
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:9SwiftDocC9benchmark4wrap0C3Log4bodyq_xyXK_AA9BenchmarkCq_yKXEtKAA0G11BlockMetricRzr0_lF1EL_xmfp",
         "text" : "E"
       },
       {
@@ -104,6 +106,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:9SwiftDocC9benchmark4wrap0C3Log4bodyq_xyXK_AA9BenchmarkCq_yKXEtKAA0G11BlockMetricRzr0_lF6ResultL_q_mfp",
         "text" : "Result"
       },
       {
@@ -120,6 +123,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:9SwiftDocC9benchmark4wrap0C3Log4bodyq_xyXK_AA9BenchmarkCq_yKXEtKAA0G11BlockMetricRzr0_lF6ResultL_q_mfp",
         "text" : "Result"
       }
     ],
@@ -128,6 +132,10 @@
         "name" : "SwiftDocC"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "Benchmark.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Benchmark\/Benchmark.swift#L140"
+    },
     "role" : "symbol",
     "roleHeading" : "Function",
     "symbolKind" : "func",
@@ -141,7 +149,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -194,7 +202,7 @@
             },
             {
               "kind" : "internalParam",
-              "text" : "event"
+              "text" : "metric"
             },
             {
               "kind" : "text",
@@ -202,14 +210,15 @@
             },
             {
               "kind" : "attribute",
-              "text" : "@autoclosure "
+              "text" : "@autoclosure"
             },
             {
               "kind" : "text",
-              "text" : "() -> "
+              "text" : " () -> "
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:9SwiftDocC9benchmark4wrap0C3Log4bodyq_xyXK_AA9BenchmarkCq_yKXEtKAA0G11BlockMetricRzr0_lF1EL_xmfp",
               "text" : "E"
             },
             {
@@ -260,6 +269,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:9SwiftDocC9benchmark4wrap0C3Log4bodyq_xyXK_AA9BenchmarkCq_yKXEtKAA0G11BlockMetricRzr0_lF6ResultL_q_mfp",
               "text" : "Result"
             },
             {
@@ -276,6 +286,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:9SwiftDocC9benchmark4wrap0C3Log4bodyq_xyXK_AA9BenchmarkCq_yKXEtKAA0G11BlockMetricRzr0_lF6ResultL_q_mfp",
               "text" : "Result"
             },
             {
@@ -308,30 +319,11 @@
         }
       ],
       "kind" : "declarations"
-    },
-    {
-      "kind" : "parameters",
-      "parameters" : [
-        {
-          "content" : [
-            {
-              "inlineContent" : [
-                {
-                  "text" : "The metric to end and log.",
-                  "type" : "text"
-                }
-              ],
-              "type" : "paragraph"
-            }
-          ],
-          "name" : "event"
-        }
-      ]
     }
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -339,6 +331,7 @@
   ],
   "seeAlsoSections" : [
     {
+      "anchor" : "Logging-Metrics",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/benchmark(add:benchmarkLog:)",
@@ -369,6 +362,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -383,6 +377,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -413,18 +408,11 @@
 "doc://SwiftDocC/documentation/SwiftDocC/BenchmarkBlockMetric": {
   "abstract" : [
     {
-      "text" : "A metric that runs over a period of time and needs",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "to be started and stopped to produce its result.",
+      "text" : "A metric that runs over a period of time and needs to be started and stopped to produce its result.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -452,20 +440,6 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/benchmarkblockmetric"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/Benchmarking": {
-  "abstract" : [
-    {
-      "text" : "Produce performance metrics to improve the compilation pipeline and track regressions.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Benchmarking",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Benchmarking",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/benchmarking"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/benchmark(add:benchmarkLog:)": {
   "abstract" : [
     {
@@ -473,6 +447,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -504,10 +479,19 @@
     },
     {
       "kind" : "text",
-      "text" : ": () -> "
+      "text" : ": "
+    },
+    {
+      "kind" : "attribute",
+      "text" : "@autoclosure"
+    },
+    {
+      "kind" : "text",
+      "text" : " () -> "
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC9benchmark3add0C3LogyxyXK_AA9BenchmarkCtAA0F6MetricRzlF1EL_xmfp",
       "text" : "E"
     },
     {
@@ -542,10 +526,11 @@
 "doc://SwiftDocC/documentation/SwiftDocC/benchmark(begin:benchmarkLog:)": {
   "abstract" : [
     {
-      "text" : "Starts the given metric.",
+      "text" : "Begins the given metric.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -577,10 +562,19 @@
     },
     {
       "kind" : "text",
-      "text" : ": () -> "
+      "text" : ": "
+    },
+    {
+      "kind" : "attribute",
+      "text" : "@autoclosure"
+    },
+    {
+      "kind" : "text",
+      "text" : " () -> "
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC9benchmark5begin0C3LogxSgxyXK_AA9BenchmarkCtAA0F11BlockMetricRzlF1EL_xmfp",
       "text" : "E"
     },
     {
@@ -606,6 +600,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC9benchmark5begin0C3LogxSgxyXK_AA9BenchmarkCtAA0F11BlockMetricRzlF1EL_xmfp",
       "text" : "E"
     },
     {
@@ -627,6 +622,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -658,10 +654,19 @@
     },
     {
       "kind" : "text",
-      "text" : ": () -> "
+      "text" : ": "
+    },
+    {
+      "kind" : "attribute",
+      "text" : "@autoclosure"
+    },
+    {
+      "kind" : "text",
+      "text" : " () -> "
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC9benchmark3end0C3LogyxSgyXK_AA9BenchmarkCtAA0F11BlockMetricRzlF1EL_xmfp",
       "text" : "E"
     },
     {
@@ -695,11 +700,9 @@
 },
 "doc://SwiftDocC/documentation/SwiftDocC/benchmark(wrap:benchmarkLog:body:)": {
   "abstract" : [
-    {
-      "text" : "Ends the given metric and adds it to the log.",
-      "type" : "text"
-    }
+
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -739,10 +742,19 @@
     },
     {
       "kind" : "text",
-      "text" : ": () -> "
+      "text" : ": "
+    },
+    {
+      "kind" : "attribute",
+      "text" : "@autoclosure"
+    },
+    {
+      "kind" : "text",
+      "text" : " () -> "
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC9benchmark4wrap0C3Log4bodyq_xyXK_AA9BenchmarkCq_yKXEtKAA0G11BlockMetricRzr0_lF1EL_xmfp",
       "text" : "E"
     },
     {
@@ -784,6 +796,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC9benchmark4wrap0C3Log4bodyq_xyXK_AA9BenchmarkCq_yKXEtKAA0G11BlockMetricRzr0_lF6ResultL_q_mfp",
       "text" : "Result"
     },
     {
@@ -800,6 +813,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC9benchmark4wrap0C3Log4bodyq_xyXK_AA9BenchmarkCq_yKXEtKAA0G11BlockMetricRzr0_lF6ResultL_q_mfp",
       "text" : "Result"
     }
   ],

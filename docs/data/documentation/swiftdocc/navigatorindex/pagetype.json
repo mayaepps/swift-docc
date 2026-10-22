@@ -9,7 +9,6 @@
     "paths" : [
       [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationIndexing",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NavigatorIndex"
       ]
     ]
@@ -46,6 +45,10 @@
         "text" : "PageType"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "NavigatorIndex.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Indexing\/Navigator\/NavigatorIndex.swift#L245"
+    },
     "role" : "symbol",
     "roleHeading" : "Enumeration",
     "symbolKind" : "enum",
@@ -59,7 +62,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -92,21 +95,22 @@
             {
               "inlineContent" : [
                 {
-                  "text" : "This information is stored as UInt8 to decrease the required size to store it and make",
+                  "text" : "This information is stored as ",
                   "type" : "text"
                 },
                 {
-                  "text" : " ",
-                  "type" : "text"
+                  "code" : "UInt8",
+                  "type" : "codeVoice"
                 },
                 {
-                  "text" : "the comparision faster between types.",
+                  "text" : " to decrease the required size to store it and make the comparison faster between types.",
                   "type" : "text"
                 }
               ],
               "type" : "paragraph"
             }
           ],
+          "name" : "Note",
           "style" : "note",
           "type" : "aside"
         }
@@ -119,7 +123,9 @@
       "identifiers" : [
         "doc:\/\/SwiftDocC\/SQ",
         "doc:\/\/SwiftDocC\/SH",
-        "doc:\/\/SwiftDocC\/SY"
+        "doc:\/\/SwiftDocC\/SY",
+        "doc:\/\/SwiftDocC\/s8SendableP",
+        "doc:\/\/SwiftDocC\/s16SendableMetatypeP"
       ],
       "kind" : "relationships",
       "title" : "Conforms To",
@@ -128,7 +134,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -136,11 +142,14 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Enumeration-Cases",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NavigatorIndex\/PageType\/article",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NavigatorIndex\/PageType\/associatedType",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NavigatorIndex\/PageType\/buildSetting",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NavigatorIndex\/PageType\/class",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NavigatorIndex\/PageType\/collection",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NavigatorIndex\/PageType\/container",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NavigatorIndex\/PageType\/dictionarySymbol",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NavigatorIndex\/PageType\/enumeration",
@@ -159,6 +168,7 @@
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NavigatorIndex\/PageType\/learn",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NavigatorIndex\/PageType\/localVariable",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NavigatorIndex\/PageType\/macro",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NavigatorIndex\/PageType\/namespace",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NavigatorIndex\/PageType\/operator",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NavigatorIndex\/PageType\/overview",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NavigatorIndex\/PageType\/propertyListKey",
@@ -180,25 +190,12 @@
       "title" : "Enumeration Cases"
     },
     {
+      "anchor" : "Initializers",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NavigatorIndex\/PageType\/init(rawValue:)"
       ],
       "title" : "Initializers"
-    },
-    {
-      "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NavigatorIndex\/PageType\/project",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NavigatorIndex\/PageType\/property"
-      ],
-      "title" : "Type Properties"
-    },
-    {
-      "generated" : true,
-      "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NavigatorIndex\/PageType\/Equatable-Implementations",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NavigatorIndex\/PageType\/RawRepresentable-Implementations"
-      ],
-      "title" : "Default Implementations"
     }
   ],
   "variants" : [
@@ -237,26 +234,13 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
   "title" : "SwiftDocC",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/DocumentationIndexing": {
-  "abstract" : [
-    {
-      "text" : "Create documentation indexes optimized for text search or navigation.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationIndexing",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Documentation Indexing",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/documentationindexing"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/NavigatorIndex": {
   "abstract" : [
@@ -297,6 +281,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -331,6 +316,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -358,32 +344,11 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/navigatorindex\/pagetype"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/NavigatorIndex/PageType/Equatable-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NavigatorIndex\/PageType\/Equatable-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Equatable Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/navigatorindex\/pagetype\/equatable-implementations"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/NavigatorIndex/PageType/RawRepresentable-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NavigatorIndex\/PageType\/RawRepresentable-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "RawRepresentable Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/navigatorindex\/pagetype\/rawrepresentable-implementations"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/NavigatorIndex/PageType/article": {
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -409,6 +374,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -434,6 +400,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -459,6 +426,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -480,10 +448,37 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/navigatorindex\/pagetype\/class"
 },
+"doc://SwiftDocC/documentation/SwiftDocC/NavigatorIndex/PageType/collection": {
+  "abstract" : [
+
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "collection"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NavigatorIndex\/PageType\/collection",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "NavigatorIndex.PageType.collection",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/navigatorindex\/pagetype\/collection"
+},
 "doc://SwiftDocC/documentation/SwiftDocC/NavigatorIndex/PageType/container": {
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -509,6 +504,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -534,6 +530,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -559,6 +556,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -584,6 +582,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -609,6 +608,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -634,6 +634,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -659,6 +660,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -684,6 +686,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -709,6 +712,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -734,6 +738,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -772,6 +777,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -797,6 +803,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -822,6 +829,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -847,6 +855,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -872,6 +881,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -897,6 +907,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -922,6 +933,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -947,6 +959,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -968,10 +981,37 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/navigatorindex\/pagetype\/macro"
 },
+"doc://SwiftDocC/documentation/SwiftDocC/NavigatorIndex/PageType/namespace": {
+  "abstract" : [
+
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "namespace"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NavigatorIndex\/PageType\/namespace",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "NavigatorIndex.PageType.namespace",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/navigatorindex\/pagetype\/namespace"
+},
 "doc://SwiftDocC/documentation/SwiftDocC/NavigatorIndex/PageType/operator": {
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -997,6 +1037,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1018,114 +1059,11 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/navigatorindex\/pagetype\/overview"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/NavigatorIndex/PageType/project": {
-  "abstract" : [
-
-  ],
-  "deprecated" : true,
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "static"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "let"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "project"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:9SwiftDocC14NavigatorIndexC",
-      "text" : "NavigatorIndex"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:9SwiftDocC14NavigatorIndexC8PageTypeO",
-      "text" : "PageType"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NavigatorIndex\/PageType\/project",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "project",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/navigatorindex\/pagetype\/project"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/NavigatorIndex/PageType/property": {
-  "abstract" : [
-
-  ],
-  "deprecated" : true,
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "static"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "let"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "property"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:9SwiftDocC14NavigatorIndexC",
-      "text" : "NavigatorIndex"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:9SwiftDocC14NavigatorIndexC8PageTypeO",
-      "text" : "PageType"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NavigatorIndex\/PageType\/property",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "property",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/navigatorindex\/pagetype\/property"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/NavigatorIndex/PageType/propertyListKey": {
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1151,6 +1089,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1176,6 +1115,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1201,6 +1141,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1226,6 +1167,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1251,6 +1193,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1276,6 +1219,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1301,6 +1245,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1326,6 +1271,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1351,6 +1297,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1376,6 +1323,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1401,6 +1349,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1426,6 +1375,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1451,6 +1401,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1476,6 +1427,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1496,6 +1448,16 @@
   "title" : "NavigatorIndex.PageType.union",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/navigatorindex\/pagetype\/union"
+},
+"doc://SwiftDocC/s16SendableMetatypeP": {
+  "identifier" : "doc:\/\/SwiftDocC\/s16SendableMetatypeP",
+  "title" : "Swift.SendableMetatype",
+  "type" : "unresolvable"
+},
+"doc://SwiftDocC/s8SendableP": {
+  "identifier" : "doc:\/\/SwiftDocC\/s8SendableP",
+  "title" : "Swift.Sendable",
+  "type" : "unresolvable"
 }
 }
 }

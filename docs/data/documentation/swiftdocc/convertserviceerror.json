@@ -44,6 +44,10 @@
         "text" : "ConvertServiceError"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "ConvertServiceError.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/DocumentationService\/Models\/Services\/Convert\/ConvertServiceError.swift#L14"
+    },
     "role" : "symbol",
     "roleHeading" : "Structure",
     "symbolKind" : "struct",
@@ -57,7 +61,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -82,11 +86,12 @@
     {
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DescribedError",
-        "doc:\/\/SwiftDocC\/10Foundation14LocalizedErrorP",
+        "doc:\/\/SwiftDocC\/20FoundationEssentials14LocalizedErrorP",
         "doc:\/\/SwiftDocC\/Se",
         "doc:\/\/SwiftDocC\/SE",
         "doc:\/\/SwiftDocC\/s5ErrorP",
-        "doc:\/\/SwiftDocC\/s8SendableP"
+        "doc:\/\/SwiftDocC\/s8SendableP",
+        "doc:\/\/SwiftDocC\/s16SendableMetatypeP"
       ],
       "kind" : "relationships",
       "title" : "Conforms To",
@@ -95,7 +100,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -103,20 +108,26 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Initializers",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ConvertServiceError\/init(from:)"
       ],
       "title" : "Initializers"
     },
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ConvertServiceError\/description",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ConvertServiceError\/errorDescription-37615",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ConvertServiceError\/errorDescription",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ConvertServiceError\/identifier"
       ],
       "title" : "Instance Properties"
     },
     {
+      "anchor" : "Type-Methods",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ConvertServiceError\/conversionError(underlyingError:)",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ConvertServiceError\/invalidRequest(underlyingError:)",
@@ -124,15 +135,6 @@
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ConvertServiceError\/missingPayload()"
       ],
       "title" : "Type Methods"
-    },
-    {
-      "generated" : true,
-      "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ConvertServiceError\/DescribedError-Implementations",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ConvertServiceError\/Error-Implementations",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ConvertServiceError\/LocalizedError-Implementations"
-      ],
-      "title" : "Default Implementations"
     }
   ],
   "variants" : [
@@ -149,9 +151,9 @@
   ]
 , 
 "references": {
-"doc://SwiftDocC/10Foundation14LocalizedErrorP": {
-  "identifier" : "doc:\/\/SwiftDocC\/10Foundation14LocalizedErrorP",
-  "title" : "Foundation.LocalizedError",
+"doc://SwiftDocC/20FoundationEssentials14LocalizedErrorP": {
+  "identifier" : "doc:\/\/SwiftDocC\/20FoundationEssentials14LocalizedErrorP",
+  "title" : "FoundationEssentials.LocalizedError",
   "type" : "unresolvable"
 },
 "doc://SwiftDocC/SE": {
@@ -171,6 +173,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -185,6 +188,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -212,39 +216,6 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/convertserviceerror"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/ConvertServiceError/DescribedError-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ConvertServiceError\/DescribedError-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "DescribedError Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/convertserviceerror\/describederror-implementations"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/ConvertServiceError/Error-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ConvertServiceError\/Error-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Error Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/convertserviceerror\/error-implementations"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/ConvertServiceError/LocalizedError-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ConvertServiceError\/LocalizedError-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "LocalizedError Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/convertserviceerror\/localizederror-implementations"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/ConvertServiceError/conversionError(underlyingError:)": {
   "abstract" : [
     {
@@ -252,6 +223,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -314,6 +286,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -344,10 +317,11 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/convertserviceerror\/description"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/ConvertServiceError/errorDescription-37615": {
+"doc://SwiftDocC/documentation/SwiftDocC/ConvertServiceError/errorDescription": {
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -371,12 +345,12 @@
       "text" : "String"
     }
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ConvertServiceError\/errorDescription-37615",
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ConvertServiceError\/errorDescription",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : "errorDescription",
   "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/convertserviceerror\/errordescription-37615"
+  "url" : "\/documentation\/swiftdocc\/convertserviceerror\/errordescription"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/ConvertServiceError/identifier": {
   "abstract" : [
@@ -385,6 +359,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -419,6 +394,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -434,7 +410,7 @@
     },
     {
       "kind" : "text",
-      "text" : ": "
+      "text" : ": any "
     },
     {
       "kind" : "typeIdentifier",
@@ -464,6 +440,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -526,6 +503,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -588,6 +566,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -633,6 +612,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -659,6 +639,11 @@
   "title" : "DescribedError",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/describederror"
+},
+"doc://SwiftDocC/s16SendableMetatypeP": {
+  "identifier" : "doc:\/\/SwiftDocC\/s16SendableMetatypeP",
+  "title" : "Swift.SendableMetatype",
+  "type" : "unresolvable"
 },
 "doc://SwiftDocC/s5ErrorP": {
   "identifier" : "doc:\/\/SwiftDocC\/s5ErrorP",

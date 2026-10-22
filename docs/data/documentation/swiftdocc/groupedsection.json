@@ -8,9 +8,7 @@
   "hierarchy" : {
     "paths" : [
       [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderingModel",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SymbolReferenceRendering"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC"
       ]
     ]
   },
@@ -46,6 +44,10 @@
         "text" : "GroupedSection"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "GroupedSection.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Model\/Section\/Sections\/GroupedSection.swift#L14"
+    },
     "role" : "symbol",
     "roleHeading" : "Protocol",
     "symbolKind" : "protocol",
@@ -59,7 +61,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -111,7 +113,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -119,6 +121,7 @@
   ],
   "seeAlsoSections" : [
     {
+      "anchor" : "Generic-Sections",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TaskGroupRenderSection",
@@ -129,8 +132,10 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/GroupedSection\/taskGroups-8xf1r"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/GroupedSection\/taskGroups"
       ],
       "title" : "Instance Properties"
     }
@@ -156,6 +161,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -170,6 +176,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -204,6 +211,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -231,11 +239,12 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/groupedsection"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/GroupedSection/taskGroups-8xf1r": {
+"doc://SwiftDocC/documentation/SwiftDocC/GroupedSection/taskGroups": {
   "abstract" : [
 
   ],
   "defaultImplementations" : 1,
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -263,27 +272,13 @@
       "text" : "]"
     }
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/GroupedSection\/taskGroups-8xf1r",
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/GroupedSection\/taskGroups",
   "kind" : "symbol",
   "required" : true,
   "role" : "symbol",
   "title" : "taskGroups",
   "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/groupedsection\/taskgroups-8xf1r"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/RenderingModel": {
-  "abstract" : [
-    {
-      "text" : "Convert documentation nodes into render nodes and save them to disk.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderingModel",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Rendering Model",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/renderingmodel"
+  "url" : "\/documentation\/swiftdocc\/groupedsection\/taskgroups"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/Section": {
   "abstract" : [
@@ -292,6 +287,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -326,6 +322,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -353,20 +350,6 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/seealsosection"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/SymbolReferenceRendering": {
-  "abstract" : [
-    {
-      "text" : "Render rich reference documentation for programming symbols.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SymbolReferenceRendering",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Symbol Reference Rendering",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/symbolreferencerendering"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/TaskGroupRenderSection": {
   "abstract" : [
     {
@@ -374,6 +357,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -408,6 +392,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",

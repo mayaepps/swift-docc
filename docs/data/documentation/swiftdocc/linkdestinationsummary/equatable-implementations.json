@@ -1,10 +1,4 @@
 {
-  "abstract" : [
-    {
-      "text" : "No overview available.",
-      "type" : "text"
-    }
-  ],
   "hierarchy" : {
     "paths" : [
       [
@@ -26,11 +20,12 @@
       }
     ],
     "role" : "collectionGroup",
+    "roleHeading" : "API Collection",
     "title" : "Equatable Implementations"
   },
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -38,9 +33,10 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Operators",
       "generated" : true,
       "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/LinkDestinationSummary\/!=(_:_:)"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/LinkDestinationSummary\/==(_:_:)"
       ],
       "title" : "Operators"
     }
@@ -66,6 +62,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -76,10 +73,11 @@
 "doc://SwiftDocC/documentation/SwiftDocC/LinkDestinationSummary": {
   "abstract" : [
     {
-      "text" : "A summary of an element that you can link to from outside the documentation bundle.",
+      "text" : "A summary of an element that you can link to from outside the local documentation.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -107,10 +105,11 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/linkdestinationsummary"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/LinkDestinationSummary/!=(_:_:)": {
+"doc://SwiftDocC/documentation/SwiftDocC/LinkDestinationSummary/==(_:_:)": {
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -130,7 +129,7 @@
     },
     {
       "kind" : "identifier",
-      "text" : "!="
+      "text" : "=="
     },
     {
       "kind" : "text",
@@ -142,7 +141,8 @@
     },
     {
       "kind" : "typeIdentifier",
-      "text" : "Self"
+      "preciseIdentifier" : "s:9SwiftDocC22LinkDestinationSummaryV",
+      "text" : "LinkDestinationSummary"
     },
     {
       "kind" : "text",
@@ -150,7 +150,8 @@
     },
     {
       "kind" : "typeIdentifier",
-      "text" : "Self"
+      "preciseIdentifier" : "s:9SwiftDocC22LinkDestinationSummaryV",
+      "text" : "LinkDestinationSummary"
     },
     {
       "kind" : "text",
@@ -162,12 +163,12 @@
       "text" : "Bool"
     }
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/LinkDestinationSummary\/!=(_:_:)",
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/LinkDestinationSummary\/==(_:_:)",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "!=(_:_:)",
+  "title" : "==(_:_:)",
   "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/linkdestinationsummary\/!=(_:_:)"
+  "url" : "\/documentation\/swiftdocc\/linkdestinationsummary\/==(_:_:)"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/PersistingDocumentation": {
   "abstract" : [

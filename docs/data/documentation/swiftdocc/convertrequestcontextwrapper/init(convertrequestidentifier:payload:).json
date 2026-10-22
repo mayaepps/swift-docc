@@ -56,6 +56,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:9SwiftDocC28ConvertRequestContextWrapperV7Payloadxmfp",
         "text" : "Payload"
       },
       {
@@ -68,6 +69,10 @@
         "name" : "SwiftDocC"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "ConvertRequestContextWrapper.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/DocumentationService\/Models\/Services\/Convert\/ConvertRequestContextWrapper.swift#L20"
+    },
     "role" : "symbol",
     "roleHeading" : "Initializer",
     "symbolKind" : "init",
@@ -81,7 +86,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -119,6 +124,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:9SwiftDocC28ConvertRequestContextWrapperV7Payloadxmfp",
               "text" : "Payload"
             },
             {
@@ -133,7 +139,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -160,6 +166,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -174,6 +181,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -208,6 +216,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -244,6 +253,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC28ConvertRequestContextWrapperV7Payloadxmfp",
       "text" : "Payload"
     },
     {

@@ -17,9 +17,7 @@
     "paths" : [
       [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationIndexing",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/AnyMetadata",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/AnyMetadata\/CustomDebugStringConvertible-Implementations"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/AnyMetadata"
       ]
     ]
   },
@@ -59,6 +57,10 @@
         "name" : "SwiftDocC"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "AnyMetadata.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Model\/Rendering\/RenderNode\/AnyMetadata.swift#L72"
+    },
     "role" : "symbol",
     "roleHeading" : "Instance Property",
     "symbolKind" : "property",
@@ -72,7 +74,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -116,7 +118,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -143,6 +145,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -157,6 +160,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -184,21 +188,11 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/anymetadata"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/AnyMetadata/CustomDebugStringConvertible-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/AnyMetadata\/CustomDebugStringConvertible-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "CustomDebugStringConvertible Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/anymetadata\/customdebugstringconvertible-implementations"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/AnyMetadata/debugDescription": {
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -228,20 +222,6 @@
   "title" : "debugDescription",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/anymetadata\/debugdescription"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/DocumentationIndexing": {
-  "abstract" : [
-    {
-      "text" : "Create documentation indexes optimized for text search or navigation.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationIndexing",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Documentation Indexing",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/documentationindexing"
 }
 }
 }

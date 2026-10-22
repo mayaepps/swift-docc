@@ -9,7 +9,6 @@
     "paths" : [
       [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Benchmarking",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Benchmark"
       ]
     ]
@@ -20,7 +19,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:9SwiftDocC9BenchmarkC4date10Foundation4DateVvp",
+    "externalID" : "s:9SwiftDocC9BenchmarkC4date20FoundationEssentials4DateVvp",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -40,7 +39,7 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:10Foundation4DateV",
+        "preciseIdentifier" : "s:20FoundationEssentials4DateV",
         "text" : "Date"
       }
     ],
@@ -49,6 +48,10 @@
         "name" : "SwiftDocC"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "Benchmark.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Benchmark\/Benchmark.swift#L38"
+    },
     "role" : "symbol",
     "roleHeading" : "Instance Property",
     "symbolKind" : "property",
@@ -62,7 +65,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -83,7 +86,7 @@
             },
             {
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:10Foundation4DateV",
+              "preciseIdentifier" : "s:20FoundationEssentials4DateV",
               "text" : "Date"
             }
           ]
@@ -94,7 +97,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -121,6 +124,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -135,6 +139,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -169,6 +174,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -188,7 +194,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10Foundation4DateV",
+      "preciseIdentifier" : "s:20FoundationEssentials4DateV",
       "text" : "Date"
     }
   ],
@@ -198,20 +204,6 @@
   "title" : "date",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/benchmark\/date"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/Benchmarking": {
-  "abstract" : [
-    {
-      "text" : "Produce performance metrics to improve the compilation pipeline and track regressions.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Benchmarking",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Benchmarking",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/benchmarking"
 }
 }
 }

@@ -1,10 +1,4 @@
 {
-  "abstract" : [
-    {
-      "text" : "No overview available.",
-      "type" : "text"
-    }
-  ],
   "hierarchy" : {
     "paths" : [
       [
@@ -27,11 +21,12 @@
       }
     ],
     "role" : "collectionGroup",
+    "roleHeading" : "API Collection",
     "title" : "Decodable Implementations"
   },
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -39,9 +34,10 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Initializers",
       "generated" : true,
       "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/IndexingRecord\/Kind-swift.struct\/init(from:)-l4xy"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/IndexingRecord\/Kind-swift.struct\/init(from:)"
       ],
       "title" : "Initializers"
     }
@@ -67,6 +63,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -104,6 +101,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -138,6 +136,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -165,10 +164,11 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/indexingrecord\/kind-swift.struct"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/IndexingRecord/Kind-swift.struct/init(from:)-l4xy": {
+"doc://SwiftDocC/documentation/SwiftDocC/IndexingRecord/Kind-swift.struct/init(from:)": {
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -187,6 +187,14 @@
       "text" : ": "
     },
     {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
       "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:s7DecoderP",
       "text" : "Decoder"
@@ -200,12 +208,12 @@
       "text" : "throws"
     }
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/IndexingRecord\/Kind-swift.struct\/init(from:)-l4xy",
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/IndexingRecord\/Kind-swift.struct\/init(from:)",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : "init(from:)",
   "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/indexingrecord\/kind-swift.struct\/init(from:)-l4xy"
+  "url" : "\/documentation\/swiftdocc\/indexingrecord\/kind-swift.struct\/init(from:)"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/RenderNode": {
   "abstract" : [
@@ -214,6 +222,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",

@@ -42,7 +42,7 @@
           "type" : "text"
         },
         {
-          "code" : "Void",
+          "code" : "()",
           "type" : "codeVoice"
         },
         {
@@ -54,14 +54,6 @@
     "extendedModule" : "SwiftDocC",
     "externalID" : "s:9SwiftDocC12SynchronizedCAAytRszlEACyytGycfc",
     "fragments" : [
-      {
-        "kind" : "keyword",
-        "text" : "convenience"
-      },
-      {
-        "kind" : "text",
-        "text" : " "
-      },
       {
         "kind" : "identifier",
         "text" : "init"
@@ -76,6 +68,10 @@
         "name" : "SwiftDocC"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "Synchronization.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Utility\/Synchronization.swift#L114"
+    },
     "role" : "symbol",
     "roleHeading" : "Initializer",
     "symbolKind" : "init",
@@ -89,7 +85,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -116,7 +112,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -143,6 +139,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -157,6 +154,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -214,7 +212,7 @@
         "type" : "text"
       },
       {
-        "code" : "Void",
+        "code" : "()",
         "type" : "codeVoice"
       },
       {
@@ -223,15 +221,8 @@
       }
     ]
   },
+  "deprecated" : true,
   "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "convenience"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
     {
       "kind" : "identifier",
       "text" : "init"

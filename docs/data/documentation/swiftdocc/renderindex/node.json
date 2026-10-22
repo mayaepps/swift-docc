@@ -9,7 +9,6 @@
     "paths" : [
       [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationIndexing",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderIndex"
       ]
     ]
@@ -47,6 +46,10 @@
         "text" : "Node"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "RenderIndex.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Indexing\/RenderIndexJSON\/RenderIndex.swift#L118"
+    },
     "role" : "symbol",
     "roleHeading" : "Structure",
     "symbolKind" : "struct",
@@ -60,7 +63,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -96,7 +99,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -104,15 +107,20 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Initializers",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderIndex\/Node\/init(from:)",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderIndex\/Node\/init(title:path:type:children:isDeprecated:isExternal:isBeta:)"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderIndex\/Node\/init(title:path:type:children:isDeprecated:isExternal:isBeta:icon:)"
       ],
       "title" : "Initializers"
     },
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderIndex\/Node\/children",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderIndex\/Node\/icon",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderIndex\/Node\/isBeta",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderIndex\/Node\/isDeprecated",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderIndex\/Node\/isExternal",
@@ -123,17 +131,12 @@
       "title" : "Instance Properties"
     },
     {
+      "anchor" : "Instance-Methods",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderIndex\/Node\/encode(to:)"
       ],
       "title" : "Instance Methods"
-    },
-    {
-      "generated" : true,
-      "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderIndex\/Node\/Equatable-Implementations"
-      ],
-      "title" : "Default Implementations"
     }
   ],
   "variants" : [
@@ -177,26 +180,13 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
   "title" : "SwiftDocC",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/DocumentationIndexing": {
-  "abstract" : [
-    {
-      "text" : "Create documentation indexes optimized for text search or navigation.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationIndexing",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Documentation Indexing",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/documentationindexing"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/RenderIndex": {
   "abstract" : [
@@ -205,6 +195,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -239,6 +230,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -266,17 +258,6 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/renderindex\/node"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/RenderIndex/Node/Equatable-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderIndex\/Node\/Equatable-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Equatable Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/renderindex\/node\/equatable-implementations"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/RenderIndex/Node/children": {
   "abstract" : [
     {
@@ -284,6 +265,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -300,15 +282,6 @@
     {
       "kind" : "text",
       "text" : ": ["
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:9SwiftDocC11RenderIndexV",
-      "text" : "RenderIndex"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",
@@ -331,6 +304,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -357,6 +331,14 @@
       "text" : ": "
     },
     {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
       "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:s7EncoderP",
       "text" : "Encoder"
@@ -377,10 +359,53 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/renderindex\/node\/encode(to:)"
 },
+"doc://SwiftDocC/documentation/SwiftDocC/RenderIndex/Node/icon": {
+  "abstract" : [
+    {
+      "text" : "A reference to a custom image for this node.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "icon"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC25RenderReferenceIdentifierV",
+      "text" : "RenderReferenceIdentifier"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderIndex\/Node\/icon",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "icon",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/renderindex\/node\/icon"
+},
 "doc://SwiftDocC/documentation/SwiftDocC/RenderIndex/Node/init(from:)": {
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -397,6 +422,14 @@
     {
       "kind" : "text",
       "text" : ": "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -419,13 +452,14 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/renderindex\/node\/init(from:)"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/RenderIndex/Node/init(title:path:type:children:isDeprecated:isExternal:isBeta:)": {
+"doc://SwiftDocC/documentation/SwiftDocC/RenderIndex/Node/init(title:path:type:children:isDeprecated:isExternal:isBeta:icon:)": {
   "abstract" : [
     {
       "text" : "Creates a new node with the given title, path, type, and children.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -484,7 +518,7 @@
     },
     {
       "kind" : "text",
-      "text" : ", "
+      "text" : "?, "
     },
     {
       "kind" : "externalParam",
@@ -493,15 +527,6 @@
     {
       "kind" : "text",
       "text" : ": ["
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:9SwiftDocC11RenderIndexV",
-      "text" : "RenderIndex"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",
@@ -561,15 +586,32 @@
     },
     {
       "kind" : "text",
-      "text" : ")"
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "icon"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC25RenderReferenceIdentifierV",
+      "text" : "RenderReferenceIdentifier"
+    },
+    {
+      "kind" : "text",
+      "text" : "?)"
     }
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderIndex\/Node\/init(title:path:type:children:isDeprecated:isExternal:isBeta:)",
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderIndex\/Node\/init(title:path:type:children:isDeprecated:isExternal:isBeta:icon:)",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "init(title:path:type:children:isDeprecated:isExternal:isBeta:)",
+  "title" : "init(title:path:type:children:isDeprecated:isExternal:isBeta:icon:)",
   "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/renderindex\/node\/init(title:path:type:children:isdeprecated:isexternal:isbeta:)"
+  "url" : "\/documentation\/swiftdocc\/renderindex\/node\/init(title:path:type:children:isdeprecated:isexternal:isbeta:icon:)"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/RenderIndex/Node/isBeta": {
   "abstract" : [
@@ -578,6 +620,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -615,6 +658,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -660,6 +704,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -697,6 +742,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -738,6 +784,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -775,6 +822,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",

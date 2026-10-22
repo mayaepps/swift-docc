@@ -16,9 +16,7 @@
   "hierarchy" : {
     "paths" : [
       [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderingModel",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SymbolReferenceRendering"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC"
       ]
     ]
   },
@@ -54,6 +52,10 @@
         "text" : "RenderProperty"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "PropertiesRenderSection.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Model\/Rendering\/Symbol\/PropertiesRenderSection.swift#L55"
+    },
     "role" : "symbol",
     "roleHeading" : "Structure",
     "symbolKind" : "struct",
@@ -67,7 +69,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -103,7 +105,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -111,13 +113,14 @@
   ],
   "seeAlsoSections" : [
     {
+      "anchor" : "Object-Description-Sections",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/AttributesRenderSection",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderAttribute",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ParameterRenderSection",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ParametersRenderSection",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TitleStyle",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/PropertyListTitleStyle",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/PossibleValuesRenderSection",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/PropertiesRenderSection",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TypeDetails"
@@ -127,12 +130,16 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Initializers",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderProperty\/init(from:)"
       ],
       "title" : "Initializers"
     },
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderProperty\/attributes",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderProperty\/content",
@@ -140,6 +147,7 @@
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderProperty\/introducedVersion",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderProperty\/mimeType",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderProperty\/name",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderProperty\/readOnly",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderProperty\/required",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderProperty\/type",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderProperty\/typeDetails"
@@ -147,9 +155,9 @@
       "title" : "Instance Properties"
     },
     {
+      "anchor" : "Default-Implementations",
       "generated" : true,
       "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderProperty\/Equatable-Implementations",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderProperty\/TextIndexing-Implementations"
       ],
       "title" : "Default Implementations"
@@ -191,6 +199,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -205,6 +214,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -239,6 +249,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -273,6 +284,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -307,6 +319,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -341,6 +354,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -368,6 +382,41 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/propertiesrendersection"
 },
+"doc://SwiftDocC/documentation/SwiftDocC/PropertyListTitleStyle": {
+  "abstract" : [
+    {
+      "text" : "A style for how to render links to a property list key or an entitlement key.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "PropertyListTitleStyle"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/PropertyListTitleStyle",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "PropertyListTitleStyle"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "PropertyListTitleStyle",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/propertylisttitlestyle"
+},
 "doc://SwiftDocC/documentation/SwiftDocC/RenderAttribute": {
   "abstract" : [
     {
@@ -375,6 +424,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -417,6 +467,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -444,17 +495,6 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/renderproperty"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/RenderProperty/Equatable-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderProperty\/Equatable-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Equatable Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/renderproperty\/equatable-implementations"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/RenderProperty/TextIndexing-Implementations": {
   "abstract" : [
 
@@ -473,10 +513,11 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "let"
+      "text" : "var"
     },
     {
       "kind" : "text",
@@ -514,10 +555,11 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "let"
+      "text" : "var"
     },
     {
       "kind" : "text",
@@ -555,6 +597,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -593,6 +636,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -608,7 +652,7 @@
     },
     {
       "kind" : "text",
-      "text" : ": "
+      "text" : ": any "
     },
     {
       "kind" : "typeIdentifier",
@@ -638,6 +682,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -679,6 +724,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -720,6 +766,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -750,6 +797,48 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/renderproperty\/name"
 },
+"doc://SwiftDocC/documentation/SwiftDocC/RenderProperty/readOnly": {
+  "abstract" : [
+    {
+      "text" : "If true, the property can only be accessed and not modified.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "readOnly"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderProperty\/readOnly",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "readOnly",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/renderproperty\/readonly"
+},
 "doc://SwiftDocC/documentation/SwiftDocC/RenderProperty/required": {
   "abstract" : [
     {
@@ -757,6 +846,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -798,6 +888,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -848,6 +939,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -882,34 +974,6 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/renderproperty\/typedetails"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/RenderingModel": {
-  "abstract" : [
-    {
-      "text" : "Convert documentation nodes into render nodes and save them to disk.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderingModel",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Rendering Model",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/renderingmodel"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/SymbolReferenceRendering": {
-  "abstract" : [
-    {
-      "text" : "Render rich reference documentation for programming symbols.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SymbolReferenceRendering",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Symbol Reference Rendering",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/symbolreferencerendering"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/TextIndexing": {
   "abstract" : [
     {
@@ -917,6 +981,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -944,40 +1009,6 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/textindexing"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/TitleStyle": {
-  "abstract" : [
-    {
-      "text" : "A title style for a property list key or an entitlement key.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "enum"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "TitleStyle"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TitleStyle",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "TitleStyle"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "TitleStyle",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/titlestyle"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/TypeDetails": {
   "abstract" : [
     {
@@ -985,6 +1016,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",

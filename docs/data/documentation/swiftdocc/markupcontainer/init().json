@@ -30,14 +30,6 @@
     "externalID" : "s:9SwiftDocC15MarkupContainerCACycfc",
     "fragments" : [
       {
-        "kind" : "keyword",
-        "text" : "convenience"
-      },
-      {
-        "kind" : "text",
-        "text" : " "
-      },
-      {
         "kind" : "identifier",
         "text" : "init"
       },
@@ -51,6 +43,10 @@
         "name" : "SwiftDocC"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "MarkupContainer.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Semantics\/MarkupContainer.swift#L19"
+    },
     "role" : "symbol",
     "roleHeading" : "Initializer",
     "symbolKind" : "init",
@@ -64,12 +60,12 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
               "kind" : "keyword",
-              "text" : "override"
+              "text" : "convenience"
             },
             {
               "kind" : "text",
@@ -77,7 +73,7 @@
             },
             {
               "kind" : "keyword",
-              "text" : "convenience"
+              "text" : "override"
             },
             {
               "kind" : "text",
@@ -99,7 +95,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -126,6 +122,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -148,6 +145,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -190,15 +188,8 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "convenience"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
     {
       "kind" : "identifier",
       "text" : "init"

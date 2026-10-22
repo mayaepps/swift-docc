@@ -44,6 +44,10 @@
         "text" : "PlatformName"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "PlatformName.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Semantics\/Symbol\/PlatformName.swift#L14"
+    },
     "role" : "symbol",
     "roleHeading" : "Structure",
     "symbolKind" : "struct",
@@ -57,7 +61,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -81,10 +85,13 @@
   "relationshipsSections" : [
     {
       "identifiers" : [
+        "doc:\/\/SwiftDocC\/SL",
         "doc:\/\/SwiftDocC\/Se",
         "doc:\/\/SwiftDocC\/SE",
         "doc:\/\/SwiftDocC\/SQ",
-        "doc:\/\/SwiftDocC\/SH"
+        "doc:\/\/SwiftDocC\/SH",
+        "doc:\/\/SwiftDocC\/s8SendableP",
+        "doc:\/\/SwiftDocC\/s16SendableMetatypeP"
       ],
       "kind" : "relationships",
       "title" : "Conforms To",
@@ -93,20 +100,36 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
 
   ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "Symbol-Reference-Directives",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DeprecationSummary",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Symbol"
+      ],
+      "title" : "Symbol Reference Directives"
+    }
+  ],
   "topicSections" : [
     {
+      "anchor" : "Operators",
+      "generated" : true,
       "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/PlatformName\/==(_:_:)"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/PlatformName\/==(_:_:)",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/PlatformName\/_(_:_:)"
       ],
       "title" : "Operators"
     },
     {
+      "anchor" : "Initializers",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/PlatformName\/init(from:)",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/PlatformName\/init(rawValue:aliases:displayName:)"
@@ -114,6 +137,8 @@
       "title" : "Initializers"
     },
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/PlatformName\/aliases",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/PlatformName\/displayName",
@@ -122,17 +147,23 @@
       "title" : "Instance Properties"
     },
     {
+      "anchor" : "Instance-Methods",
+      "generated" : true,
       "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/PlatformName\/encode(to:)"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/PlatformName\/encode(to:)",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/PlatformName\/hash(into:)"
       ],
       "title" : "Instance Methods"
     },
     {
+      "anchor" : "Type-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/PlatformName\/catalyst",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/PlatformName\/catalystOSAppExtension",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/PlatformName\/iOS",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/PlatformName\/iOSAppExtension",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/PlatformName\/iPadOS",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/PlatformName\/linux",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/PlatformName\/macOS",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/PlatformName\/macOSAppExtension",
@@ -140,17 +171,20 @@
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/PlatformName\/swift",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/PlatformName\/tvOS",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/PlatformName\/tvOSAppExtension",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/PlatformName\/visionOS",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/PlatformName\/visionOSAppExtension",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/PlatformName\/watchOS",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/PlatformName\/watchOSAppExtension"
       ],
       "title" : "Type Properties"
     },
     {
+      "anchor" : "Type-Methods",
       "generated" : true,
       "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/PlatformName\/Equatable-Implementations"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/PlatformName\/addingFallbacks(_:)"
       ],
-      "title" : "Default Implementations"
+      "title" : "Type Methods"
     }
   ],
   "variants" : [
@@ -177,6 +211,11 @@
   "title" : "Swift.Hashable",
   "type" : "unresolvable"
 },
+"doc://SwiftDocC/SL": {
+  "identifier" : "doc:\/\/SwiftDocC\/SL",
+  "title" : "Swift.Comparable",
+  "type" : "unresolvable"
+},
 "doc://SwiftDocC/SQ": {
   "identifier" : "doc:\/\/SwiftDocC\/SQ",
   "title" : "Swift.Equatable",
@@ -194,12 +233,48 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
   "title" : "SwiftDocC",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/DeprecationSummary": {
+  "abstract" : [
+    {
+      "text" : "A directive that specifies a custom deprecation summary message to an already deprecated symbol.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "DeprecationSummary"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DeprecationSummary",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "DeprecationSummary"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "DeprecationSummary",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/deprecationsummary"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/PlatformName": {
   "abstract" : [
@@ -208,6 +283,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -242,6 +318,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -302,16 +379,149 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/platformname\/==(_:_:)"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/PlatformName/Equatable-Implementations": {
+"doc://SwiftDocC/documentation/SwiftDocC/PlatformName/_(_:_:)": {
   "abstract" : [
-
+    {
+      "text" : "Compares two platform names using the order defined in ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/PlatformName\/sortedPlatforms",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "Unknown platforms are lexicographically sorted after known platforms.",
+      "type" : "text"
+    }
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/PlatformName\/Equatable-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Equatable Implementations",
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "<"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC12PlatformNameV",
+      "text" : "PlatformName"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC12PlatformNameV",
+      "text" : "PlatformName"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/PlatformName\/_(_:_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "<(_:_:)",
   "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/platformname\/equatable-implementations"
+  "url" : "\/documentation\/swiftdocc\/platformname\/_(_:_:)"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/PlatformName/addingFallbacks(_:)": {
+  "abstract" : [
+    {
+      "text" : "Returns the given platforms with any missing fallback platforms added.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "addingFallbacks"
+    },
+    {
+      "kind" : "text",
+      "text" : "(["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC12PlatformNameV",
+      "text" : "PlatformName"
+    },
+    {
+      "kind" : "text",
+      "text" : "?]) -> ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC12PlatformNameV",
+      "text" : "PlatformName"
+    },
+    {
+      "kind" : "text",
+      "text" : "?]"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/PlatformName\/addingFallbacks(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "addingFallbacks(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/platformname\/addingfallbacks(_:)"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/PlatformName/aliases": {
   "abstract" : [
@@ -320,6 +530,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -361,6 +572,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -403,6 +615,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -464,6 +677,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -498,6 +712,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -524,6 +739,14 @@
       "text" : ": "
     },
     {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
       "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:s7EncoderP",
       "text" : "Encoder"
@@ -544,6 +767,73 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/platformname\/encode(to:)"
 },
+"doc://SwiftDocC/documentation/SwiftDocC/PlatformName/hash(into:)": {
+  "abstract" : [
+    {
+      "text" : "Hashes the entity using the raw value, consistent with the implementation of ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/PlatformName\/==(_:_:)",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "hash"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "into"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "inout"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s6HasherV",
+      "text" : "Hasher"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/PlatformName\/hash(into:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "hash(into:)",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/platformname\/hash(into:)"
+},
 "doc://SwiftDocC/documentation/SwiftDocC/PlatformName/iOS": {
   "abstract" : [
     {
@@ -551,6 +841,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -593,6 +884,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -631,10 +923,57 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/platformname\/iosappextension"
 },
+"doc://SwiftDocC/documentation/SwiftDocC/PlatformName/iPadOS": {
+  "abstract" : [
+    {
+      "text" : "The iPad platform.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "iPadOS"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC12PlatformNameV",
+      "text" : "PlatformName"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/PlatformName\/iPadOS",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "iPadOS",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/platformname\/ipados"
+},
 "doc://SwiftDocC/documentation/SwiftDocC/PlatformName/init(from:)": {
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -651,6 +990,14 @@
     {
       "kind" : "text",
       "text" : ": "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -680,6 +1027,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -755,6 +1103,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -800,6 +1149,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -842,6 +1192,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -884,6 +1235,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -921,6 +1273,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -970,6 +1323,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1015,6 +1369,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1057,6 +1412,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1095,6 +1451,95 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/platformname\/tvosappextension"
 },
+"doc://SwiftDocC/documentation/SwiftDocC/PlatformName/visionOS": {
+  "abstract" : [
+    {
+      "text" : "Apple’s visionOS operating system.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "visionOS"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC12PlatformNameV",
+      "text" : "PlatformName"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/PlatformName\/visionOS",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "visionOS",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/platformname\/visionos"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/PlatformName/visionOSAppExtension": {
+  "abstract" : [
+
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "visionOSAppExtension"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC12PlatformNameV",
+      "text" : "PlatformName"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/PlatformName\/visionOSAppExtension",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "visionOSAppExtension",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/platformname\/visionosappextension"
+},
 "doc://SwiftDocC/documentation/SwiftDocC/PlatformName/watchOS": {
   "abstract" : [
     {
@@ -1102,6 +1547,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1144,6 +1590,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -1181,6 +1628,51 @@
   "title" : "watchOSAppExtension",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/platformname\/watchosappextension"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/Symbol": {
+  "abstract" : [
+    {
+      "text" : "A programming symbol semantic type.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Symbol"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Symbol",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Symbol"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Symbol",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/symbol"
+},
+"doc://SwiftDocC/s16SendableMetatypeP": {
+  "identifier" : "doc:\/\/SwiftDocC\/s16SendableMetatypeP",
+  "title" : "Swift.SendableMetatype",
+  "type" : "unresolvable"
+},
+"doc://SwiftDocC/s8SendableP": {
+  "identifier" : "doc:\/\/SwiftDocC\/s8SendableP",
+  "title" : "Swift.Sendable",
+  "type" : "unresolvable"
 }
 }
 }

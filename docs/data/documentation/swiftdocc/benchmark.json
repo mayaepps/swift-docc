@@ -8,8 +8,7 @@
   "hierarchy" : {
     "paths" : [
       [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Benchmarking"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC"
       ]
     ]
   },
@@ -45,6 +44,10 @@
         "text" : "Benchmark"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "Benchmark.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Benchmark\/Benchmark.swift#L14"
+    },
     "role" : "symbol",
     "roleHeading" : "Class",
     "symbolKind" : "class",
@@ -58,7 +61,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -91,7 +94,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -99,6 +102,7 @@
   ],
   "seeAlsoSections" : [
     {
+      "anchor" : "Benchmark-Log",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Benchmark\/main"
@@ -108,12 +112,30 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Classes",
+      "generated" : true,
       "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Benchmark\/TopicAnchorHash"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Benchmark\/Duration",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Benchmark\/ExternalTopicsHash",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Benchmark\/PeakMemory",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Benchmark\/TopicAnchorHash",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Benchmark\/TopicGraphHash"
       ],
       "title" : "Classes"
     },
     {
+      "anchor" : "Structures",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Benchmark\/ArchiveOutputSize",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Benchmark\/DataDirectoryOutputSize",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Benchmark\/IndexDirectoryOutputSize"
+      ],
+      "title" : "Structures"
+    },
+    {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Benchmark\/date",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Benchmark\/isEnabled",
@@ -124,10 +146,21 @@
       "title" : "Instance Properties"
     },
     {
+      "anchor" : "Instance-Methods",
+      "generated" : true,
       "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Benchmark\/encode(to:)"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Benchmark\/encode(to:)",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Benchmark\/results()"
       ],
       "title" : "Instance Methods"
+    },
+    {
+      "anchor" : "Type-Properties",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Benchmark\/main"
+      ],
+      "title" : "Type Properties"
     }
   ],
   "variants" : [
@@ -156,6 +189,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -170,6 +204,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -197,13 +232,224 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/benchmark"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/Benchmark/TopicAnchorHash": {
+"doc://SwiftDocC/documentation/SwiftDocC/Benchmark/ArchiveOutputSize": {
   "abstract" : [
     {
-      "text" : "A anchor sections hash metric produced off the given documentation context.",
+      "text" : "Measures the total output size of a DocC archive.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ArchiveOutputSize"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Benchmark\/ArchiveOutputSize",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ArchiveOutputSize"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Benchmark.ArchiveOutputSize",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/benchmark\/archiveoutputsize"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/Benchmark/DataDirectoryOutputSize": {
+  "abstract" : [
+    {
+      "text" : "Measures the output size of the data subdirectory in a DocC archive.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "DataDirectoryOutputSize"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Benchmark\/DataDirectoryOutputSize",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "DataDirectoryOutputSize"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Benchmark.DataDirectoryOutputSize",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/benchmark\/datadirectoryoutputsize"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/Benchmark/Duration": {
+  "abstract" : [
+    {
+      "text" : "A duration metric in milliseconds.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Duration"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Benchmark\/Duration",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Duration"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Benchmark.Duration",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/benchmark\/duration"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/Benchmark/ExternalTopicsHash": {
+  "abstract" : [
+    {
+      "text" : "A hash metric produced off the externally resolved links.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ExternalTopicsHash"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Benchmark\/ExternalTopicsHash",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ExternalTopicsHash"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Benchmark.ExternalTopicsHash",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/benchmark\/externaltopicshash"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/Benchmark/IndexDirectoryOutputSize": {
+  "abstract" : [
+    {
+      "text" : "Measures the output size of the index subdirectory in a DocC archive.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "IndexDirectoryOutputSize"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Benchmark\/IndexDirectoryOutputSize",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "IndexDirectoryOutputSize"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Benchmark.IndexDirectoryOutputSize",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/benchmark\/indexdirectoryoutputsize"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/Benchmark/PeakMemory": {
+  "abstract" : [
+    {
+      "text" : "A peak memory footprint metric for the current process.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "PeakMemory"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Benchmark\/PeakMemory",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "PeakMemory"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Benchmark.PeakMemory",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/benchmark\/peakmemory"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/Benchmark/TopicAnchorHash": {
+  "abstract" : [
+    {
+      "text" : "An anchor sections hash metric produced off the given documentation context.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -231,6 +477,41 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/benchmark\/topicanchorhash"
 },
+"doc://SwiftDocC/documentation/SwiftDocC/Benchmark/TopicGraphHash": {
+  "abstract" : [
+    {
+      "text" : "A hash metric produced off the given documentation context.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "TopicGraphHash"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Benchmark\/TopicGraphHash",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "TopicGraphHash"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Benchmark.TopicGraphHash",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/benchmark\/topicgraphhash"
+},
 "doc://SwiftDocC/documentation/SwiftDocC/Benchmark/date": {
   "abstract" : [
     {
@@ -238,6 +519,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -257,7 +539,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10Foundation4DateV",
+      "preciseIdentifier" : "s:20FoundationEssentials4DateV",
       "text" : "Date"
     }
   ],
@@ -272,6 +554,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -296,6 +579,14 @@
     {
       "kind" : "text",
       "text" : ": "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -325,6 +616,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -362,6 +654,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -407,6 +700,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -423,6 +717,14 @@
     {
       "kind" : "text",
       "text" : ": ["
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -448,6 +750,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -486,6 +789,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -516,19 +820,47 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/benchmark\/platform"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/Benchmarking": {
+"doc://SwiftDocC/documentation/SwiftDocC/Benchmark/results()": {
   "abstract" : [
     {
-      "text" : "Produce performance metrics to improve the compilation pipeline and track regressions.",
+      "text" : "Prepare the gathered measurements into a benchmark results.",
       "type" : "text"
     }
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Benchmarking",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Benchmarking",
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "results"
+    },
+    {
+      "kind" : "text",
+      "text" : "() -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC16BenchmarkResultsV",
+      "text" : "BenchmarkResults"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Benchmark\/results()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "results()",
   "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/benchmarking"
+  "url" : "\/documentation\/swiftdocc\/benchmark\/results()"
 }
 }
 }

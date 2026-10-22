@@ -44,6 +44,10 @@
         "text" : "AssetReference"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "DataAssetManager.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Infrastructure\/Bundle%20Assets\/DataAssetManager.swift#L362"
+    },
     "role" : "symbol",
     "roleHeading" : "Structure",
     "symbolKind" : "struct",
@@ -57,7 +61,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -93,7 +97,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -101,31 +105,22 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Initializers",
+      "generated" : true,
       "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/AssetReference\/init(assetName:bundleIdentifier:)",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/AssetReference\/init(assetName:bundleID:)",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/AssetReference\/init(from:)"
       ],
       "title" : "Initializers"
     },
     {
-      "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/AssetReference\/assetName",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/AssetReference\/bundleIdentifier"
-      ],
-      "title" : "Instance Properties"
-    },
-    {
-      "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/AssetReference\/hash(into:)"
-      ],
-      "title" : "Instance Methods"
-    },
-    {
+      "anchor" : "Instance-Properties",
       "generated" : true,
       "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/AssetReference\/Equatable-Implementations"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/AssetReference\/assetName",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/AssetReference\/bundleID"
       ],
-      "title" : "Default Implementations"
+      "title" : "Instance Properties"
     }
   ],
   "variants" : [
@@ -169,6 +164,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -183,6 +179,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -210,17 +207,6 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/assetreference"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/AssetReference/Equatable-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/AssetReference\/Equatable-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Equatable Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/assetreference\/equatable-implementations"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/AssetReference/assetName": {
   "abstract" : [
     {
@@ -228,6 +214,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -258,17 +245,18 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/assetreference\/assetname"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/AssetReference/bundleIdentifier": {
+"doc://SwiftDocC/documentation/SwiftDocC/AssetReference/bundleID": {
   "abstract" : [
     {
       "text" : "The identifier of the bundle the asset is apart of.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "var"
+      "text" : "let"
     },
     {
       "kind" : "text",
@@ -276,7 +264,7 @@
     },
     {
       "kind" : "identifier",
-      "text" : "bundleIdentifier"
+      "text" : "bundleID"
     },
     {
       "kind" : "text",
@@ -284,78 +272,43 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:SS",
-      "text" : "String"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/AssetReference\/bundleIdentifier",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "bundleIdentifier",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/assetreference\/bundleidentifier"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/AssetReference/hash(into:)": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "func"
+      "preciseIdentifier" : "s:9SwiftDocC20DocumentationContextC",
+      "text" : "DocumentationContext"
     },
     {
       "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "hash"
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "into"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "inout"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
+      "text" : "."
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:s6HasherV",
-      "text" : "Hasher"
+      "preciseIdentifier" : "s:9SwiftDocC20DocumentationContextC6InputsV",
+      "text" : "Inputs"
     },
     {
       "kind" : "text",
-      "text" : ")"
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC20DocumentationContextC6InputsV10IdentifierV",
+      "text" : "Identifier"
     }
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/AssetReference\/hash(into:)",
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/AssetReference\/bundleID",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "hash(into:)",
+  "title" : "bundleID",
   "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/assetreference\/hash(into:)"
+  "url" : "\/documentation\/swiftdocc\/assetreference\/bundleid"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/AssetReference/init(assetName:bundleIdentifier:)": {
+"doc://SwiftDocC/documentation/SwiftDocC/AssetReference/init(assetName:bundleID:)": {
   "abstract" : [
     {
       "text" : "Creates a reference from a given asset name and the bundle it is apart of.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -384,7 +337,7 @@
     },
     {
       "kind" : "externalParam",
-      "text" : "bundleIdentifier"
+      "text" : "bundleID"
     },
     {
       "kind" : "text",
@@ -392,25 +345,44 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:SS",
-      "text" : "String"
+      "preciseIdentifier" : "s:9SwiftDocC20DocumentationContextC",
+      "text" : "DocumentationContext"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC20DocumentationContextC6InputsV",
+      "text" : "Inputs"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC20DocumentationContextC6InputsV10IdentifierV",
+      "text" : "Identifier"
     },
     {
       "kind" : "text",
       "text" : ")"
     }
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/AssetReference\/init(assetName:bundleIdentifier:)",
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/AssetReference\/init(assetName:bundleID:)",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "init(assetName:bundleIdentifier:)",
+  "title" : "init(assetName:bundleID:)",
   "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/assetreference\/init(assetname:bundleidentifier:)"
+  "url" : "\/documentation\/swiftdocc\/assetreference\/init(assetname:bundleid:)"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/AssetReference/init(from:)": {
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -426,7 +398,7 @@
     },
     {
       "kind" : "text",
-      "text" : ": "
+      "text" : ": any "
     },
     {
       "kind" : "typeIdentifier",

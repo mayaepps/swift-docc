@@ -17,10 +17,7 @@
     "paths" : [
       [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderingModel",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SymbolReferenceRendering",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TaskGroupRenderSection",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TaskGroupRenderSection\/TextIndexing-Implementations"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TaskGroupRenderSection"
       ]
     ]
   },
@@ -67,6 +64,14 @@
         "text" : " : "
       },
       {
+        "kind" : "keyword",
+        "text" : "any"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
         "kind" : "typeIdentifier",
         "preciseIdentifier" : "s:9SwiftDocC15RenderReferenceP",
         "text" : "RenderReference"
@@ -86,6 +91,10 @@
         "name" : "SwiftDocC"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "RenderSection+TextIndexing.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Indexing\/RenderSection+TextIndexing.swift#L194"
+    },
     "role" : "symbol",
     "roleHeading" : "Instance Method",
     "symbolKind" : "method",
@@ -99,7 +108,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -136,6 +145,14 @@
               "text" : " : "
             },
             {
+              "kind" : "keyword",
+              "text" : "any"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
               "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderReference",
               "kind" : "typeIdentifier",
               "preciseIdentifier" : "s:9SwiftDocC15RenderReferenceP",
@@ -158,7 +175,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -185,6 +202,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -199,6 +217,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -226,34 +245,6 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/renderreference"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/RenderingModel": {
-  "abstract" : [
-    {
-      "text" : "Convert documentation nodes into render nodes and save them to disk.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/RenderingModel",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Rendering Model",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/renderingmodel"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/SymbolReferenceRendering": {
-  "abstract" : [
-    {
-      "text" : "Render rich reference documentation for programming symbols.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SymbolReferenceRendering",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Symbol Reference Rendering",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/symbolreferencerendering"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/TaskGroupRenderSection": {
   "abstract" : [
     {
@@ -261,6 +252,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -288,21 +280,11 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/taskgrouprendersection"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/TaskGroupRenderSection/TextIndexing-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TaskGroupRenderSection\/TextIndexing-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "TextIndexing Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/taskgrouprendersection\/textindexing-implementations"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/TaskGroupRenderSection/rawIndexableTextContent(references:)": {
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -336,6 +318,14 @@
     {
       "kind" : "text",
       "text" : " : "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",

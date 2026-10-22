@@ -17,7 +17,7 @@
     "paths" : [
       [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Benchmarking",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Benchmark",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Benchmark\/Duration"
       ]
     ]
@@ -57,6 +57,10 @@
         "name" : "SwiftDocC"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "Duration.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Benchmark\/Metrics\/Duration.swift#L22"
+    },
     "role" : "symbol",
     "roleHeading" : "Instance Property",
     "symbolKind" : "property",
@@ -70,7 +74,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -114,7 +118,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -141,12 +145,48 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
   "title" : "SwiftDocC",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/Benchmark": {
+  "abstract" : [
+    {
+      "text" : "A logger that runs benchmarks and stores the results.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Benchmark"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Benchmark",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Benchmark"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Benchmark",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/benchmark"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/Benchmark/Duration": {
   "abstract" : [
@@ -155,6 +195,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -186,6 +227,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -215,20 +257,6 @@
   "title" : "displayName",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/benchmark\/duration\/displayname-swift.property"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/Benchmarking": {
-  "abstract" : [
-    {
-      "text" : "Produce performance metrics to improve the compilation pipeline and track regressions.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Benchmarking",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Benchmarking",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/benchmarking"
 }
 }
 }

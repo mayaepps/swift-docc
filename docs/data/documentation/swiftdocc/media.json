@@ -18,11 +18,11 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:9SwiftDocC5MediaC",
+    "externalID" : "s:9SwiftDocC5MediaP",
     "fragments" : [
       {
         "kind" : "keyword",
-        "text" : "class"
+        "text" : "protocol"
       },
       {
         "kind" : "text",
@@ -44,9 +44,13 @@
         "text" : "Media"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "Media.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Semantics\/Media\/Media.swift#L12"
+    },
     "role" : "symbol",
-    "roleHeading" : "Class",
-    "symbolKind" : "class",
+    "roleHeading" : "Protocol",
+    "symbolKind" : "protocol",
     "title" : "Media"
   },
   "primaryContentSections" : [
@@ -57,12 +61,12 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
               "kind" : "keyword",
-              "text" : "class"
+              "text" : "protocol"
             },
             {
               "kind" : "text",
@@ -71,6 +75,16 @@
             {
               "kind" : "identifier",
               "text" : "Media"
+            },
+            {
+              "kind" : "text",
+              "text" : " : "
+            },
+            {
+              "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Semantic",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:9SwiftDocC8SemanticC",
+              "text" : "Semantic"
             }
           ]
         }
@@ -93,34 +107,37 @@
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/VideoMedia"
       ],
       "kind" : "relationships",
-      "title" : "Inherited By",
-      "type" : "inheritedBy"
-    },
-    {
-      "identifiers" : [
-        "doc:\/\/SwiftDocC\/SQ"
-      ],
-      "kind" : "relationships",
-      "title" : "Conforms To",
-      "type" : "conformsTo"
+      "title" : "Conforming Types",
+      "type" : "conformingTypes"
     }
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
 
   ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "Common-Directives",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ImageMedia",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/VideoMedia",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Comment",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ContentAndMedia",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Layout",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Redirect"
+      ],
+      "title" : "Common Directives"
+    }
+  ],
   "topicSections" : [
     {
-      "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Media\/init()"
-      ],
-      "title" : "Initializers"
-    },
-    {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Media\/source"
       ],
@@ -141,11 +158,6 @@
   ]
 , 
 "references": {
-"doc://SwiftDocC/SQ": {
-  "identifier" : "doc:\/\/SwiftDocC\/SQ",
-  "title" : "Swift.Equatable",
-  "type" : "unresolvable"
-},
 "doc://SwiftDocC/documentation/SwiftDocC": {
   "abstract" : [
     {
@@ -153,12 +165,83 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
   "title" : "SwiftDocC",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/Comment": {
+  "abstract" : [
+    {
+      "text" : "A general purpose comment directive. All contents inside are stripped from",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Comment"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Comment",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Comment"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Comment",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/comment"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/ContentAndMedia": {
+  "abstract" : [
+    {
+      "text" : "A piece of media, such as an image or video, with an attached description.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ContentAndMedia"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ContentAndMedia",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ContentAndMedia"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ContentAndMedia",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/contentandmedia"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/ImageMedia": {
   "abstract" : [
@@ -167,6 +250,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -194,6 +278,41 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/imagemedia"
 },
+"doc://SwiftDocC/documentation/SwiftDocC/Layout": {
+  "abstract" : [
+    {
+      "text" : "Possible layouts for certain containers of markup content.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Layout"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Layout",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Layout"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Layout",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/layout"
+},
 "doc://SwiftDocC/documentation/SwiftDocC/Media": {
   "abstract" : [
     {
@@ -201,10 +320,11 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "class"
+      "text" : "protocol"
     },
     {
       "kind" : "text",
@@ -228,27 +348,6 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/media"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/Media/init()": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "identifier",
-      "text" : "init"
-    },
-    {
-      "kind" : "text",
-      "text" : "()"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Media\/init()",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "init()",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/media\/init()"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/Media/source": {
   "abstract" : [
     {
@@ -256,10 +355,11 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "let"
+      "text" : "var"
     },
     {
       "kind" : "text",
@@ -281,10 +381,46 @@
   ],
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Media\/source",
   "kind" : "symbol",
+  "required" : true,
   "role" : "symbol",
   "title" : "source",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/media\/source"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/Redirect": {
+  "abstract" : [
+    {
+      "text" : "A directive that specifies a previous URL for the page where the directive appears.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Redirect"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Redirect",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Redirect"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Redirect",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/redirect"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/Semantic": {
   "abstract" : [
@@ -293,6 +429,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -327,6 +464,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",

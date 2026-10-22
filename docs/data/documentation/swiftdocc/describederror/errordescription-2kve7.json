@@ -1,7 +1,15 @@
 {
   "abstract" : [
     {
-      "text" : "No overview available.",
+      "text" : "Inherited from ",
+      "type" : "text"
+    },
+    {
+      "code" : "LocalizedError.errorDescription",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
       "type" : "text"
     }
   ],
@@ -9,9 +17,7 @@
     "paths" : [
       [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Utilities",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DescribedError",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DescribedError\/errorDescription-3e16y"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DescribedError"
       ]
     ]
   },
@@ -55,6 +61,10 @@
         "name" : "SwiftDocC"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "DescribedError.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Utility\/Errors\/DescribedError.swift#L20"
+    },
     "role" : "symbol",
     "roleHeading" : "Instance Property",
     "symbolKind" : "property",
@@ -68,7 +78,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -112,7 +122,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -139,6 +149,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -153,6 +164,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -184,6 +196,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -217,56 +230,6 @@
   "title" : "errorDescription",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/describederror\/errordescription-2kve7"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/DescribedError/errorDescription-3e16y": {
-  "abstract" : [
-    {
-      "text" : "A plain-text description of the error.",
-      "type" : "text"
-    }
-  ],
-  "defaultImplementations" : 1,
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "var"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "errorDescription"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:SS",
-      "text" : "String"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DescribedError\/errorDescription-3e16y",
-  "kind" : "symbol",
-  "required" : true,
-  "role" : "symbol",
-  "title" : "errorDescription",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/describederror\/errordescription-3e16y"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/Utilities": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Utilities",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Utility APIs",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/utilities"
 }
 }
 }

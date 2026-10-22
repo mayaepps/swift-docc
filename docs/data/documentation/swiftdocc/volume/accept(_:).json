@@ -63,6 +63,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:9SwiftDocC6VolumeC6accepty6ResultQzxzAA15SemanticVisitorRzlF1VL_xmfp",
         "text" : "V"
       },
       {
@@ -71,6 +72,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:9SwiftDocC6VolumeC6accepty6ResultQzxzAA15SemanticVisitorRzlF1VL_xmfp",
         "text" : "V"
       },
       {
@@ -79,6 +81,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:9SwiftDocC15SemanticVisitorP6ResultQa",
         "text" : "Result"
       }
     ],
@@ -87,6 +90,10 @@
         "name" : "SwiftDocC"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "Volume.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Semantics\/Technology\/Volume\/Volume.swift#L100"
+    },
     "role" : "symbol",
     "roleHeading" : "Instance Method",
     "symbolKind" : "method",
@@ -100,7 +107,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -161,6 +168,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:9SwiftDocC6VolumeC6accepty6ResultQzxzAA15SemanticVisitorRzlF1VL_xmfp",
               "text" : "V"
             },
             {
@@ -169,6 +177,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:9SwiftDocC6VolumeC6accepty6ResultQzxzAA15SemanticVisitorRzlF1VL_xmfp",
               "text" : "V"
             },
             {
@@ -176,7 +185,9 @@
               "text" : "."
             },
             {
+              "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SemanticVisitor\/Result",
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:9SwiftDocC15SemanticVisitorP6ResultQa",
               "text" : "Result"
             },
             {
@@ -213,7 +224,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -240,6 +251,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -254,6 +266,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -297,6 +310,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -324,6 +338,36 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/semanticvisitor"
 },
+"doc://SwiftDocC/documentation/SwiftDocC/SemanticVisitor/Result": {
+  "abstract" : [
+    {
+      "text" : "The result type returned when visiting a node.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "associatedtype"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Result"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SemanticVisitor\/Result",
+  "kind" : "symbol",
+  "required" : true,
+  "role" : "symbol",
+  "title" : "Result",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/semanticvisitor\/result"
+},
 "doc://SwiftDocC/documentation/SwiftDocC/Volume": {
   "abstract" : [
     {
@@ -331,6 +375,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -362,6 +407,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -397,6 +443,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC6VolumeC6accepty6ResultQzxzAA15SemanticVisitorRzlF1VL_xmfp",
       "text" : "V"
     },
     {
@@ -405,6 +452,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC6VolumeC6accepty6ResultQzxzAA15SemanticVisitorRzlF1VL_xmfp",
       "text" : "V"
     },
     {
@@ -413,6 +461,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC15SemanticVisitorP6ResultQa",
       "text" : "Result"
     }
   ],

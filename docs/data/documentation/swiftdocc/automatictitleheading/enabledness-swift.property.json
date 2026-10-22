@@ -1,0 +1,322 @@
+{
+  "abstract" : [
+    {
+      "text" : "Whether or not DocC generates automatic title headings.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/AutomaticTitleHeading"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/AutomaticTitleHeading\/enabledness-swift.property"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:9SwiftDocC21AutomaticTitleHeadingC11enablednessAC11EnablednessOvp",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "var"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "enabledness"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:9SwiftDocC21AutomaticTitleHeadingC11EnablednessO",
+        "text" : "Enabledness"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "SwiftDocC"
+      }
+    ],
+    "remoteSource" : {
+      "fileName" : "AutomaticTitleHeading.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Semantics\/Options\/AutomaticTitleHeading.swift#L27"
+    },
+    "role" : "symbol",
+    "roleHeading" : "Instance Property",
+    "symbolKind" : "property",
+    "title" : "enabledness"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "Linux"
+          ],
+          "tokens" : [
+            {
+              "kind" : "attribute",
+              "text" : "@"
+            },
+            {
+              "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DirectiveArgumentWrapped",
+              "kind" : "attribute",
+              "preciseIdentifier" : "s:9SwiftDocC24DirectiveArgumentWrappedV",
+              "text" : "DirectiveArgumentWrapped"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "var"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "enabledness"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/AutomaticTitleHeading\/Enabledness-swift.enum",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:9SwiftDocC21AutomaticTitleHeadingC11EnablednessO",
+              "text" : "Enabledness"
+            },
+            {
+              "kind" : "text",
+              "text" : " { "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "get"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "set"
+            },
+            {
+              "kind" : "text",
+              "text" : " }"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/swiftdocc\/automatictitleheading\/enabledness-swift.property"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://SwiftDocC/documentation/SwiftDocC": {
+  "abstract" : [
+    {
+      "text" : "Combine code comments with markup prose to produce structured, semantic documentation.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "SwiftDocC",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/AutomaticTitleHeading": {
+  "abstract" : [
+    {
+      "text" : "A directive for specifying Swift-DocC’s automatic behavior when generating a page’s",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "title heading.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "AutomaticTitleHeading"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/AutomaticTitleHeading",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "AutomaticTitleHeading"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "AutomaticTitleHeading",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/automatictitleheading"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/AutomaticTitleHeading/Enabledness-swift.enum": {
+  "abstract" : [
+    {
+      "text" : "A value that represents whether automatic title heading generation is enabled or disabled.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Enabledness"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/AutomaticTitleHeading\/Enabledness-swift.enum",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Enabledness"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "AutomaticTitleHeading.Enabledness",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/automatictitleheading\/enabledness-swift.enum"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/AutomaticTitleHeading/enabledness-swift.property": {
+  "abstract" : [
+    {
+      "text" : "Whether or not DocC generates automatic title headings.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "enabledness"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC21AutomaticTitleHeadingC11EnablednessO",
+      "text" : "Enabledness"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/AutomaticTitleHeading\/enabledness-swift.property",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "enabledness",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/automatictitleheading\/enabledness-swift.property"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/DirectiveArgumentWrapped": {
+  "abstract" : [
+    {
+      "text" : "A property wrapper that represents a directive argument.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "DirectiveArgumentWrapped"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DirectiveArgumentWrapped",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "DirectiveArgumentWrapped"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "DirectiveArgumentWrapped",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/directiveargumentwrapped"
+}
+}
+}

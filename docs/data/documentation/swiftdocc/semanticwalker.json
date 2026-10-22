@@ -53,6 +53,10 @@
         "text" : "SemanticWalker"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "SemanticWalker.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Semantics\/Walker\/SemanticWalker.swift#L12"
+    },
     "role" : "symbol",
     "roleHeading" : "Protocol",
     "symbolKind" : "protocol",
@@ -66,7 +70,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -112,17 +116,14 @@
               "text" : "."
             },
             {
+              "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SemanticVisitor\/Result",
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:9SwiftDocC15SemanticVisitorP6ResultQa",
               "text" : "Result"
             },
             {
               "kind" : "text",
-              "text" : " == "
-            },
-            {
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:s4Voida",
-              "text" : "Void"
+              "text" : " == ()"
             }
           ]
         }
@@ -142,16 +143,32 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
 
   ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "Semantic-Elements",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Semantic",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SemanticVisitor",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/MarkupContainer",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/MarkupConvertible",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DirectiveConvertible"
+      ],
+      "title" : "Semantic Elements"
+    }
+  ],
   "topicSections" : [
     {
+      "anchor" : "Instance-Methods",
+      "generated" : true,
       "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SemanticWalker\/descendIntoChildren(of:)-1mme3"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SemanticWalker\/descendIntoChildren(of:)"
       ],
       "title" : "Instance Methods"
     }
@@ -177,12 +194,126 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
   "title" : "SwiftDocC",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/DirectiveConvertible": {
+  "abstract" : [
+    {
+      "text" : "A semantic object formed from a directive after a series of semantic analysis checks.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "DirectiveConvertible"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DirectiveConvertible",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "DirectiveConvertible"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "DirectiveConvertible",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/directiveconvertible"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/MarkupContainer": {
+  "abstract" : [
+    {
+      "text" : "A general purpose ",
+      "type" : "text"
+    },
+    {
+      "code" : "Markup",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " semantic container.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "MarkupContainer"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/MarkupContainer",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "MarkupContainer"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "MarkupContainer",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/markupcontainer"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/MarkupConvertible": {
+  "abstract" : [
+    {
+      "text" : "A type that can be initialized from markup.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "MarkupConvertible"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/MarkupConvertible",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "MarkupConvertible"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "MarkupConvertible",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/markupconvertible"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/Semantic": {
   "abstract" : [
@@ -191,6 +322,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -234,6 +366,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -261,6 +394,36 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/semanticvisitor"
 },
+"doc://SwiftDocC/documentation/SwiftDocC/SemanticVisitor/Result": {
+  "abstract" : [
+    {
+      "text" : "The result type returned when visiting a node.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "associatedtype"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Result"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SemanticVisitor\/Result",
+  "kind" : "symbol",
+  "required" : true,
+  "role" : "symbol",
+  "title" : "Result",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/semanticvisitor\/result"
+},
 "doc://SwiftDocC/documentation/SwiftDocC/SemanticWalker": {
   "abstract" : [
     {
@@ -277,6 +440,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -304,11 +468,12 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/semanticwalker"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/SemanticWalker/descendIntoChildren(of:)-1mme3": {
+"doc://SwiftDocC/documentation/SwiftDocC/SemanticWalker/descendIntoChildren(of:)": {
   "abstract" : [
 
   ],
   "defaultImplementations" : 1,
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -344,13 +509,13 @@
       "text" : ")"
     }
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SemanticWalker\/descendIntoChildren(of:)-1mme3",
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/SemanticWalker\/descendIntoChildren(of:)",
   "kind" : "symbol",
   "required" : true,
   "role" : "symbol",
   "title" : "descendIntoChildren(of:)",
   "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/semanticwalker\/descendintochildren(of:)-1mme3"
+  "url" : "\/documentation\/swiftdocc\/semanticwalker\/descendintochildren(of:)"
 }
 }
 }

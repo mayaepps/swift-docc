@@ -8,9 +8,7 @@
   "hierarchy" : {
     "paths" : [
       [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationWorkspaceGroup",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/PlatformVersion"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC"
       ]
     ]
   },
@@ -46,6 +44,10 @@
         "text" : "VersionTriplet"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "ExternalMetadata.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Infrastructure\/External%20Data\/ExternalMetadata.swift#L12"
+    },
     "role" : "symbol",
     "roleHeading" : "Structure",
     "symbolKind" : "struct",
@@ -59,7 +61,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -93,7 +95,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -101,6 +103,7 @@
   ],
   "seeAlsoSections" : [
     {
+      "anchor" : "Semantic-Versions",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Version"
@@ -110,26 +113,20 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Operators",
+      "generated" : true,
       "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/VersionTriplet\/_(_:_:)-2ckh6"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/VersionTriplet\/_(_:_:)"
       ],
       "title" : "Operators"
     },
     {
+      "anchor" : "Initializers",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/VersionTriplet\/init(_:_:_:)"
       ],
       "title" : "Initializers"
-    },
-    {
-      "generated" : true,
-      "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/VersionTriplet\/-Implementations",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/VersionTriplet\/-Implementations",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/VersionTriplet\/Comparable-Implementations",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/VersionTriplet\/Equatable-Implementations"
-      ],
-      "title" : "Default Implementations"
     }
   ],
   "variants" : [
@@ -163,60 +160,13 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
   "title" : "SwiftDocC",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/DocumentationWorkspaceGroup": {
-  "abstract" : [
-    {
-      "text" : "Learn how to explore a documentation workspace and discover bundles.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationWorkspaceGroup",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Bundle Discovery",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/documentationworkspacegroup"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/PlatformVersion": {
-  "abstract" : [
-    {
-      "text" : "A pair of a version number and beta information for a platform.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "struct"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "PlatformVersion"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/PlatformVersion",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "PlatformVersion"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "PlatformVersion",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/platformversion"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/Version": {
   "abstract" : [
@@ -225,6 +175,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -259,6 +210,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -286,46 +238,14 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/versiontriplet"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/VersionTriplet/-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/VersionTriplet\/-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : " Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/versiontriplet\/-implementations"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/VersionTriplet/Comparable-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/VersionTriplet\/Comparable-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Comparable Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/versiontriplet\/comparable-implementations"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/VersionTriplet/Equatable-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/VersionTriplet\/Equatable-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Equatable Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/versiontriplet\/equatable-implementations"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/VersionTriplet/_(_:_:)-2ckh6": {
+"doc://SwiftDocC/documentation/SwiftDocC/VersionTriplet/_(_:_:)": {
   "abstract" : [
     {
       "text" : "Returns a Boolean value that indicates whether the first version is less than the second version.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -379,12 +299,12 @@
       "text" : "Bool"
     }
   ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/VersionTriplet\/_(_:_:)-2ckh6",
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/VersionTriplet\/_(_:_:)",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : "<(_:_:)",
   "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/versiontriplet\/_(_:_:)-2ckh6"
+  "url" : "\/documentation\/swiftdocc\/versiontriplet\/_(_:_:)"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/VersionTriplet/init(_:_:_:)": {
   "abstract" : [
@@ -393,6 +313,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",

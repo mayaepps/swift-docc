@@ -1,17 +1,9 @@
 {
-  "abstract" : [
-    {
-      "text" : "No overview available.",
-      "type" : "text"
-    }
-  ],
   "hierarchy" : {
     "paths" : [
       [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationIndexing",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/LMDBData",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/LMDBData\/read(_:)-9zbwr"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/LMDBData"
       ]
     ]
   },
@@ -67,6 +59,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:9SwiftDocC8LMDBDataPAAE4readyqd__qd__SWKXEKlF1RL_qd__mfp",
         "text" : "R"
       },
       {
@@ -83,6 +76,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:9SwiftDocC8LMDBDataPAAE4readyqd__qd__SWKXEKlF1RL_qd__mfp",
         "text" : "R"
       }
     ],
@@ -91,6 +85,10 @@
         "name" : "SwiftDocC"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "LMDB.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Utility\/LMDB\/LMDB.swift#L73"
+    },
     "role" : "symbol",
     "roleHeading" : "Instance Method",
     "symbolKind" : "method",
@@ -104,7 +102,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -166,6 +164,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:9SwiftDocC8LMDBDataPAAE4readyqd__qd__SWKXEKlF1RL_qd__mfp",
               "text" : "R"
             },
             {
@@ -182,6 +181,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:9SwiftDocC8LMDBDataPAAE4readyqd__qd__SWKXEKlF1RL_qd__mfp",
               "text" : "R"
             }
           ]
@@ -192,7 +192,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -219,26 +219,13 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
   "title" : "SwiftDocC",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/DocumentationIndexing": {
-  "abstract" : [
-    {
-      "text" : "Create documentation indexes optimized for text search or navigation.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationIndexing",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Documentation Indexing",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/documentationindexing"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/LMDBData": {
   "abstract" : [
@@ -247,6 +234,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -278,6 +266,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -322,6 +311,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC8LMDBDataPAAE4readyqd__qd__SWKXEKlF1RL_qd__mfp",
       "text" : "R"
     },
     {
@@ -338,6 +328,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC8LMDBDataPAAE4readyqd__qd__SWKXEKlF1RL_qd__mfp",
       "text" : "R"
     }
   ],
@@ -347,82 +338,6 @@
   "title" : "read(_:)",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/lmdbdata\/read(_:)-9440j"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/LMDBData/read(_:)-9zbwr": {
-  "abstract" : [
-
-  ],
-  "defaultImplementations" : 1,
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "read"
-    },
-    {
-      "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "genericParameter",
-      "text" : "ResultType"
-    },
-    {
-      "kind" : "text",
-      "text" : ">(("
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:SW",
-      "text" : "UnsafeRawBufferPointer"
-    },
-    {
-      "kind" : "text",
-      "text" : ") "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "throws"
-    },
-    {
-      "kind" : "text",
-      "text" : " -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "ResultType"
-    },
-    {
-      "kind" : "text",
-      "text" : ") "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "rethrows"
-    },
-    {
-      "kind" : "text",
-      "text" : " -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "ResultType"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/LMDBData\/read(_:)-9zbwr",
-  "kind" : "symbol",
-  "required" : true,
-  "role" : "symbol",
-  "title" : "read(_:)",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/lmdbdata\/read(_:)-9zbwr"
 }
 }
 }

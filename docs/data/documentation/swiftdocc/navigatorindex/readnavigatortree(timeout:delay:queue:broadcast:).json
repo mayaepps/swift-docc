@@ -25,7 +25,7 @@
       "type" : "text"
     },
     {
-      "text" : "This approach ensures that the used  queue doesn’t stall while loading the content from the disk keeping the used queue responsive.",
+      "text" : "This approach ensures that the used queue doesn’t stall while loading the content from the disk keeping the used queue responsive.",
       "type" : "text"
     }
   ],
@@ -33,7 +33,6 @@
     "paths" : [
       [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationIndexing",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/NavigatorIndex"
       ]
     ]
@@ -44,7 +43,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:9SwiftDocC14NavigatorIndexC04readC4Tree7timeout5delay5queue9broadcastySd_SdSo012OS_dispatch_I0CySayAA0cF0C4NodeCG_SbAL5ErrorOSgtcSgtKF",
+    "externalID" : "s:9SwiftDocC14NavigatorIndexC04readC4Tree7timeout5delay5queue9broadcastySd_Sd8Dispatch0K5QueueCySayAA0cF0C4NodeCG_SbAM5ErrorOSgtcSgtKF",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -72,7 +71,7 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "c:@T@NSTimeInterval",
+        "preciseIdentifier" : "s:10Foundation12TimeIntervala",
         "text" : "TimeInterval"
       },
       {
@@ -89,7 +88,7 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "c:@T@NSTimeInterval",
+        "preciseIdentifier" : "s:10Foundation12TimeIntervala",
         "text" : "TimeInterval"
       },
       {
@@ -106,7 +105,7 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "c:objc(cs)OS_dispatch_queue",
+        "preciseIdentifier" : "s:8Dispatch0A5QueueC",
         "text" : "DispatchQueue"
       },
       {
@@ -149,6 +148,10 @@
         "name" : "SwiftDocC"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "NavigatorIndex.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Indexing\/Navigator\/NavigatorIndex.swift#L394"
+    },
     "role" : "symbol",
     "roleHeading" : "Instance Method",
     "symbolKind" : "method",
@@ -162,7 +165,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -191,7 +194,7 @@
             },
             {
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "c:@T@NSTimeInterval",
+              "preciseIdentifier" : "s:10Foundation12TimeIntervala",
               "text" : "TimeInterval"
             },
             {
@@ -208,7 +211,7 @@
             },
             {
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "c:@T@NSTimeInterval",
+              "preciseIdentifier" : "s:10Foundation12TimeIntervala",
               "text" : "TimeInterval"
             },
             {
@@ -225,7 +228,7 @@
             },
             {
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "c:objc(cs)OS_dispatch_queue",
+              "preciseIdentifier" : "s:8Dispatch0A5QueueC",
               "text" : "DispatchQueue"
             },
             {
@@ -277,7 +280,7 @@
             {
               "inlineContent" : [
                 {
-                  "text" : "The amount of time we can load a batch of items from data, once the timeout time pass,",
+                  "text" : "The duration for which we can load a batch of items from data. Once the timeout duration passes,",
                   "type" : "text"
                 },
                 {
@@ -299,7 +302,7 @@
             {
               "inlineContent" : [
                 {
-                  "text" : "The delay to wait before schedule the next read. Default: 0.01 seconds.",
+                  "text" : "The duration to wait for before scheduling the next read. Default: 0.01 seconds.",
                   "type" : "text"
                 }
               ],
@@ -327,7 +330,7 @@
             {
               "inlineContent" : [
                 {
-                  "text" : "The callback to update get updates of the current process.",
+                  "text" : "The callback to receive updates on the status of the current process.",
                   "type" : "text"
                 }
               ],
@@ -366,6 +369,7 @@
               "type" : "paragraph"
             }
           ],
+          "name" : "Note",
           "style" : "note",
           "type" : "aside"
         }
@@ -375,7 +379,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -402,26 +406,13 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
   "title" : "SwiftDocC",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/DocumentationIndexing": {
-  "abstract" : [
-    {
-      "text" : "Create documentation indexes optimized for text search or navigation.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationIndexing",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Documentation Indexing",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/documentationindexing"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/NavigatorIndex": {
   "abstract" : [
@@ -462,6 +453,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -516,10 +508,11 @@
       "type" : "text"
     },
     {
-      "text" : "This approach ensures that the used  queue doesn’t stall while loading the content from the disk keeping the used queue responsive.",
+      "text" : "This approach ensures that the used queue doesn’t stall while loading the content from the disk keeping the used queue responsive.",
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -547,7 +540,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "c:@T@NSTimeInterval",
+      "preciseIdentifier" : "s:10Foundation12TimeIntervala",
       "text" : "TimeInterval"
     },
     {
@@ -564,7 +557,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "c:@T@NSTimeInterval",
+      "preciseIdentifier" : "s:10Foundation12TimeIntervala",
       "text" : "TimeInterval"
     },
     {
@@ -581,7 +574,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "c:objc(cs)OS_dispatch_queue",
+      "preciseIdentifier" : "s:8Dispatch0A5QueueC",
       "text" : "DispatchQueue"
     },
     {
@@ -641,6 +634,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -675,6 +669,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",

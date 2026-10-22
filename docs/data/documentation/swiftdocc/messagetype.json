@@ -8,8 +8,7 @@
   "hierarchy" : {
     "paths" : [
       [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Communication"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC"
       ]
     ]
   },
@@ -45,6 +44,10 @@
         "text" : "MessageType"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "MessageType.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Infrastructure\/Communication\/MessageType.swift#L16"
+    },
     "role" : "symbol",
     "roleHeading" : "Structure",
     "symbolKind" : "struct",
@@ -58,7 +61,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -107,6 +110,7 @@
               "type" : "paragraph"
             }
           ],
+          "name" : "Note",
           "style" : "note",
           "type" : "aside"
         }
@@ -122,7 +126,9 @@
         "doc:\/\/SwiftDocC\/SE",
         "doc:\/\/SwiftDocC\/SQ",
         "doc:\/\/SwiftDocC\/SH",
-        "doc:\/\/SwiftDocC\/SY"
+        "doc:\/\/SwiftDocC\/SY",
+        "doc:\/\/SwiftDocC\/s8SendableP",
+        "doc:\/\/SwiftDocC\/s16SendableMetatypeP"
       ],
       "kind" : "relationships",
       "title" : "Conforms To",
@@ -131,7 +137,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -139,13 +145,11 @@
   ],
   "seeAlsoSections" : [
     {
+      "anchor" : "Communication-Bridge",
       "generated" : true,
       "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/WebKitCommunicationBridge",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/CommunicationBridge",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/CommunicationBridgeError",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationSchemeHandler",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TopicReferenceSchemeHandler",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Message",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/CodeColors",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/CodeColorsPreferenceKey"
@@ -155,12 +159,16 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Initializers",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/MessageType\/init(rawValue:)"
       ],
       "title" : "Initializers"
     },
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/MessageType\/debugDescription",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/MessageType\/rawValue"
@@ -168,20 +176,14 @@
       "title" : "Instance Properties"
     },
     {
+      "anchor" : "Type-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/MessageType\/codeColors",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/MessageType\/rendered",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/MessageType\/requestCodeColors"
       ],
       "title" : "Type Properties"
-    },
-    {
-      "generated" : true,
-      "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/MessageType\/Equatable-Implementations",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/MessageType\/RawRepresentable-Implementations"
-      ],
-      "title" : "Default Implementations"
     }
   ],
   "variants" : [
@@ -230,6 +232,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -244,6 +247,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -278,6 +282,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -305,20 +310,6 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/codecolorspreferencekey"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/Communication": {
-  "abstract" : [
-    {
-      "text" : "Offer native integration of DocC in your IDE.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Communication",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Communication Bridge",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/communication"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/CommunicationBridge": {
   "abstract" : [
     {
@@ -326,6 +317,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -360,6 +352,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -387,37 +380,6 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/communicationbridgeerror"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/DocumentationSchemeHandler": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "class"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "DocumentationSchemeHandler"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationSchemeHandler",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "DocumentationSchemeHandler"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "DocumentationSchemeHandler",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/documentationschemehandler"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/Message": {
   "abstract" : [
     {
@@ -425,6 +387,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -459,6 +422,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -486,28 +450,6 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/messagetype"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/MessageType/Equatable-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/MessageType\/Equatable-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Equatable Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/messagetype\/equatable-implementations"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/MessageType/RawRepresentable-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/MessageType\/RawRepresentable-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "RawRepresentable Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/messagetype\/rawrepresentable-implementations"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/MessageType/codeColors": {
   "abstract" : [
     {
@@ -515,6 +457,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -557,6 +500,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -594,6 +538,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -632,6 +577,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -669,6 +615,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -714,6 +661,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -752,75 +700,19 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/messagetype\/requestcodecolors"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/TopicReferenceSchemeHandler": {
-  "abstract" : [
-
-  ],
-  "deprecated" : true,
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "typealias"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "TopicReferenceSchemeHandler"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/TopicReferenceSchemeHandler",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "TopicReferenceSchemeHandler"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "TopicReferenceSchemeHandler",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/topicreferenceschemehandler"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/WebKitCommunicationBridge": {
-  "abstract" : [
-    {
-      "text" : "Provides bi-directional communication with a documentation renderer via JavaScript calls in a web view.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "struct"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "WebKitCommunicationBridge"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/WebKitCommunicationBridge",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "WebKitCommunicationBridge"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "WebKitCommunicationBridge",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/webkitcommunicationbridge"
+"doc://SwiftDocC/s16SendableMetatypeP": {
+  "identifier" : "doc:\/\/SwiftDocC\/s16SendableMetatypeP",
+  "title" : "Swift.SendableMetatype",
+  "type" : "unresolvable"
 },
 "doc://SwiftDocC/s28CustomDebugStringConvertibleP": {
   "identifier" : "doc:\/\/SwiftDocC\/s28CustomDebugStringConvertibleP",
   "title" : "Swift.CustomDebugStringConvertible",
+  "type" : "unresolvable"
+},
+"doc://SwiftDocC/s8SendableP": {
+  "identifier" : "doc:\/\/SwiftDocC\/s8SendableP",
+  "title" : "Swift.Sendable",
   "type" : "unresolvable"
 }
 }

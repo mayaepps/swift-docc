@@ -1,15 +1,8 @@
 {
-  "abstract" : [
-    {
-      "text" : "No overview available.",
-      "type" : "text"
-    }
-  ],
   "hierarchy" : {
     "paths" : [
       [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationIndexing",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Platform"
       ]
     ]
@@ -46,6 +39,10 @@
         "text" : "Version"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "AvailabilityIndex+Ext.swift",
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/SwiftDocC\/Indexing\/Navigator\/AvailabilityIndex+Ext.swift#L209"
+    },
     "role" : "symbol",
     "roleHeading" : "Structure",
     "symbolKind" : "struct",
@@ -59,7 +56,7 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "Linux"
           ],
           "tokens" : [
             {
@@ -97,7 +94,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -105,6 +102,8 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Initializers",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Platform\/Version-swift.struct\/init(string:)",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Platform\/Version-swift.struct\/init(uint32:)"
@@ -112,6 +111,8 @@
       "title" : "Initializers"
     },
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Platform\/Version-swift.struct\/majorVersion",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Platform\/Version-swift.struct\/minorVersion",
@@ -121,16 +122,12 @@
       "title" : "Instance Properties"
     },
     {
+      "anchor" : "Default-Implementations",
       "generated" : true,
       "identifiers" : [
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Platform\/Version-swift.struct\/-Implementations",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Platform\/Version-swift.struct\/-Implementations",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Platform\/Version-swift.struct\/Comparable-Implementations",
         "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Platform\/Version-swift.struct\/CustomStringConvertible-Implementations",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Platform\/Version-swift.struct\/Decodable-Implementations",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Platform\/Version-swift.struct\/Encodable-Implementations",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Platform\/Version-swift.struct\/Equatable-Implementations",
-        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Platform\/Version-swift.struct\/Hashable-Implementations"
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Platform\/Version-swift.struct\/Decodable-Implementations"
       ],
       "title" : "Default Implementations"
     }
@@ -181,6 +178,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -188,24 +186,11 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/DocumentationIndexing": {
-  "abstract" : [
-    {
-      "text" : "Create documentation indexes optimized for text search or navigation.",
-      "type" : "text"
-    }
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/DocumentationIndexing",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Documentation Indexing",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/documentationindexing"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/Platform": {
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -237,6 +222,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -263,17 +249,6 @@
   "title" : "Platform.Version",
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/platform\/version-swift.struct"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/Platform/Version-swift.struct/-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Platform\/Version-swift.struct\/-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : " Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/platform\/version-swift.struct\/-implementations"
 },
 "doc://SwiftDocC/documentation/SwiftDocC/Platform/Version-swift.struct/Comparable-Implementations": {
   "abstract" : [
@@ -308,39 +283,6 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/platform\/version-swift.struct\/decodable-implementations"
 },
-"doc://SwiftDocC/documentation/SwiftDocC/Platform/Version-swift.struct/Encodable-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Platform\/Version-swift.struct\/Encodable-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Encodable Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/platform\/version-swift.struct\/encodable-implementations"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/Platform/Version-swift.struct/Equatable-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Platform\/Version-swift.struct\/Equatable-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Equatable Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/platform\/version-swift.struct\/equatable-implementations"
-},
-"doc://SwiftDocC/documentation/SwiftDocC/Platform/Version-swift.struct/Hashable-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/Platform\/Version-swift.struct\/Hashable-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Hashable Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/swiftdocc\/platform\/version-swift.struct\/hashable-implementations"
-},
 "doc://SwiftDocC/documentation/SwiftDocC/Platform/Version-swift.struct/init(string:)": {
   "abstract" : [
     {
@@ -364,6 +306,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -402,6 +345,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -440,6 +384,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -474,6 +419,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -508,6 +454,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -542,6 +489,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
