@@ -46,7 +46,7 @@
     ],
     "remoteSource" : {
       "fileName" : "LinkProvider.swift",
-      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/DocCHTML\/LinkProvider.swift#L16"
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/DocCHTML\/LinkProvider.swift#L15"
     },
     "role" : "symbol",
     "roleHeading" : "Protocol",
@@ -121,7 +121,6 @@
   "abstract" : [
 
   ],
-  "deprecated" : true,
   "identifier" : "doc:\/\/DocCHTML\/documentation\/DocCHTML",
   "kind" : "symbol",
   "role" : "collection",
@@ -136,7 +135,6 @@
       "type" : "text"
     }
   ],
-  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -179,7 +177,6 @@
       "type" : "text"
     }
   ],
-  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -239,7 +236,6 @@
       "type" : "text"
     }
   ],
-  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -267,8 +263,8 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:20FoundationEssentials3URLV",
-      "text" : "URL"
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
     },
     {
       "kind" : "text",
@@ -299,7 +295,6 @@
       "type" : "text"
     }
   ],
-  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -363,7 +358,6 @@
       "type" : "text"
     }
   ],
-  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -392,8 +386,8 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:20FoundationEssentials3URLV",
-      "text" : "URL"
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
     },
     {
       "kind" : "text",

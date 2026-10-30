@@ -196,6 +196,16 @@
       "title" : "Initializers"
     },
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ConformanceSection\/availabilityPrefix",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ConformanceSection\/conformancePrefix",
+        "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ConformanceSection\/constraints"
+      ],
+      "title" : "Instance Properties"
+    },
+    {
       "anchor" : "Default-Implementations",
       "generated" : true,
       "identifiers" : [
@@ -251,7 +261,7 @@
   "kind" : "symbol",
   "navigatorTitle" : [
     {
-      "kind" : "identifier",
+      "kind" : "text",
       "text" : "FastJSONDecodable"
     }
   ],
@@ -282,7 +292,6 @@
       "type" : "text"
     }
   ],
-  "deprecated" : true,
   "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC",
   "kind" : "symbol",
   "role" : "collection",
@@ -297,7 +306,6 @@
       "type" : "text"
     }
   ],
-  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -336,11 +344,133 @@
   "type" : "topic",
   "url" : "\/documentation\/swiftdocc\/conformancesection\/fastjsondecodable-implementations"
 },
+"doc://SwiftDocC/documentation/SwiftDocC/ConformanceSection/availabilityPrefix": {
+  "abstract" : [
+    {
+      "text" : "A prefix with which to prepend availability constraints.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "availabilityPrefix"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC19RenderInlineContentO",
+      "text" : "RenderInlineContent"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ConformanceSection\/availabilityPrefix",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "availabilityPrefix",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/conformancesection\/availabilityprefix"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/ConformanceSection/conformancePrefix": {
+  "abstract" : [
+    {
+      "text" : "A prefix with which to prepend conformance constraints.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "conformancePrefix"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC19RenderInlineContentO",
+      "text" : "RenderInlineContent"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ConformanceSection\/conformancePrefix",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "conformancePrefix",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/conformancesection\/conformanceprefix"
+},
+"doc://SwiftDocC/documentation/SwiftDocC/ConformanceSection/constraints": {
+  "abstract" : [
+    {
+      "text" : "The section constraints rendered as inline content.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "constraints"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9SwiftDocC19RenderInlineContentO",
+      "text" : "RenderInlineContent"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/SwiftDocC\/documentation\/SwiftDocC\/ConformanceSection\/constraints",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "constraints",
+  "type" : "topic",
+  "url" : "\/documentation\/swiftdocc\/conformancesection\/constraints"
+},
 "doc://SwiftDocC/documentation/SwiftDocC/ConformanceSection/init(from:)": {
   "abstract" : [
 
   ],
-  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -386,7 +516,6 @@
       "type" : "text"
     }
   ],
-  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -421,7 +550,6 @@
       "type" : "text"
     }
   ],
-  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -456,7 +584,6 @@
       "type" : "text"
     }
   ],
-  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -491,7 +618,6 @@
       "type" : "text"
     }
   ],
-  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -526,7 +652,6 @@
       "type" : "text"
     }
   ],
-  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -561,7 +686,6 @@
       "type" : "text"
     }
   ],
-  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",

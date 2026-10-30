@@ -13,7 +13,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:8DocCHTML11LinkedAssetV5filesACSDyAC10ColorStyleOSDySi20FoundationEssentials3URLVGG_tcfc",
+    "externalID" : "s:8DocCHTML11LinkedAssetV5filesACSDyAC10ColorStyleOSDySiSSGG_tcfc",
     "fragments" : [
       {
         "kind" : "identifier",
@@ -51,8 +51,8 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:20FoundationEssentials3URLV",
-        "text" : "URL"
+        "preciseIdentifier" : "s:SS",
+        "text" : "String"
       },
       {
         "kind" : "text",
@@ -121,8 +121,8 @@
             },
             {
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:20FoundationEssentials3URLV",
-              "text" : "URL"
+              "preciseIdentifier" : "s:SS",
+              "text" : "String"
             },
             {
               "kind" : "text",
@@ -160,7 +160,6 @@
   "abstract" : [
 
   ],
-  "deprecated" : true,
   "identifier" : "doc:\/\/DocCHTML\/documentation\/DocCHTML",
   "kind" : "symbol",
   "role" : "collection",
@@ -175,7 +174,6 @@
       "type" : "text"
     }
   ],
-  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -207,7 +205,6 @@
   "abstract" : [
 
   ],
-  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -239,7 +236,6 @@
   "abstract" : [
 
   ],
-  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -277,8 +273,8 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:20FoundationEssentials3URLV",
-      "text" : "URL"
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
     },
     {
       "kind" : "text",

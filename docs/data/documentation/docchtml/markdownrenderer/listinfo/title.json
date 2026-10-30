@@ -55,7 +55,7 @@
     ],
     "remoteSource" : {
       "fileName" : "MarkdownRenderer+Relationships.swift",
-      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/DocCHTML\/MarkdownRenderer+Relationships.swift#L19"
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/DocCHTML\/MarkdownRenderer+Relationships.swift#L17"
     },
     "role" : "symbol",
     "roleHeading" : "Instance Property",
@@ -130,7 +130,6 @@
   "abstract" : [
 
   ],
-  "deprecated" : true,
   "identifier" : "doc:\/\/DocCHTML\/documentation\/DocCHTML",
   "kind" : "symbol",
   "role" : "collection",
@@ -145,7 +144,6 @@
       "type" : "text"
     }
   ],
-  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -212,7 +210,6 @@
       }
     ]
   },
-  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -247,7 +244,6 @@
       "type" : "text"
     }
   ],
-  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",

@@ -80,7 +80,7 @@
     ],
     "remoteSource" : {
       "fileName" : "MarkdownRenderer+Relationships.swift",
-      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/DocCHTML\/MarkdownRenderer+Relationships.swift#L17"
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/DocCHTML\/MarkdownRenderer+Relationships.swift#L15"
     },
     "role" : "symbol",
     "roleHeading" : "Structure",
@@ -171,7 +171,6 @@
   "abstract" : [
 
   ],
-  "deprecated" : true,
   "identifier" : "doc:\/\/DocCHTML\/documentation\/DocCHTML",
   "kind" : "symbol",
   "role" : "collection",
@@ -186,7 +185,6 @@
       "type" : "text"
     }
   ],
-  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -253,7 +251,6 @@
       }
     ]
   },
-  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -285,7 +282,6 @@
   "abstract" : [
 
   ],
-  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "identifier",
@@ -322,8 +318,8 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:20FoundationEssentials3URLV",
-      "text" : "URL"
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
     },
     {
       "kind" : "text",
@@ -344,7 +340,6 @@
       "type" : "text"
     }
   ],
-  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -364,8 +359,8 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:20FoundationEssentials3URLV",
-      "text" : "URL"
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
     },
     {
       "kind" : "text",
@@ -386,7 +381,6 @@
       "type" : "text"
     }
   ],
-  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",

@@ -19,7 +19,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:8DocCHTML13LinkedElementV4path20FoundationEssentials3URLVvp",
+    "externalID" : "s:8DocCHTML13LinkedElementV4pathSSvp",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -39,8 +39,8 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:20FoundationEssentials3URLV",
-        "text" : "URL"
+        "preciseIdentifier" : "s:SS",
+        "text" : "String"
       }
     ],
     "modules" : [
@@ -50,7 +50,7 @@
     ],
     "remoteSource" : {
       "fileName" : "LinkProvider.swift",
-      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/DocCHTML\/LinkProvider.swift#L32"
+      "url" : "https:\/\/github.com\/swiftlang\/swift-docc\/blob\/main\/Sources\/DocCHTML\/LinkProvider.swift#L31"
     },
     "role" : "symbol",
     "roleHeading" : "Instance Property",
@@ -86,8 +86,8 @@
             },
             {
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:20FoundationEssentials3URLV",
-              "text" : "URL"
+              "preciseIdentifier" : "s:SS",
+              "text" : "String"
             }
           ]
         }
@@ -121,7 +121,6 @@
   "abstract" : [
 
   ],
-  "deprecated" : true,
   "identifier" : "doc:\/\/DocCHTML\/documentation\/DocCHTML",
   "kind" : "symbol",
   "role" : "collection",
@@ -133,7 +132,6 @@
   "abstract" : [
 
   ],
-  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -168,7 +166,6 @@
       "type" : "text"
     }
   ],
-  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -188,8 +185,8 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:20FoundationEssentials3URLV",
-      "text" : "URL"
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
     }
   ],
   "identifier" : "doc:\/\/DocCHTML\/documentation\/DocCHTML\/LinkedElement\/path",
