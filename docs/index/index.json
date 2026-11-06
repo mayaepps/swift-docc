@@ -1993,6 +1993,22 @@
                 "type" : "protocol"
               },
               {
+                "children" : [
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/docchtml\/renderabledirectiveparser\/parse(blockdirective:)",
+                    "title" : "func parse(blockDirective: BlockDirective) -> RenderableDirective?",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/docchtml\/renderabledirectiveparser",
+                "title" : "RenderableDirectiveParser",
+                "type" : "protocol"
+              },
+              {
                 "title" : "Structures",
                 "type" : "groupMarker"
               },
@@ -4687,8 +4703,8 @@
                     "type" : "groupMarker"
                   },
                   {
-                    "path" : "\/documentation\/docchtml\/markdownrenderer\/init(path:goal:linkprovider:)",
-                    "title" : "init(path: String, goal: RenderGoal, linkProvider: Provider)",
+                    "path" : "\/documentation\/docchtml\/markdownrenderer\/init(path:goal:linkprovider:renderabledirectiveparser:)",
+                    "title" : "init(path: String, goal: RenderGoal, linkProvider: Provider, renderableDirectiveParser: Parser)",
                     "type" : "init"
                   },
                   {
@@ -4818,6 +4834,11 @@
                 "type" : "func"
               },
               {
+                "path" : "\/documentation\/docchtml\/div(attributes:contents:)",
+                "title" : "func div(attributes: [HTMLNode.Attribute], contents: [HTMLNode]) -> HTMLNode",
+                "type" : "func"
+              },
+              {
                 "path" : "\/documentation\/docchtml\/dl(attributes:contents:)",
                 "title" : "func dl(attributes: [HTMLNode.Attribute], contents: [HTMLNode]) -> HTMLNode",
                 "type" : "func"
@@ -4918,6 +4939,11 @@
                 "type" : "func"
               },
               {
+                "path" : "\/documentation\/docchtml\/script(attributes:contents:)",
+                "title" : "func script(attributes: [HTMLNode.Attribute], contents: [HTMLNode]) -> HTMLNode",
+                "type" : "func"
+              },
+              {
                 "path" : "\/documentation\/docchtml\/section(attributes:contents:)",
                 "title" : "func section(attributes: [HTMLNode.Attribute], contents: [HTMLNode]) -> HTMLNode",
                 "type" : "func"
@@ -4965,6 +4991,27 @@
               {
                 "children" : [
                   {
+                    "title" : "Enumeration Cases",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/docchtml\/renderabledirective\/image(source:alt:caption:)",
+                    "title" : "case image(source: String, alt: String?, caption: [any Markup])",
+                    "type" : "case"
+                  },
+                  {
+                    "path" : "\/documentation\/docchtml\/renderabledirective\/small",
+                    "title" : "case small",
+                    "type" : "case"
+                  }
+                ],
+                "path" : "\/documentation\/docchtml\/renderabledirective",
+                "title" : "RenderableDirective",
+                "type" : "enum"
+              },
+              {
+                "children" : [
+                  {
                     "title" : "Structures",
                     "type" : "groupMarker"
                   },
@@ -4996,6 +5043,11 @@
                   {
                     "path" : "\/documentation\/docchtml\/staticresources\/allfiles",
                     "title" : "static let allFiles: [StaticResources.File]",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/docchtml\/staticresources\/navigatorscript",
+                    "title" : "static let navigatorScript: StaticResources.File",
                     "type" : "property"
                   }
                 ],
@@ -6049,7 +6101,13 @@
                         "type" : "init"
                       },
                       {
-                        "path" : "\/documentation\/swiftdocc\/defaultavailability\/init(with:)",
+                        "path" : "\/documentation\/swiftdocc\/defaultavailability\/init(with:)-66y36",
+                        "title" : "init(with: [ModuleAvailability])",
+                        "type" : "init"
+                      },
+                      {
+                        "deprecated" : true,
+                        "path" : "\/documentation\/swiftdocc\/defaultavailability\/init(with:)-69d2u",
                         "title" : "init(with: [String : [ModuleAvailability]])",
                         "type" : "init"
                       },
@@ -13001,6 +13059,7 @@
                             "type" : "groupMarker"
                           },
                           {
+                            "deprecated" : true,
                             "path" : "\/documentation\/swiftdocc\/topicssection\/title",
                             "title" : "static let title: String?",
                             "type" : "property"
@@ -13031,6 +13090,7 @@
                             "type" : "groupMarker"
                           },
                           {
+                            "deprecated" : true,
                             "path" : "\/documentation\/swiftdocc\/seealsosection\/title",
                             "title" : "static let title: String?",
                             "type" : "property"
@@ -29417,6 +29477,22 @@
                 ],
                 "path" : "\/documentation\/swiftdocc\/readonlyfilemanagerprotocol",
                 "title" : "ReadOnlyFileManagerProtocol",
+                "type" : "protocol"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/swiftdocc\/removethisnavigatorindexworkaround\/consume(navigatorindexrendernode:)",
+                    "title" : "func consume(navigatorIndexRenderNode: RenderNode) throws",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/swiftdocc\/removethisnavigatorindexworkaround",
+                "title" : "RemoveThisNavigatorIndexWorkaround",
                 "type" : "protocol"
               },
               {
