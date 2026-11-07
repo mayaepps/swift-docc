@@ -1007,6 +1007,23 @@ figcaption {
       font-size: 0.82rem;
     }
 }
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.row > .column {
+    /* column-size acts as a proportion; */
+    flex: var(--column-size, 1) 1 0;
+    text-align: var(--alignment, center);
+    min-width: 0; /* lets long code blocks shrink */
+    
+    @media only screen and (max-width: 735px) {
+        flex-basis: 100%;
+    }
+}
 """.utf8))
     
     // MARK: Scripts
