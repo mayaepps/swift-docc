@@ -96,7 +96,9 @@
       "generated" : true,
       "identifiers" : [
         "doc:\/\/DocCHTML\/documentation\/DocCHTML\/RenderableDirective\/image(source:alt:caption:)",
-        "doc:\/\/DocCHTML\/documentation\/DocCHTML\/RenderableDirective\/small"
+        "doc:\/\/DocCHTML\/documentation\/DocCHTML\/RenderableDirective\/row(columns:)",
+        "doc:\/\/DocCHTML\/documentation\/DocCHTML\/RenderableDirective\/small",
+        "doc:\/\/DocCHTML\/documentation\/DocCHTML\/RenderableDirective\/tabNavigator(tabs:)"
       ],
       "title" : "Enumeration Cases"
     }
@@ -248,6 +250,90 @@
   "type" : "topic",
   "url" : "\/documentation\/docchtml\/renderabledirective\/image(source:alt:caption:)"
 },
+"doc://DocCHTML/documentation/DocCHTML/RenderableDirective/row(columns:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "row"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "columns"
+    },
+    {
+      "kind" : "text",
+      "text" : ": [(size"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    },
+    {
+      "kind" : "text",
+      "text" : ", alignment"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8DocCHTML15ColumnAlignmentO",
+      "text" : "ColumnAlignment"
+    },
+    {
+      "kind" : "text",
+      "text" : ", content"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8Markdown6MarkupP",
+      "text" : "Markup"
+    },
+    {
+      "kind" : "text",
+      "text" : "])])"
+    }
+  ],
+  "identifier" : "doc:\/\/DocCHTML\/documentation\/DocCHTML\/RenderableDirective\/row(columns:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "RenderableDirective.row(columns:)",
+  "type" : "topic",
+  "url" : "\/documentation\/docchtml\/renderabledirective\/row(columns:)"
+},
 "doc://DocCHTML/documentation/DocCHTML/RenderableDirective/small": {
   "abstract" : [
 
@@ -272,6 +358,77 @@
   "title" : "RenderableDirective.small",
   "type" : "topic",
   "url" : "\/documentation\/docchtml\/renderabledirective\/small"
+},
+"doc://DocCHTML/documentation/DocCHTML/RenderableDirective/tabNavigator(tabs:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "tabNavigator"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "tabs"
+    },
+    {
+      "kind" : "text",
+      "text" : ": [(title"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ", content"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8Markdown6MarkupP",
+      "text" : "Markup"
+    },
+    {
+      "kind" : "text",
+      "text" : "])])"
+    }
+  ],
+  "identifier" : "doc:\/\/DocCHTML\/documentation\/DocCHTML\/RenderableDirective\/tabNavigator(tabs:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "RenderableDirective.tabNavigator(tabs:)",
+  "type" : "topic",
+  "url" : "\/documentation\/docchtml\/renderabledirective\/tabnavigator(tabs:)"
 }
 }
 }

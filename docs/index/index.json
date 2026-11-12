@@ -2383,6 +2383,11 @@
                         "type" : "method"
                       },
                       {
+                        "path" : "\/documentation\/docchtml\/htmlnode\/attribute\/csscustomproperties(_:)",
+                        "title" : "static func cssCustomProperties(KeyValuePairs<String, String>) -> Attribute",
+                        "type" : "method"
+                      },
+                      {
                         "path" : "\/documentation\/docchtml\/htmlnode\/attribute\/data(_:)",
                         "title" : "static func data(String) -> Attribute",
                         "type" : "method"
@@ -4974,6 +4979,32 @@
                     "type" : "groupMarker"
                   },
                   {
+                    "path" : "\/documentation\/docchtml\/columnalignment\/center",
+                    "title" : "case center",
+                    "type" : "case"
+                  },
+                  {
+                    "path" : "\/documentation\/docchtml\/columnalignment\/leading",
+                    "title" : "case leading",
+                    "type" : "case"
+                  },
+                  {
+                    "path" : "\/documentation\/docchtml\/columnalignment\/trailing",
+                    "title" : "case trailing",
+                    "type" : "case"
+                  }
+                ],
+                "path" : "\/documentation\/docchtml\/columnalignment",
+                "title" : "ColumnAlignment",
+                "type" : "enum"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Enumeration Cases",
+                    "type" : "groupMarker"
+                  },
+                  {
                     "path" : "\/documentation\/docchtml\/rendergoal\/conciseness",
                     "title" : "case conciseness",
                     "type" : "case"
@@ -5000,8 +5031,18 @@
                     "type" : "case"
                   },
                   {
+                    "path" : "\/documentation\/docchtml\/renderabledirective\/row(columns:)",
+                    "title" : "case row(columns: [(size: Int, alignment: ColumnAlignment, content: [any Markup])])",
+                    "type" : "case"
+                  },
+                  {
                     "path" : "\/documentation\/docchtml\/renderabledirective\/small",
                     "title" : "case small",
+                    "type" : "case"
+                  },
+                  {
+                    "path" : "\/documentation\/docchtml\/renderabledirective\/tabnavigator(tabs:)",
+                    "title" : "case tabNavigator(tabs: [(title: String, content: [any Markup])])",
                     "type" : "case"
                   }
                 ],

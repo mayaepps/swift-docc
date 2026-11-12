@@ -3,7 +3,7 @@
     {
       "inlineContent" : [
         {
-          "text" : "Use style sheet file to define CSS instead.",
+          "text" : "Use a style sheet file to define CSS or `cssCustomProperties` to  pass variables to the CSS instead.",
           "type" : "text"
         }
       ],
